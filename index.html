@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>crabucate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --fg: #f0ece2;
+      --accent: #c8b89a;
+      --muted: #5a5650;
+      --line: rgba(200,184,154,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'IBM Plex Mono', monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 2rem;
+    }
+
+    /* subtle grain overlay */
+    #hero::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 18vw, 16rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--fg);
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .wordmark span {
+      color: var(--accent);
+    }
+
+    .tagline {
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.2s forwards;
+      z-index: 1;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+    /* ── IMPRESSUM ── */
+    #impressum {
+      border-top: 1px solid var(--line);
+      padding: 5rem clamp(1.5rem, 8vw, 10rem);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .imp-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+    }
+
+    .imp-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .imp-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--fg);
+      margin-bottom: 0.6rem;
+    }
+
+    .imp-section p, .imp-section address {
+      font-style: normal;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .imp-section a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .imp-section a:hover { border-color: var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section id="hero">
+    <h1 class="wordmark">crab<span>u</span>cate</h1>
+    <p class="tagline">Coming soon</p>
+    <div class="scroll-hint">Impressum</div>
+  </section>
+
+  <!-- IMPRESSUM -->
+  <section id="impressum">
+    <p class="imp-label">Impressum</p>
+
+    <div class="imp-section">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <address>
+        <!-- ⚠️ BITTE AUSFÜLLEN -->
+        Vorname Nachname<br />
+        Musterstraße 1<br />
+        12345 Musterstadt<br />
+        Deutschland
+      </address>
+    </div>
+
+    <div class="imp-section">
+      <h2>Kontakt</h2>
+      <p>
+        <!-- ⚠️ BITTE AUSFÜLLEN -->
+        Telefon: +49 (0) 123 456789<br />
+        E-Mail: <a href="mailto:hallo@crabucate.de">hallo@crabucate.de</a>
+      </p>
+    </div>
+
+    <div class="imp-section">
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <address>
+        <!-- ⚠️ BITTE AUSFÜLLEN -->
+        Vorname Nachname<br />
+        Musterstraße 1<br />
+        12345 Musterstadt
+      </address>
+    </div>
+
+    <div class="imp-section">
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
+        nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+        Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+        Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+        Tätigkeit hinweisen.
+      </p>
+    </div>
+
+    <div class="imp-section">
+      <h2>Haftung für Links</h2>
+      <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr
+        übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
+        Betreiber der Seiten verantwortlich.
+      </p>
+    </div>
+
+    <div class="imp-section">
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
+        dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
+        der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen
+        Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+    </div>
+  </section>
+
+  <footer>© 2026 crabucate · <a href="#impressum" style="color:inherit;text-decoration:none;">Impressum</a></footer>
+
+</body>
+</html>
