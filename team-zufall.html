@@ -200,18 +200,9 @@
     }
 
     .device {
-      width: clamp(175px, 20vw, 245px);
-      aspect-ratio: 9 / 19.5;
-      background: #1a1714;
-      border-radius: 44px;
-      border: 12px solid #2a2623;
-      box-shadow:
-        0 0 0 1px #3a3532,
-        0 50px 100px rgba(0,0,0,0.7);
-      overflow: hidden;
-      position: relative;
+      width: clamp(175px, 20vw, 240px);
       flex-shrink: 0;
-      padding: 2px;
+      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.7));
     }
 
     .device:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
@@ -219,10 +210,8 @@
 
     .device img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-      border-radius: 30px;
     }
 
     /* ── DIVIDER ── */
