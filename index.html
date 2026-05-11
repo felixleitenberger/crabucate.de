@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>crabucate — Apps zum Teams bilden und Gruppen einteilen</title>
-  <meta name="description" content="Fokussierte iOS Apps, die den Job erledigen. Team Zufall teilt Gruppen per Knopfdruck zufällig in Teams auf — für iPhone und iPad." />
+  <title>Team Zufall — Gruppen zufällig in Teams einteilen | crabucate</title>
+  <meta name="description" content="Mit Team Zufall teilst du Gruppen in Sekunden zufällig auf Teams auf. Ein Tippen — fertig. Für iPhone und iPad, iOS 16+." />
   <link rel="canonical" href="https://crabucate.de/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/" />
-  <meta property="og:title" content="crabucate — Apps zum Teams bilden und Gruppen einteilen" />
-  <meta property="og:description" content="Team Zufall teilt Gruppen per Knopfdruck zufällig in Teams auf. Für iPhone und iPad." />
+  <meta property="og:title" content="Team Zufall — Gruppen zufällig in Teams einteilen" />
+  <meta property="og:description" content="Gruppen per Knopfdruck zufällig in Teams aufteilen. Für iPhone und iPad." />
   <meta property="og:image" content="https://crabucate.de/images/Team%20Zufall-iOS-Default-1024x1024%401x.png" />
   <meta property="og:locale" content="de_DE" />
 
@@ -20,10 +20,21 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "crabucate",
-    "url": "https://crabucate.de",
-    "description": "iOS Apps zum Teams bilden und Gruppen einteilen"
+    "@type": "MobileApplication",
+    "name": "Team Zufall",
+    "operatingSystem": "iOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Gruppen zufällig in Teams einteilen — per Knopfdruck. Für iPhone und iPad.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "crabucate",
+      "url": "https://crabucate.de"
+    }
   }
   </script>
   <style>
@@ -36,6 +47,8 @@
       --muted: #5a5650;
       --line: rgba(200,184,154,0.15);
       --card-bg: #111010;
+      --tz: #F07D4A;
+      --tz-dim: rgba(240,125,74,0.1);
     }
 
     html { scroll-behavior: smooth; }
@@ -44,7 +57,6 @@
       background: var(--bg);
       color: var(--fg);
       font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      min-height: 100vh;
       overflow-x: hidden;
     }
 
@@ -75,239 +87,279 @@
     }
 
     .nav-logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      font-weight: 700;
-      font-size: 1.1rem;
       color: var(--fg);
       text-decoration: none;
-      letter-spacing: -0.01em;
+      font-size: 0.875rem;
+      font-weight: 600;
     }
 
-    .nav-logo span { color: var(--accent); }
-
     .nav-logo img {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
       background: #fff;
       object-fit: cover;
       flex-shrink: 0;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
+    .app-store-badge img {
+      height: 36px;
+      width: auto;
+      display: block;
+      opacity: 0.45;
     }
 
-    nav ul a {
-      color: var(--muted);
-      text-decoration: none;
+    .coming-soon {
+      margin-top: 0.6rem;
       font-size: 0.72rem;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
+      letter-spacing: 0.06em;
+      color: var(--muted);
     }
-
-    nav ul a:hover { color: var(--accent); }
 
     /* ── HERO ── */
     .hero {
-      padding: 8rem clamp(1.5rem, 9vw, 9rem) 3.5rem;
-      max-width: 1200px;
+      padding: calc(60px + 4rem) clamp(1.5rem, 6vw, 6rem) 0;
+      max-width: 1300px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
 
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(ellipse, var(--tz-dim), transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      display: block;
+      margin-bottom: 1.75rem;
+      background: linear-gradient(135deg, var(--tz), #c05520);
+      box-shadow: 0 16px 40px rgba(240,125,74,0.22);
       opacity: 0;
-      animation: fadeUp 0.8s ease 0.15s forwards;
+      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 8.5vw, 7.5rem);
+      font-size: clamp(2.5rem, 6vw, 6rem);
       font-weight: 800;
-      line-height: 1.0;
       letter-spacing: -0.04em;
+      line-height: 1;
       color: var(--fg);
-      max-width: 14ch;
       opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
     }
 
-    .hero p {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      line-height: 1.75;
+    .tagline {
+      margin-top: 1.25rem;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      line-height: 1.65;
       color: var(--muted);
-      max-width: 48ch;
+      max-width: 42ch;
       opacity: 0;
-      animation: fadeUp 1s ease 0.5s forwards;
+      animation: fadeUp 1s ease 0.4s forwards;
     }
 
-    /* ── APPS ── */
-    #apps {
-      padding: 3rem clamp(1.5rem, 9vw, 9rem) 10rem;
-      max-width: 1200px;
+    .hero-badge {
+      margin-top: 2.25rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .hero-badge img {
+      height: 48px;
+      width: auto;
+      display: block;
+      opacity: 0.45;
+    }
+
+    /* ── IPAD MOCKUP ── */
+    .hero-visual {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 1.2s ease 0.5s forwards;
+      filter: drop-shadow(0 30px 80px rgba(0,0,0,0.55));
+    }
+
+    .ipad-mockup {
+      position: relative;
+      width: 100%;
+    }
+
+    .ipad-mockup .ipad-bezel {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ipad-mockup .ipad-screen {
+      position: absolute;
+      top: 5.8%;
+      left: 3.85%;
+      width: 92.4%;
+      height: 88.5%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .ipad-screen .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      display: block;
+    }
+
+    .ipad-screen .slide.active { opacity: 1; }
+
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.25rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .dot.active {
+      background: var(--tz);
+      transform: scale(1.4);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
+      max-width: 1100px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
 
     .section-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-    }
-
-    .app-category { margin-bottom: 4rem; }
-
-    .category-label {
+      text-align: center;
       font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 3.5rem;
     }
 
-    .apps-grid {
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 380px));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
     }
 
-    .app-card {
-      display: block;
-      text-decoration: none;
+    .feature-card {
       background: var(--card-bg);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 2.25rem;
-      transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
+      border-radius: 18px;
+      padding: 2rem 2rem 2.25rem;
+      transition: border-color 0.3s;
     }
 
-    .app-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 20px;
-      background: radial-gradient(circle at 20% 20%, var(--glow, transparent), transparent 65%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
+    .feature-card:hover { border-color: rgba(240,125,74,0.22); }
 
-    .app-card:hover { border-color: rgba(200,184,154,0.28); transform: translateY(-3px); }
-    .app-card:hover::after { opacity: 1; }
-
-    .app-card-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      display: block;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #f07d4a, #c05520);
-    }
-
-    .app-platform {
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .app-card h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--fg);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.6rem;
-    }
-
-    .app-card p {
-      font-size: 0.875rem;
-      line-height: 1.65;
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-    }
-
-    .app-card--soon {
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    .app-link {
-      display: inline-flex;
+    .feat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      background: var(--tz-dim);
+      display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--fg);
-      transition: gap 0.2s;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      color: var(--tz);
     }
 
-    .app-card:hover .app-link { gap: 0.8rem; }
+    .feat-icon svg { width: 22px; height: 22px; }
 
-    /* ── IMPRESSUM ── */
-    #impressum {
-      border-top: 1px solid var(--line);
-      padding: 5rem clamp(1.5rem, 9vw, 9rem);
-      max-width: 1200px;
-      margin: 0 auto;
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.65rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
+      text-align: center;
       position: relative;
       z-index: 1;
     }
 
-    .imp-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3rem;
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center bottom, rgba(240,125,74,0.07), transparent 65%);
+      pointer-events: none;
     }
 
-    .imp-section { margin-bottom: 2.5rem; }
-
-    .imp-section h2 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.6rem;
-    }
-
-    .imp-section p,
-    .imp-section address {
-      font-style: normal;
-      font-size: 0.875rem;
-      line-height: 1.9;
-      color: var(--muted);
-    }
-
-    .imp-section a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .imp-section a:hover { border-color: var(--accent); }
+    .final-cta > * { position: relative; }
 
     /* ── FOOTER ── */
     footer {
       text-align: center;
-      padding: 3rem 1rem 4rem;
+      padding: 2.5rem 1rem 3.5rem;
       font-size: 0.8rem;
       color: var(--muted);
       border-top: 1px solid var(--line);
@@ -322,47 +374,156 @@
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    @media (max-width: 600px) {
+      .hero-visual { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">
+    <span class="nav-logo">
       <img src="images/crabucateSquare.jpg" alt="" />
       crabucate
-    </a>
-    <ul>
-      <li><a href="#apps">Apps</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
+    </span>
+    <div>
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" style="height:36px; width:auto; opacity:0.45; display:block;" />
+      <p style="font-size:0.65rem; letter-spacing:0.06em; color:var(--muted); text-align:right; margin-top:0.3rem;">Coming soon</p>
+    </div>
   </nav>
 
-  <header class="hero">
-    <h1>Apps, die den Job erledigen.</h1>
-  </header>
+  <!-- HERO -->
+  <section class="hero">
 
-  <section id="apps">
-    <div class="app-category">
-      <div class="apps-grid">
-        <a href="team-zufall.html" class="app-card" style="--glow: rgba(240,125,74,0.08)">
-          <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall" class="app-card-icon" />
-          <p class="app-platform">iPhone · iPad &nbsp;·&nbsp; <span style="color:var(--muted);">Coming soon</span></p>
-          <h2>Team Zufall</h2>
-          <p>Gruppen in Sekunden zufällig auf Teams verteilen. Ein Tippen — fertig.</p>
-          <span class="app-link">
-            Mehr erfahren
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3l3.5 3.5L7 10"/>
-            </svg>
-          </span>
-        </a>
+    <div class="hero-content">
+      <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" class="hero-icon" />
+      <h1>Team Zufall</h1>
+      <p class="tagline">Gruppen zufällig auf Teams verteilen — in einer Sekunde.</p>
+      <div class="hero-badge" style="cursor:default;">
+        <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" />
+        <p class="coming-soon">Coming soon</p>
       </div>
     </div>
 
+    <div class="hero-visual">
+      <div class="ipad-mockup">
+        <div class="ipad-screen">
+          <img class="slide active" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.04.png" alt="" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.12.png" alt="" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.24.png" alt="" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.31.png" alt="" />
+        </div>
+        <img class="ipad-bezel"
+             src="images/iPad%20Pro%20(M5)%2011%22%20-%20Space%20Black%20-%20Landscape.png"
+             alt="" aria-hidden="true" />
+      </div>
+    </div>
+
+    <div class="slideshow-dots">
+      <button class="dot active" aria-label="Bild 1"></button>
+      <button class="dot" aria-label="Bild 2"></button>
+      <button class="dot" aria-label="Bild 3"></button>
+      <button class="dot" aria-label="Bild 4"></button>
+    </div>
 
   </section>
 
-  <footer>© 2026 crabucate · <a href="impressum.html">Impressum</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a></footer>
+  <hr class="divider" />
 
+  <!-- FEATURES -->
+  <section class="features">
+    <p class="section-eyebrow">Features</p>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Gruppen verwalten</h3>
+        <p>Trage deine Gruppen einmalig ein. Namen bleiben gespeichert — kein erneutes Eintippen beim nächsten Mal.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 3 21 3 21 8"/>
+            <line x1="4" y1="20" x2="21" y2="3"/>
+            <polyline points="21 16 21 21 16 21"/>
+            <line x1="15" y1="15" x2="21" y2="21"/>
+            <line x1="4" y1="4" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <h3>Ein Tippen — fertig</h3>
+        <p>Alle Teilnehmer werden gleichmäßig und zufällig auf Teams verteilt. Sofort einsatzbereit.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="21" x2="4" y2="14"/>
+            <line x1="4" y1="10" x2="4" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12" y2="3"/>
+            <line x1="20" y1="21" x2="20" y2="16"/>
+            <line x1="20" y1="12" x2="20" y2="3"/>
+            <line x1="1" y1="14" x2="7" y2="14"/>
+            <line x1="9" y1="8" x2="15" y2="8"/>
+            <line x1="17" y1="16" x2="23" y2="16"/>
+          </svg>
+        </div>
+        <h3>Flexible Teamgröße</h3>
+        <p>2er, 3er, 4er Gruppen — du bestimmst, wie groß die Teams werden sollen.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div style="display:inline-block;">
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" style="height:48px; width:auto; opacity:0.45; display:block;" />
+      <p class="coming-soon" style="text-align:center;">Coming soon</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 crabucate · <a href="impressum.html">Impressum</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a>
+  </footer>
+
+  <script>
+    (function () {
+      var slides = document.querySelectorAll('.ipad-screen .slide');
+      var dots = document.querySelectorAll('.dot');
+      var current = 0;
+      var timer;
+
+      function go(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function startTimer() {
+        timer = setInterval(function () { go(current + 1); }, 2000);
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          clearInterval(timer);
+          go(i);
+          startTimer();
+        });
+      });
+
+      startTimer();
+    })();
+  </script>
 </body>
 </html>
