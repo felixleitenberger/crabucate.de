@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0d0d0d;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      padding: 0 88px;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.6;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(240,125,74,0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .icon {
+      width: 128px;
+      height: 128px;
+      border-radius: 28px;
+      flex-shrink: 0;
+      margin-right: 52px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 20px 50px rgba(240,125,74,0.25);
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .label {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8b89a;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #f0ece2;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    p {
+      font-size: 22px;
+      color: #5a5650;
+      line-height: 1.6;
+    }
+
+    .domain {
+      position: absolute;
+      bottom: 44px;
+      right: 88px;
+      font-size: 13px;
+      color: #3a3632;
+      letter-spacing: 0.06em;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" class="icon" alt="" />
+  <div class="text">
+    <p class="label">crabucate</p>
+    <h1>Team Zufall</h1>
+    <p>Gruppen zufällig in Teams aufteilen.<br>Ein Tippen — fertig.</p>
+  </div>
+  <span class="domain">crabucate.de</span>
+</body>
+</html>
