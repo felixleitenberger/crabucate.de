@@ -193,10 +193,45 @@
       left: 3.85%;
       width: 92.4%;
       height: 88.5%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .ipad-screen .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: top left;
-      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.7s ease;
       display: block;
+    }
+
+    .ipad-screen .slide.active { opacity: 1; }
+
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.25rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .dot.active {
+      background: var(--tz);
+      transform: scale(1.4);
     }
 
     /* ── DIVIDER ── */
@@ -352,13 +387,23 @@
 
     <div class="hero-visual">
       <div class="ipad-mockup">
-        <img class="ipad-screen"
-             src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.24.png"
-             alt="Team Zufall auf dem iPad" />
+        <div class="ipad-screen">
+          <img class="slide active" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.04.png" alt="" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.12.png" alt="" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.24.png" alt="" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.31.png" alt="" />
+        </div>
         <img class="ipad-bezel"
              src="images/iPad%20Pro%20(M5)%2011%22%20-%20Space%20Black%20-%20Landscape.png"
              alt="" aria-hidden="true" />
       </div>
+    </div>
+
+    <div class="slideshow-dots">
+      <button class="dot active" aria-label="Bild 1"></button>
+      <button class="dot" aria-label="Bild 2"></button>
+      <button class="dot" aria-label="Bild 3"></button>
+      <button class="dot" aria-label="Bild 4"></button>
     </div>
 
   </section>
@@ -428,5 +473,35 @@
     <a href="/">crabucate</a> · <a href="/#impressum">Impressum</a>
   </footer>
 
+  <script>
+    (function () {
+      var slides = document.querySelectorAll('.ipad-screen .slide');
+      var dots = document.querySelectorAll('.dot');
+      var current = 0;
+      var timer;
+
+      function go(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function startTimer() {
+        timer = setInterval(function () { go(current + 1); }, 3500);
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          clearInterval(timer);
+          go(i);
+          startTimer();
+        });
+      });
+
+      startTimer();
+    })();
+  </script>
 </body>
 </html>
