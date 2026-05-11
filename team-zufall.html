@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team Zufall — crabucate</title>
   <meta name="description" content="Schülerinnen und Schüler per Knopfdruck in zufällige Teams einteilen. Für iPhone und iPad." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -26,7 +24,7 @@
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       overflow-x: hidden;
     }
 
@@ -62,9 +60,7 @@
       gap: 0.5rem;
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.63rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      font-size: 0.875rem;
       transition: color 0.2s;
     }
 
@@ -79,9 +75,8 @@
       color: #fff;
       text-decoration: none;
       border-radius: 9px;
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 500;
       transition: opacity 0.2s, transform 0.2s;
     }
 
@@ -128,9 +123,8 @@
     }
 
     .hero h1 {
-      font-family: 'Playfair Display', serif;
       font-size: clamp(3rem, 10vw, 8rem);
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1;
       color: var(--fg);
@@ -140,8 +134,8 @@
 
     .tagline {
       margin-top: 1.5rem;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
-      line-height: 1.85;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      line-height: 1.7;
       color: var(--muted);
       max-width: 42ch;
       opacity: 0;
@@ -158,8 +152,8 @@
       color: #fff;
       text-decoration: none;
       border-radius: 13px;
-      font-size: 0.73rem;
-      letter-spacing: 0.06em;
+      font-size: 0.95rem;
+      font-weight: 500;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 10px 36px rgba(240,125,74,0.32);
       opacity: 0;
@@ -173,9 +167,7 @@
 
     .platform-note {
       margin-top: 1rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
+      font-size: 0.8rem;
       color: var(--muted);
       opacity: 0;
       animation: fadeUp 0.8s ease 0.7s forwards;
@@ -200,8 +192,9 @@
 
     .section-eyebrow {
       text-align: center;
-      font-size: 0.6rem;
-      letter-spacing: 0.42em;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 3.5rem;
@@ -238,17 +231,16 @@
     .feat-icon svg { width: 22px; height: 22px; }
 
     .feature-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 600;
       color: var(--fg);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       margin-bottom: 0.65rem;
     }
 
     .feature-card p {
-      font-size: 0.72rem;
-      line-height: 1.85;
+      font-size: 0.875rem;
+      line-height: 1.75;
       color: var(--muted);
     }
 
@@ -344,16 +336,15 @@
     .final-cta > * { position: relative; }
 
     .final-cta h2 {
-      font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 5.5vw, 4rem);
-      font-weight: 900;
-      letter-spacing: -0.04em;
+      font-weight: 800;
+      letter-spacing: -0.03em;
       color: var(--fg);
       margin-bottom: 0.75rem;
     }
 
     .final-cta .sub {
-      font-size: 0.72rem;
+      font-size: 0.9rem;
       color: var(--muted);
       margin-bottom: 2.75rem;
     }
@@ -362,8 +353,7 @@
     footer {
       text-align: center;
       padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.22em;
+      font-size: 0.8rem;
       color: var(--muted);
       border-top: 1px solid var(--line);
       position: relative;

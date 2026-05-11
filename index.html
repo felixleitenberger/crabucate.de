@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>crabucate — Apps für den Unterricht</title>
   <meta name="description" content="Kleine, fokussierte Apps für Lehrerinnen und Lehrer." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -24,7 +22,7 @@
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -56,12 +54,11 @@
     }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 1.25rem;
+      font-weight: 700;
+      font-size: 1.1rem;
       color: var(--fg);
       text-decoration: none;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .nav-logo span { color: var(--accent); }
@@ -75,9 +72,8 @@
     nav ul a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.63rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
       transition: color 0.2s;
     }
 
@@ -97,19 +93,18 @@
     }
 
     .hero-eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.42em;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.15s forwards;
     }
 
     .hero h1 {
-      font-family: 'Playfair Display', serif;
       font-size: clamp(3rem, 8.5vw, 7.5rem);
-      font-weight: 900;
+      font-weight: 800;
       line-height: 1.0;
       letter-spacing: -0.04em;
       color: var(--fg);
@@ -120,8 +115,8 @@
 
     .hero p {
       margin-top: 2rem;
-      font-size: 0.78rem;
-      line-height: 2;
+      font-size: 0.95rem;
+      line-height: 1.75;
       color: var(--muted);
       max-width: 48ch;
       opacity: 0;
@@ -138,11 +133,22 @@
     }
 
     .section-eyebrow {
-      font-size: 0.6rem;
-      letter-spacing: 0.42em;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 2.5rem;
+    }
+
+    .app-category { margin-bottom: 4rem; }
+
+    .category-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
     }
 
     .apps-grid {
@@ -187,36 +193,38 @@
     }
 
     .app-platform {
-      font-size: 0.6rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
       color: var(--accent);
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.5rem;
     }
 
     .app-card h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--fg);
       letter-spacing: -0.02em;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
     }
 
     .app-card p {
-      font-size: 0.72rem;
-      line-height: 1.8;
+      font-size: 0.875rem;
+      line-height: 1.65;
       color: var(--muted);
       margin-bottom: 1.75rem;
+    }
+
+    .app-card--soon {
+      opacity: 0.45;
+      pointer-events: none;
     }
 
     .app-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 500;
       color: var(--fg);
       transition: gap 0.2s;
     }
@@ -234,8 +242,8 @@
     }
 
     .imp-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.42em;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 3rem;
@@ -244,9 +252,8 @@
     .imp-section { margin-bottom: 2.5rem; }
 
     .imp-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 900;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--fg);
       margin-bottom: 0.6rem;
     }
@@ -254,7 +261,7 @@
     .imp-section p,
     .imp-section address {
       font-style: normal;
-      font-size: 0.78rem;
+      font-size: 0.875rem;
       line-height: 1.9;
       color: var(--muted);
     }
@@ -272,8 +279,7 @@
     footer {
       text-align: center;
       padding: 3rem 1rem 4rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
+      font-size: 0.8rem;
       color: var(--muted);
       border-top: 1px solid var(--line);
       position: relative;
@@ -306,23 +312,38 @@
   </header>
 
   <section id="apps">
-    <p class="section-eyebrow">Unsere Apps</p>
-    <div class="apps-grid">
+    <p class="section-eyebrow">Apps</p>
 
-      <a href="team-zufall.html" class="app-card" style="--glow: rgba(240,125,74,0.08)">
-        <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall" class="app-card-icon" />
-        <p class="app-platform">iPhone · iPad</p>
-        <h2>Team Zufall</h2>
-        <p>Schülerinnen und Schüler in Sekunden zufällig auf Teams verteilen. Ein Tippen — fertig.</p>
-        <span class="app-link">
-          Mehr erfahren
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2.5 6.5h8M7 3l3.5 3.5L7 10"/>
-          </svg>
-        </span>
-      </a>
-
+    <div class="app-category">
+      <p class="category-label">Für Lehrpersonen</p>
+      <div class="apps-grid">
+        <a href="team-zufall.html" class="app-card" style="--glow: rgba(240,125,74,0.08)">
+          <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall" class="app-card-icon" />
+          <p class="app-platform">iPhone · iPad</p>
+          <h2>Team Zufall</h2>
+          <p>Schülerinnen und Schüler in Sekunden zufällig auf Teams verteilen. Ein Tippen — fertig.</p>
+          <span class="app-link">
+            Mehr erfahren
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 6.5h8M7 3l3.5 3.5L7 10"/>
+            </svg>
+          </span>
+        </a>
+      </div>
     </div>
+
+    <div class="app-category">
+      <p class="category-label">Für Schüler:innen</p>
+      <div class="apps-grid">
+        <div class="app-card app-card--soon">
+          <div class="app-card-icon" style="background: linear-gradient(135deg, #5b8def, #2d5fcf);"></div>
+          <p class="app-platform">In Entwicklung</p>
+          <h2>Bald verfügbar</h2>
+          <p>Neue Apps für Schülerinnen und Schüler sind bereits in Arbeit.</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- IMPRESSUM -->
