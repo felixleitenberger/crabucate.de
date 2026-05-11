@@ -54,6 +54,9 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--fg);
@@ -62,6 +65,15 @@
     }
 
     .nav-logo span { color: var(--accent); }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: #fff;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
     nav ul {
       list-style: none;
@@ -298,7 +310,10 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">crab<span>u</span>cate</a>
+    <a href="/" class="nav-logo">
+      <img src="images/crabucateSquare.jpg" alt="" />
+      crab<span>u</span>cate
+    </a>
     <ul>
       <li><a href="#apps">Apps</a></li>
       <li><a href="#impressum">Impressum</a></li>

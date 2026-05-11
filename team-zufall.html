@@ -57,11 +57,20 @@
     .back-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       color: var(--muted);
       text-decoration: none;
       font-size: 0.875rem;
       transition: color 0.2s;
+    }
+
+    .back-link img {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: #fff;
+      object-fit: cover;
+      flex-shrink: 0;
     }
 
     .back-link:hover { color: var(--fg); }
@@ -378,9 +387,7 @@
 
   <nav>
     <a href="/" class="back-link">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 2.5L4.5 7 9 11.5"/>
-      </svg>
+      <img src="images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
     <a href="#" class="nav-store-btn">
