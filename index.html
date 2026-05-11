@@ -6,6 +6,7 @@
   <title>Team Zufall — Gruppen zufällig in Teams einteilen | crabucate</title>
   <meta name="description" content="Mit Team Zufall teilst du Gruppen in Sekunden zufällig auf Teams auf. Ein Tippen — fertig. Für iPhone und iPad, iOS 16+." />
   <link rel="canonical" href="https://crabucate.de/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
@@ -16,7 +17,7 @@
   <meta property="og:image" content="https://crabucate.de/images/Team%20Zufall-iOS-Default-1024x1024%401x.png" />
   <meta property="og:locale" content="de_DE" />
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: App -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,6 +36,48 @@
       "name": "crabucate",
       "url": "https://crabucate.de"
     }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie teile ich eine Gruppe zufällig in Teams auf?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lege deine Gruppe einmalig in Team Zufall an, trage die Teilnehmer ein und tippe auf „Teams auslosen". Die App verteilt alle gleichmäßig und zufällig auf die gewählte Anzahl Teams — in Sekunden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Für wen ist Team Zufall geeignet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Team Zufall eignet sich für alle, die regelmäßig Gruppen in Teams aufteilen: Lehrkräfte, Trainer, Seminarleiter, Vereinsverantwortliche oder Eventorganisatoren."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich die Teamgröße selbst festlegen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Du bestimmst, wie viele Personen ein Team haben soll — 2er, 3er, 4er Gruppen und mehr sind möglich. Team Zufall verteilt die Teilnehmer entsprechend gleichmäßig."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werden meine Daten gespeichert oder übertragen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Alle Gruppen und Teilnehmernamen bleiben ausschließlich lokal auf deinem Gerät. Es werden keine Daten an externe Server übertragen."
+        }
+      }
+    ]
   }
   </script>
   <style>
@@ -338,6 +381,64 @@
       color: var(--muted);
     }
 
+    /* ── DESCRIPTION ── */
+    .description {
+      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .description p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 auto;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
     /* ── FINAL CTA ── */
     .final-cta {
       padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
@@ -409,10 +510,10 @@
     <div class="hero-visual">
       <div class="ipad-mockup">
         <div class="ipad-screen">
-          <img class="slide active" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.04.png" alt="" />
-          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.12.png" alt="" />
-          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.24.png" alt="" />
-          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.31.png" alt="" />
+          <img class="slide active" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.04.png" alt="Team Zufall Übersicht mit gespeicherten Gruppen" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.12.png" alt="Teilnehmerliste einer Gruppe in Team Zufall" loading="lazy" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.24.png" alt="Zufällig aufgeteilte Teams in Team Zufall" loading="lazy" />
+          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.31.png" alt="Neue Gruppe erstellen in Team Zufall" loading="lazy" />
         </div>
         <img class="ipad-bezel"
              src="images/iPad%20Pro%20(M5)%2011%22%20-%20Space%20Black%20-%20Landscape.png"
@@ -480,6 +581,36 @@
         <p>2er, 3er, 4er Gruppen — du bestimmst, wie groß die Teams werden sollen.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section class="description">
+    <p>Team Zufall macht das zufällige Aufteilen von Gruppen in Teams so einfach wie möglich. Egal ob Sport, Seminar, Workshop oder Unterricht — ein Tippen genügt. Die App speichert deine Gruppen lokal, sodass du beim nächsten Mal sofort loslegen kannst. Keine Anmeldung, keine Cloud, keine Ablenkung.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <p class="faq-eyebrow">FAQ</p>
+
+    <div class="faq-item">
+      <h3>Wie teile ich eine Gruppe zufällig in Teams auf?</h3>
+      <p>Lege deine Gruppe einmalig in Team Zufall an, trage die Teilnehmer ein und tippe auf „Teams auslosen". Die App verteilt alle gleichmäßig und zufällig auf die gewählte Anzahl Teams — in Sekunden.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Für wen ist Team Zufall geeignet?</h3>
+      <p>Für alle, die regelmäßig Gruppen in Teams aufteilen: Lehrkräfte, Trainer, Seminarleiter, Vereinsverantwortliche oder Eventorganisatoren.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Kann ich die Teamgröße selbst festlegen?</h3>
+      <p>Ja. Du bestimmst, wie viele Personen ein Team haben soll — 2er, 3er, 4er Gruppen und mehr sind möglich. Team Zufall verteilt die Teilnehmer entsprechend gleichmäßig.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Werden meine Daten gespeichert oder übertragen?</h3>
+      <p>Nein. Alle Gruppen und Teilnehmernamen bleiben ausschließlich lokal auf deinem Gerät. Es werden keine Daten an externe Server übertragen.</p>
     </div>
   </section>
 
