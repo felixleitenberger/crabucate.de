@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>crabucate</title>
+  <title>crabucate — Apps für den Unterricht</title>
+  <meta name="description" content="Kleine, fokussierte Apps für Lehrerinnen und Lehrer." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,7 +15,8 @@
       --fg: #f0ece2;
       --accent: #c8b89a;
       --muted: #5a5650;
-      --line: rgba(200,184,154,0.2);
+      --line: rgba(200,184,154,0.15);
+      --card-bg: #111010;
     }
 
     html { scroll-behavior: smooth; }
@@ -27,19 +29,7 @@
       overflow-x: hidden;
     }
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 2rem;
-    }
-
-    /* subtle grain overlay */
-    #hero::before {
+    body::before {
       content: '';
       position: fixed;
       inset: 0;
@@ -47,99 +37,224 @@
       background-size: 200px;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
-    .wordmark {
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(4rem, 18vw, 16rem);
       font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1;
+      font-size: 1.25rem;
       color: var(--fg);
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+      text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
-    .wordmark span {
-      color: var(--accent);
+    .nav-logo span { color: var(--accent); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
     }
 
-    .tagline {
-      margin-top: 1.5rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
+    nav ul a {
       color: var(--muted);
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+      text-decoration: none;
+      font-size: 0.63rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
 
-    .scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+    nav ul a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--muted);
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fadeUp 1s ease 1.2s forwards;
+      justify-content: flex-end;
+      padding: 10rem clamp(1.5rem, 9vw, 9rem) 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
       z-index: 1;
     }
 
-    .scroll-hint::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: pulse 2s ease-in-out infinite;
+    .hero-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.15s forwards;
     }
 
-    @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8.5vw, 7.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      color: var(--fg);
+      max-width: 14ch;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+    }
+
+    .hero p {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      line-height: 2;
+      color: var(--muted);
+      max-width: 48ch;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    /* ── APPS ── */
+    #apps {
+      padding: 3rem clamp(1.5rem, 9vw, 9rem) 10rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 380px));
+      gap: 1.5rem;
+    }
+
+    .app-card {
+      display: block;
+      text-decoration: none;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.25rem;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: radial-gradient(circle at 20% 20%, var(--glow, transparent), transparent 65%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .app-card:hover { border-color: rgba(200,184,154,0.28); transform: translateY(-3px); }
+    .app-card:hover::after { opacity: 1; }
+
+    .app-card-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      display: block;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #f07d4a, #c05520);
+    }
+
+    .app-platform {
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+
+    .app-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.7rem;
+    }
+
+    .app-card p {
+      font-size: 0.72rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .app-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fg);
+      transition: gap 0.2s;
+    }
+
+    .app-card:hover .app-link { gap: 0.8rem; }
 
     /* ── IMPRESSUM ── */
     #impressum {
       border-top: 1px solid var(--line);
-      padding: 5rem clamp(1.5rem, 8vw, 10rem);
-      max-width: 860px;
+      padding: 5rem clamp(1.5rem, 9vw, 9rem);
+      max-width: 1200px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .imp-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.4em;
+      font-size: 0.62rem;
+      letter-spacing: 0.42em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 3rem;
     }
 
-    .imp-section {
-      margin-bottom: 2.5rem;
-    }
+    .imp-section { margin-bottom: 2.5rem; }
 
     .imp-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 900;
       color: var(--fg);
       margin-bottom: 0.6rem;
     }
 
-    .imp-section p, .imp-section address {
+    .imp-section p,
+    .imp-section address {
       font-style: normal;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       line-height: 1.9;
       color: var(--muted);
     }
@@ -153,27 +268,61 @@
 
     .imp-section a:hover { border-color: var(--accent); }
 
+    /* ── FOOTER ── */
     footer {
       text-align: center;
       padding: 3rem 1rem 4rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
       color: var(--muted);
       border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
     }
 
+    footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
+
     @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section id="hero">
-    <h1 class="wordmark">crab<span>u</span>cate</h1>
-    <p class="tagline">Coming soon</p>
-    <div class="scroll-hint">Impressum</div>
+  <nav>
+    <a href="/" class="nav-logo">crab<span>u</span>cate</a>
+    <ul>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#impressum">Impressum</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="hero-eyebrow">Education Apps</p>
+    <h1>Apps für den Unterricht.</h1>
+    <p>Kleine, fokussierte Werkzeuge für Lehrerinnen und Lehrer. Kein Schnickschnack — nur das, was im Unterricht wirklich zählt.</p>
+  </header>
+
+  <section id="apps">
+    <p class="section-eyebrow">Unsere Apps</p>
+    <div class="apps-grid">
+
+      <a href="team-zufall.html" class="app-card" style="--glow: rgba(240,125,74,0.08)">
+        <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall" class="app-card-icon" />
+        <p class="app-platform">iPhone · iPad</p>
+        <h2>Team Zufall</h2>
+        <p>Schülerinnen und Schüler in Sekunden zufällig auf Teams verteilen. Ein Tippen — fertig.</p>
+        <span class="app-link">
+          Mehr erfahren
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 6.5h8M7 3l3.5 3.5L7 10"/>
+          </svg>
+        </span>
+      </a>
+
+    </div>
   </section>
 
   <!-- IMPRESSUM -->
@@ -183,10 +332,9 @@
     <div class="imp-section">
       <h2>Angaben gemäß § 5 TMG</h2>
       <address>
-        <!-- ⚠️ BITTE AUSFÜLLEN -->
-        Vorname Nachname<br />
-        Musterstraße 1<br />
-        12345 Musterstadt<br />
+        Felix Leitenberger<br />
+        Kreuzenstr. 32<br />
+        82041 Furth<br />
         Deutschland
       </address>
     </div>
@@ -194,19 +342,17 @@
     <div class="imp-section">
       <h2>Kontakt</h2>
       <p>
-        <!-- ⚠️ BITTE AUSFÜLLEN -->
-        Telefon: +49 (0) 123 456789<br />
-        E-Mail: <a href="mailto:hallo@crabucate.de">hallo@crabucate.de</a>
+        Telefon: +49 176 23707720<br />
+        E-Mail: <a id="imp-mail" href="#">felix.leitenberger(at)gmail.com</a>
       </p>
     </div>
 
     <div class="imp-section">
       <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
       <address>
-        <!-- ⚠️ BITTE AUSFÜLLEN -->
-        Vorname Nachname<br />
-        Musterstraße 1<br />
-        12345 Musterstadt
+        Felix Leitenberger<br />
+        Kreuzenstr. 32<br />
+        82041 Furth
       </address>
     </div>
 
@@ -242,7 +388,16 @@
     </div>
   </section>
 
-  <footer>© 2026 crabucate · <a href="#impressum" style="color:inherit;text-decoration:none;">Impressum</a></footer>
+  <footer>© 2026 crabucate · <a href="#impressum">Impressum</a></footer>
+
+  <script>
+    (function () {
+      var a = document.getElementById('imp-mail');
+      var u = 'felix.leitenberger', d = 'gmail.com';
+      a.href = 'mailto:' + u + '@' + d;
+      a.textContent = u + '@' + d;
+    })();
+  </script>
 
 </body>
 </html>
