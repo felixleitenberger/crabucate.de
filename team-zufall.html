@@ -93,27 +93,21 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: clamp(2rem, 5vw, 5rem);
-      padding: calc(60px + 5rem) clamp(1.5rem, 8vw, 8rem) 5rem;
+      padding: calc(60px + 4rem) clamp(1.5rem, 6vw, 6rem) 0;
       max-width: 1300px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
 
-    /* ambient glow behind phones */
     .hero::before {
       content: '';
       position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 600px;
-      height: 700px;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
       background: radial-gradient(ellipse, var(--tz-dim), transparent 65%);
       pointer-events: none;
       z-index: 0;
@@ -124,7 +118,9 @@
     .hero-content {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 3.5rem;
     }
 
     .hero-icon {
@@ -140,7 +136,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+      font-size: clamp(2.5rem, 6vw, 6rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1;
@@ -151,10 +147,10 @@
 
     .tagline {
       margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
       line-height: 1.65;
       color: var(--muted);
-      max-width: 38ch;
+      max-width: 42ch;
       opacity: 0;
       animation: fadeUp 1s ease 0.4s forwards;
     }
@@ -182,40 +178,38 @@
       box-shadow: 0 16px 48px rgba(240,125,74,0.42);
     }
 
-    .platform-note {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.7s forwards;
-    }
-
-    /* ── HERO VISUAL (phones) ── */
+    /* ── IPAD MOCKUP ── */
     .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: clamp(1rem, 2vw, 1.75rem);
-      padding-bottom: 2rem;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 1.2s ease 0.5s forwards;
+      filter: drop-shadow(0 30px 80px rgba(0,0,0,0.55));
     }
 
-    .device {
-      width: clamp(175px, 20vw, 240px);
-      flex-shrink: 0;
-      border-radius: clamp(20px, 2.4vw, 28px);
-      overflow: hidden;
-      box-shadow:
-        0 0 0 9px #232120,
-        0 0 0 10px #2e2b28,
-        0 50px 90px rgba(0,0,0,0.65);
+    .ipad-mockup {
+      position: relative;
+      width: 100%;
     }
 
-    .device:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
-    .device:nth-child(2) { transform: rotate(2deg); }
-
-    .device img {
+    .ipad-mockup .ipad-bezel {
       width: 100%;
       height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ipad-mockup .ipad-screen {
+      position: absolute;
+      top: 4.5%;
+      left: 2.8%;
+      width: 94.4%;
+      height: 91%;
+      object-fit: cover;
+      object-position: top left;
+      z-index: 1;
       display: block;
     }
 
@@ -341,22 +335,8 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-bottom: 3rem;
-        text-align: center;
-      }
-      .hero::before { display: none; }
-      .hero-content { align-items: center; }
-      .tagline { max-width: 100%; }
-      .hero-visual {
-        justify-content: center;
-        padding-bottom: 0;
-      }
-      .device:nth-child(1) { transform: rotate(-2deg); }
-      .device:nth-child(2) { display: none; }
+    @media (max-width: 600px) {
+      .hero-visual { max-width: 100%; }
     }
   </style>
 </head>
@@ -391,11 +371,13 @@
     </div>
 
     <div class="hero-visual">
-      <div class="device">
-        <img src="images/Raw%20Screens/iPhone/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-05-08%20at%2021.36.19.png" alt="Klassenübersicht" />
-      </div>
-      <div class="device">
-        <img src="images/Raw%20Screens/iPhone/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-05-08%20at%2021.36.44.png" alt="Zufällige Teams" />
+      <div class="ipad-mockup">
+        <img class="ipad-screen"
+             src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.04.png"
+             alt="Team Zufall auf dem iPad" />
+        <img class="ipad-bezel"
+             src="images/iPad%20Pro%20(M5)%2011%22%20-%20Space%20Black%20-%20Landscape.png"
+             alt="" aria-hidden="true" />
       </div>
     </div>
 
