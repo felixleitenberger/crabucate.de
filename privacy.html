@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum — crabucate</title>
+  <title>Datenschutzerklärung — crabucate</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -13,7 +13,6 @@
       --accent: #c8b89a;
       --muted: #5a5650;
       --line: rgba(200,184,154,0.15);
-      --card-bg: #111010;
     }
 
     html { scroll-behavior: smooth; }
@@ -42,7 +41,6 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
       background: rgba(13,13,13,0.85);
       backdrop-filter: blur(16px);
@@ -65,52 +63,63 @@
       width: 30px;
       height: 30px;
       border-radius: 7px;
-      background: #fff;
       object-fit: cover;
       flex-shrink: 0;
     }
 
     main {
       padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 8rem;
-      max-width: 1200px;
+      max-width: 760px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
 
-    .imp-label {
+    .page-label {
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
 
-    .imp-section { margin-bottom: 2.5rem; }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
 
-    .imp-section h2 {
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
       font-size: 1rem;
       font-weight: 600;
       color: var(--fg);
+      margin-top: 2.5rem;
       margin-bottom: 0.6rem;
     }
 
-    .imp-section p,
-    .imp-section address {
-      font-style: normal;
+    p {
       font-size: 0.875rem;
       line-height: 1.9;
       color: var(--muted);
+      margin-bottom: 0.75rem;
     }
 
-    .imp-section a {
+    a {
       color: var(--accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
 
-    .imp-section a:hover { border-color: var(--accent); }
+    a:hover { border-color: var(--accent); }
 
     footer {
       text-align: center;
@@ -136,74 +145,39 @@
   </nav>
 
   <main>
-    <p class="imp-label">Impressum</p>
+    <p class="page-label">Rechtliches</p>
+    <h1>Datenschutzerklärung</h1>
+    <p class="meta">Zuletzt aktualisiert: Mai 2026</p>
 
-    <div class="imp-section">
-      <h2>Angaben gemäß § 5 TMG</h2>
-      <address>
-        Felix Leitenberger<br />
-        Kreuzenstr. 32<br />
-        82041 Furth<br />
-        Deutschland
-      </address>
-    </div>
+    <h2>Überblick</h2>
+    <p>Team Zufall erhebt keine personenbezogenen Daten, sendet keine Informationen an externe Server und verwendet kein Tracking oder Analytics. Alle Daten (z. B. Gruppen und Teilnehmernamen) werden ausschließlich lokal auf deinem Gerät gespeichert und verlassen dieses nie.</p>
 
-    <div class="imp-section">
-      <h2>Kontakt</h2>
-      <p>
-        Telefon: +49 176 23707720<br />
-        E-Mail: <a id="imp-mail" href="#">felix.leitenberger(at)gmail.com</a>
-      </p>
-    </div>
+    <h2>Welche Daten werden gespeichert?</h2>
+    <p>Die App speichert deine Gruppen und Teilnehmernamen lokal auf deinem Gerät — ausschließlich damit du sie beim nächsten Öffnen der App wiederfindest. Diese Daten werden nicht an uns oder Dritte übertragen.</p>
 
-    <div class="imp-section">
-      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-      <address>
-        Felix Leitenberger<br />
-        Kreuzenstr. 32<br />
-        82041 Furth
-      </address>
-    </div>
+    <h2>In-App-Käufe</h2>
+    <p>Team Zufall bietet optionale In-App-Käufe an. Alle Zahlungen werden ausschließlich über Apple und den App Store abgewickelt. Wir haben keinen Zugriff auf deine Zahlungsdaten. Es gelten die <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank" rel="noopener">Datenschutzrichtlinien von Apple</a>.</p>
 
-    <div class="imp-section">
-      <h2>Haftung für Inhalte</h2>
-      <p>
-        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-        nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
-        Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
-        Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
-        Tätigkeit hinweisen.
-      </p>
-    </div>
+    <h2>Drittanbieter</h2>
+    <p>Die App bindet keine Drittanbieter-SDKs, Werbenetzwerke oder Analysedienste ein.</p>
 
-    <div class="imp-section">
-      <h2>Haftung für Links</h2>
-      <p>
-        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr
-        übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
-        Betreiber der Seiten verantwortlich.
-      </p>
-    </div>
+    <h2>Kinder</h2>
+    <p>Die App richtet sich nicht gezielt an Kinder unter 13 Jahren. Es werden keinerlei personenbezogene Daten von Kindern erhoben.</p>
 
-    <div class="imp-section">
-      <h2>Urheberrecht</h2>
-      <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
-        dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
-        der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen
-        Zustimmung des jeweiligen Autors bzw. Erstellers.
-      </p>
-    </div>
+    <h2>Änderungen</h2>
+    <p>Sollte sich an der App etwas grundlegend ändern, das diese Erklärung betrifft, werden wir sie aktualisieren. Das Datum oben zeigt an, wann die Erklärung zuletzt geändert wurde.</p>
+
+    <h2>Kontakt</h2>
+    <p>Bei Fragen: <a id="priv-mail" href="#">felix.leitenberger(at)gmail.com</a></p>
   </main>
 
   <footer>
-    <a href="/">crabucate</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a>
+    <a href="/">crabucate</a> · <a href="impressum.html">Impressum</a> · <a href="terms.html">Nutzungsbedingungen</a>
   </footer>
 
   <script>
     (function () {
-      var a = document.getElementById('imp-mail');
+      var a = document.getElementById('priv-mail');
       var u = 'felix.leitenberger', d = 'gmail.com';
       a.href = 'mailto:' + u + '@' + d;
       a.textContent = u + '@' + d;
