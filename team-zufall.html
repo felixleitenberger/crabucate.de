@@ -202,7 +202,6 @@
     .device {
       width: clamp(175px, 20vw, 240px);
       flex-shrink: 0;
-      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.7));
     }
 
     .device:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
@@ -212,6 +211,11 @@
       width: 100%;
       height: auto;
       display: block;
+      border-radius: 11%;
+      box-shadow:
+        0 0 0 9px #232120,
+        0 0 0 10px #333,
+        0 50px 90px rgba(0,0,0,0.65);
     }
 
     /* ── DIVIDER ── */
