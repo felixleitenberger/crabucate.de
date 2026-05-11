@@ -202,6 +202,12 @@
     .device {
       width: clamp(175px, 20vw, 240px);
       flex-shrink: 0;
+      border-radius: clamp(20px, 2.4vw, 28px);
+      overflow: hidden;
+      box-shadow:
+        0 0 0 9px #232120,
+        0 0 0 10px #2e2b28,
+        0 50px 90px rgba(0,0,0,0.65);
     }
 
     .device:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
@@ -211,11 +217,6 @@
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 11%;
-      box-shadow:
-        0 0 0 9px #232120,
-        0 0 0 10px #333,
-        0 50px 90px rgba(0,0,0,0.65);
     }
 
     /* ── DIVIDER ── */
