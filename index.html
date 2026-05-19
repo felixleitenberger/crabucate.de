@@ -33,6 +33,7 @@
       "price": "0",
       "priceCurrency": "EUR"
     },
+    "url": "https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282",
     "author": {
       "@type": "Organization",
       "name": "crabucate",
@@ -154,15 +155,10 @@
       height: 36px;
       width: auto;
       display: block;
-      opacity: 0.45;
+      transition: opacity 0.2s;
     }
 
-    .coming-soon {
-      margin-top: 0.6rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-    }
+    .app-store-badge:hover img { opacity: 0.75; }
 
     /* ── HERO ── */
     .hero {
@@ -238,8 +234,10 @@
       height: 48px;
       width: auto;
       display: block;
-      opacity: 0.45;
+      transition: opacity 0.2s;
     }
+
+    .hero-badge a:hover img { opacity: 0.75; }
 
     /* ── IPAD MOCKUP ── */
     .hero-visual {
@@ -490,10 +488,9 @@
       <img src="images/crabucateSquare.jpg" alt="" />
       crabucate
     </span>
-    <div>
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" style="height:36px; width:auto; opacity:0.45; display:block;" />
-      <p style="font-size:0.65rem; letter-spacing:0.06em; color:var(--muted); text-align:right; margin-top:0.3rem;">Coming soon</p>
-    </div>
+    <a class="app-store-badge" href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+    </a>
   </nav>
 
   <!-- HERO -->
@@ -503,9 +500,10 @@
       <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" class="hero-icon" />
       <h1>Team Zufall</h1>
       <p class="tagline">Gruppen zufällig auf Teams verteilen — in einer Sekunde.</p>
-      <div class="hero-badge" style="cursor:default;">
-        <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" />
-        <p class="coming-soon">Coming soon</p>
+      <div class="hero-badge">
+        <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
+          <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+        </a>
       </div>
     </div>
 
@@ -618,10 +616,9 @@
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <div style="display:inline-block;">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" style="height:48px; width:auto; opacity:0.45; display:block;" />
-      <p class="coming-soon" style="text-align:center;">Coming soon</p>
-    </div>
+    <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" style="height:48px; width:auto; display:block;" />
+    </a>
   </section>
 
   <footer>
