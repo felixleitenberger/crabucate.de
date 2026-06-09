@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platzwahl — Sitzplan-App für Lehrkräfte | crabucate</title>
+  <meta name="description" content="Platzwahl erstellt automatisch faire Sitzpläne für Lehrkräfte. Raum einrichten, Klasse einpflegen, Regeln festlegen — fertig als PDF. Für iPad und iPhone." />
+  <link rel="canonical" href="https://crabucate.de/platzwahl.html" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/platzwahl.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/platzwahl.html" />
+  <meta property="og:title" content="Platzwahl — Sitzplan-App für Lehrkräfte" />
+  <meta property="og:description" content="Automatisch faire Sitzpläne erstellen. Für iPad und iPhone." />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- JSON-LD: App -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Platzwahl",
+    "operatingSystem": "iOS",
+    "applicationCategory": "EducationApplication",
+    "description": "Sitzpläne für Lehrkräfte — automatisch, regelbasiert, druckfertig.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Für wen ist Platzwahl gedacht?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Platzwahl ist für Lehrkräfte aller Schularten, die Sitzpläne schnell und fair erstellen möchten — ohne stundenlanges Hin-und-her-Schieben."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie erstellt Platzwahl automatisch einen Sitzplan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die App verteilt Schülerinnen und Schüler anhand individueller Regeln — Störneigung, Sitzwünsche, Jungen/Mädchen-Trennung — optimal auf die verfügbaren Plätze. Ein Score zeigt, wie gut der Plan ist und welche Regeln noch nicht eingehalten werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werden Schülerdaten gespeichert oder an Dritte übertragen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Alle eingetragenen Namen und Regeln bleiben ausschließlich lokal auf deinem Gerät. Es findet keine Übertragung an externe Server statt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich mehrere Klassen und Räume verwalten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Du kannst beliebig viele Räume und Klassen anlegen und jeweils eigene Sitzpläne erstellen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es einen PDF-Export?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Jeder Sitzplan lässt sich als sauberes PDF exportieren — zum Ausdrucken und Hinlegen."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --fg: #f0ece2;
+      --accent: #c8b89a;
+      --muted: #5a5650;
+      --line: rgba(200,184,154,0.15);
+      --card-bg: #111010;
+      --pw: #F5923A;
+      --pw-dim: rgba(245,146,58,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-logo img {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--fg); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, var(--pw-dim), transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 21px;
+      display: block;
+      margin: 0 auto 1.75rem;
+      box-shadow: 0 16px 48px rgba(245,146,58,0.28);
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--fg);
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
+    }
+
+    .tagline {
+      margin-top: 1.25rem;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 46ch;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.4s forwards;
+    }
+
+    .coming-soon {
+      margin-top: 2.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid rgba(245,146,58,0.35);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--pw);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .coming-soon::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pw);
+      flex-shrink: 0;
+      animation: pulse 2.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+
+    /* ── SCREENSHOTS ── */
+    .screenshots-section {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 0 1rem;
+    }
+
+    .screenshots-strip {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 1rem clamp(1.5rem, 6vw, 6rem) 2.5rem;
+      cursor: grab;
+    }
+
+    .screenshots-strip:active { cursor: grabbing; }
+    .screenshots-strip::-webkit-scrollbar { display: none; }
+    .screenshots-strip { user-select: none; -webkit-user-select: none; }
+
+    .screenshots-strip img {
+      height: clamp(220px, 36vw, 480px);
+      width: auto;
+      border-radius: 18px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      filter: drop-shadow(0 16px 48px rgba(0,0,0,0.55));
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), filter 0.35s;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .screenshots-strip img:hover {
+      transform: translateY(-6px);
+      filter: drop-shadow(0 28px 64px rgba(0,0,0,0.65));
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      max-width: 1100px;
+      margin: 1rem auto 0;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 2rem 2rem 2.25rem;
+      transition: border-color 0.3s;
+    }
+
+    .feature-card:hover { border-color: rgba(245,146,58,0.22); }
+
+    .feat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      background: var(--pw-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      color: var(--pw);
+    }
+
+    .feat-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.65rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── DESCRIPTION ── */
+    .description {
+      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .description p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 auto;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center bottom, rgba(245,146,58,0.07), transparent 65%);
+      pointer-events: none;
+    }
+
+    .final-cta > * { position: relative; }
+
+    .final-cta-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.75rem;
+    }
+
+    .final-cta-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <a href="/" class="nav-link">← Alle Apps</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img
+      src="images/platzwahl-icon-1024.svg"
+      alt="Platzwahl App Icon"
+      class="hero-icon"
+    />
+    <h1>Platzwahl</h1>
+    <p class="tagline">Sitzpläne, die wirklich funktionieren — automatisch erstellt, fair verteilt, druckfertig.</p>
+    <span class="coming-soon">Demnächst im App Store</span>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="screenshots-section" aria-label="App-Screenshots">
+    <div class="screenshots-strip" id="screenshotsStrip">
+      <img src="images/platzwahl/Platzwahl-01.png" alt="Automatisch erstellter Sitzplan: alle Plätze fair verteilt" />
+      <img src="images/platzwahl/Platzwahl-02.png" alt="Klassenraum individuell nachbauen" loading="lazy" />
+      <img src="images/platzwahl/Platzwahl-03.png" alt="Regeln pro Schüler festlegen" loading="lazy" />
+      <img src="images/platzwahl/Platzwahl-04.png" alt="Score-Ansicht mit erklärten Verstößen" loading="lazy" />
+      <img src="images/platzwahl/Platzwahl-05.png" alt="Perfekter Sitzplan ohne Verstöße" loading="lazy" />
+      <img src="images/platzwahl/Platzwahl-06.png" alt="Sitzplan als PDF exportieren und ausdrucken" loading="lazy" />
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FEATURES -->
+  <section class="features">
+    <p class="section-eyebrow">Features</p>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <h3>Sitzplan auf Knopfdruck</h3>
+        <p>Einmal tippen — Platzwahl verteilt alle Schülerinnen und Schüler automatisch und regelkonform. Kein manuelles Schieben, kein Ausprobieren.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <h3>Raum individuell einrichten</h3>
+        <p>Tische setzen, Lücken lassen, Pult platzieren — bilde deinen Klassenraum exakt nach. Jede Anordnung ist möglich.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="17" y1="8" x2="23" y2="8"/>
+            <line x1="20" y1="5" x2="20" y2="11"/>
+          </svg>
+        </div>
+        <h3>Regeln pro Schüler</h3>
+        <p>Störneigung, Sitzwünsche, vorne sitzen — individuelle Regeln fließen direkt in die Berechnung ein.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <line x1="2" y1="20" x2="22" y2="20"/>
+          </svg>
+        </div>
+        <h3>Score &amp; Verstöße</h3>
+        <p>Jede Regelabweichung wird erklärt und gewichtet. Du siehst genau, warum ein Plan gut — oder noch verbesserungswürdig — ist.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+        </div>
+        <h3>Als PDF exportieren</h3>
+        <p>Sauberer Sitzplan als PDF — ausdrucken, aufs Pult kleben, fertig. Kein Nachbearbeiten nötig.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section class="description">
+    <p>Platzwahl ist für Lehrkräfte, die morgens einen funktionierenden Sitzplan brauchen — nicht eine Stunde Zeit. Raum einmal einrichten, Klasse einpflegen, Regeln festlegen. Ab dann erledigt die App die Arbeit: Sie verteilt alle fair, zeigt Regelkonflikte transparent an und gibt das Ergebnis direkt als druckfertiges PDF aus. Keine Cloud, keine Anmeldung, keine Ablenkung.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <p class="faq-eyebrow">FAQ</p>
+
+    <div class="faq-item">
+      <h3>Für wen ist Platzwahl gedacht?</h3>
+      <p>Für Lehrkräfte aller Schularten, die Sitzpläne schnell und fair erstellen möchten — ohne stundenlanges Hin-und-her-Schieben oder Tabellen-Gefummel.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Wie erstellt Platzwahl automatisch einen Sitzplan?</h3>
+      <p>Die App verteilt Schülerinnen und Schüler anhand individueller Regeln — Störneigung, Sitzwünsche, Jungen/Mädchen-Trennung — optimal auf die verfügbaren Plätze. Ein Score zeigt auf einen Blick, wie gut der Plan ist und welche Regeln noch verletzt werden.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Werden Schülerdaten gespeichert oder übertragen?</h3>
+      <p>Nein. Alle eingetragenen Namen und Regeln bleiben ausschließlich lokal auf deinem Gerät. Es findet keine Übertragung an externe Server statt — weder von uns noch von Drittanbietern.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Kann ich mehrere Klassen und Räume verwalten?</h3>
+      <p>Ja. Du kannst beliebig viele Räume und Klassen anlegen und jeweils eigene Sitzpläne erstellen. Alles bleibt gespeichert.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Gibt es einen PDF-Export?</h3>
+      <p>Ja. Jeder Sitzplan lässt sich direkt als PDF exportieren — sauber, ohne Aufwand, sofort druckfertig.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <p class="final-cta-title">Bald verfügbar.</p>
+    <p class="final-cta-sub">Platzwahl erscheint demnächst im App Store für iPad und iPhone.</p>
+  </section>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="platzwahl-privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a>
+  </footer>
+
+  <script>
+    (function () {
+      var strip = document.getElementById('screenshotsStrip');
+      var isDown = false;
+      var startX, scrollLeft;
+
+      strip.addEventListener('mousedown', function (e) {
+        isDown = true;
+        startX = e.pageX - strip.offsetLeft;
+        scrollLeft = strip.scrollLeft;
+        strip.style.scrollSnapType = 'none';
+      });
+
+      strip.addEventListener('mouseleave', function () { isDown = false; });
+
+      strip.addEventListener('mouseup', function () {
+        isDown = false;
+        strip.style.scrollSnapType = '';
+      });
+
+      strip.addEventListener('mousemove', function (e) {
+        if (!isDown) return;
+        e.preventDefault();
+        var x = e.pageX - strip.offsetLeft;
+        strip.scrollLeft = scrollLeft - (x - startX) * 1.4;
+      });
+    })();
+  </script>
+
+</body>
+</html>

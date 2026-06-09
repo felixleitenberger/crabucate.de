@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team Zufall — Gruppen zufällig in Teams einteilen | crabucate</title>
-  <meta name="description" content="Mit Team Zufall teilst du Gruppen in Sekunden zufällig auf Teams auf. Ein Tippen — fertig. Für iPhone und iPad, iOS 16+." />
+  <title>crabucate — iOS-Apps für iPhone und iPad</title>
+  <meta name="description" content="iOS-Apps von crabucate: Team Zufall und Platzwahl — einfach, lokal, ohne Ablenkung." />
   <link rel="canonical" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <meta name="robots" content="index, follow" />
@@ -12,77 +12,13 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/" />
-  <meta property="og:title" content="Team Zufall — Gruppen zufällig in Teams einteilen" />
-  <meta property="og:description" content="Gruppen per Knopfdruck zufällig in Teams aufteilen. Für iPhone und iPad." />
+  <meta property="og:title" content="crabucate — iOS-Apps für iPhone und iPad" />
+  <meta property="og:description" content="Kleine Apps für echte Probleme. Für iPhone und iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="de_DE" />
 
-  <!-- JSON-LD: App -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Team Zufall",
-    "operatingSystem": "iOS",
-    "applicationCategory": "UtilitiesApplication",
-    "description": "Gruppen zufällig in Teams einteilen — per Knopfdruck. Für iPhone und iPad.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "url": "https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282",
-    "author": {
-      "@type": "Organization",
-      "name": "crabucate",
-      "url": "https://crabucate.de"
-    }
-  }
-  </script>
-
-  <!-- JSON-LD: FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Wie teile ich eine Gruppe zufällig in Teams auf?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Lege deine Gruppe einmalig in Team Zufall an, trage die Teilnehmer ein und tippe auf „Teams auslosen". Die App verteilt alle gleichmäßig und zufällig auf die gewählte Anzahl Teams — in Sekunden."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Für wen ist Team Zufall geeignet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Team Zufall eignet sich für alle, die regelmäßig Gruppen in Teams aufteilen: Lehrkräfte, Trainer, Seminarleiter, Vereinsverantwortliche oder Eventorganisatoren."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kann ich die Teamgröße selbst festlegen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Du bestimmst, wie viele Personen ein Team haben soll — 2er, 3er, 4er Gruppen und mehr sind möglich. Team Zufall verteilt die Teilnehmer entsprechend gleichmäßig."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Werden meine Daten gespeichert oder übertragen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nein. Alle Gruppen und Teilnehmernamen bleiben ausschließlich lokal auf deinem Gerät. Es werden keine Daten an externe Server übertragen."
-        }
-      }
-    ]
-  }
-  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -94,7 +30,7 @@
       --line: rgba(200,184,154,0.15);
       --card-bg: #111010;
       --tz: #F07D4A;
-      --tz-dim: rgba(240,125,74,0.1);
+      --pw: #F5923A;
     }
 
     html { scroll-behavior: smooth; }
@@ -103,7 +39,9 @@
       background: var(--bg);
       color: var(--fg);
       font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
     }
 
     body::before {
@@ -124,7 +62,6 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
       background: rgba(13,13,13,0.85);
       backdrop-filter: blur(16px);
@@ -146,269 +83,22 @@
       width: 26px;
       height: 26px;
       border-radius: 6px;
-      background: #fff;
       object-fit: cover;
       flex-shrink: 0;
     }
 
-    .app-store-badge img {
-      height: 36px;
-      width: auto;
-      display: block;
-      transition: opacity 0.2s;
-    }
-
-    .app-store-badge:hover img { opacity: 0.75; }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 4rem) clamp(1.5rem, 6vw, 6rem) 0;
-      max-width: 1300px;
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      padding: calc(60px + 3.5rem) clamp(1.25rem, 4vw, 4rem) 5rem;
+      max-width: 1280px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 500px;
-      background: radial-gradient(ellipse, var(--tz-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 3.5rem;
-    }
-
-    .hero-icon {
-      width: 76px;
-      height: 76px;
-      border-radius: 18px;
-      display: block;
-      margin-bottom: 1.75rem;
-      background: linear-gradient(135deg, var(--tz), #c05520);
-      box-shadow: 0 16px 40px rgba(240,125,74,0.22);
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 6rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 42ch;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero-badge {
-      margin-top: 2.25rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-badge img {
-      height: 48px;
-      width: auto;
-      display: block;
-      transition: opacity 0.2s;
-    }
-
-    .hero-badge a:hover img { opacity: 0.75; }
-
-    /* ── IPAD MOCKUP ── */
-    .hero-visual {
       width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeUp 1.2s ease 0.5s forwards;
-      filter: drop-shadow(0 30px 80px rgba(0,0,0,0.55));
-    }
-
-    .ipad-mockup {
-      position: relative;
-      width: 100%;
-    }
-
-    .ipad-mockup .ipad-bezel {
-      width: 100%;
-      height: auto;
-      display: block;
-      position: relative;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .ipad-mockup .ipad-screen {
-      position: absolute;
-      top: 5.8%;
-      left: 3.85%;
-      width: 92.4%;
-      height: 88.5%;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .ipad-screen .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top left;
-      opacity: 0;
-      transition: opacity 0.7s ease;
-      display: block;
-    }
-
-    .ipad-screen .slide.active { opacity: 1; }
-
-    .slideshow-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 1.25rem;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--muted);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .dot.active {
-      background: var(--tz);
-      transform: scale(1.4);
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
       position: relative;
       z-index: 1;
     }
 
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      transition: border-color 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(240,125,74,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--tz-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--tz);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
+    .page-eyebrow {
       text-align: center;
       font-size: 0.72rem;
       font-weight: 500;
@@ -416,46 +106,155 @@
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.1s forwards;
     }
 
-    .faq-item {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0;
+    /* ── APP TILES GRID ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
     }
 
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    @media (max-width: 680px) {
+      .apps-grid { grid-template-columns: 1fr; }
+    }
 
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
+    /* ── SINGLE TILE ── */
+    .app-tile {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.3s;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) var(--delay, 0.25s) forwards;
+    }
+
+    .app-tile--tz { --delay: 0.2s; }
+    .app-tile--pw { --delay: 0.35s; }
+
+    .app-tile--tz:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-8px); }
+    .app-tile--pw:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-8px); }
+
+    /* Top content area */
+    .tile-content {
+      padding: 2.25rem 2.5rem 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .tile-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 17px;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .tile-icon--tz {
+      background: linear-gradient(135deg, var(--tz), #c05520);
+      box-shadow: 0 8px 24px rgba(240,125,74,0.25);
+    }
+
+    .tile-name {
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
       color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 0.7rem;
     }
 
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
+    .tile-tagline {
+      font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+      line-height: 1.65;
       color: var(--muted);
+      max-width: 36ch;
+      margin-bottom: 1.75rem;
     }
 
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
+    /* CTA row */
+    .tile-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .tile-cta--tz { color: var(--tz); }
+    .tile-cta--pw { color: var(--pw); }
+
+    .tile-cta-badge img {
+      height: 34px;
+      width: auto;
+      display: block;
+      opacity: 0.9;
+    }
+
+    .tile-coming-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--pw);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .tile-coming-soon::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pw);
+      flex-shrink: 0;
+      animation: pulse 2.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.8); }
+    }
+
+    /* Screenshot preview area */
+    .tile-preview {
+      flex: 1;
       position: relative;
-      z-index: 1;
+      overflow: hidden;
+      min-height: 240px;
     }
 
-    .final-cta::before {
+    /* Gradient fade from card bg into screenshot */
+    .tile-preview::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(240,125,74,0.07), transparent 65%);
+      top: 0; left: 0; right: 0;
+      height: 72px;
+      background: linear-gradient(to bottom, var(--card-bg), transparent);
+      z-index: 1;
       pointer-events: none;
     }
 
-    .final-cta > * { position: relative; }
+    .tile-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .app-tile:hover .tile-preview img {
+      transform: scale(1.04) translateY(-6px);
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -472,12 +271,8 @@
     footer a:hover { color: var(--accent); }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
+      from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      .hero-visual { max-width: 100%; }
     }
   </style>
 </head>
@@ -488,172 +283,61 @@
       <img src="images/crabucateSquare.jpg" alt="" />
       crabucate
     </span>
-    <a class="app-store-badge" href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
-    </a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
+  <main>
+    <p class="page-eyebrow">Unsere Apps</p>
 
-    <div class="hero-content">
-      <img src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" class="hero-icon" />
-      <h1>Team Zufall</h1>
-      <p class="tagline">Gruppen zufällig auf Teams verteilen — in einer Sekunde.</p>
-      <div class="hero-badge">
-        <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
-          <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
-        </a>
-      </div>
-    </div>
+    <div class="apps-grid">
 
-    <div class="hero-visual">
-      <div class="ipad-mockup">
-        <div class="ipad-screen">
-          <img class="slide active" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.04.png" alt="Team Zufall Übersicht mit gespeicherten Gruppen" />
-          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.12.png" alt="Teilnehmerliste einer Gruppe in Team Zufall" loading="lazy" />
-          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.24.png" alt="Zufällig aufgeteilte Teams in Team Zufall" loading="lazy" />
-          <img class="slide" src="images/Raw%20Screens/iPad/Simulator%20Screenshot%20-%20iPad%20Pro%2013-inch%20(M5)%20-%202026-05-11%20at%2017.04.31.png" alt="Neue Gruppe erstellen in Team Zufall" loading="lazy" />
+      <!-- TEAM ZUFALL -->
+      <a href="team-zufall.html" class="app-tile app-tile--tz">
+        <div class="tile-content">
+          <img
+            src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png"
+            alt="Team Zufall App Icon"
+            class="tile-icon tile-icon--tz"
+          />
+          <h2 class="tile-name">Team Zufall</h2>
+          <p class="tile-tagline">Gruppen zufällig in Teams aufteilen — in einer Sekunde.</p>
+          <span class="tile-cta tile-cta--tz">Im App Store &nbsp;→</span>
         </div>
-        <img class="ipad-bezel"
-             src="images/iPad%20Pro%20(M5)%2011%22%20-%20Space%20Black%20-%20Landscape.png"
-             alt="" aria-hidden="true" />
-      </div>
-    </div>
-
-    <div class="slideshow-dots">
-      <button class="dot active" aria-label="Bild 1"></button>
-      <button class="dot" aria-label="Bild 2"></button>
-      <button class="dot" aria-label="Bild 3"></button>
-      <button class="dot" aria-label="Bild 4"></button>
-    </div>
-
-  </section>
-
-  <hr class="divider" />
-
-  <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Features</p>
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
+        <div class="tile-preview">
+          <img
+            src="images/AppStore%20Screenshots/Screenshots%20iPad/ipad-01-home.png"
+            alt="Team Zufall App-Vorschau"
+            loading="lazy"
+          />
         </div>
-        <h3>Gruppen verwalten</h3>
-        <p>Trage deine Gruppen einmalig ein. Namen bleiben gespeichert — kein erneutes Eintippen beim nächsten Mal.</p>
-      </div>
+      </a>
 
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 3 21 3 21 8"/>
-            <line x1="4" y1="20" x2="21" y2="3"/>
-            <polyline points="21 16 21 21 16 21"/>
-            <line x1="15" y1="15" x2="21" y2="21"/>
-            <line x1="4" y1="4" x2="9" y2="9"/>
-          </svg>
+      <!-- PLATZWAHL -->
+      <a href="platzwahl.html" class="app-tile app-tile--pw">
+        <div class="tile-content">
+          <img
+            src="images/platzwahl-icon-1024.svg"
+            alt="Platzwahl App Icon"
+            class="tile-icon"
+          />
+          <h2 class="tile-name">Platzwahl</h2>
+          <p class="tile-tagline">Sitzpläne für Lehrkräfte — automatisch erstellt, fair verteilt, druckfertig.</p>
+          <span class="tile-coming-soon">Demnächst im App Store</span>
         </div>
-        <h3>Ein Tippen — fertig</h3>
-        <p>Alle Teilnehmer werden gleichmäßig und zufällig auf Teams verteilt. Sofort einsatzbereit.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"/>
-            <line x1="4" y1="10" x2="4" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12" y2="3"/>
-            <line x1="20" y1="21" x2="20" y2="16"/>
-            <line x1="20" y1="12" x2="20" y2="3"/>
-            <line x1="1" y1="14" x2="7" y2="14"/>
-            <line x1="9" y1="8" x2="15" y2="8"/>
-            <line x1="17" y1="16" x2="23" y2="16"/>
-          </svg>
+        <div class="tile-preview">
+          <img
+            src="images/platzwahl/Platzwahl-01.png"
+            alt="Platzwahl App-Vorschau"
+            loading="lazy"
+          />
         </div>
-        <h3>Flexible Teamgröße</h3>
-        <p>2er, 3er, 4er Gruppen — du bestimmst, wie groß die Teams werden sollen.</p>
-      </div>
+      </a>
 
     </div>
-  </section>
-
-  <!-- DESCRIPTION -->
-  <section class="description">
-    <p>Team Zufall macht das zufällige Aufteilen von Gruppen in Teams so einfach wie möglich. Egal ob Sport, Seminar, Workshop oder Unterricht — ein Tippen genügt. Die App speichert deine Gruppen lokal, sodass du beim nächsten Mal sofort loslegen kannst. Keine Anmeldung, keine Cloud, keine Ablenkung.</p>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq">
-    <p class="faq-eyebrow">FAQ</p>
-
-    <div class="faq-item">
-      <h3>Wie teile ich eine Gruppe zufällig in Teams auf?</h3>
-      <p>Lege deine Gruppe einmalig in Team Zufall an, trage die Teilnehmer ein und tippe auf „Teams auslosen". Die App verteilt alle gleichmäßig und zufällig auf die gewählte Anzahl Teams — in Sekunden.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Für wen ist Team Zufall geeignet?</h3>
-      <p>Für alle, die regelmäßig Gruppen in Teams aufteilen: Lehrkräfte, Trainer, Seminarleiter, Vereinsverantwortliche oder Eventorganisatoren.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Kann ich die Teamgröße selbst festlegen?</h3>
-      <p>Ja. Du bestimmst, wie viele Personen ein Team haben soll — 2er, 3er, 4er Gruppen und mehr sind möglich. Team Zufall verteilt die Teilnehmer entsprechend gleichmäßig.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Werden meine Daten gespeichert oder übertragen?</h3>
-      <p>Nein. Alle Gruppen und Teilnehmernamen bleiben ausschließlich lokal auf deinem Gerät. Es werden keine Daten an externe Server übertragen.</p>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" style="height:48px; width:auto; display:block;" />
-    </a>
-  </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a>
   </footer>
 
-  <script>
-    (function () {
-      var slides = document.querySelectorAll('.ipad-screen .slide');
-      var dots = document.querySelectorAll('.dot');
-      var current = 0;
-      var timer;
-
-      function go(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (n + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-
-      function startTimer() {
-        timer = setInterval(function () { go(current + 1); }, 2000);
-      }
-
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () {
-          clearInterval(timer);
-          go(i);
-          startTimer();
-        });
-      });
-
-      startTimer();
-    })();
-  </script>
 </body>
 </html>
