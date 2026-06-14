@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Platzwahl — Sitzplan-App für Lehrkräfte | crabucate</title>
-  <meta name="description" content="Platzwahl erstellt automatisch faire Sitzpläne für Lehrkräfte. Raum einrichten, Klasse einpflegen, Regeln festlegen — fertig als PDF. Für iPad und iPhone." />
-  <link rel="canonical" href="https://crabucate.de/platzwahl.html" />
-  <link rel="alternate" hreflang="de" href="https://crabucate.de/platzwahl.html" />
+  <title>Platzwahl — Seating Plan App for Teachers | crabucate</title>
+  <meta name="description" content="Platzwahl automatically creates fair seating plans for teachers. Set up the room, add your class, define rules — done as PDF. For iPad and iPhone." />
+  <link rel="canonical" href="https://crabucate.de/en/platzwahl.html" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/platzwahl.html" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/platzwahl.html" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://crabucate.de/platzwahl.html" />
-  <meta property="og:title" content="Platzwahl — Sitzplan-App für Lehrkräfte" />
-  <meta property="og:description" content="Automatisch faire Sitzpläne erstellen. Für iPad und iPhone." />
-  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://crabucate.de/en/platzwahl.html" />
+  <meta property="og:title" content="Platzwahl — Seating Plan App for Teachers" />
+  <meta property="og:description" content="Automatically create fair seating plans. For iPad and iPhone." />
+  <meta property="og:locale" content="en_US" />
 
   <!-- JSON-LD: App -->
   <script type="application/ld+json">
@@ -25,9 +25,9 @@
     "name": "Platzwahl",
     "operatingSystem": "iOS",
     "applicationCategory": "EducationApplication",
-    "description": "Sitzpläne für Lehrkräfte — automatisch, regelbasiert, druckfertig.",
+    "description": "Seating plans for teachers — automatic, rule-based, print-ready.",
     "url": "https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
   }
   </script>
@@ -40,42 +40,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Für wen ist Platzwahl gedacht?",
+        "name": "Who is Platzwahl for?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Platzwahl ist für Lehrkräfte aller Schularten, die Sitzpläne schnell und fair erstellen möchten — ohne stundenlanges Hin-und-her-Schieben."
+          "text": "Platzwahl is for teachers of all school types who want to create seating plans quickly and fairly — without spending hours manually rearranging."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie erstellt Platzwahl automatisch einen Sitzplan?",
+        "name": "How does Platzwahl automatically create a seating plan?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die App verteilt Schülerinnen und Schüler anhand individueller Regeln — Störneigung, Sitzwünsche, Jungen/Mädchen-Trennung — optimal auf die verfügbaren Plätze. Ein Score zeigt, wie gut der Plan ist und welche Regeln noch nicht eingehalten werden."
+          "text": "The app distributes students based on individual rules — disruptive behaviour, seating preferences, gender separation — optimally across the available seats. A score shows how good the plan is and which rules are not yet met."
         }
       },
       {
         "@type": "Question",
-        "name": "Werden Schülerdaten gespeichert oder an Dritte übertragen?",
+        "name": "Are student data stored or shared with third parties?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nein. Alle eingetragenen Namen und Regeln bleiben ausschließlich lokal auf deinem Gerät. Es findet keine Übertragung an externe Server statt."
+          "text": "No. All entered names and rules remain exclusively on your device. There is no transmission to external servers."
         }
       },
       {
         "@type": "Question",
-        "name": "Kann ich mehrere Klassen und Räume verwalten?",
+        "name": "Can I manage multiple classes and rooms?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Du kannst beliebig viele Räume und Klassen anlegen und jeweils eigene Sitzpläne erstellen."
+          "text": "Yes. You can create as many rooms and classes as you like, each with their own seating plans."
         }
       },
       {
         "@type": "Question",
-        "name": "Gibt es einen PDF-Export?",
+        "name": "Is there a PDF export?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Jeder Sitzplan lässt sich als sauberes PDF exportieren — zum Ausdrucken und Hinlegen."
+          "text": "Yes. Every seating plan can be exported as a clean PDF — ready to print and place on your desk."
         }
       }
     ]
@@ -225,38 +225,17 @@
       animation: fadeUp 1s ease 0.4s forwards;
     }
 
-    .coming-soon {
+    .app-store-badge {
+      display: inline-block;
       margin-top: 2.25rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.55rem 1.4rem;
-      border: 1px solid rgba(245,146,58,0.35);
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--pw);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
       opacity: 0;
       animation: fadeUp 1s ease 0.55s forwards;
+      transition: opacity 0.2s;
     }
 
-    .coming-soon::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--pw);
-      flex-shrink: 0;
-      animation: pulse 2.5s ease infinite;
-    }
+    .app-store-badge:hover { opacity: 0.75 !important; }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
+    .app-store-badge img { height: 48px; width: auto; display: block; }
 
     /* ── SCREENSHOTS ── */
     .screenshots-section {
@@ -405,11 +384,7 @@
       margin-bottom: 2.5rem;
     }
 
-    .faq-item {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0;
-    }
-
+    .faq-item { border-top: 1px solid var(--line); padding: 1.5rem 0; }
     .faq-item:last-child { border-bottom: 1px solid var(--line); }
 
     .faq-item h3 {
@@ -449,13 +424,7 @@
       font-weight: 700;
       letter-spacing: -0.03em;
       color: var(--fg);
-      margin-bottom: 0.75rem;
-    }
-
-    .final-cta-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
+      margin-bottom: 1.5rem;
     }
 
     /* ── FOOTER ── */
@@ -481,16 +450,16 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">
-      <img src="images/crabucateSquare.jpg" alt="" />
+    <a href="/en/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
     <div class="nav-right">
-      <a href="/" class="nav-link">← Alle Apps</a>
+      <a href="/en/" class="nav-link">← All Apps</a>
       <div class="lang-switch">
-        <span class="lang-active">DE</span>
+        <a href="/platzwahl.html" onclick="localStorage.setItem('lang','de')">DE</a>
         <span class="lang-sep">|</span>
-        <a href="/en/platzwahl.html" onclick="localStorage.setItem('lang','en')">EN</a>
+        <span class="lang-active">EN</span>
       </div>
     </div>
   </nav>
@@ -498,25 +467,25 @@
   <!-- HERO -->
   <section class="hero">
     <img
-      src="images/platzwahl-icon-1024.svg"
+      src="../images/platzwahl-icon-1024.svg"
       alt="Platzwahl App Icon"
       class="hero-icon"
     />
     <h1>Platzwahl</h1>
-    <p class="tagline">Sitzpläne, die wirklich funktionieren — automatisch erstellt, fair verteilt, druckfertig.</p>
+    <p class="tagline">Seating plans that actually work — automatically created, fairly distributed, print-ready.</p>
     <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
     </a>
   </section>
 
   <!-- SCREENSHOTS -->
-  <section class="screenshots-section" aria-label="App-Screenshots">
+  <section class="screenshots-section" aria-label="App Screenshots">
     <div class="screenshots-strip" id="screenshotsStrip">
-      <img src="images/platzwahl/de_01_perfekterSitzplan.png" alt="Erstelle Sitzpläne — automatisch erstellter Sitzplan mit fair verteilten Plätzen" />
-      <img src="images/platzwahl/de_02_Kriterien.png" alt="Definiere Kriterien — individuelle Regeln pro Schüler festlegen" loading="lazy" />
-      <img src="images/platzwahl/de_03_automatischeBerechnung.png" alt="Optimiere automatisch — Sitzplan auf Knopfdruck berechnen" loading="lazy" />
-      <img src="images/platzwahl/de_04_GestalteRaeume.png" alt="Gestalte Räume — Klassenraum individuell nachbauen" loading="lazy" />
-      <img src="images/platzwahl/de_05_DruckeAus.png" alt="Drucke Sitzpläne — sauberer PDF-Export zum Ausdrucken" loading="lazy" />
+      <img src="../images/platzwahl/en_01_perfekterSitzplan.png" alt="Create seating plans — all seats fairly distributed automatically" />
+      <img src="../images/platzwahl/en_02_Kriterien.png" alt="Define criteria — set individual rules per student" loading="lazy" />
+      <img src="../images/platzwahl/en_03_automaticCalculation.png" alt="Optimize automatically — calculate the best seating plan at the tap of a button" loading="lazy" />
+      <img src="../images/platzwahl/en_04_DesignRooms.png" alt="Design rooms — recreate your classroom layout exactly" loading="lazy" />
+      <img src="../images/platzwahl/en_05_Print.png" alt="Print seating plans — clean PDF export ready to print" loading="lazy" />
     </div>
   </section>
 
@@ -533,8 +502,8 @@
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
           </svg>
         </div>
-        <h3>Sitzplan auf Knopfdruck</h3>
-        <p>Einmal tippen — Platzwahl verteilt alle Schülerinnen und Schüler automatisch und regelkonform. Kein manuelles Schieben, kein Ausprobieren.</p>
+        <h3>Seating plan at the tap of a button</h3>
+        <p>One tap — Platzwahl distributes all students automatically and in accordance with the rules you've set. No manual rearranging, no trial and error.</p>
       </div>
 
       <div class="feature-card">
@@ -546,8 +515,8 @@
             <rect x="14" y="14" width="7" height="7"/>
           </svg>
         </div>
-        <h3>Raum individuell einrichten</h3>
-        <p>Tische setzen, Lücken lassen, Pult platzieren — bilde deinen Klassenraum exakt nach. Jede Anordnung ist möglich.</p>
+        <h3>Customise your classroom</h3>
+        <p>Place desks, leave gaps, position the teacher's desk — recreate your classroom exactly as it is. Any layout is possible.</p>
       </div>
 
       <div class="feature-card">
@@ -559,8 +528,8 @@
             <line x1="20" y1="5" x2="20" y2="11"/>
           </svg>
         </div>
-        <h3>Regeln pro Schüler</h3>
-        <p>Störneigung, Sitzwünsche, vorne sitzen — individuelle Regeln fließen direkt in die Berechnung ein.</p>
+        <h3>Rules per student</h3>
+        <p>Disruptive tendencies, seating preferences, sit at the front — individual rules feed directly into the calculation.</p>
       </div>
 
       <div class="feature-card">
@@ -572,8 +541,8 @@
             <line x1="2" y1="20" x2="22" y2="20"/>
           </svg>
         </div>
-        <h3>Score &amp; Verstöße</h3>
-        <p>Jede Regelabweichung wird erklärt und gewichtet. Du siehst genau, warum ein Plan gut — oder noch verbesserungswürdig — ist.</p>
+        <h3>Score &amp; violations</h3>
+        <p>Every rule violation is explained and weighted. You can see exactly why a plan is good — or still needs improvement.</p>
       </div>
 
       <div class="feature-card">
@@ -584,8 +553,8 @@
             <rect x="6" y="14" width="12" height="8"/>
           </svg>
         </div>
-        <h3>Als PDF exportieren</h3>
-        <p>Sauberer Sitzplan als PDF — ausdrucken, aufs Pult kleben, fertig. Kein Nachbearbeiten nötig.</p>
+        <h3>Export as PDF</h3>
+        <p>Clean seating plan as PDF — print it, place it on the desk, done. No post-processing needed.</p>
       </div>
 
     </div>
@@ -593,7 +562,7 @@
 
   <!-- DESCRIPTION -->
   <section class="description">
-    <p>Platzwahl ist für Lehrkräfte, die morgens einen funktionierenden Sitzplan brauchen — nicht eine Stunde Zeit. Raum einmal einrichten, Klasse einpflegen, Regeln festlegen. Ab dann erledigt die App die Arbeit: Sie verteilt alle fair, zeigt Regelkonflikte transparent an und gibt das Ergebnis direkt als druckfertiges PDF aus. Keine Cloud, keine Anmeldung, keine Ablenkung.</p>
+    <p>Platzwahl is for teachers who need a working seating plan in the morning — not an hour to create one. Set up the room once, add your class, define rules. From then on, the app does the work: it distributes everyone fairly, displays rule conflicts transparently, and delivers the result as a print-ready PDF. No cloud, no sign-in, no distractions.</p>
   </section>
 
   <!-- FAQ -->
@@ -601,41 +570,41 @@
     <p class="faq-eyebrow">FAQ</p>
 
     <div class="faq-item">
-      <h3>Für wen ist Platzwahl gedacht?</h3>
-      <p>Für Lehrkräfte aller Schularten, die Sitzpläne schnell und fair erstellen möchten — ohne stundenlanges Hin-und-her-Schieben oder Tabellen-Gefummel.</p>
+      <h3>Who is Platzwahl for?</h3>
+      <p>For teachers of all school types who want to create seating plans quickly and fairly — without spending hours manually rearranging or fiddling with spreadsheets.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Wie erstellt Platzwahl automatisch einen Sitzplan?</h3>
-      <p>Die App verteilt Schülerinnen und Schüler anhand individueller Regeln — Störneigung, Sitzwünsche, Jungen/Mädchen-Trennung — optimal auf die verfügbaren Plätze. Ein Score zeigt auf einen Blick, wie gut der Plan ist und welche Regeln noch verletzt werden.</p>
+      <h3>How does Platzwahl automatically create a seating plan?</h3>
+      <p>The app distributes students based on individual rules — disruptive behaviour, seating preferences, gender separation — optimally across the available seats. A score shows at a glance how good the plan is and which rules are still violated.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Werden Schülerdaten gespeichert oder übertragen?</h3>
-      <p>Nein. Alle eingetragenen Namen und Regeln bleiben ausschließlich lokal auf deinem Gerät. Es findet keine Übertragung an externe Server statt — weder von uns noch von Drittanbietern.</p>
+      <h3>Are student data stored or shared?</h3>
+      <p>No. All entered names and rules remain exclusively on your device. There is no transmission to external servers — neither by us nor by any third party.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Kann ich mehrere Klassen und Räume verwalten?</h3>
-      <p>Ja. Du kannst beliebig viele Räume und Klassen anlegen und jeweils eigene Sitzpläne erstellen. Alles bleibt gespeichert.</p>
+      <h3>Can I manage multiple classes and rooms?</h3>
+      <p>Yes. You can create as many rooms and classes as you like, each with their own seating plans. Everything is saved.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Gibt es einen PDF-Export?</h3>
-      <p>Ja. Jeder Sitzplan lässt sich direkt als PDF exportieren — sauber, ohne Aufwand, sofort druckfertig.</p>
+      <h3>Is there a PDF export?</h3>
+      <p>Yes. Every seating plan can be exported directly as a PDF — clean, effortlessly, immediately ready to print.</p>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <p class="final-cta-title">Jetzt im App Store.</p>
+    <p class="final-cta-title">Now on the App Store.</p>
     <a href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" style="height:48px; width:auto; display:block;" />
+      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" style="height:48px; width:auto; display:block;" />
     </a>
   </section>
 
   <footer>
-    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="platzwahl-privacy.html">Datenschutz</a> · <a href="platzwahl-terms.html">Nutzungsbedingungen</a>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Legal Notice</a> · <a href="platzwahl-privacy.html">Privacy</a> · <a href="platzwahl-terms.html">Terms</a>
   </footer>
 
   <script>

@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){var p=localStorage.getItem('lang');if(p==='en'||(!p&&navigator.language.startsWith('en')))location.replace('/en/');})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>crabucate — iOS-Apps für iPhone und iPad</title>
-  <meta name="description" content="iOS-Apps von crabucate: Team Zufall und Platzwahl — einfach, lokal, ohne Ablenkung." />
-  <link rel="canonical" href="https://crabucate.de/" />
-  <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
+  <title>crabucate — iOS Apps for iPhone and iPad</title>
+  <meta name="description" content="iOS apps by crabucate: Team Zufall and Platzwahl — simple, local, no distractions." />
+  <link rel="canonical" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://crabucate.de/" />
-  <meta property="og:title" content="crabucate — iOS-Apps für iPhone und iPad" />
-  <meta property="og:description" content="Kleine Apps für echte Probleme. Für iPhone und iPad." />
+  <meta property="og:url" content="https://crabucate.de/en/" />
+  <meta property="og:title" content="crabucate — iOS Apps for iPhone and iPad" />
+  <meta property="og:description" content="Small apps for real problems. For iPhone and iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale" content="en_US" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -150,7 +149,6 @@
     .app-tile--tz:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-8px); }
     .app-tile--pw:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-8px); }
 
-    /* Top content area */
     .tile-content {
       padding: 2.25rem 2.5rem 1.75rem;
       flex-shrink: 0;
@@ -186,7 +184,6 @@
       margin-bottom: 1.75rem;
     }
 
-    /* CTA row */
     .tile-cta {
       display: inline-flex;
       align-items: center;
@@ -199,41 +196,6 @@
     .tile-cta--tz { color: var(--tz); }
     .tile-cta--pw { color: var(--pw); }
 
-    .tile-cta-badge img {
-      height: 34px;
-      width: auto;
-      display: block;
-      opacity: 0.9;
-    }
-
-    .tile-coming-soon {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--pw);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .tile-coming-soon::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--pw);
-      flex-shrink: 0;
-      animation: pulse 2.5s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.8); }
-    }
-
-    /* Screenshot preview area */
     .tile-preview {
       flex: 1;
       position: relative;
@@ -241,7 +203,6 @@
       min-height: 240px;
     }
 
-    /* Gradient fade from card bg into screenshot */
     .tile-preview::before {
       content: '';
       position: absolute;
@@ -289,18 +250,18 @@
 
   <nav>
     <span class="nav-logo">
-      <img src="images/crabucateSquare.jpg" alt="" />
+      <img src="../images/crabucateSquare.jpg" alt="" />
       crabucate
     </span>
     <div class="lang-switch">
-      <span class="lang-active">DE</span>
+      <a href="/" onclick="localStorage.setItem('lang','de')">DE</a>
       <span class="lang-sep">|</span>
-      <a href="/en/" onclick="localStorage.setItem('lang','en')">EN</a>
+      <span class="lang-active">EN</span>
     </div>
   </nav>
 
   <main>
-    <p class="page-eyebrow">Unsere Apps</p>
+    <p class="page-eyebrow">Our Apps</p>
 
     <div class="apps-grid">
 
@@ -308,18 +269,18 @@
       <a href="team-zufall.html" class="app-tile app-tile--tz">
         <div class="tile-content">
           <img
-            src="images/Team%20Zufall-iOS-Default-1024x1024%401x.png"
+            src="../images/Team%20Zufall-iOS-Default-1024x1024%401x.png"
             alt="Team Zufall App Icon"
             class="tile-icon tile-icon--tz"
           />
           <h2 class="tile-name">Team Zufall</h2>
-          <p class="tile-tagline">Gruppen zufällig in Teams aufteilen — in einer Sekunde.</p>
-          <span class="tile-cta tile-cta--tz">Im App Store &nbsp;→</span>
+          <p class="tile-tagline">Randomly split groups into teams — in one second.</p>
+          <span class="tile-cta tile-cta--tz">On the App Store &nbsp;→</span>
         </div>
         <div class="tile-preview">
           <img
-            src="images/AppStore%20Screenshots/Screenshots%20iPad/ipad-01-home.png"
-            alt="Team Zufall App-Vorschau"
+            src="../images/AppStore%20Screenshots/Screenshots%20iPad/ipad-01-home.png"
+            alt="Team Zufall App Preview"
             loading="lazy"
           />
         </div>
@@ -329,18 +290,18 @@
       <a href="platzwahl.html" class="app-tile app-tile--pw">
         <div class="tile-content">
           <img
-            src="images/platzwahl-icon-1024.svg"
+            src="../images/platzwahl-icon-1024.svg"
             alt="Platzwahl App Icon"
             class="tile-icon"
           />
           <h2 class="tile-name">Platzwahl</h2>
-          <p class="tile-tagline">Sitzpläne für Lehrkräfte — automatisch erstellt, fair verteilt, druckfertig.</p>
-          <span class="tile-cta tile-cta--pw">Im App Store &nbsp;→</span>
+          <p class="tile-tagline">Seating plans for teachers — automatically created, fairly distributed, print-ready.</p>
+          <span class="tile-cta tile-cta--pw">On the App Store &nbsp;→</span>
         </div>
         <div class="tile-preview">
           <img
-            src="images/platzwahl/de_01_perfekterSitzplan.png"
-            alt="Platzwahl App-Vorschau"
+            src="../images/platzwahl/en_01_perfekterSitzplan.png"
+            alt="Platzwahl App Preview"
             loading="lazy"
           />
         </div>
@@ -350,7 +311,7 @@
   </main>
 
   <footer>
-    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Legal Notice</a>
   </footer>
 
 </body>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum — crabucate</title>
+  <title>Legal Notice (Impressum) — crabucate</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -61,12 +61,6 @@
 
     .back-link:hover { color: var(--fg); }
 
-    .lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
-    .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .lang-switch a:hover { color: var(--fg); }
-    .lang-active { color: var(--fg); }
-    .lang-sep { color: var(--muted); opacity: 0.3; }
-
     .nav-logo {
       display: flex;
       align-items: center;
@@ -86,6 +80,12 @@
       object-fit: cover;
       flex-shrink: 0;
     }
+
+    .lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
+    .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .lang-switch a:hover { color: var(--fg); }
+    .lang-active { color: var(--fg); }
+    .lang-sep { color: var(--muted); opacity: 0.3; }
 
     main {
       padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 8rem;
@@ -146,44 +146,44 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">
-      <img src="images/crabucateSquare.jpg" alt="" />
+    <a href="/en/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
     <div class="nav-right">
-      <a href="/" class="back-link">← Zurück</a>
+      <a href="/en/" class="back-link">← Back</a>
       <div class="lang-switch">
-        <span class="lang-active">DE</span>
+        <a href="/impressum.html" onclick="localStorage.setItem('lang','de')">DE</a>
         <span class="lang-sep">|</span>
-        <a href="/en/impressum.html" onclick="localStorage.setItem('lang','en')">EN</a>
+        <span class="lang-active">EN</span>
       </div>
     </div>
   </nav>
 
   <main>
-    <p class="imp-label">Impressum</p>
+    <p class="imp-label">Legal Notice (Impressum)</p>
 
     <div class="imp-section">
-      <h2>Angaben gemäß § 5 TMG</h2>
+      <h2>Information pursuant to § 5 TMG (German Telemedia Act)</h2>
       <address>
         Felix Leitenberger<br />
         Kreuzenstr. 32<br />
         82041 Furth<br />
-        Deutschland
+        Germany
       </address>
     </div>
 
     <div class="imp-section">
-      <h2>Kontakt</h2>
+      <h2>Contact</h2>
       <p>
-        Telefon: +49 176 23707720<br />
-        E-Mail: <a id="imp-mail" href="#">felix.leitenberger(at)gmail.com</a><br />
-        E-Mail: <a id="imp-mail-info" href="#">info(at)crabucate.de</a>
+        Phone: +49 176 23707720<br />
+        Email: <a id="imp-mail" href="#">felix.leitenberger(at)gmail.com</a><br />
+        Email: <a id="imp-mail-info" href="#">info(at)crabucate.de</a>
       </p>
     </div>
 
     <div class="imp-section">
-      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <h2>Responsible for content pursuant to § 18 Para. 2 MStV</h2>
       <address>
         Felix Leitenberger<br />
         Kreuzenstr. 32<br />
@@ -192,39 +192,29 @@
     </div>
 
     <div class="imp-section">
-      <h2>Haftung für Inhalte</h2>
+      <h2>Liability for content</h2>
       <p>
-        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-        nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
-        Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
-        Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
-        Tätigkeit hinweisen.
+        As a service provider, we are responsible for our own content on these pages in accordance with § 7 Para. 1 TMG under general law. According to §§ 8 to 10 TMG, however, we are not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
       </p>
     </div>
 
     <div class="imp-section">
-      <h2>Haftung für Links</h2>
+      <h2>Liability for links</h2>
       <p>
-        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr
-        übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
-        Betreiber der Seiten verantwortlich.
+        Our website contains links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of those pages.
       </p>
     </div>
 
     <div class="imp-section">
-      <h2>Urheberrecht</h2>
+      <h2>Copyright</h2>
       <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
-        dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
-        der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen
-        Zustimmung des jeweiligen Autors bzw. Erstellers.
+        The content and works created by the site operators on these pages are subject to German copyright law. Duplication, editing, distribution, and any form of use beyond the limits of copyright law require the written consent of the respective author or creator.
       </p>
     </div>
   </main>
 
   <footer>
-    <a href="/">crabucate</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a>
+    <a href="/en/">crabucate</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
   </footer>
 
   <script>

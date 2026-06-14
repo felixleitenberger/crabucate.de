@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Datenschutzerklärung Platzwahl — crabucate</title>
+  <title>Privacy Policy — Platzwahl</title>
   <meta name="robots" content="index, follow" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,6 +50,8 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
     .nav-logo {
       display: flex;
       align-items: center;
@@ -68,8 +70,6 @@
       object-fit: cover;
       flex-shrink: 0;
     }
-
-    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
 
     .back-link {
       font-size: 0.8rem;
@@ -160,62 +160,62 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">
-      <img src="images/crabucateSquare.jpg" alt="" />
+    <a href="/en/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
     <div class="nav-right">
       <a href="platzwahl.html" class="back-link">← Platzwahl</a>
       <div class="lang-switch">
-        <span class="lang-active">DE</span>
+        <a href="/platzwahl-privacy.html" onclick="localStorage.setItem('lang','de')">DE</a>
         <span class="lang-sep">|</span>
-        <a href="/en/platzwahl-privacy.html" onclick="localStorage.setItem('lang','en')">EN</a>
+        <span class="lang-active">EN</span>
       </div>
     </div>
   </nav>
 
   <main>
-    <p class="page-label">Rechtliches</p>
-    <h1>Datenschutzerklärung</h1>
-    <p class="meta">Platzwahl · Zuletzt aktualisiert: Juni 2026</p>
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Platzwahl · Last updated: June 2026</p>
 
-    <h2>Überblick</h2>
-    <p>Platzwahl erhebt keine personenbezogenen Daten, sendet keine Informationen an externe Server und verwendet kein Tracking oder Analytics. Alle in der App eingetragenen Daten werden ausschließlich lokal auf deinem Gerät gespeichert und verlassen dieses nie.</p>
+    <h2>Overview</h2>
+    <p>Platzwahl does not collect any personal data, does not send information to external servers, and uses no tracking or analytics. All data entered in the app is stored exclusively on your device and never leaves it.</p>
 
-    <h2>Welche Daten werden verarbeitet?</h2>
-    <p>Beim Verwenden der App kannst du folgende Informationen eingeben und speichern:</p>
-    <p>Raumkonfigurationen (Raumname, Tischanordnung, Pultposition), Gruppen- und Klasseninformationen (Klassenname, Namen der Schülerinnen und Schüler, individuelle Regeln wie Störneigung oder Sitzwünsche) sowie daraus generierte Sitzpläne.</p>
-    <p>Diese Daten werden ausschließlich lokal auf deinem Gerät im App-Container gespeichert. Sie werden nicht an uns oder Dritte übertragen, nicht in einer Cloud gesichert und nicht mit anderen Apps geteilt.</p>
+    <h2>What data is processed?</h2>
+    <p>When using the app you can enter and save the following information:</p>
+    <p>Room configurations (room name, desk layout, teacher's desk position), class and group information (class name, student names, individual rules such as disruptive tendency or seating preferences), and seating plans generated from these.</p>
+    <p>This data is stored exclusively on your device within the app container. It is not transmitted to us or any third party, not backed up to any cloud, and not shared with other apps.</p>
 
-    <h2>Personenbezogene Daten von Schülerinnen und Schülern</h2>
-    <p>Wenn du Namen von Schülerinnen und Schülern einträgst, verarbeitest du als nutzende Lehrkraft personenbezogene Daten natürlicher Personen. Da diese Daten ausschließlich auf deinem Gerät verbleiben und crabucate zu keinem Zeitpunkt Zugriff darauf hat, bist du im Sinne der DSGVO die verantwortliche Stelle für die Verarbeitung dieser Daten.</p>
-    <p>Bitte stelle sicher, dass du für die Eingabe und Speicherung von Schülernamen auf deinem Dienstgerät eine geeignete Rechtsgrundlage hast — in der Regel ergibt sich diese aus deinen dienstlichen Pflichten und den Regelungen deiner Schule oder Schulbehörde.</p>
-    <p>Wir empfehlen, für die App Schülerinnen und Schüler mit Vornamen oder einem internen Kürzel einzutragen, sofern vollständige Namen nicht zwingend erforderlich sind.</p>
+    <h2>Personal data of students</h2>
+    <p>If you enter student names, you as the teacher are processing personal data of natural persons. Since this data remains exclusively on your device and crabucate has no access to it at any time, you are the data controller within the meaning of the GDPR for the processing of this data.</p>
+    <p>Please ensure that you have an appropriate legal basis for entering and storing student names on your device — typically this arises from your professional duties and the regulations of your school or educational authority.</p>
+    <p>We recommend entering students by first name or an internal abbreviation where full names are not strictly necessary.</p>
 
-    <h2>In-App-Käufe</h2>
-    <p>Platzwahl kann optionale In-App-Käufe anbieten. Alle Zahlungen werden ausschließlich über Apple und den App Store abgewickelt. crabucate hat keinen Zugriff auf deine Zahlungsdaten. Es gelten die <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank" rel="noopener">Datenschutzrichtlinien von Apple</a>.</p>
+    <h2>In-app purchases</h2>
+    <p>Platzwahl may offer optional in-app purchases. All payments are processed exclusively through Apple and the App Store. crabucate has no access to your payment data. Apple's <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a> applies.</p>
 
-    <h2>Drittanbieter</h2>
-    <p>Die App bindet keine Drittanbieter-SDKs, Werbenetzwerke oder Analysedienste ein. Es findet kein Tracking statt.</p>
+    <h2>Third parties</h2>
+    <p>The app does not include any third-party SDKs, advertising networks, or analytics services. No tracking takes place.</p>
 
-    <h2>Kinder</h2>
-    <p>Platzwahl richtet sich als Werkzeug für Lehrkräfte an erwachsene Nutzerinnen und Nutzer. Die App selbst ist nicht für die direkte Nutzung durch Kinder konzipiert. Schülernamen werden, sofern eingegeben, nicht von der App übertragen oder verarbeitet — sie verbleiben ausschließlich auf dem Gerät der Lehrkraft.</p>
+    <h2>Children</h2>
+    <p>Platzwahl is designed as a tool for teachers — adult users. The app itself is not intended for direct use by children. Student names, if entered, are not transmitted or processed by the app — they remain exclusively on the teacher's device.</p>
 
-    <h2>Gerätespeicher und Backups</h2>
-    <p>Die lokal gespeicherten App-Daten können, je nach Geräteeinstellungen, Teil eines iCloud- oder iTunes/Finder-Backups sein. Das Backup wird dann von Apple gemäß deren Datenschutzrichtlinien verarbeitet. Du kannst App-Daten vom Backup ausschließen, indem du in den iOS-Einstellungen unter iCloud → Apps den Schalter für Platzwahl deaktivierst.</p>
+    <h2>Device storage and backups</h2>
+    <p>The locally stored app data may, depending on device settings, be included in an iCloud or iTunes/Finder backup. That backup is then processed by Apple in accordance with their privacy policy. You can exclude app data from backups by going to iOS Settings → iCloud → Apps and disabling the toggle for Platzwahl.</p>
 
-    <h2>Deine Rechte</h2>
-    <p>Da crabucate keine Nutzerdaten erhebt oder speichert, können wir keine Auskunft über gespeicherte Daten geben oder Löschungen vornehmen — diese Daten liegen ausschließlich auf deinem Gerät. Alle App-Daten kannst du jederzeit vollständig löschen, indem du die App deinstallierst.</p>
+    <h2>Your rights</h2>
+    <p>Since crabucate does not collect or store any user data, we cannot provide information about stored data or perform deletions — this data exists exclusively on your device. All app data can be deleted at any time by uninstalling the app.</p>
 
-    <h2>Änderungen</h2>
-    <p>Sollte sich etwas grundlegend ändern, das diese Erklärung betrifft, werden wir sie aktualisieren. Das Datum oben zeigt an, wann die Erklärung zuletzt geändert wurde.</p>
+    <h2>Changes</h2>
+    <p>If something fundamental changes that affects this policy, we will update it. The date above indicates when the policy was last changed.</p>
 
-    <h2>Kontakt</h2>
-    <p>Bei Fragen: <a id="priv-mail" href="#">info(at)crabucate.de</a></p>
+    <h2>Contact</h2>
+    <p>Questions? <a id="priv-mail" href="#">info(at)crabucate.de</a></p>
   </main>
 
   <footer>
-    <a href="/">crabucate</a> · <a href="platzwahl.html">Platzwahl</a> · <a href="impressum.html">Impressum</a> · <a href="platzwahl-terms.html">Nutzungsbedingungen</a>
+    <a href="/en/">crabucate</a> · <a href="platzwahl.html">Platzwahl</a> · <a href="impressum.html">Legal Notice</a> · <a href="platzwahl-terms.html">Terms</a>
   </footer>
 
   <script>

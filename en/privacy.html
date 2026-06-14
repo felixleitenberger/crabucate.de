@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutzungsbedingungen — Platzwahl</title>
-  <meta name="robots" content="index, follow" />
+  <title>Privacy Policy — Team Zufall</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,6 +49,20 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
     .nav-logo {
       display: flex;
       align-items: center;
@@ -68,20 +81,6 @@
       object-fit: cover;
       flex-shrink: 0;
     }
-
-    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
-
-    .back-link {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s;
-    }
-
-    .back-link:hover { color: var(--fg); }
 
     .lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
     .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
@@ -160,55 +159,49 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">
-      <img src="images/crabucateSquare.jpg" alt="" />
+    <a href="/en/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
     <div class="nav-right">
-      <a href="platzwahl.html" class="back-link">← Platzwahl</a>
+      <a href="team-zufall.html" class="back-link">← Team Zufall</a>
       <div class="lang-switch">
-        <span class="lang-active">DE</span>
+        <a href="/privacy.html" onclick="localStorage.setItem('lang','de')">DE</a>
         <span class="lang-sep">|</span>
-        <a href="/en/platzwahl-terms.html" onclick="localStorage.setItem('lang','en')">EN</a>
+        <span class="lang-active">EN</span>
       </div>
     </div>
   </nav>
 
   <main>
-    <p class="page-label">Rechtliches</p>
-    <h1>Nutzungsbedingungen</h1>
-    <p class="meta">Platzwahl · Zuletzt aktualisiert: Juni 2026</p>
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Team Zufall · Last updated: June 2026</p>
 
-    <h2>Geltungsbereich</h2>
-    <p>Diese Nutzungsbedingungen gelten für die iOS-App „Platzwahl", entwickelt von Felix Leitenberger (crabucate). Mit der Nutzung der App stimmst du diesen Bedingungen zu.</p>
+    <h2>Overview</h2>
+    <p>Team Zufall does not collect any personal data, does not send information to external servers, and uses no tracking or analytics. All data (e.g. groups and participant names) is stored exclusively on your device and never leaves it.</p>
 
-    <h2>Nutzungsrecht</h2>
-    <p>Du erhältst ein persönliches, nicht übertragbares Recht, die App auf deinen Apple-Geräten zu nutzen. Eine Weitergabe, Modifikation oder kommerzielle Verwertung der App ist nicht gestattet.</p>
+    <h2>What data is stored?</h2>
+    <p>The app stores your groups and participant names locally on your device — exclusively so you can find them again when you next open the app. This data is not transmitted to us or any third party.</p>
 
-    <h2>Bestimmungsgemäßer Gebrauch</h2>
-    <p>Platzwahl ist als Werkzeug für Lehrkräfte zur Erstellung und Verwaltung von Sitzplänen gedacht. Du bist dafür verantwortlich, dass die Nutzung der App — insbesondere die Eingabe von Schülernamen und anderen personenbezogenen Daten — im Einklang mit den geltenden Datenschutzgesetzen sowie den Vorgaben deiner Schule oder Schulbehörde steht. Hinweise zur Datenverarbeitung findest du in der <a href="platzwahl-privacy.html">Datenschutzerklärung</a>.</p>
+    <h2>In-app purchases</h2>
+    <p>Team Zufall offers optional in-app purchases. All payments are processed exclusively through Apple and the App Store. We have no access to your payment data. Apple's <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a> applies.</p>
 
-    <h2>In-App-Käufe</h2>
-    <p>Platzwahl kann optionale In-App-Käufe anbieten, die zusätzliche Funktionen freischalten. Alle Transaktionen werden über Apple abgewickelt. Es gelten die <a href="https://www.apple.com/legal/internet-services/itunes/de/terms.html" target="_blank" rel="noopener">Nutzungsbedingungen des App Store</a>. Käufe können nach dem Kauf nicht von uns erstattet werden — für Rückerstattungen wende dich bitte an den Apple Support.</p>
+    <h2>Third parties</h2>
+    <p>The app does not include any third-party SDKs, advertising networks, or analytics services.</p>
 
-    <h2>Verfügbarkeit</h2>
-    <p>Wir bemühen uns um eine stabile und zuverlässige App, übernehmen jedoch keine Garantie für ununterbrochene Verfügbarkeit. Updates können Funktionen verändern oder entfernen.</p>
+    <h2>Children</h2>
+    <p>The app is not specifically directed at children under 13. No personal data from children is collected.</p>
 
-    <h2>Haftungsausschluss</h2>
-    <p>Die App wird „wie besehen" bereitgestellt. Wir haften nicht für Schäden, die aus der Nutzung der App entstehen, soweit gesetzlich zulässig. Insbesondere übernehmen wir keine Haftung für Daten, die du in der App einträgst oder speicherst.</p>
+    <h2>Changes</h2>
+    <p>If something fundamental changes that affects this policy, we will update it. The date above indicates when the policy was last changed.</p>
 
-    <h2>Änderungen</h2>
-    <p>Wir behalten uns vor, diese Bedingungen jederzeit zu ändern. Die fortgesetzte Nutzung der App nach einer Änderung gilt als Zustimmung zu den neuen Bedingungen.</p>
-
-    <h2>Anwendbares Recht</h2>
-    <p>Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts.</p>
-
-    <h2>Kontakt</h2>
-    <p>Bei Fragen: <a href="mailto:info@crabucate.de">info@crabucate.de</a></p>
+    <h2>Contact</h2>
+    <p>Questions? <a href="mailto:info@crabucate.de">info@crabucate.de</a></p>
   </main>
 
   <footer>
-    <a href="/">crabucate</a> · <a href="platzwahl.html">Platzwahl</a> · <a href="impressum.html">Impressum</a> · <a href="platzwahl-privacy.html">Datenschutz</a>
+    <a href="/en/">crabucate</a> · <a href="team-zufall.html">Team Zufall</a> · <a href="impressum.html">Legal Notice</a> · <a href="terms.html">Terms</a>
   </footer>
 
 </body>

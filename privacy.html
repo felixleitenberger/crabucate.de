@@ -49,6 +49,8 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
     .back-link {
       font-size: 0.8rem;
       color: var(--muted);
@@ -60,6 +62,12 @@
     }
 
     .back-link:hover { color: var(--fg); }
+
+    .lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
+    .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .lang-switch a:hover { color: var(--fg); }
+    .lang-active { color: var(--fg); }
+    .lang-sep { color: var(--muted); opacity: 0.3; }
 
     .nav-logo {
       display: flex;
@@ -155,7 +163,14 @@
       <img src="images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
-    <a href="team-zufall.html" class="back-link">← Team Zufall</a>
+    <div class="nav-right">
+      <a href="team-zufall.html" class="back-link">← Team Zufall</a>
+      <div class="lang-switch">
+        <span class="lang-active">DE</span>
+        <span class="lang-sep">|</span>
+        <a href="/en/privacy.html" onclick="localStorage.setItem('lang','en')">EN</a>
+      </div>
+    </div>
   </nav>
 
   <main>

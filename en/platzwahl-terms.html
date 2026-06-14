@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutzungsbedingungen — Platzwahl</title>
+  <title>Terms of Use — Platzwahl</title>
   <meta name="robots" content="index, follow" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,6 +50,8 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
     .nav-logo {
       display: flex;
       align-items: center;
@@ -68,8 +70,6 @@
       object-fit: cover;
       flex-shrink: 0;
     }
-
-    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
 
     .back-link {
       font-size: 0.8rem;
@@ -160,55 +160,55 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">
-      <img src="images/crabucateSquare.jpg" alt="" />
+    <a href="/en/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
       crabucate
     </a>
     <div class="nav-right">
       <a href="platzwahl.html" class="back-link">← Platzwahl</a>
       <div class="lang-switch">
-        <span class="lang-active">DE</span>
+        <a href="/platzwahl-terms.html" onclick="localStorage.setItem('lang','de')">DE</a>
         <span class="lang-sep">|</span>
-        <a href="/en/platzwahl-terms.html" onclick="localStorage.setItem('lang','en')">EN</a>
+        <span class="lang-active">EN</span>
       </div>
     </div>
   </nav>
 
   <main>
-    <p class="page-label">Rechtliches</p>
-    <h1>Nutzungsbedingungen</h1>
-    <p class="meta">Platzwahl · Zuletzt aktualisiert: Juni 2026</p>
+    <p class="page-label">Legal</p>
+    <h1>Terms of Use</h1>
+    <p class="meta">Platzwahl · Last updated: June 2026</p>
 
-    <h2>Geltungsbereich</h2>
-    <p>Diese Nutzungsbedingungen gelten für die iOS-App „Platzwahl", entwickelt von Felix Leitenberger (crabucate). Mit der Nutzung der App stimmst du diesen Bedingungen zu.</p>
+    <h2>Scope</h2>
+    <p>These Terms of Use apply to the iOS app "Platzwahl", developed by Felix Leitenberger (crabucate). By using the app you agree to these terms.</p>
 
-    <h2>Nutzungsrecht</h2>
-    <p>Du erhältst ein persönliches, nicht übertragbares Recht, die App auf deinen Apple-Geräten zu nutzen. Eine Weitergabe, Modifikation oder kommerzielle Verwertung der App ist nicht gestattet.</p>
+    <h2>Licence</h2>
+    <p>You receive a personal, non-transferable right to use the app on your Apple devices. Redistribution, modification, or commercial exploitation of the app is not permitted.</p>
 
-    <h2>Bestimmungsgemäßer Gebrauch</h2>
-    <p>Platzwahl ist als Werkzeug für Lehrkräfte zur Erstellung und Verwaltung von Sitzplänen gedacht. Du bist dafür verantwortlich, dass die Nutzung der App — insbesondere die Eingabe von Schülernamen und anderen personenbezogenen Daten — im Einklang mit den geltenden Datenschutzgesetzen sowie den Vorgaben deiner Schule oder Schulbehörde steht. Hinweise zur Datenverarbeitung findest du in der <a href="platzwahl-privacy.html">Datenschutzerklärung</a>.</p>
+    <h2>Intended use</h2>
+    <p>Platzwahl is designed as a tool for teachers to create and manage seating plans. You are responsible for ensuring that your use of the app — in particular the entry and storage of student names and other personal data — complies with applicable data protection laws and the requirements of your school or educational authority. See the <a href="platzwahl-privacy.html">Privacy Policy</a> for information on data processing.</p>
 
-    <h2>In-App-Käufe</h2>
-    <p>Platzwahl kann optionale In-App-Käufe anbieten, die zusätzliche Funktionen freischalten. Alle Transaktionen werden über Apple abgewickelt. Es gelten die <a href="https://www.apple.com/legal/internet-services/itunes/de/terms.html" target="_blank" rel="noopener">Nutzungsbedingungen des App Store</a>. Käufe können nach dem Kauf nicht von uns erstattet werden — für Rückerstattungen wende dich bitte an den Apple Support.</p>
+    <h2>In-app purchases</h2>
+    <p>Platzwahl may offer optional in-app purchases that unlock additional features. All transactions are processed through Apple. Apple's <a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank" rel="noopener">App Store Terms of Service</a> apply. Purchases cannot be refunded by us after the fact — for refunds please contact Apple Support.</p>
 
-    <h2>Verfügbarkeit</h2>
-    <p>Wir bemühen uns um eine stabile und zuverlässige App, übernehmen jedoch keine Garantie für ununterbrochene Verfügbarkeit. Updates können Funktionen verändern oder entfernen.</p>
+    <h2>Availability</h2>
+    <p>We strive to provide a stable and reliable app, but cannot guarantee uninterrupted availability. Updates may change or remove features.</p>
 
-    <h2>Haftungsausschluss</h2>
-    <p>Die App wird „wie besehen" bereitgestellt. Wir haften nicht für Schäden, die aus der Nutzung der App entstehen, soweit gesetzlich zulässig. Insbesondere übernehmen wir keine Haftung für Daten, die du in der App einträgst oder speicherst.</p>
+    <h2>Disclaimer</h2>
+    <p>The app is provided "as is". We accept no liability for damages arising from the use of the app, to the extent permitted by law. In particular, we accept no liability for data you enter or store in the app.</p>
 
-    <h2>Änderungen</h2>
-    <p>Wir behalten uns vor, diese Bedingungen jederzeit zu ändern. Die fortgesetzte Nutzung der App nach einer Änderung gilt als Zustimmung zu den neuen Bedingungen.</p>
+    <h2>Changes</h2>
+    <p>We reserve the right to modify these terms at any time. Continued use of the app after a change constitutes acceptance of the new terms.</p>
 
-    <h2>Anwendbares Recht</h2>
-    <p>Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts.</p>
+    <h2>Governing law</h2>
+    <p>German law applies, excluding the UN Convention on Contracts for the International Sale of Goods.</p>
 
-    <h2>Kontakt</h2>
-    <p>Bei Fragen: <a href="mailto:info@crabucate.de">info@crabucate.de</a></p>
+    <h2>Contact</h2>
+    <p>Questions? <a href="mailto:info@crabucate.de">info@crabucate.de</a></p>
   </main>
 
   <footer>
-    <a href="/">crabucate</a> · <a href="platzwahl.html">Platzwahl</a> · <a href="impressum.html">Impressum</a> · <a href="platzwahl-privacy.html">Datenschutz</a>
+    <a href="/en/">crabucate</a> · <a href="platzwahl.html">Platzwahl</a> · <a href="impressum.html">Legal Notice</a> · <a href="platzwahl-privacy.html">Privacy</a>
   </footer>
 
 </body>
