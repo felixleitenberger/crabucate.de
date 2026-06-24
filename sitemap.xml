@@ -1,23 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Startseite -->
   <url>
     <loc>https://crabucate.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://crabucate.de/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://crabucate.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Platzwahl -->
+  <url>
+    <loc>https://crabucate.de/platzwahl.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/platzwahl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/platzwahl.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crabucate.de/terms.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://crabucate.de/en/platzwahl.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/platzwahl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/platzwahl.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Team Zufall -->
+  <url>
+    <loc>https://crabucate.de/team-zufall.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/team-zufall.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/team-zufall.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/team-zufall.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/team-zufall.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/team-zufall.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Rechtliches -->
   <url>
     <loc>https://crabucate.de/impressum.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>https://crabucate.de/platzwahl-privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/platzwahl-terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
 </urlset>
