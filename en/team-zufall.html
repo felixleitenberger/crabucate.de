@@ -147,6 +147,15 @@
 
     .nav-right { display: flex; align-items: center; gap: 1.25rem; }
 
+    .nav-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--fg); }
+
     .app-store-badge img {
       height: 36px;
       width: auto;
@@ -479,6 +488,7 @@
       crabucate
     </a>
     <div class="nav-right">
+      <a href="/en/" class="nav-link">← All Apps</a>
       <a class="app-store-badge" href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
         <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
       </a>
