@@ -8,12 +8,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0d0d;
-      --fg: #f0ece2;
-      --accent: #c8b89a;
-      --muted: #5a5650;
-      --line: rgba(200,184,154,0.15);
-      --card-bg: #111010;
+      --bg: #FBF6EF;
+      --fg: #241F1A;
+      --accent: #B04D1C;
+      --muted: #6B6358;
+      --line: rgba(176,77,28,0.15);
+      --card-bg: #FFFFFF;
     }
 
     html { scroll-behavior: smooth; }
@@ -44,7 +44,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(13,13,13,0.85);
+      background: rgba(251,246,239,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
@@ -141,6 +141,12 @@
 
     footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--accent); }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>

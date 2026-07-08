@@ -86,13 +86,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0d0d;
-      --fg: #f0ece2;
-      --accent: #c8b89a;
-      --muted: #5a5650;
-      --line: rgba(200,184,154,0.15);
-      --card-bg: #111010;
+      --bg: #FBF6EF;
+      --fg: #241F1A;
+      --accent: #B04D1C;
+      --muted: #6B6358;
+      --line: rgba(176,77,28,0.15);
+      --card-bg: #FFFFFF;
       --pw: #F5923A;
+      --pw-text: #9C570D;
       --pw-dim: rgba(245,146,58,0.1);
     }
 
@@ -125,7 +126,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(13,13,13,0.85);
+      background: rgba(251,246,239,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
@@ -225,6 +226,11 @@
       animation: fadeUp 1s ease 0.4s forwards;
     }
 
+    .hero .app-store-badge {
+      display: inline-block;
+      margin-top: 2.25rem;
+    }
+
     .app-store-badge {
       display: inline-block;
       margin-top: 2.25rem;
@@ -241,40 +247,56 @@
     .screenshots-section {
       position: relative;
       z-index: 1;
-      padding: 2rem 0 1rem;
+      padding: 3rem clamp(1.5rem, 6vw, 6rem) 3rem;
     }
 
-    .screenshots-strip {
-      display: flex;
-      gap: 1.25rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding: 1rem clamp(1.5rem, 6vw, 6rem) 2.5rem;
-      cursor: grab;
+    .screenshots-carousel {
+      max-width: 960px;
+      margin: 0 auto;
     }
 
-    .screenshots-strip:active { cursor: grabbing; }
-    .screenshots-strip::-webkit-scrollbar { display: none; }
-    .screenshots-strip { user-select: none; -webkit-user-select: none; }
-
-    .screenshots-strip img {
-      height: clamp(220px, 36vw, 480px);
-      width: auto;
+    .carousel-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2752 / 2064;
       border-radius: 18px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      filter: drop-shadow(0 16px 48px rgba(0,0,0,0.55));
-      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), filter 0.35s;
-      user-select: none;
-      -webkit-user-drag: none;
+      overflow: hidden;
+      cursor: pointer;
+      filter: drop-shadow(0 16px 48px rgba(36,31,26,0.16));
     }
 
-    .screenshots-strip img:hover {
-      transform: translateY(-6px);
-      filter: drop-shadow(0 28px 64px rgba(0,0,0,0.65));
+    .carousel-frame .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      display: block;
     }
+
+    .carousel-frame .slide.active { opacity: 1; }
+
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 2.75rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .dot.active { background: var(--pw-text); transform: scale(1.4); }
 
     /* ── DIVIDER ── */
     .divider {
@@ -314,7 +336,8 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 2rem 2rem 2.25rem;
-      transition: border-color 0.3s;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
 
     .feature-card:hover { border-color: rgba(245,146,58,0.22); }
@@ -328,7 +351,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 1.4rem;
-      color: var(--pw);
+      color: var(--pw-text);
     }
 
     .feat-icon svg { width: 22px; height: 22px; }
@@ -445,6 +468,21 @@
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .hero-icon, .hero h1, .tagline, .coming-soon { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -480,12 +518,21 @@
 
   <!-- SCREENSHOTS -->
   <section class="screenshots-section" aria-label="App Screenshots">
-    <div class="screenshots-strip" id="screenshotsStrip">
-      <img src="../images/platzwahl/en_01_perfekterSitzplan.png" alt="Create seating plans — all seats fairly distributed automatically" />
-      <img src="../images/platzwahl/en_02_Kriterien.png" alt="Define criteria — set individual rules per student" loading="lazy" />
-      <img src="../images/platzwahl/en_03_automaticCalculation.png" alt="Optimize automatically — calculate the best seating plan at the tap of a button" loading="lazy" />
-      <img src="../images/platzwahl/en_04_DesignRooms.png" alt="Design rooms — recreate your classroom layout exactly" loading="lazy" />
-      <img src="../images/platzwahl/en_05_Print.png" alt="Print seating plans — clean PDF export ready to print" loading="lazy" />
+    <div class="screenshots-carousel">
+      <div class="carousel-frame" id="screenshotsFrame">
+        <img class="slide active" src="../images/platzwahl/en_01_perfekterSitzplan.png" alt="Create seating plans — all seats fairly distributed automatically" />
+        <img class="slide" src="../images/platzwahl/en_02_Kriterien.png" alt="Define criteria — set individual rules per student" loading="lazy" />
+        <img class="slide" src="../images/platzwahl/en_03_automaticCalculation.png" alt="Optimize automatically — calculate the best seating plan at the tap of a button" loading="lazy" />
+        <img class="slide" src="../images/platzwahl/en_04_DesignRooms.png" alt="Design rooms — recreate your classroom layout exactly" loading="lazy" />
+        <img class="slide" src="../images/platzwahl/en_05_Print.png" alt="Print seating plans — clean PDF export ready to print" loading="lazy" />
+      </div>
+    </div>
+    <div class="slideshow-dots">
+      <button class="dot active" aria-label="Image 1"></button>
+      <button class="dot" aria-label="Image 2"></button>
+      <button class="dot" aria-label="Image 3"></button>
+      <button class="dot" aria-label="Image 4"></button>
+      <button class="dot" aria-label="Image 5"></button>
     </div>
   </section>
 
@@ -609,30 +656,24 @@
 
   <script>
     (function () {
-      var strip = document.getElementById('screenshotsStrip');
-      var isDown = false;
-      var startX, scrollLeft;
+      var slides = document.querySelectorAll('#screenshotsFrame .slide');
+      var dots = document.querySelectorAll('.slideshow-dots .dot');
+      var frame = document.getElementById('screenshotsFrame');
+      var current = 0;
 
-      strip.addEventListener('mousedown', function (e) {
-        isDown = true;
-        startX = e.pageX - strip.offsetLeft;
-        scrollLeft = strip.scrollLeft;
-        strip.style.scrollSnapType = 'none';
+      function go(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { go(i); });
       });
 
-      strip.addEventListener('mouseleave', function () { isDown = false; });
-
-      strip.addEventListener('mouseup', function () {
-        isDown = false;
-        strip.style.scrollSnapType = '';
-      });
-
-      strip.addEventListener('mousemove', function (e) {
-        if (!isDown) return;
-        e.preventDefault();
-        var x = e.pageX - strip.offsetLeft;
-        strip.scrollLeft = scrollLeft - (x - startX) * 1.4;
-      });
+      frame.addEventListener('click', function () { go(current + 1); });
     })();
   </script>
 
