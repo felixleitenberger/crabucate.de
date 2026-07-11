@@ -27,7 +27,7 @@
     "applicationCategory": "EducationApplication",
     "description": "Sitzplan App für Lehrkräfte und Schule — automatisch, regelbasiert, druckfertig als PDF. Für iPhone und iPad.",
     "keywords": "Sitzplan, Sitzplan App, Sitzplan erstellen, Schule, Lehrkräfte, iPad, iPhone, iOS, automatisch, PDF, Klassenzimmer",
-    "url": "https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924",
+    "url": "https://apps.apple.com/de/app/platzwahl-sitzplan-app/id6769323924",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
   }
@@ -77,6 +77,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Ja. Jeder Sitzplan lässt sich als sauberes PDF exportieren — zum Ausdrucken und Hinlegen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist die Sitzplan App kostenlos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Platzwahl ist kostenlos im App Store erhältlich. Platzwahl Pro schaltet optional unbegrenzt viele Räume, Gruppen und Sitzpläne frei."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich eine ganze Klasse aus Excel importieren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Exportiere die Klassenliste als CSV-Datei aus Excel oder Google Sheets und importiere sie direkt in Platzwahl — die ganze Klasse ist in Sekunden angelegt."
         }
       }
     ]
@@ -231,6 +247,18 @@
       display: inline-block;
       margin-top: 2.25rem;
     }
+
+    .hero-meta {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .hero-meta span { white-space: nowrap; }
+    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
 
     .coming-soon {
       margin-top: 2.25rem;
@@ -410,6 +438,105 @@
       margin: 0 auto;
     }
 
+    /* ── HOW IT WORKS ── */
+    .how {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
+
+    .how-steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 0 0 2rem 3.6rem;
+    }
+
+    .how-steps li:last-child { padding-bottom: 0; }
+
+    .how-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: var(--pw-dim);
+      color: var(--pw-text);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .how-steps h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .how-steps p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── GUIDES ── */
+    .guides {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .guide-card {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .guide-card:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-4px); }
+
+    .guide-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .guide-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .guide-card .guide-more {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--pw-text);
+    }
+
     /* ── FAQ ── */
     .faq {
       padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
@@ -449,6 +576,17 @@
       line-height: 1.75;
       color: var(--muted);
     }
+
+    .faq-more {
+      display: inline-block;
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pw-text);
+      text-decoration: none;
+    }
+
+    .faq-more:hover { text-decoration: underline; }
 
     /* ── FINAL CTA ── */
     .final-cta {
@@ -542,10 +680,13 @@
       class="hero-icon"
     />
     <h1>Platzwahl</h1>
-    <p class="tagline">Sitzpläne, die wirklich funktionieren — automatisch erstellt, fair verteilt, druckfertig.</p>
-    <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
+    <p class="tagline">Die Sitzplan-App für Lehrkräfte: Sitzplan erstellen auf Knopfdruck — automatisch, fair verteilt, druckfertig als PDF.</p>
+    <a class="app-store-badge" href="https://apps.apple.com/de/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
       <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
     </a>
+    <p class="hero-meta">
+      <span>Gratis</span><span class="sep">·</span><span>iPhone &amp; iPad</span><span class="sep">·</span><span>Keine Anmeldung</span><span class="sep">·</span><span>Schülerdaten bleiben auf dem Gerät</span>
+    </p>
   </section>
 
   <!-- SCREENSHOTS -->
@@ -644,6 +785,61 @@
     <p>Mit Platzwahl einen Sitzplan erstellen dauert Minuten — nicht eine Stunde. Raum einmal einrichten, Klasse einpflegen, Regeln festlegen. Ab dann erledigt die App die Arbeit: Sie verteilt alle fair, zeigt Regelkonflikte transparent an und gibt das Ergebnis direkt als druckfertiges PDF aus. Keine Cloud, keine Anmeldung, keine Ablenkung.</p>
   </section>
 
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <p class="section-eyebrow">So funktioniert's</p>
+    <ol class="how-steps">
+      <li>
+        <h3>Klassenraum nachbauen</h3>
+        <p>Zeichne dein Klassenzimmer als Raster — tippe Sitze an oder male ganze Bereiche mit dem Finger. Reihen, U-Form, Gruppentische: jede Anordnung ist möglich.</p>
+      </li>
+      <li>
+        <h3>Klasse anlegen &amp; Regeln festlegen</h3>
+        <p>Schüler eintragen oder per CSV aus Excel importieren. Dann pro Schüler markieren: Störpotenzial, vorderer Platz, Wunschnachbarn, Trennungen.</p>
+      </li>
+      <li>
+        <h3>„Optimal“ tippen</h3>
+        <p>Der genetische Algorithmus berechnet den bestmöglichen Sitzplan. Ein Score zeigt, wie gut alle Regeln erfüllt sind — jede Abweichung wird erklärt.</p>
+      </li>
+      <li>
+        <h3>Als PDF drucken</h3>
+        <p>Fertigen Plan exportieren, ausdrucken, aufs Pult legen. Neuer Plan nötig? Ein Tipp genügt.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- GUIDES -->
+  <section class="guides">
+    <p class="section-eyebrow">Ratgeber</p>
+    <div class="guides-grid">
+      <a class="guide-card" href="guides/sitzplan-erstellen.html">
+        <h3>Sitzplan erstellen</h3>
+        <p>In 5 Minuten zum fertigen Plan — worauf es wirklich ankommt.</p>
+        <span class="guide-more">Zum Ratgeber →</span>
+      </a>
+      <a class="guide-card" href="guides/sitzplan-generator.html">
+        <h3>Sitzplan-Generator</h3>
+        <p>Warum Zufall nicht reicht — und wie der Algorithmus arbeitet.</p>
+        <span class="guide-more">Zum Ratgeber →</span>
+      </a>
+      <a class="guide-card" href="guides/sitzordnung-klassenzimmer.html">
+        <h3>Sitzordnung im Klassenzimmer</h3>
+        <p>Reihen, U-Form, Gruppentische — Ideen auch für unruhige Klassen.</p>
+        <span class="guide-more">Zum Ratgeber →</span>
+      </a>
+      <a class="guide-card" href="guides/sitzplan-grundschule.html">
+        <h3>Sitzplan Grundschule</h3>
+        <p>Was in Klasse 1–4 zählt — Ideen statt starrer Vorlagen.</p>
+        <span class="guide-more">Zum Ratgeber →</span>
+      </a>
+      <a class="guide-card" href="guides/sitzplan-app-ipad.html">
+        <h3>Sitzplan-App für iPad</h3>
+        <p>App statt Excel — und warum Datenschutz das wichtigste Kriterium ist.</p>
+        <span class="guide-more">Zum Ratgeber →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="faq">
     <p class="faq-eyebrow">FAQ</p>
@@ -651,33 +847,51 @@
     <div class="faq-item">
       <h3>Für wen ist Platzwahl gedacht?</h3>
       <p>Für Lehrkräfte aller Schularten, die Sitzpläne schnell und fair erstellen möchten — ohne stundenlanges Hin-und-her-Schieben oder Tabellen-Gefummel.</p>
+      <a class="faq-more" href="guides/sitzplan-erstellen.html">Mehr erfahren →</a>
     </div>
 
     <div class="faq-item">
       <h3>Wie erstellt Platzwahl automatisch einen Sitzplan?</h3>
       <p>Die App verteilt Schülerinnen und Schüler anhand individueller Regeln — Störneigung, Sitzwünsche, Jungen/Mädchen-Trennung — optimal auf die verfügbaren Plätze. Ein Score zeigt auf einen Blick, wie gut der Plan ist und welche Regeln noch verletzt werden.</p>
+      <a class="faq-more" href="guides/sitzplan-generator.html">Mehr erfahren →</a>
     </div>
 
     <div class="faq-item">
       <h3>Werden Schülerdaten gespeichert oder übertragen?</h3>
       <p>Nein. Alle eingetragenen Namen und Regeln bleiben ausschließlich lokal auf deinem Gerät. Es findet keine Übertragung an externe Server statt — weder von uns noch von Drittanbietern.</p>
+      <a class="faq-more" href="guides/sitzplan-app-ipad.html">Mehr erfahren →</a>
     </div>
 
     <div class="faq-item">
       <h3>Kann ich mehrere Klassen und Räume verwalten?</h3>
       <p>Ja. Du kannst beliebig viele Räume und Klassen anlegen und jeweils eigene Sitzpläne erstellen. Alles bleibt gespeichert.</p>
+      <a class="faq-more" href="guides/sitzordnung-klassenzimmer.html">Mehr erfahren →</a>
     </div>
 
     <div class="faq-item">
       <h3>Gibt es einen PDF-Export?</h3>
       <p>Ja. Jeder Sitzplan lässt sich direkt als PDF exportieren — sauber, ohne Aufwand, sofort druckfertig.</p>
+      <a class="faq-more" href="guides/sitzplan-erstellen.html">Mehr erfahren →</a>
+    </div>
+
+    <div class="faq-item">
+      <h3>Ist die Sitzplan App kostenlos?</h3>
+      <p>Ja. Platzwahl ist kostenlos im App Store erhältlich. Platzwahl Pro schaltet optional unbegrenzt viele Räume, Gruppen und Sitzpläne frei.</p>
+      <a class="faq-more" href="guides/sitzplan-app-ipad.html">Mehr erfahren →</a>
+    </div>
+
+    <div class="faq-item">
+      <h3>Kann ich eine ganze Klasse aus Excel importieren?</h3>
+      <p>Ja. Exportiere die Klassenliste als CSV-Datei aus Excel oder Google Sheets und importiere sie direkt in Platzwahl — die ganze Klasse ist in Sekunden angelegt.</p>
+      <a class="faq-more" href="guides/sitzplan-erstellen.html">Mehr erfahren →</a>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <p class="final-cta-title">Jetzt im App Store.</p>
-    <a href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+    <p class="final-cta-title">Der nächste Sitzplan dauert eine Minute.</p>
+    <p class="final-cta-sub" style="margin-bottom:1.75rem;">Gratis laden — und nie wieder Namen hin- und herschieben.</p>
+    <a href="https://apps.apple.com/de/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
       <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" style="height:48px; width:auto; display:block;" />
     </a>
   </section>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gruppen einteilen im Unterricht – zufällig, fair & ohne Diskussion</title>
+  <meta name="description" content="Gruppen einteilen ohne Drama: Warum Zufall die fairste Methode ist und wie du eine Klasse mit der App Team Zufall in Sekunden in Gruppen aufteilst." />
+  <link rel="canonical" href="https://crabucate.de/guides/gruppen-einteilen.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://crabucate.de/guides/gruppen-einteilen.html" />
+  <meta property="og:title" content="Gruppen einteilen im Unterricht – zufällig, fair & ohne Diskussion" />
+  <meta property="og:description" content="Gruppen einteilen ohne Drama: Warum Zufall die fairste Methode ist und wie du eine Klasse mit der App Team Zufall in Sekunden in Gruppen aufteilst." />
+  <meta property="og:locale" content="de_DE" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gruppen einteilen: zufällig, fair, ohne Diskussion",
+    "description": "Gruppen einteilen ohne Drama: Warum Zufall die fairste Methode ist und wie du eine Klasse mit der App Team Zufall in Sekunden in Gruppen aufteilst.",
+    "inLanguage": "de",
+    "datePublished": "2026-07-11",
+    "dateModified": "2026-07-11",
+    "author": {
+      "@type": "Organization",
+      "name": "crabucate",
+      "url": "https://crabucate.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "crabucate",
+      "url": "https://crabucate.de"
+    },
+    "mainEntityOfPage": "https://crabucate.de/guides/gruppen-einteilen.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "crabucate",
+        "item": "https://crabucate.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Team Zufall",
+        "item": "https://crabucate.de/team-zufall.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gruppen einteilen: zufällig, fair, ohne Diskussion",
+        "item": "https://crabucate.de/guides/gruppen-einteilen.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie teile ich eine Klasse zufällig in Gruppen ein?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Am schnellsten mit einer App: In Team Zufall legst du die Klasse einmalig an (oder importierst sie als CSV), wählst die Teamanzahl und tippst auf Auslosen. Die App verteilt alle gleichmäßig und zufällig."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert mit Schülern, die fehlen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Team Zufall deaktivierst du Abwesende mit einem Tipp — sie werden bei der Auslosung automatisch übersprungen und bleiben trotzdem in der Liste."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist die App zum Gruppen einteilen kostenlos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, Team Zufall ist kostenlos für iPhone und iPad (iOS 17+) im App Store erhältlich."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FBF6EF; --fg: #241F1A; --accent: #B04D1C; --muted: #6B6358;
+      --line: rgba(176,77,28,0.15); --card-bg: #FFFFFF;
+      --app: #F07D4A; --app-text: #B8481A; --app-dim: rgba(240,125,74,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px; pointer-events: none; z-index: 0; opacity: 0.5;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: rgba(251,246,239,0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--fg); text-decoration: none; font-size: 0.875rem; font-weight: 600; }
+    .nav-logo img { width: 26px; height: 26px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .nav-link { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--fg); }
+    article {
+      max-width: 720px; margin: 0 auto;
+      padding: calc(60px + 4.5rem) clamp(1.25rem, 5vw, 3rem) 4rem;
+      position: relative; z-index: 1;
+    }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 2.25rem; }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+    .breadcrumb a:hover { color: var(--app-text); }
+    .breadcrumb span { opacity: 0.4; margin: 0 0.35rem; }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem); font-weight: 800;
+      letter-spacing: -0.035em; line-height: 1.12; margin-bottom: 1.1rem;
+    }
+    .intro { font-size: 1.02rem; line-height: 1.8; color: var(--muted); margin-bottom: 2.75rem; }
+    h2 {
+      font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em;
+      margin: 2.75rem 0 0.9rem;
+    }
+    h3 { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.5rem; }
+    article p { font-size: 0.92rem; line-height: 1.85; color: #4A443C; margin-bottom: 1rem; }
+    article ul, article ol { padding-left: 1.3rem; margin-bottom: 1rem; }
+    article li { font-size: 0.92rem; line-height: 1.85; color: #4A443C; margin-bottom: 0.35rem; }
+    article a { color: var(--app-text); text-decoration: underline; text-decoration-color: var(--app-dim); text-underline-offset: 3px; }
+    article a:hover { text-decoration-color: var(--app); }
+    strong { color: var(--fg); }
+    .shot {
+      width: 100%; border-radius: 16px; margin: 1.75rem 0 2.25rem;
+      display: block; filter: drop-shadow(0 14px 40px rgba(36,31,26,0.16));
+    }
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 1.25rem 0 1.5rem; }
+    .steps li {
+      counter-increment: step; position: relative;
+      padding: 0 0 1.4rem 3.1rem; margin: 0;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute; left: 0; top: -0.15rem;
+      width: 2.1rem; height: 2.1rem; border-radius: 50%;
+      background: var(--app-dim); color: var(--app-text);
+      font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .steps li strong { display: block; margin-bottom: 0.15rem; }
+    .cta-box {
+      background: var(--card-bg); border: 1px solid var(--line); border-radius: 20px;
+      padding: 2.25rem 2rem; text-align: center; margin: 3rem 0;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.06), 0 12px 32px rgba(36,31,26,0.06);
+    }
+    .cta-box img.cta-icon { width: 64px; height: 64px; border-radius: 15px; margin: 0 auto 1rem; display: block; box-shadow: 0 8px 24px var(--app-dim); }
+    .cta-box .cta-title { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .cta-box .cta-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .cta-box .badge img { height: 44px; width: auto; display: inline-block; }
+    .cta-box .cta-alt { display: block; margin-top: 1rem; font-size: 0.8rem; }
+    .faq-mini { margin-top: 0.5rem; }
+    .faq-mini .faq-item { border-top: 1px solid var(--line); padding: 1.2rem 0; }
+    .faq-mini .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-mini h3 { margin: 0 0 0.4rem; font-size: 0.92rem; }
+    .faq-mini p { margin: 0; font-size: 0.875rem; }
+    .related { margin: 3rem 0 0; }
+    .related h2 { margin-top: 0; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .related-links a {
+      display: inline-block; padding: 0.55rem 1rem;
+      background: var(--card-bg); border: 1px solid var(--line); border-radius: 100px;
+      font-size: 0.8rem; color: var(--fg); text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .related-links a:hover { border-color: var(--app); transform: translateY(-2px); }
+    footer {
+      text-align: center; padding: 2.5rem 1rem 3.5rem; font-size: 0.8rem;
+      color: var(--muted); border-top: 1px solid var(--line); position: relative; z-index: 1;
+      margin-top: 3rem;
+    }
+    footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <a href="../team-zufall.html" class="nav-link">Team Zufall →</a>
+  </nav>
+
+  <article>
+    <p class="breadcrumb">
+      <a href="/">crabucate</a><span>/</span><a href="../team-zufall.html">Team Zufall</a><span>/</span>Ratgeber
+    </p>
+
+    <h1>Gruppen einteilen: zufällig, fair, ohne Diskussion</h1>
+    <p class="intro">„Sucht euch einen Partner“ — und drei Kinder bleiben übrig. Wer Gruppen selbst wählen lässt, produziert jedes Mal Gewinner und Verlierer. Die zufällige Einteilung löst das Problem — wenn sie schnell geht und wirklich fair ist.</p>
+
+  <h2>Warum selbstgewählte Gruppen selten funktionieren</h2>
+  <p>Freie Gruppenwahl klingt nach Autonomie, erzeugt aber verlässlich dieselben Effekte: Freundeskreise bleiben unter sich, leistungsstarke Schüler ballen sich, und die immer gleichen Kinder werden zuletzt gewählt — vor der ganzen Klasse. Die zufällige Einteilung nimmt diese soziale Last komplett raus: <strong>Der Zufall entscheidet, nicht die Beliebtheit.</strong></p>
+
+  <h2>Die Anforderungen an eine gute Zufallseinteilung</h2>
+  <ul>
+    <li><strong>Wirklich zufällig</strong> — nicht „die linke Hälfte gegen die rechte"</li>
+    <li><strong>Gleichmäßig:</strong> Teams sollen gleich groß sein, auch wenn die Zahl nicht glatt aufgeht</li>
+    <li><strong>Schnell:</strong> Im Unterricht zählt jede Minute — Zettelchen falten kostet fünf davon</li>
+    <li><strong>Transparent:</strong> Wenn die Klasse die Auslosung sieht, akzeptiert sie das Ergebnis</li>
+  </ul>
+
+  <h2>Gruppen einteilen mit Team Zufall</h2>
+  <ol class="steps">
+    <li><strong>Klasse einmalig anlegen</strong> Namen eintippen oder als CSV-Liste aus Excel bzw. Google Sheets importieren. Die Liste bleibt gespeichert.</li>
+    <li><strong>Abwesende abwählen</strong> Wer heute fehlt, wird per Tipp deaktiviert und automatisch übersprungen.</li>
+    <li><strong>Teamanzahl wählen und auslosen</strong> Die Animation wirbelt alle Namen durcheinander — die ganze Klasse sieht zu, das Ergebnis steht in Sekunden fest.</li>
+    <li><strong>Optional: als PDF teilen</strong> Ergebnis exportieren, ausdrucken oder an die Wand beamen.</li>
+  </ol>
+  <p>Nicht zufrieden mit der Auslosung? <strong>Gerät schütteln</strong> — neue Runde. Das lieben übrigens auch die Schüler.</p>
+
+  <h2>Nicht nur für die Schule</h2>
+  <p>Dasselbe Prinzip funktioniert im Sporttraining (Mannschaften), im Seminar (Arbeitsgruppen) und auf Events (Spielrunden). Einmal angelegt, ist jede Gruppe mit einem Tipp neu gemischt.</p>
+
+  <img class="shot" src="../images/AppStore%20Screenshots/Screenshots%20iPad/ipad-03-result.png" alt="Gruppen einteilen mit Team Zufall: zufällig ausgeloste Teams auf dem iPad" loading="lazy" />
+
+  <div class="cta-box">
+    <img class="cta-icon" src="../images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" />
+    <p class="cta-title">Team Zufall kostenlos laden</p>
+    <p class="cta-sub">Gratis laden · iPhone &amp; iPad · iOS 17+ · Keine Anmeldung</p>
+    <a class="badge" href="https://apps.apple.com/de/app/gruppen-aufteilen-team-zufall/id6768655282" target="_blank" rel="noopener">
+      <img src="../images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+    </a>
+    <a class="cta-alt" href="../team-zufall.html">Team Zufall entdecken →</a>
+  </div>
+
+<h2>Häufige Fragen</h2>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <h3>Wie teile ich eine Klasse zufällig in Gruppen ein?</h3>
+      <p>Am schnellsten mit einer App: In Team Zufall legst du die Klasse einmalig an — oder importierst sie als CSV —, wählst die Teamanzahl und tippst auf Auslosen. Die App verteilt alle gleichmäßig und zufällig.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Was passiert mit Schülern, die fehlen?</h3>
+      <p>In Team Zufall deaktivierst du Abwesende mit einem Tipp — sie werden bei der Auslosung automatisch übersprungen und bleiben trotzdem in der Liste.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Ist die App zum Gruppen einteilen kostenlos?</h3>
+      <p>Ja, Team Zufall ist kostenlos für iPhone und iPad (iOS 17+) im App Store erhältlich.</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Weiterlesen</h2>
+    <div class="related-links">
+      <a href="zufallsgruppen-generator.html">Zufallsgruppen-Generator</a>
+      <a href="teams-auslosen.html">Teams auslosen</a>
+      <a href="gruppeneinteilung-methoden.html">5 Methoden zur Gruppeneinteilung</a>
+    </div>
+  </div>
+
+  </article>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="../impressum.html">Impressum</a>
+  </footer>
+
+</body>
+</html>

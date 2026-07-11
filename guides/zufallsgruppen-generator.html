@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zufallsgruppen-Generator: Gruppen per Zufall bilden (App)</title>
+  <meta name="description" content="Zufallsgruppen bilden ohne Zettelchen: Mit dem Zufallsgruppen-Generator Team Zufall teilst du jede Liste in Sekunden fair auf – mit CSV-Import und PDF-Export." />
+  <link rel="canonical" href="https://crabucate.de/guides/zufallsgruppen-generator.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://crabucate.de/guides/zufallsgruppen-generator.html" />
+  <meta property="og:title" content="Zufallsgruppen-Generator: Gruppen per Zufall bilden (App)" />
+  <meta property="og:description" content="Zufallsgruppen bilden ohne Zettelchen: Mit dem Zufallsgruppen-Generator Team Zufall teilst du jede Liste in Sekunden fair auf – mit CSV-Import und PDF-Export." />
+  <meta property="og:locale" content="de_DE" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Zufallsgruppen-Generator: Gruppen per Zufall bilden",
+    "description": "Zufallsgruppen bilden ohne Zettelchen: Mit dem Zufallsgruppen-Generator Team Zufall teilst du jede Liste in Sekunden fair auf – mit CSV-Import und PDF-Export.",
+    "inLanguage": "de",
+    "datePublished": "2026-07-11",
+    "dateModified": "2026-07-11",
+    "author": {
+      "@type": "Organization",
+      "name": "crabucate",
+      "url": "https://crabucate.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "crabucate",
+      "url": "https://crabucate.de"
+    },
+    "mainEntityOfPage": "https://crabucate.de/guides/zufallsgruppen-generator.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "crabucate",
+        "item": "https://crabucate.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Team Zufall",
+        "item": "https://crabucate.de/team-zufall.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Zufallsgruppen-Generator: Gruppen per Zufall bilden",
+        "item": "https://crabucate.de/guides/zufallsgruppen-generator.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Gibt es einen kostenlosen Zufallsgruppen-Generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Team Zufall ist ein kostenloser Zufallsgruppen-Generator für iPhone und iPad — mit gespeicherten Listen, CSV-Import und PDF-Export."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich Namenslisten aus Excel importieren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Exportiere deine Liste als CSV aus Excel oder Google Sheets und importiere sie direkt in Team Zufall — die ganze Klasse ist in Sekunden angelegt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Verteilt der Generator wirklich fair?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Team Zufall verteilt alle aktiven Teilnehmer rein zufällig und gleichmäßig auf die Teams; Reste werden sauber verteilt, sodass die Teams höchstens um eine Person differieren."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FBF6EF; --fg: #241F1A; --accent: #B04D1C; --muted: #6B6358;
+      --line: rgba(176,77,28,0.15); --card-bg: #FFFFFF;
+      --app: #F07D4A; --app-text: #B8481A; --app-dim: rgba(240,125,74,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px; pointer-events: none; z-index: 0; opacity: 0.5;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: rgba(251,246,239,0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--fg); text-decoration: none; font-size: 0.875rem; font-weight: 600; }
+    .nav-logo img { width: 26px; height: 26px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .nav-link { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--fg); }
+    article {
+      max-width: 720px; margin: 0 auto;
+      padding: calc(60px + 4.5rem) clamp(1.25rem, 5vw, 3rem) 4rem;
+      position: relative; z-index: 1;
+    }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 2.25rem; }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+    .breadcrumb a:hover { color: var(--app-text); }
+    .breadcrumb span { opacity: 0.4; margin: 0 0.35rem; }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem); font-weight: 800;
+      letter-spacing: -0.035em; line-height: 1.12; margin-bottom: 1.1rem;
+    }
+    .intro { font-size: 1.02rem; line-height: 1.8; color: var(--muted); margin-bottom: 2.75rem; }
+    h2 {
+      font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em;
+      margin: 2.75rem 0 0.9rem;
+    }
+    h3 { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.5rem; }
+    article p { font-size: 0.92rem; line-height: 1.85; color: #4A443C; margin-bottom: 1rem; }
+    article ul, article ol { padding-left: 1.3rem; margin-bottom: 1rem; }
+    article li { font-size: 0.92rem; line-height: 1.85; color: #4A443C; margin-bottom: 0.35rem; }
+    article a { color: var(--app-text); text-decoration: underline; text-decoration-color: var(--app-dim); text-underline-offset: 3px; }
+    article a:hover { text-decoration-color: var(--app); }
+    strong { color: var(--fg); }
+    .shot {
+      width: 100%; border-radius: 16px; margin: 1.75rem 0 2.25rem;
+      display: block; filter: drop-shadow(0 14px 40px rgba(36,31,26,0.16));
+    }
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 1.25rem 0 1.5rem; }
+    .steps li {
+      counter-increment: step; position: relative;
+      padding: 0 0 1.4rem 3.1rem; margin: 0;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute; left: 0; top: -0.15rem;
+      width: 2.1rem; height: 2.1rem; border-radius: 50%;
+      background: var(--app-dim); color: var(--app-text);
+      font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .steps li strong { display: block; margin-bottom: 0.15rem; }
+    .cta-box {
+      background: var(--card-bg); border: 1px solid var(--line); border-radius: 20px;
+      padding: 2.25rem 2rem; text-align: center; margin: 3rem 0;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.06), 0 12px 32px rgba(36,31,26,0.06);
+    }
+    .cta-box img.cta-icon { width: 64px; height: 64px; border-radius: 15px; margin: 0 auto 1rem; display: block; box-shadow: 0 8px 24px var(--app-dim); }
+    .cta-box .cta-title { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .cta-box .cta-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .cta-box .badge img { height: 44px; width: auto; display: inline-block; }
+    .cta-box .cta-alt { display: block; margin-top: 1rem; font-size: 0.8rem; }
+    .faq-mini { margin-top: 0.5rem; }
+    .faq-mini .faq-item { border-top: 1px solid var(--line); padding: 1.2rem 0; }
+    .faq-mini .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-mini h3 { margin: 0 0 0.4rem; font-size: 0.92rem; }
+    .faq-mini p { margin: 0; font-size: 0.875rem; }
+    .related { margin: 3rem 0 0; }
+    .related h2 { margin-top: 0; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .related-links a {
+      display: inline-block; padding: 0.55rem 1rem;
+      background: var(--card-bg); border: 1px solid var(--line); border-radius: 100px;
+      font-size: 0.8rem; color: var(--fg); text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .related-links a:hover { border-color: var(--app); transform: translateY(-2px); }
+    footer {
+      text-align: center; padding: 2.5rem 1rem 3.5rem; font-size: 0.8rem;
+      color: var(--muted); border-top: 1px solid var(--line); position: relative; z-index: 1;
+      margin-top: 3rem;
+    }
+    footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <a href="../team-zufall.html" class="nav-link">Team Zufall →</a>
+  </nav>
+
+  <article>
+    <p class="breadcrumb">
+      <a href="/">crabucate</a><span>/</span><a href="../team-zufall.html">Team Zufall</a><span>/</span>Ratgeber
+    </p>
+
+    <h1>Zufallsgruppen-Generator: Gruppen per Zufall bilden</h1>
+    <p class="intro">Ob Arbeitsgruppen im Unterricht, Mannschaften im Training oder Teams im Workshop: Ein Zufallsgruppen-Generator nimmt dir die Einteilung ab — und jede Diskussion gleich mit. Worauf es ankommt und wie es am schnellsten geht.</p>
+
+  <h2>Was ein guter Zufallsgruppen-Generator braucht</h2>
+  <ul>
+    <li><strong>Gespeicherte Listen:</strong> Die Klasse oder das Team einmal anlegen — nicht bei jeder Nutzung neu eintippen. Das ist der große Schwachpunkt der meisten Online-Generatoren.</li>
+    <li><strong>Faire Verteilung:</strong> Bei 25 Personen und 4 Teams entstehen Teams à 6–7 — der Generator muss den Rest sauber verteilen.</li>
+    <li><strong>Flexible Vorgaben:</strong> Mal willst du 4 Teams, mal Gruppen à 3 Personen — beides muss gehen.</li>
+    <li><strong>Anwesenheit:</strong> Wer fehlt, fliegt mit einem Tipp aus der Ziehung, ohne die Liste zu ändern.</li>
+  </ul>
+
+  <h2>Online-Generator oder App?</h2>
+  <p>Web-Tools sind schnell erreichbar, vergessen aber alles beim Schließen des Tabs — und Namenslisten in fremde Web-Formulare einzutippen ist spätestens bei Schülernamen ein Datenschutzproblem. Eine App wie <strong>Team Zufall</strong> speichert deine Gruppen lokal auf dem Gerät: einmal anlegen, für immer wiederverwenden, keine Datenübertragung.</p>
+
+  <h2>In drei Schritten zu Zufallsgruppen</h2>
+  <ol class="steps">
+    <li><strong>Liste anlegen oder importieren</strong> Namen direkt eintippen oder als CSV aus Excel/Google Sheets laden.</li>
+    <li><strong>Gruppengröße festlegen</strong> Anzahl der Teams oder Personen pro Gruppe wählen.</li>
+    <li><strong>Auslosen</strong> Die Animation mischt alle Namen sichtbar durcheinander — Ergebnis in Sekunden, auf Wunsch als PDF.</li>
+  </ol>
+  <p>Extra: Schüttle das Gerät für eine neue Ziehung — perfekt, wenn das Los mal wieder ausgerechnet die zwei Unzertrennlichen zusammengewürfelt hat.</p>
+
+  <img class="shot" src="../images/AppStore%20Screenshots/Screenshots%20iPad/ipad-01-home.png" alt="Zufallsgruppen-Generator Team Zufall: gespeicherte Gruppen in der Übersicht" loading="lazy" />
+
+  <div class="cta-box">
+    <img class="cta-icon" src="../images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" />
+    <p class="cta-title">Team Zufall kostenlos laden</p>
+    <p class="cta-sub">Gratis laden · iPhone &amp; iPad · iOS 17+ · Keine Anmeldung</p>
+    <a class="badge" href="https://apps.apple.com/de/app/gruppen-aufteilen-team-zufall/id6768655282" target="_blank" rel="noopener">
+      <img src="../images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+    </a>
+    <a class="cta-alt" href="../team-zufall.html">Team Zufall entdecken →</a>
+  </div>
+
+<h2>Häufige Fragen</h2>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <h3>Gibt es einen kostenlosen Zufallsgruppen-Generator?</h3>
+      <p>Ja. Team Zufall ist ein kostenloser Zufallsgruppen-Generator für iPhone und iPad — mit gespeicherten Listen, CSV-Import und PDF-Export.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Kann ich Namenslisten aus Excel importieren?</h3>
+      <p>Ja. Exportiere deine Liste als CSV aus Excel oder Google Sheets und importiere sie direkt in Team Zufall — die ganze Klasse ist in Sekunden angelegt.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Verteilt der Generator wirklich fair?</h3>
+      <p>Ja. Team Zufall verteilt alle aktiven Teilnehmer rein zufällig und gleichmäßig auf die Teams — Reste werden so verteilt, dass die Teams höchstens um eine Person differieren.</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Weiterlesen</h2>
+    <div class="related-links">
+      <a href="gruppen-einteilen.html">Gruppen einteilen im Unterricht</a>
+      <a href="teams-auslosen.html">Teams auslosen</a>
+      <a href="gruppeneinteilung-methoden.html">5 Methoden zur Gruppeneinteilung</a>
+    </div>
+  </div>
+
+  </article>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="../impressum.html">Impressum</a>
+  </footer>
+
+</body>
+</html>
