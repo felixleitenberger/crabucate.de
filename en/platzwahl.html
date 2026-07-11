@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Platzwahl — Seating Plan App for Teachers | crabucate</title>
-  <meta name="description" content="Platzwahl automatically creates fair seating plans for teachers. Set up the room, add your class, define rules — done as PDF. For iPad and iPhone." />
+  <title>Platzwahl – Classroom Seating Chart App | iPhone &amp; iPad</title>
+  <meta name="description" content="Create a classroom seating chart automatically: set up the room, add your class, define rules per student — print-ready PDF in minutes. Free for iPhone and iPad." />
   <link rel="canonical" href="https://crabucate.de/en/platzwahl.html" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/platzwahl.html" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/platzwahl.html" />
@@ -13,8 +13,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/en/platzwahl.html" />
-  <meta property="og:title" content="Platzwahl — Seating Plan App for Teachers" />
-  <meta property="og:description" content="Automatically create fair seating plans. For iPad and iPhone." />
+  <meta property="og:title" content="Platzwahl – Classroom Seating Chart App" />
+  <meta property="og:description" content="Create classroom seating charts automatically — with rules per student. Free for iPhone and iPad." />
   <meta property="og:locale" content="en_US" />
 
   <!-- JSON-LD: App -->
@@ -25,7 +25,8 @@
     "name": "Platzwahl",
     "operatingSystem": "iOS",
     "applicationCategory": "EducationApplication",
-    "description": "Seating plans for teachers — automatic, rule-based, print-ready.",
+    "description": "Classroom seating chart app for teachers — automatic, rule-based, print-ready as PDF. For iPhone and iPad.",
+    "keywords": "seating chart, classroom seating chart, seating chart app, seating chart generator, create seating chart, classroom, teachers, iPad, iPhone, iOS",
     "url": "https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
@@ -76,6 +77,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. Every seating plan can be exported as a clean PDF — ready to print and place on your desk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the seating chart app free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Platzwahl is free on the App Store. Platzwahl Pro optionally unlocks unlimited rooms, groups, and seating charts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import a whole class from Excel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Export the class list as a CSV file from Excel or Google Sheets and import it straight into Platzwahl — the whole class is set up in seconds."
         }
       }
     ]
@@ -243,6 +260,18 @@
 
     .app-store-badge img { height: 48px; width: auto; display: block; }
 
+    .hero-meta {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .hero-meta span { white-space: nowrap; }
+    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
+
     /* ── SCREENSHOTS ── */
     .screenshots-section {
       position: relative;
@@ -388,6 +417,105 @@
       margin: 0 auto;
     }
 
+    /* ── HOW IT WORKS ── */
+    .how {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
+
+    .how-steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 0 0 2rem 3.6rem;
+    }
+
+    .how-steps li:last-child { padding-bottom: 0; }
+
+    .how-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: var(--pw-dim);
+      color: var(--pw-text);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .how-steps h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .how-steps p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── GUIDES ── */
+    .guides {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .guide-card {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .guide-card:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-4px); }
+
+    .guide-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .guide-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .guide-card .guide-more {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--pw-text);
+    }
+
     /* ── FAQ ── */
     .faq {
       padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
@@ -423,6 +551,17 @@
       line-height: 1.75;
       color: var(--muted);
     }
+
+    .faq-more {
+      display: inline-block;
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pw-text);
+      text-decoration: none;
+    }
+
+    .faq-more:hover { text-decoration: underline; }
 
     /* ── FINAL CTA ── */
     .final-cta {
@@ -510,10 +649,13 @@
       class="hero-icon"
     />
     <h1>Platzwahl</h1>
-    <p class="tagline">Seating plans that actually work — automatically created, fairly distributed, print-ready.</p>
+    <p class="tagline">The classroom seating chart app for teachers: create a seating chart in one tap — automatic, fair, print-ready as PDF.</p>
     <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
       <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
     </a>
+    <p class="hero-meta">
+      <span>Free</span><span class="sep">·</span><span>iPhone &amp; iPad</span><span class="sep">·</span><span>No account</span><span class="sep">·</span><span>Student data stays on your device</span>
+    </p>
   </section>
 
   <!-- SCREENSHOTS -->
@@ -612,39 +754,107 @@
     <p>Platzwahl is for teachers who need a working seating plan in the morning — not an hour to create one. Set up the room once, add your class, define rules. From then on, the app does the work: it distributes everyone fairly, displays rule conflicts transparently, and delivers the result as a print-ready PDF. No cloud, no sign-in, no distractions.</p>
   </section>
 
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <p class="section-eyebrow">How it works</p>
+    <ol class="how-steps">
+      <li>
+        <h3>Rebuild your classroom</h3>
+        <p>Draw your room as a grid — tap seats or paint whole areas with your finger. Rows, U-shape, table groups: any layout works.</p>
+      </li>
+      <li>
+        <h3>Add your class &amp; set rules</h3>
+        <p>Enter students or import them via CSV from Excel. Then mark per student: disruption level, front-row seat, preferred neighbors, separations.</p>
+      </li>
+      <li>
+        <h3>Tap "Optimize"</h3>
+        <p>The genetic algorithm computes the best possible seating chart. A score shows how well all rules are met — every deviation is explained.</p>
+      </li>
+      <li>
+        <h3>Print as PDF</h3>
+        <p>Export the finished chart, print it, put it on your desk. Need a new one? One tap.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- GUIDES -->
+  <section class="guides">
+    <p class="section-eyebrow">Guides</p>
+    <div class="guides-grid">
+      <a class="guide-card" href="guides/create-seating-chart.html">
+        <h3>Create a seating chart</h3>
+        <p>Five minutes to a finished chart — what actually matters.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="guides/seating-chart-generator.html">
+        <h3>Seating chart generator</h3>
+        <p>Why random isn't enough — and how the algorithm works.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="guides/classroom-seating-arrangements.html">
+        <h3>Classroom seating arrangements</h3>
+        <p>Rows, U-shape, table groups — ideas for restless classes too.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="guides/seating-chart-app.html">
+        <h3>Seating chart app for iPad</h3>
+        <p>App instead of Excel — and why privacy is criterion #1.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="faq">
     <p class="faq-eyebrow">FAQ</p>
 
     <div class="faq-item">
       <h3>Who is Platzwahl for?</h3>
-      <p>For teachers of all school types who want to create seating plans quickly and fairly — without spending hours manually rearranging or fiddling with spreadsheets.</p>
+      <p>For teachers of all school types who want to create seating charts quickly and fairly — without spending hours manually rearranging or fiddling with spreadsheets.</p>
+      <a class="faq-more" href="guides/create-seating-chart.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
-      <h3>How does Platzwahl automatically create a seating plan?</h3>
-      <p>The app distributes students based on individual rules — disruptive behaviour, seating preferences, gender separation — optimally across the available seats. A score shows at a glance how good the plan is and which rules are still violated.</p>
+      <h3>How does Platzwahl automatically create a seating chart?</h3>
+      <p>The app distributes students based on individual rules — disruptive behaviour, seating preferences, gender separation — optimally across the available seats. A score shows at a glance how good the chart is and which rules are still violated.</p>
+      <a class="faq-more" href="guides/seating-chart-generator.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
       <h3>Are student data stored or shared?</h3>
       <p>No. All entered names and rules remain exclusively on your device. There is no transmission to external servers — neither by us nor by any third party.</p>
+      <a class="faq-more" href="guides/seating-chart-app.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
       <h3>Can I manage multiple classes and rooms?</h3>
-      <p>Yes. You can create as many rooms and classes as you like, each with their own seating plans. Everything is saved.</p>
+      <p>Yes. You can create as many rooms and classes as you like, each with their own seating charts. Everything is saved.</p>
+      <a class="faq-more" href="guides/classroom-seating-arrangements.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
       <h3>Is there a PDF export?</h3>
-      <p>Yes. Every seating plan can be exported directly as a PDF — clean, effortlessly, immediately ready to print.</p>
+      <p>Yes. Every seating chart can be exported directly as a PDF — clean, effortlessly, immediately ready to print.</p>
+      <a class="faq-more" href="guides/create-seating-chart.html">Learn more →</a>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is the seating chart app free?</h3>
+      <p>Yes. Platzwahl is free on the App Store. Platzwahl Pro optionally unlocks unlimited rooms, groups, and seating charts.</p>
+      <a class="faq-more" href="guides/seating-chart-app.html">Learn more →</a>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I import a whole class from Excel?</h3>
+      <p>Yes. Export the class list as a CSV file from Excel or Google Sheets and import it straight into Platzwahl — the whole class is set up in seconds.</p>
+      <a class="faq-more" href="guides/create-seating-chart.html">Learn more →</a>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <p class="final-cta-title">Now on the App Store.</p>
+    <p class="final-cta-title">Your next seating chart takes one minute.</p>
+    <p class="final-cta-sub" style="margin-bottom:1.75rem;">Download for free — and never shuffle names around again.</p>
     <a href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
       <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" style="height:48px; width:auto; display:block;" />
     </a>

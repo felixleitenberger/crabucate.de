@@ -220,6 +220,46 @@
       transform: scale(1.04) translateY(-6px);
     }
 
+    /* ── GUIDES ── */
+    .ratgeber {
+      margin-top: 3.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    .ratgeber-title {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .ratgeber-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ratgeber-links a {
+      display: inline-block;
+      padding: 0.55rem 1.1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--fg);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .ratgeber-links a:hover { border-color: var(--accent); transform: translateY(-2px); }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -253,6 +293,7 @@
       }
       .app-tile { opacity: 1; }
       .page-eyebrow { opacity: 1; }
+      .ratgeber { opacity: 1; }
     }
   </style>
 </head>
@@ -316,6 +357,20 @@
       </a>
 
     </div>
+
+    <section class="ratgeber" aria-label="Guides">
+      <p class="ratgeber-title">Guides for teachers</p>
+      <div class="ratgeber-links">
+        <a href="guides/create-seating-chart.html">Create a seating chart</a>
+        <a href="guides/seating-chart-generator.html">Seating chart generator</a>
+        <a href="guides/classroom-seating-arrangements.html">Classroom seating arrangements</a>
+        <a href="guides/seating-chart-app.html">Seating chart app for iPad</a>
+        <a href="guides/divide-students-into-groups.html">Divide students into groups</a>
+        <a href="guides/random-group-generator.html">Random group generator</a>
+        <a href="guides/random-team-generator.html">Random team generator</a>
+        <a href="guides/ways-to-group-students.html">5 ways to group students</a>
+      </div>
+    </section>
   </main>
 
   <footer>

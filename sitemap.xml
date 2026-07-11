@@ -50,19 +50,25 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Ratgeber -->
+  <!-- Ratgeber / Guides -->
   <url>
     <loc>https://crabucate.de/guides/sitzplan-erstellen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-erstellen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/create-seating-chart.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/guides/sitzplan-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/seating-chart-generator.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/guides/sitzordnung-klassenzimmer.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzordnung-klassenzimmer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/classroom-seating-arrangements.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -73,26 +79,92 @@
   </url>
   <url>
     <loc>https://crabucate.de/guides/sitzplan-app-ipad.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-app-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/seating-chart-app.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/guides/gruppen-einteilen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/gruppen-einteilen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/divide-students-into-groups.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/guides/zufallsgruppen-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/zufallsgruppen-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/random-group-generator.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/guides/teams-auslosen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/teams-auslosen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/random-team-generator.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/guides/gruppeneinteilung-methoden.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/gruppeneinteilung-methoden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/ways-to-group-students.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/create-seating-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-erstellen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/create-seating-chart.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/seating-chart-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/seating-chart-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/classroom-seating-arrangements.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzordnung-klassenzimmer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/classroom-seating-arrangements.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/seating-chart-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-app-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/seating-chart-app.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/divide-students-into-groups.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/gruppen-einteilen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/divide-students-into-groups.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/random-group-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/zufallsgruppen-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/random-group-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/random-team-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/teams-auslosen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/random-team-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/ways-to-group-students.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/gruppeneinteilung-methoden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/ways-to-group-students.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team Zufall — Randomly Split Groups into Teams | crabucate</title>
-  <meta name="description" content="With Team Zufall you split groups into random teams in seconds. One tap — done. For iPhone and iPad, iOS 16+." />
+  <title>Team Zufall – Random Team Generator &amp; Group Maker App</title>
+  <meta name="description" content="Random team generator for teachers and coaches: divide students into groups and draw fair teams in seconds — with CSV import and PDF export. Free for iPhone and iPad." />
   <link rel="canonical" href="https://crabucate.de/en/team-zufall.html" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/team-zufall.html" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/team-zufall.html" />
@@ -13,8 +13,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/en/team-zufall.html" />
-  <meta property="og:title" content="Team Zufall — Randomly Split Groups into Teams" />
-  <meta property="og:description" content="Split groups into random teams at the press of a button. For iPhone and iPad." />
+  <meta property="og:title" content="Team Zufall – Random Team Generator &amp; Group Maker App" />
+  <meta property="og:description" content="Divide students into groups and draw fair teams in seconds. Free for iPhone and iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -27,8 +27,9 @@
     "@type": "MobileApplication",
     "name": "Team Zufall",
     "operatingSystem": "iOS",
-    "applicationCategory": "UtilitiesApplication",
-    "description": "Randomly split groups into teams — at the press of a button. For iPhone and iPad.",
+    "applicationCategory": "EducationApplication",
+    "description": "Random team generator and group maker — one tap, with CSV import and PDF export. For iPhone and iPad.",
+    "keywords": "random team generator, random group generator, divide students into groups, group maker, team randomizer, classroom, sports, iPhone, iPad, iOS",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "url": "https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282",
     "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
@@ -71,6 +72,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No. All groups and participant names remain exclusively on your device. No data is transmitted to external servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import name lists from Excel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Export the list as CSV from Excel or Google Sheets and import it straight into Team Zufall — the whole class or roster is set up in seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Team Zufall free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Team Zufall is free for iPhone and iPad (iOS 17+) on the App Store."
         }
       }
     ]
@@ -242,6 +259,18 @@
 
     .hero-badge a:hover img { opacity: 0.75; }
 
+    .hero-meta {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.65s forwards;
+    }
+
+    .hero-meta span { white-space: nowrap; }
+    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
+
     /* ── IPAD MOCKUP ── */
     .hero-visual {
       width: 100%;
@@ -398,6 +427,105 @@
       margin: 0 auto;
     }
 
+    /* ── HOW IT WORKS ── */
+    .how {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
+
+    .how-steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 0 0 2rem 3.6rem;
+    }
+
+    .how-steps li:last-child { padding-bottom: 0; }
+
+    .how-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: var(--tz-dim);
+      color: var(--tz-text);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .how-steps h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .how-steps p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── GUIDES ── */
+    .guides {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .guide-card {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .guide-card:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-4px); }
+
+    .guide-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .guide-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .guide-card .guide-more {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--tz-text);
+    }
+
     /* ── FAQ ── */
     .faq {
       padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
@@ -433,6 +561,17 @@
       line-height: 1.75;
       color: var(--muted);
     }
+
+    .faq-more {
+      display: inline-block;
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--tz-text);
+      text-decoration: none;
+    }
+
+    .faq-more:hover { text-decoration: underline; }
 
     /* ── FINAL CTA ── */
     .final-cta {
@@ -512,12 +651,15 @@
     <div class="hero-content">
       <img src="../images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" class="hero-icon" />
       <h1>Team Zufall</h1>
-      <p class="tagline">Randomly split groups into teams — in one second.</p>
+      <p class="tagline">Random team generator &amp; group maker — divide any group fairly, in one second.</p>
       <div class="hero-badge">
         <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
           <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
         </a>
       </div>
+      <p class="hero-meta">
+        <span>Free</span><span class="sep">·</span><span>iPhone &amp; iPad</span><span class="sep">·</span><span>No account</span><span class="sep">·</span><span>Data stays on your device</span>
+      </p>
     </div>
 
     <div class="hero-visual">
@@ -599,7 +741,57 @@
 
   <!-- DESCRIPTION -->
   <section class="description">
-    <p>Team Zufall makes randomly splitting groups into teams as simple as possible. Whether for sport, seminars, workshops, or school — one tap is enough. The app saves your groups locally, so you can start right away next time. No sign-in, no cloud, no distractions.</p>
+    <p>Team Zufall makes dividing groups into random teams as simple as possible. Whether for sports, seminars, workshops, or the classroom — one tap is enough, and everyone is drawn fairly into teams. The app saves your groups locally, so you can start right away next time. No sign-in, no cloud, no distractions.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <p class="section-eyebrow">How it works</p>
+    <ol class="how-steps">
+      <li>
+        <h3>Set up your group</h3>
+        <p>Type in names or import the whole list as CSV from Excel or Google Sheets. Once created, everything stays saved.</p>
+      </li>
+      <li>
+        <h3>Deselect absentees</h3>
+        <p>Whoever's out today gets deactivated with one tap — and is skipped automatically in the draw.</p>
+      </li>
+      <li>
+        <h3>Draw the teams</h3>
+        <p>Choose the team count and draw — the animation visibly scrambles all names, then the teams are set. Not happy? Shake the device for a new round.</p>
+      </li>
+      <li>
+        <h3>Share the result</h3>
+        <p>Show the teams full-screen, beam them onto the wall, or export as PDF.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- GUIDES -->
+  <section class="guides">
+    <p class="section-eyebrow">Guides</p>
+    <div class="guides-grid">
+      <a class="guide-card" href="guides/divide-students-into-groups.html">
+        <h3>Divide students into groups</h3>
+        <p>Random, fair, and drama-free — how it works in class.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="guides/random-group-generator.html">
+        <h3>Random group generator</h3>
+        <p>What a good generator needs — app or online tool?</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="guides/random-team-generator.html">
+        <h3>Random team generator</h3>
+        <p>Fair teams for PE, practice, and clubs.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="guides/ways-to-group-students.html">
+        <h3>5 ways to group students</h3>
+        <p>Counting off, cards, puzzles, Excel, or app — what fits when.</p>
+        <span class="guide-more">Read the guide →</span>
+      </a>
+    </div>
   </section>
 
   <!-- FAQ -->
@@ -609,26 +801,44 @@
     <div class="faq-item">
       <h3>How do I randomly split a group into teams?</h3>
       <p>Add your group to Team Zufall once, enter the participants, and tap "Draw Teams". The app distributes everyone evenly and randomly into the chosen number of teams — in seconds.</p>
+      <a class="faq-more" href="guides/divide-students-into-groups.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
       <h3>Who is Team Zufall for?</h3>
       <p>For anyone who regularly splits groups into teams: teachers, coaches, seminar leaders, club organisers, or event planners.</p>
+      <a class="faq-more" href="guides/random-team-generator.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
       <h3>Can I choose the team size?</h3>
       <p>Yes. You decide how many people should be in a team — groups of 2, 3, 4 and more are possible. Team Zufall distributes the participants evenly.</p>
+      <a class="faq-more" href="guides/random-group-generator.html">Learn more →</a>
     </div>
 
     <div class="faq-item">
       <h3>Are my data stored or transmitted?</h3>
       <p>No. All groups and participant names remain exclusively on your device. No data is transmitted to external servers.</p>
+      <a class="faq-more" href="guides/random-group-generator.html">Learn more →</a>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I import name lists from Excel?</h3>
+      <p>Yes. Export the list as CSV from Excel or Google Sheets and import it straight into Team Zufall — the whole class or roster is set up in seconds.</p>
+      <a class="faq-more" href="guides/divide-students-into-groups.html">Learn more →</a>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is Team Zufall free?</h3>
+      <p>Yes. Team Zufall is free for iPhone and iPad (iOS 17+) on the App Store.</p>
+      <a class="faq-more" href="guides/ways-to-group-students.html">Learn more →</a>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta">
+    <p style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; letter-spacing:-0.03em; margin-bottom:0.75rem;">Your next group split takes one second.</p>
+    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.75rem;">Download for free — and never fold paper slips again.</p>
     <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
       <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" style="height:48px; width:auto; display:block;" />
     </a>
