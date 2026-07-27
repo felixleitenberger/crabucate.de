@@ -1,0 +1,48 @@
+name: Deploy to IONOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-ionos
+  cancel-in-progress: false
+
+env:
+  # Document root of the domain binding on the webspace.
+  # Confirm this in the IONOS Control Panel before the first run.
+  REMOTE_PATH: /public
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Mirror to webspace
+        env:
+          IONOS_HOST: ${{ secrets.IONOS_SFTP_HOST }}
+          IONOS_USER: ${{ secrets.IONOS_SFTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
+        run: |
+          lftp -u "$IONOS_USER" --env-password "sftp://$IONOS_HOST" -e "
+          set sftp:auto-confirm yes;
+          set net:max-retries 3;
+          set net:timeout 20;
+          mirror --reverse --delete --verbose --parallel=4 \
+            --exclude '^\.git/' \
+            --exclude '^\.github/' \
+            --exclude '^\.claude/' \
+            --exclude '^\.gitignore$' \
+            --exclude '^CLAUDE\.md$' \
+            --exclude '^app\.md$' \
+            --exclude '^CNAME$' \
+            --exclude '^og-image\.html$' \
+            --exclude-glob '.DS_Store' \
+            ./ '$REMOTE_PATH' ;
+          bye
+          "
