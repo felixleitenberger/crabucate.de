@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seite nicht gefunden — crabucate</title>
+  <meta name="robots" content="noindex, follow" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FBF6EF;
+      --fg: #241F1A;
+      --accent: #B04D1C;
+      --muted: #6B6358;
+      --line: rgba(176,77,28,0.15);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-logo img { width: 26px; height: 26px; border-radius: 6px; object-fit: cover; }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem clamp(1.25rem, 4vw, 4rem);
+      gap: 1rem;
+    }
+
+    .code {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600; }
+
+    p { color: var(--muted); font-size: 0.95rem; max-width: 34rem; }
+
+    .links { display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center; margin-top: 1rem; }
+    .links a { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .links a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">
+      <img src="/images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+  </nav>
+
+  <main>
+    <span class="code">Fehler 404</span>
+    <h1>Diese Seite gibt es nicht</h1>
+    <p>
+      Die Adresse führt ins Leere — vielleicht ein Tippfehler oder ein veralteter Link.
+      <br />
+      <em>This page doesn’t exist.</em>
+    </p>
+    <div class="links">
+      <a href="/">Startseite</a>
+      <a href="/platzwahl.html">Platzwahl</a>
+      <a href="/team-zufall.html">Team Zufall</a>
+      <a href="/en/">English</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="/impressum.html">Impressum</a>
+  </footer>
+
+</body>
+</html>

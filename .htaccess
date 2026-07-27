@@ -1,5 +1,7 @@
 # crabucate.de — replicates the behaviour GitHub Pages provided out of the box.
 
+ErrorDocument 404 /404.html
+
 RewriteEngine On
 
 # Force HTTPS (GitHub Pages had "Enforce HTTPS" enabled).
