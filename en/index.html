@@ -24,63 +24,8 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
 
+  <link rel="stylesheet" href="/assets/base.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #FBF6EF;
-      --fg: #241F1A;
-      --accent: #B04D1C;
-      --muted: #6B6358;
-      --line: rgba(176,77,28,0.15);
-      --card-bg: #FFFFFF;
-      --tz: #F07D4A;
-      --tz-text: #B8481A;
-      --pw: #F5923A;
-      --pw-text: #9C570D;
-      --nav-bg: rgba(251,246,239,0.85);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg: #17120E;
-        --fg: #F3ECE3;
-        --accent: #E98544;
-        --muted: #A3998B;
-        --line: rgba(233,133,68,0.22);
-        --card-bg: #211A15;
-        --tz-text: #F2925E;
-        --pw-text: #F0A65B;
-        --nav-bg: rgba(23,18,14,0.85);
-      }
-    }
-    :root[data-theme="dark"] {
-      --bg: #17120E;
-      --fg: #F3ECE3;
-      --accent: #E98544;
-      --muted: #A3998B;
-      --line: rgba(233,133,68,0.22);
-      --card-bg: #211A15;
-      --tz-text: #F2925E;
-      --pw-text: #F0A65B;
-      --nav-bg: rgba(23,18,14,0.85);
-    }
-    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
-    .theme-toggle {
-      display: none; align-items: center; justify-content: center;
-      width: 30px; height: 30px; padding: 0; border: 0; border-radius: 8px;
-      background: none; color: var(--muted); cursor: pointer;
-      transition: color 0.2s, background 0.2s;
-    }
-    html.js .theme-toggle { display: inline-flex; }
-    .theme-toggle:hover { color: var(--fg); background: var(--line); }
-    .theme-toggle svg { width: 16px; height: 16px; display: block; }
-    .theme-toggle .ico-light, .theme-toggle .ico-dark { display: none; }
-    :root[data-theme="light"] .theme-toggle .ico-auto { display: none; }
-    :root[data-theme="light"] .theme-toggle .ico-light { display: block; }
-    :root[data-theme="dark"] .theme-toggle .ico-auto { display: none; }
-    :root[data-theme="dark"] .theme-toggle .ico-dark { display: block; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -89,17 +34,6 @@
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 200px;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
     }
 
     /* ── NAV ── */
@@ -134,12 +68,6 @@
       object-fit: cover;
       flex-shrink: 0;
     }
-
-    .lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
-    .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .lang-switch a:hover { color: var(--fg); }
-    .lang-active { color: var(--fg); }
-    .lang-sep { color: var(--muted); opacity: 0.3; }
 
     /* ── MAIN ── */
     main {
@@ -200,8 +128,6 @@
       padding: 2.25rem 2.5rem 1.75rem;
       flex-shrink: 0;
     }
-
-    picture { display: contents; }
     .tile-icon {
       width: 72px;
       height: 72px;
@@ -209,7 +135,6 @@
       display: block;
       margin-bottom: 1.5rem;
     }
-
 
     .tile-name {
       font-size: clamp(1.75rem, 3.5vw, 2.6rem);
@@ -312,18 +237,9 @@
       z-index: 1;
     }
 
-    footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--accent); }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-      border-radius: 4px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -431,42 +347,6 @@
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Legal Notice</a>
   </footer>
 
-  <script>
-  (function () {
-    var root = document.documentElement;
-    var btn = document.querySelector('.theme-toggle');
-    if (!btn) return;
-    var order = ['auto', 'light', 'dark'];
-    var labels = { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' };
-
-    function apply(mode) {
-      if (mode === 'auto') {
-        delete root.dataset.theme;
-        try { localStorage.removeItem('theme'); } catch (e) {}
-      } else {
-        root.dataset.theme = mode;
-        try { localStorage.setItem('theme', mode); } catch (e) {}
-      }
-      // <picture> und theme-color folgen sonst weiter dem Betriebssystem
-      var q = function (isDark) {
-        if (mode === 'auto') return isDark ? '(prefers-color-scheme: dark)' : '(prefers-color-scheme: light)';
-        return isDark === (mode === 'dark') ? 'all' : 'not all';
-      };
-      document.querySelectorAll('picture source').forEach(function (s) {
-        s.media = q(/-icon-dark\./.test(s.srcset));
-      });
-      document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
-        m.media = q(m.content.toUpperCase() === '#17120E');
-      });
-      btn.title = labels[mode];
-      btn.setAttribute('aria-label', labels[mode]);
-    }
-
-    btn.addEventListener('click', function () {
-      apply(order[(order.indexOf(root.dataset.theme || 'auto') + 1) % 3]);
-    });
-    apply(root.dataset.theme || 'auto');
-  })();
-  </script>
+  <script src="/assets/theme.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+/* crabucate — shared base layer.
+   Everything in here was byte-identical across the pages that used it.
+   Page-specific CSS stays in each page's inline <style>, which is loaded
+   after this file and therefore wins wherever a page needs to differ. */
+
+:root {
+  --bg: #FBF6EF;
+  --fg: #241F1A;
+  --accent: #B04D1C;
+  --muted: #6B6358;
+  --line: rgba(176,77,28,0.15);
+  --card-bg: #FFFFFF;
+  --prose: #4A443C;
+  --nav-bg: rgba(251,246,239,0.85);
+  --tz: #F07D4A;
+  --tz-text: #B8481A;
+  --tz-dim: rgba(240,125,74,0.1);
+  --pw: #F5923A;
+  --pw-text: #9C570D;
+  --pw-dim: rgba(245,146,58,0.1);
+}
+
+/* Dark mode. The tokens appear twice on purpose: the media query serves the
+   automatic case, the attribute selector the manual choice from the toggle.
+   Both have specificity (0,2,0), so the manual block MUST stay second. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17120E;
+    --fg: #F3ECE3;
+    --accent: #E98544;
+    --muted: #A3998B;
+    --line: rgba(233,133,68,0.22);
+    --card-bg: #211A15;
+    --prose: #CAC0B2;
+    --nav-bg: rgba(23,18,14,0.85);
+    --tz-text: #F2925E;
+    --tz-dim: rgba(240,125,74,0.16);
+    --pw-text: #F0A65B;
+    --pw-dim: rgba(245,146,58,0.16);
+  }
+  /* Der schwarze Apple-Badge wird auf dunklem Grund zum weissen Badge */
+  :root:not([data-theme="light"]) img[src*="App_Store_Badge"] { filter: invert(1); }
+}
+:root[data-theme="dark"] {
+  --bg: #17120E;
+  --fg: #F3ECE3;
+  --accent: #E98544;
+  --muted: #A3998B;
+  --line: rgba(233,133,68,0.22);
+  --card-bg: #211A15;
+  --prose: #CAC0B2;
+  --nav-bg: rgba(23,18,14,0.85);
+  --tz-text: #F2925E;
+  --tz-dim: rgba(240,125,74,0.16);
+  --pw-text: #F0A65B;
+  --pw-dim: rgba(245,146,58,0.16);
+}
+:root[data-theme="dark"] img[src*="App_Store_Badge"] { filter: invert(1); }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+/* Feine Rauschtextur ueber der ganzen Seite */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Die App-Icons bringen eigene runde Ecken mit transparentem Aussenbereich mit.
+   display: contents nimmt <picture> aus dem Box-Modell, damit die Layoutregeln
+   des <img> unveraendert greifen. */
+picture { display: contents; }
+
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
+.nav-link { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover { color: var(--fg); }
+
+.lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
+.lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.lang-switch a:hover { color: var(--fg); }
+.lang-sep { color: var(--muted); opacity: 0.3; }
+.lang-active { color: var(--fg); }
+
+footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--accent); }
+
+/* Theme-Umschalter. Ohne JavaScript bleibt der Knopf verborgen — dann sorgt
+   die Media Query oben weiterhin fuer den automatischen Dark Mode. */
+.theme-toggle {
+  display: none; align-items: center; justify-content: center;
+  width: 30px; height: 30px; padding: 0; border: 0; border-radius: 8px;
+  background: none; color: var(--muted); cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+html.js .theme-toggle { display: inline-flex; }
+.theme-toggle:hover { color: var(--fg); background: var(--line); }
+.theme-toggle svg { width: 16px; height: 16px; display: block; }
+.theme-toggle .ico-light, .theme-toggle .ico-dark { display: none; }
+:root[data-theme="light"] .theme-toggle .ico-auto { display: none; }
+:root[data-theme="light"] .theme-toggle .ico-light { display: block; }
+:root[data-theme="dark"] .theme-toggle .ico-auto { display: none; }
+:root[data-theme="dark"] .theme-toggle .ico-dark { display: block; }

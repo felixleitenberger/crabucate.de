@@ -20,13 +20,26 @@ The workflow mirrors with `--delete`, so files removed here are removed on the s
 
 German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (9) and `/en/guides/` (8). Images are in `/images/`.
 
-Each page is fully self-contained: CSS in an inline `<style>` block, no shared stylesheet, no webfonts. Changing a shared visual detail means touching every page. The font stack is system-native (`-apple-system, BlinkMacSystemFont, …`).
+There is still no build step. Shared code lives in `/assets/`, page-specific code stays inline:
+
+| Where | What |
+|-------|------|
+| `assets/base.css` | Design tokens, dark mode, reset, nav/footer/toggle chrome — everything that was byte-identical across pages |
+| `assets/theme.js` | The theme toggle, loaded with `defer` |
+| inline `<style>` | Everything specific to one page or page family (layout, hero, guide article styles) |
+| inline `<script>` in `<head>` | Only the 150-byte anti-flash snippet, see below |
+
+Load order matters: `base.css` comes before the inline `<style>`, so a page can override any shared rule simply by declaring it. That is how pages with a different `nav`, `footer`, `body` or `.nav-logo` keep their own version — those genuinely differ and were deliberately left inline.
+
+When adding a rule, ask whether it is identical everywhere. If yes it belongs in `base.css`; if not, keep it inline. Do not move `nav`, `footer`, `.nav-logo` or `body` into `base.css` without checking all 34 pages — they have several legitimate variants.
+
+The font stack is system-native (`-apple-system, BlinkMacSystemFont, …`), no webfonts.
 
 DE and EN counterparts reference each other via `hreflang` and each carry a `canonical` link — keep both in sync when adding pages, and add new URLs to `sitemap.xml`.
 
 ## Design tokens (CSS custom properties)
 
-Repeated identically in every page's `:root`:
+All defined once in `assets/base.css`:
 
 | Variable     | Light                  | Dark                   | Usage                  |
 |--------------|------------------------|------------------------|------------------------|
@@ -43,24 +56,37 @@ Repeated identically in every page's `:root`:
 | `--pw`       | `#F5923A`              | unchanged              | Platzwahl accent       |
 | `--pw-text`  | `#9C570D`              | `#F0A65B`              | Platzwahl text         |
 
-Guide pages use `--app` / `--app-text` / `--app-dim` instead of the `--tz`/`--pw` pairs,
-carrying whichever app's colours that guide belongs to.
+Guide pages add three aliases in their own inline `:root`, pointing at whichever app that guide
+belongs to — `--app: var(--pw); --app-text: var(--pw-text); --app-dim: var(--pw-dim);` (or the
+`--tz` trio). They must stay `var()` references, never literal colours: the dark overrides apply to
+`--pw-text`, so a hardcoded `--app-text` would silently keep its light value in dark mode.
 
 ## Dark mode
 
-Follows the OS by default; the nav toggle cycles auto → light → dark and persists the choice in
-`localStorage.theme` (unset means auto). Each page carries the dark tokens twice, directly after
-`:root` — adding a page means adding both blocks:
+Follows the OS by default; the nav toggle cycles between auto, light and dark and persists an
+explicit choice in `localStorage.theme` (no entry means auto). All of it lives in `assets/base.css`
+and `assets/theme.js` — a new page needs nothing beyond the `<link>`, the `<script>`, the head
+snippet and the button markup.
+
+`base.css` carries the dark tokens twice on purpose:
 
 ```css
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { …tokens… } }
 :root[data-theme="dark"] { …tokens… }
 ```
 
-Equal specificity, so source order decides and the manual block must stay second. The `<html>`
-element gets `data-theme` from a blocking inline script in `<head>` (before first paint, so no
-flash) which also sets `class="js"`. Without JavaScript the button stays hidden and the media
-query alone still gives automatic dark mode.
+The media query serves the automatic case, the attribute selector the manual one. Both have
+specificity (0,2,0), so source order decides and the manual block must stay second.
+
+The `<html>` element gets `data-theme` from a blocking inline script in `<head>`. That snippet
+stays inline deliberately: an external file would only run after a round-trip and the page would
+flash the wrong theme until then. It also sets `class="js"`, which is what reveals the button —
+without JavaScript it stays hidden and the media query alone still gives automatic dark mode.
+
+The cycle order depends on the system theme so the first click always changes something visible.
+With a light system it runs auto → dark → light → auto; with a dark system auto → light → dark →
+auto. A fixed order would make `auto → light` a no-op on a light system and the button would seem
+to need two clicks.
 
 The app icons carry their own rounded corners with transparent outside, and their curve is rounder
 than the `border-radius` the CSS clips them with — so never put a `background` behind an icon
