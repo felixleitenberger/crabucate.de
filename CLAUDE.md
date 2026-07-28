@@ -39,6 +39,13 @@ There is still no build step. Shared code lives in `/assets/`, page-specific cod
 | inline `<style>` | Everything specific to one page or page family (layout, hero, guide article styles) |
 | inline `<script>` in `<head>` | Only the 150-byte anti-flash snippet, see below |
 
+Link `/assets/` with **relative** paths — `assets/…` at the root, `../assets/…` under `/en/` and
+`/guides/`, `../../assets/…` under `/en/guides/`. Absolute paths look fine on the server but break
+when a page is opened straight from disk, which silently drops all styling and leaves default blue
+links. `404.html` is the one exception and must stay absolute: Apache serves it for a request at
+any depth, and the browser resolves relative URLs against the requested URL, not the error page's
+location.
+
 Load order matters: `base.css` comes before the inline `<style>`, so a page can override any shared rule simply by declaring it. That is how pages with a different `nav`, `footer`, `body` or `.nav-logo` keep their own version — those genuinely differ and were deliberately left inline.
 
 When adding a rule, ask whether it is identical everywhere. If yes it belongs in `base.css`; if not, keep it inline. Do not move `nav`, `footer`, `.nav-logo` or `body` into `base.css` without checking all 34 pages — they have several legitimate variants.
