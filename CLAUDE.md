@@ -48,13 +48,26 @@ carrying whichever app's colours that guide belongs to.
 
 ## Dark mode
 
-Automatic via `@media (prefers-color-scheme: dark)` — no toggle, no JavaScript. Each page
-carries its own dark block directly after `:root`, overriding only the tokens above. Adding a
-page means adding that block too; everything else follows from the tokens.
+Follows the OS by default; the nav toggle cycles auto → light → dark and persists the choice in
+`localStorage.theme` (unset means auto). Each page carries the dark tokens twice, directly after
+`:root` — adding a page means adding both blocks:
 
-Two things do not come from tokens: the app icons swap via `<picture>` + `<source media="(prefers-color-scheme: dark)">`
-(`images/*-icon.png` / `*-icon-dark.png`), and the black Apple badge is flipped to the white one
-with `img[src*="App_Store_Badge"] { filter: invert(1); }`.
+```css
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { …tokens… } }
+:root[data-theme="dark"] { …tokens… }
+```
+
+Equal specificity, so source order decides and the manual block must stay second. The `<html>`
+element gets `data-theme` from a blocking inline script in `<head>` (before first paint, so no
+flash) which also sets `class="js"`. Without JavaScript the button stays hidden and the media
+query alone still gives automatic dark mode.
+
+Three things do not come from tokens. The app icons swap via `<picture>` + `<source media="(prefers-color-scheme: dark)">`
+(`images/*-icon.png` / `*-icon-dark.png`), the black Apple badge is flipped to the white one with
+`img[src*="App_Store_Badge"] { filter: invert(1); }`, and both of those plus the `theme-color`
+metas are media-query driven — so the toggle script rewrites their `media` attributes to
+`all` / `not all` when a manual choice is active. A new `<picture>` or `theme-color` needs no
+extra wiring; the script finds them by selector.
 
 Box-shadows keep their light values on purpose — at 5–16 % alpha they simply fade out on dark,
 where `--card-bg` and `--line` carry the elevation instead.
