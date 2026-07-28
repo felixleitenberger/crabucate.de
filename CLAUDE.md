@@ -28,15 +28,36 @@ DE and EN counterparts reference each other via `hreflang` and each carry a `can
 
 Repeated identically in every page's `:root`:
 
-| Variable     | Value                  | Usage                  |
-|--------------|------------------------|------------------------|
-| `--bg`       | `#FBF6EF`              | Page background        |
-| `--fg`       | `#241F1A`              | Body text              |
-| `--accent`   | `#B04D1C`              | Highlights, links      |
-| `--muted`    | `#6B6358`              | Secondary text         |
-| `--line`     | `rgba(176,77,28,0.15)` | Dividers               |
-| `--card-bg`  | `#FFFFFF`              | Cards                  |
-| `--tz`       | `#F07D4A`              | Team Zufall accent     |
-| `--tz-text`  | `#B8481A`              | Team Zufall text       |
-| `--pw`       | `#F5923A`              | Platzwahl accent       |
-| `--pw-text`  | `#9C570D`              | Platzwahl text         |
+| Variable     | Light                  | Dark                   | Usage                  |
+|--------------|------------------------|------------------------|------------------------|
+| `--bg`       | `#FBF6EF`              | `#17120E`              | Page background        |
+| `--fg`       | `#241F1A`              | `#F3ECE3`              | Body text              |
+| `--accent`   | `#B04D1C`              | `#E98544`              | Highlights, links      |
+| `--muted`    | `#6B6358`              | `#A3998B`              | Secondary text         |
+| `--line`     | `rgba(176,77,28,0.15)` | `rgba(233,133,68,0.22)`| Dividers               |
+| `--card-bg`  | `#FFFFFF`              | `#211A15`              | Cards                  |
+| `--nav-bg`   | `rgba(251,246,239,0.85)`| `rgba(23,18,14,0.85)` | Sticky nav backdrop    |
+| `--prose`    | `#4A443C`              | `#CAC0B2`              | Guide body copy        |
+| `--tz`       | `#F07D4A`              | unchanged              | Team Zufall accent     |
+| `--tz-text`  | `#B8481A`              | `#F2925E`              | Team Zufall text       |
+| `--pw`       | `#F5923A`              | unchanged              | Platzwahl accent       |
+| `--pw-text`  | `#9C570D`              | `#F0A65B`              | Platzwahl text         |
+
+Guide pages use `--app` / `--app-text` / `--app-dim` instead of the `--tz`/`--pw` pairs,
+carrying whichever app's colours that guide belongs to.
+
+## Dark mode
+
+Automatic via `@media (prefers-color-scheme: dark)` — no toggle, no JavaScript. Each page
+carries its own dark block directly after `:root`, overriding only the tokens above. Adding a
+page means adding that block too; everything else follows from the tokens.
+
+Two things do not come from tokens: the app icons swap via `<picture>` + `<source media="(prefers-color-scheme: dark)">`
+(`images/*-icon.png` / `*-icon-dark.png`), and the black Apple badge is flipped to the white one
+with `img[src*="App_Store_Badge"] { filter: invert(1); }`.
+
+Box-shadows keep their light values on purpose — at 5–16 % alpha they simply fade out on dark,
+where `--card-bg` and `--line` carry the elevation instead.
+
+Headless Chrome cannot emulate `prefers-color-scheme` (`--force-prefers-color-scheme` is a no-op).
+To screenshot dark mode, copy the site and swap `light` ↔ `dark` in the media queries.

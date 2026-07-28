@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>Sitzplan Grundschule: Ideen & digitale Vorlage für Klasse 1–4</title>
   <meta name="description" content="Sitzplan für die Grundschule erstellen: was in Klasse 1–4 wichtig ist, welche Anordnungen sich bewähren und wie du den Plan in Minuten fertig hast." />
   <link rel="canonical" href="https://crabucate.de/guides/sitzplan-grundschule.html" />
@@ -98,6 +101,23 @@
       --bg: #FBF6EF; --fg: #241F1A; --accent: #B04D1C; --muted: #6B6358;
       --line: rgba(176,77,28,0.15); --card-bg: #FFFFFF;
       --app: #F5923A; --app-text: #9C570D; --app-dim: rgba(245,146,58,0.1);
+      --prose: #4A443C; --nav-bg: rgba(251,246,239,0.85);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17120E;
+        --fg: #F3ECE3;
+        --accent: #E98544;
+        --muted: #A3998B;
+        --line: rgba(233,133,68,0.22);
+        --card-bg: #211A15;
+        --app-text: #F0A65B;
+        --app-dim: rgba(245,146,58,0.16);
+        --prose: #CAC0B2;
+        --nav-bg: rgba(23,18,14,0.85);
+      }
+      /* Der schwarze Apple-Badge wird auf dunklem Grund zum weissen Badge */
+      img[src*="App_Store_Badge"] { filter: invert(1); }
     }
     html { scroll-behavior: smooth; }
     body {
@@ -114,7 +134,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(251,246,239,0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
@@ -141,9 +161,9 @@
       margin: 2.75rem 0 0.9rem;
     }
     h3 { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.5rem; }
-    article p { font-size: 0.92rem; line-height: 1.85; color: #4A443C; margin-bottom: 1rem; }
+    article p { font-size: 0.92rem; line-height: 1.85; color: var(--prose); margin-bottom: 1rem; }
     article ul, article ol { padding-left: 1.3rem; margin-bottom: 1rem; }
-    article li { font-size: 0.92rem; line-height: 1.85; color: #4A443C; margin-bottom: 0.35rem; }
+    article li { font-size: 0.92rem; line-height: 1.85; color: var(--prose); margin-bottom: 0.35rem; }
     article a { color: var(--app-text); text-decoration: underline; text-decoration-color: var(--app-dim); text-underline-offset: 3px; }
     article a:hover { text-decoration-color: var(--app); }
     strong { color: var(--fg); }
@@ -170,6 +190,7 @@
       padding: 2.25rem 2rem; text-align: center; margin: 3rem 0;
       box-shadow: 0 2px 10px rgba(176,77,28,0.06), 0 12px 32px rgba(36,31,26,0.06);
     }
+    picture { display: contents; }
     .cta-box img.cta-icon { width: 64px; height: 64px; border-radius: 15px; margin: 0 auto 1rem; display: block; box-shadow: 0 8px 24px var(--app-dim); }
     .cta-box .cta-title { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
     .cta-box .cta-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.4rem; }
@@ -244,7 +265,10 @@
   <img class="shot" src="../images/platzwahl/de_04_GestalteRaeume.png" alt="Sitzplan Grundschule: Klassenzimmer als Raster in der Platzwahl App nachbauen" loading="lazy" />
 
   <div class="cta-box">
-    <img class="cta-icon" src="../images/platzwahl-icon-1024.svg" alt="Platzwahl App Icon" />
+    <picture>
+      <source srcset="../images/platzwahl-icon-dark.png" media="(prefers-color-scheme: dark)" />
+      <img class="cta-icon" src="../images/platzwahl-icon.png" alt="Platzwahl App Icon" />
+    </picture>
     <p class="cta-title">Platzwahl kostenlos laden</p>
     <p class="cta-sub">Gratis laden · iPhone &amp; iPad · iOS 17+ · Keine Anmeldung</p>
     <a class="badge" href="https://apps.apple.com/de/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">

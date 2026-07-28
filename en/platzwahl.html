@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>Platzwahl – Classroom Seating Chart App | iPhone &amp; iPad</title>
   <meta name="description" content="Create a classroom seating chart automatically: set up the room, add your class, define rules per student — print-ready PDF in minutes. Free for iPhone and iPad." />
   <link rel="canonical" href="https://crabucate.de/en/platzwahl.html" />
@@ -112,6 +115,22 @@
       --pw: #F5923A;
       --pw-text: #9C570D;
       --pw-dim: rgba(245,146,58,0.1);
+      --nav-bg: rgba(251,246,239,0.85);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17120E;
+        --fg: #F3ECE3;
+        --accent: #E98544;
+        --muted: #A3998B;
+        --line: rgba(233,133,68,0.22);
+        --card-bg: #211A15;
+        --pw-text: #F0A65B;
+        --pw-dim: rgba(245,146,58,0.16);
+        --nav-bg: rgba(23,18,14,0.85);
+      }
+      /* Der schwarze Apple-Badge wird auf dunklem Grund zum weissen Badge */
+      img[src*="App_Store_Badge"] { filter: invert(1); }
     }
 
     html { scroll-behavior: smooth; }
@@ -143,7 +162,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(251,246,239,0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
@@ -209,6 +228,7 @@
 
     .hero > * { position: relative; z-index: 1; }
 
+    picture { display: contents; }
     .hero-icon {
       width: 88px;
       height: 88px;
@@ -643,11 +663,14 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img
-      src="../images/platzwahl-icon-1024.svg"
-      alt="Platzwahl App Icon"
-      class="hero-icon"
-    />
+    <picture>
+      <source srcset="../images/platzwahl-icon-dark.png" media="(prefers-color-scheme: dark)" />
+      <img
+        src="../images/platzwahl-icon.png"
+        alt="Platzwahl App Icon"
+        class="hero-icon"
+      />
+    </picture>
     <h1>Platzwahl</h1>
     <p class="tagline">The classroom seating chart app for teachers: create a seating chart in one tap — automatic, fair, print-ready as PDF.</p>
     <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">

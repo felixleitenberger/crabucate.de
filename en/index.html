@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS Apps for iPhone and iPad</title>
   <meta name="description" content="iOS apps by crabucate: Team Zufall and Platzwahl — simple, local, no distractions." />
   <link rel="canonical" href="https://crabucate.de/en/" />
@@ -34,6 +37,20 @@
       --tz-text: #B8481A;
       --pw: #F5923A;
       --pw-text: #9C570D;
+      --nav-bg: rgba(251,246,239,0.85);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17120E;
+        --fg: #F3ECE3;
+        --accent: #E98544;
+        --muted: #A3998B;
+        --line: rgba(233,133,68,0.22);
+        --card-bg: #211A15;
+        --tz-text: #F2925E;
+        --pw-text: #F0A65B;
+        --nav-bg: rgba(23,18,14,0.85);
+      }
     }
 
     html { scroll-behavior: smooth; }
@@ -67,7 +84,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(251,246,239,0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
@@ -157,6 +174,7 @@
       flex-shrink: 0;
     }
 
+    picture { display: contents; }
     .tile-icon {
       width: 72px;
       height: 72px;
@@ -317,11 +335,14 @@
       <!-- TEAM ZUFALL -->
       <a href="team-zufall.html" class="app-tile app-tile--tz">
         <div class="tile-content">
-          <img
-            src="../images/Team%20Zufall-iOS-Default-1024x1024%401x.png"
-            alt="Team Zufall App Icon"
-            class="tile-icon tile-icon--tz"
-          />
+          <picture>
+            <source srcset="../images/teamzufall-icon-dark.png" media="(prefers-color-scheme: dark)" />
+            <img
+              src="../images/teamzufall-icon.png"
+              alt="Team Zufall App Icon"
+              class="tile-icon tile-icon--tz"
+            />
+          </picture>
           <h2 class="tile-name">Team Zufall</h2>
           <p class="tile-tagline">Randomly split groups into teams — in one second.</p>
           <span class="tile-cta tile-cta--tz">On the App Store &nbsp;→</span>
@@ -338,11 +359,14 @@
       <!-- PLATZWAHL -->
       <a href="platzwahl.html" class="app-tile app-tile--pw">
         <div class="tile-content">
-          <img
-            src="../images/platzwahl-icon-1024.svg"
-            alt="Platzwahl App Icon"
-            class="tile-icon"
-          />
+          <picture>
+            <source srcset="../images/platzwahl-icon-dark.png" media="(prefers-color-scheme: dark)" />
+            <img
+              src="../images/platzwahl-icon.png"
+              alt="Platzwahl App Icon"
+              class="tile-icon"
+            />
+          </picture>
           <h2 class="tile-name">Platzwahl</h2>
           <p class="tile-tagline">Seating plans for teachers — automatically created, fairly distributed, print-ready.</p>
           <span class="tile-cta tile-cta--pw">On the App Store &nbsp;→</span>

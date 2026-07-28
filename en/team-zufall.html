@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>Team Zufall – Random Team Generator &amp; Group Maker App</title>
   <meta name="description" content="Random team generator for teachers and coaches: divide students into groups and draw fair teams in seconds — with CSV import and PDF export. Free for iPhone and iPad." />
   <link rel="canonical" href="https://crabucate.de/en/team-zufall.html" />
@@ -107,6 +110,22 @@
       --tz: #F07D4A;
       --tz-text: #B8481A;
       --tz-dim: rgba(240,125,74,0.1);
+      --nav-bg: rgba(251,246,239,0.85);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17120E;
+        --fg: #F3ECE3;
+        --accent: #E98544;
+        --muted: #A3998B;
+        --line: rgba(233,133,68,0.22);
+        --card-bg: #211A15;
+        --tz-text: #F2925E;
+        --tz-dim: rgba(240,125,74,0.16);
+        --nav-bg: rgba(23,18,14,0.85);
+      }
+      /* Der schwarze Apple-Badge wird auf dunklem Grund zum weissen Badge */
+      img[src*="App_Store_Badge"] { filter: invert(1); }
     }
 
     html { scroll-behavior: smooth; }
@@ -138,7 +157,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(251,246,239,0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
@@ -212,6 +231,7 @@
       padding-bottom: 3.5rem;
     }
 
+    picture { display: contents; }
     .hero-icon {
       width: 76px;
       height: 76px;
@@ -649,7 +669,10 @@
   <section class="hero">
 
     <div class="hero-content">
-      <img src="../images/Team%20Zufall-iOS-Default-1024x1024%401x.png" alt="Team Zufall App Icon" class="hero-icon" />
+      <picture>
+        <source srcset="../images/teamzufall-icon-dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="../images/teamzufall-icon.png" alt="Team Zufall App Icon" class="hero-icon" />
+      </picture>
       <h1>Team Zufall</h1>
       <p class="tagline">Random team generator &amp; group maker — divide any group fairly, in one second.</p>
       <div class="hero-badge">

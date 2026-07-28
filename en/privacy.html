@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>Privacy Policy — Team Zufall</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,6 +16,17 @@
       --accent: #B04D1C;
       --muted: #6B6358;
       --line: rgba(176,77,28,0.15);
+      --nav-bg: rgba(251,246,239,0.85);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17120E;
+        --fg: #F3ECE3;
+        --accent: #E98544;
+        --muted: #A3998B;
+        --line: rgba(233,133,68,0.22);
+        --nav-bg: rgba(23,18,14,0.85);
+      }
     }
 
     html { scroll-behavior: smooth; }
@@ -43,7 +57,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: rgba(251,246,239,0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
