@@ -62,6 +62,11 @@ element gets `data-theme` from a blocking inline script in `<head>` (before firs
 flash) which also sets `class="js"`. Without JavaScript the button stays hidden and the media
 query alone still gives automatic dark mode.
 
+The app icons carry their own rounded corners with transparent outside, and their curve is rounder
+than the `border-radius` the CSS clips them with — so never put a `background` behind an icon
+element. It shows up as a coloured crescent along the edge, which is what `.tile-icon--tz` and the
+Team Zufall `.hero-icon` used to do. Icon elements get no background and no glow, on either app.
+
 Three things do not come from tokens. The app icons swap via `<picture>` + `<source media="(prefers-color-scheme: dark)">`
 (`images/*-icon.png` / `*-icon-dark.png`), the black Apple badge is flipped to the white one with
 `img[src*="App_Store_Badge"] { filter: invert(1); }`, and both of those plus the `theme-color`
