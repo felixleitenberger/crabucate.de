@@ -19,8 +19,8 @@ Quelle: iTunes Lookup API + App-Store-Web-Listings (Stand: 2026-07-11).
 | Sprachen | DE, EN |
 | Version | 1.1 (Release 2026-06-10) |
 | Bewertung | 5,0 ★ (2 Bewertungen) |
-| Icon | images/platzwahl-icon-appstore-1024.png |
-| Screenshots | images/platzwahl/de_01…de_05 (iPad, 2000×1500), EN-Varianten vorhanden |
+| Icon | images/platzwahl/icons/light/icon.png (512 px; die 1024er App-Store-Fassung liegt nicht mehr im Repo) |
+| Screenshots | images/platzwahl/screenshots/light/ (de_01…de_05, iPad 2000×1500, EN-Varianten vorhanden) |
 
 ### App-Store-Beschreibung (DE, vollständig)
 
@@ -59,8 +59,8 @@ Quelle: iTunes Lookup API + App-Store-Web-Listings (Stand: 2026-07-11).
 | Preis | Gratis |
 | Mindest-iOS | 17.0 |
 | Version | 1.5 (Release 2026-05-19) |
-| Icon | images/teamzufall-icon-appstore-1024.png |
-| Screenshots | images/AppStore Screenshots/ (iPhone 01–08 light/dark, iPad 01–08) |
+| Icon | images/team-zufall/icons/light/icon.png (512 px; die 1024er App-Store-Fassung liegt nicht mehr im Repo) |
+| Screenshots | images/team-zufall/screenshots/light/ (marketing-01…03, app-01…04); die uebrigen App-Store-Motive wurden entfernt |
 
 ### App-Store-Beschreibung (DE, vollständig)
 

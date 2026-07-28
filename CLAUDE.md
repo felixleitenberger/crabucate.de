@@ -18,7 +18,17 @@ The workflow mirrors with `--delete`, so files removed here are removed on the s
 
 ## Structure
 
-German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (9) and `/en/guides/` (8). Images are in `/images/`.
+German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (9) and `/en/guides/` (8).
+
+Images are grouped per app: `images/<app>/icons/{light,dark}/icon.png` and
+`images/<app>/screenshots/{light,dark}/`. Assets both apps share — the crab logo, the two App Store
+badges, the empty iPad bezel — sit directly in `images/`. Only files the site actually references
+are kept; App Store deliverables and raw simulator captures were removed and are recoverable from
+git history if a submission needs them.
+
+When checking which images are still in use, read `src`/`srcset`/`url()` **attribute values**, not
+a free-text pattern. Filenames have contained spaces, quotes and parentheses, and a naive pattern
+silently misses them.
 
 There is still no build step. Shared code lives in `/assets/`, page-specific code stays inline:
 
@@ -88,13 +98,16 @@ With a light system it runs auto → dark → light → auto; with a dark system
 auto. A fixed order would make `auto → light` a no-op on a light system and the button would seem
 to need two clicks.
 
+`theme.js` recognises the dark source by the `/dark/` segment of its path, so icon files must stay
+inside their `light/` and `dark/` folders — renaming those folders breaks the toggle silently.
+
 The app icons carry their own rounded corners with transparent outside, and their curve is rounder
 than the `border-radius` the CSS clips them with — so never put a `background` behind an icon
 element. It shows up as a coloured crescent along the edge, which is what `.tile-icon--tz` and the
 Team Zufall `.hero-icon` used to do. Icon elements get no background and no glow, on either app.
 
 Three things do not come from tokens. The app icons swap via `<picture>` + `<source media="(prefers-color-scheme: dark)">`
-(`images/*-icon.png` / `*-icon-dark.png`), the black Apple badge is flipped to the white one with
+(`images/<app>/icons/light/icon.png` / `.../dark/icon.png`), the black Apple badge is flipped to the white one with
 `img[src*="App_Store_Badge"] { filter: invert(1); }`, and both of those plus the `theme-color`
 metas are media-query driven — so the toggle script rewrites their `media` attributes to
 `all` / `not all` when a manual choice is active. A new `<picture>` or `theme-color` needs no

@@ -55,7 +55,7 @@
     }
 
     document.querySelectorAll('picture source').forEach(function (source) {
-      source.media = mediaFor(mode, /-icon-dark\./.test(source.srcset));
+      source.media = mediaFor(mode, /\/dark\//.test(source.srcset));
     });
     document.querySelectorAll('meta[name="theme-color"]').forEach(function (meta) {
       meta.media = mediaFor(mode, meta.content.toUpperCase() === '#17120E');
