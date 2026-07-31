@@ -40,6 +40,7 @@ jobs:
             --exclude '^\.gitignore$' \
             --exclude '^CLAUDE\.md$' \
             --exclude '^app\.md$' \
+            --exclude '^notes/' \
             --exclude '^CNAME$' \
             --exclude '^og-image\.html$' \
             --exclude-glob '.DS_Store' \

@@ -18,6 +18,9 @@
   --pw: #F5923A;
   --pw-text: #9C570D;
   --pw-dim: rgba(245,146,58,0.1);
+  --la: #F79D39;
+  --la-text: #8F4F0E;
+  --la-dim: rgba(247,157,57,0.1);
 }
 
 /* Dark mode. The tokens appear twice on purpose: the media query serves the
@@ -37,6 +40,8 @@
     --tz-dim: rgba(240,125,74,0.16);
     --pw-text: #F0A65B;
     --pw-dim: rgba(245,146,58,0.16);
+    --la-text: #F5B06A;
+    --la-dim: rgba(247,157,57,0.16);
   }
   /* Der schwarze Apple-Badge wird auf dunklem Grund zum weissen Badge */
   :root:not([data-theme="light"]) img[src*="App_Store_Badge"] { filter: invert(1); }
@@ -54,6 +59,8 @@
   --tz-dim: rgba(240,125,74,0.16);
   --pw-text: #F0A65B;
   --pw-dim: rgba(245,146,58,0.16);
+  --la-text: #F5B06A;
+  --la-dim: rgba(247,157,57,0.16);
 }
 :root[data-theme="dark"] img[src*="App_Store_Badge"] { filter: invert(1); }
 

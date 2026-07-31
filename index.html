@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS-Apps für Schule &amp; Unterricht</title>
-  <meta name="description" content="iOS-Apps für Lehrkräfte: Platzwahl erstellt automatisch Sitzpläne für die Schule, Team Zufall teilt Gruppen zufällig auf. Für iPhone und iPad." />
+  <meta name="description" content="iOS-Apps für Lehrkräfte: Der Lehrer Arbeitszeit Tracker erfasst die Arbeitszeit, Platzwahl erstellt automatisch Sitzpläne für die Schule, Team Zufall teilt Gruppen zufällig auf. Für iPhone und iPad." />
   <link rel="canonical" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/" />
   <meta property="og:title" content="crabucate — iOS-Apps für Schule &amp; Unterricht" />
-  <meta property="og:description" content="iOS-Apps für Lehrkräfte: Sitzplan-App Platzwahl und Gruppen-Zufalls-Tool Team Zufall. Für iPhone und iPad." />
+  <meta property="og:description" content="iOS-Apps für Lehrkräfte: Zeiterfassung mit dem Lehrer Arbeitszeit Tracker, Sitzpläne mit Platzwahl, Gruppen mit Team Zufall. Für iPhone und iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -119,11 +119,70 @@
       animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) var(--delay, 0.25s) forwards;
     }
 
-    .app-tile--tz { --delay: 0.2s; }
-    .app-tile--pw { --delay: 0.35s; }
+    .app-tile--la { --delay: 0.15s; }
+    .app-tile--tz { --delay: 0.3s; }
+    .app-tile--pw { --delay: 0.45s; }
 
     .app-tile--tz:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(240,125,74,0.18); }
     .app-tile--pw:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(245,146,58,0.18); }
+    .app-tile--la:hover { border-color: rgba(247,157,57,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(247,157,57,0.18); }
+
+    /* Die neueste App bekommt die volle Breite ueber beiden Spalten und legt
+       Text und Vorschau nebeneinander statt uebereinander. */
+    .app-tile--featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .app-tile--featured .tile-content {
+      flex: 1 1 44%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.75rem 2.5rem;
+    }
+
+    .app-tile--featured .tile-preview {
+      flex: 1 1 56%;
+      border-top: none;
+      border-left: 1px solid var(--line);
+      min-height: 320px;
+    }
+
+    .app-tile--featured .tile-preview img { object-position: top left; }
+
+    @media (max-width: 860px) {
+      .app-tile--featured { flex-direction: column; }
+      .app-tile--featured .tile-content { padding: 2.25rem 2.5rem 1.75rem; }
+      .app-tile--featured .tile-preview {
+        border-left: none;
+        border-top: 1px solid var(--line);
+        min-height: 240px;
+      }
+    }
+
+    .tile-flag {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--la-text);
+      background: var(--la-dim);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+
+    .tile-free {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--la-text);
+      margin-bottom: 1.5rem;
+    }
 
     /* Top content area */
     .tile-content {
@@ -181,9 +240,10 @@
       gap: 0.45rem;
       font-size: 0.75rem;
       font-weight: 500;
-      color: var(--pw);
+      color: var(--la-text);
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      align-self: flex-start;
     }
 
     .tile-coming-soon::before {
@@ -192,7 +252,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--pw);
+      background: var(--la);
       flex-shrink: 0;
       animation: pulse 2.5s ease infinite;
     }
@@ -315,6 +375,35 @@
 
   <main>
     <div class="apps-grid">
+
+      <!-- LEHRER ARBEITSZEIT TRACKER -->
+      <a href="lehrer-arbeitszeit.html" class="app-tile app-tile--la app-tile--featured">
+        <div class="tile-content">
+          <span class="tile-flag">Neu</span>
+          <picture>
+            <source srcset="images/lehrer-arbeitszeit/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+            <img
+              src="images/lehrer-arbeitszeit/icons/light/icon.png"
+              alt="Lehrer Arbeitszeit Tracker App Icon"
+              class="tile-icon"
+            />
+          </picture>
+          <h2 class="tile-name">Lehrer Arbeitszeit Tracker</h2>
+          <p class="tile-tagline">Zeiterfassung für Lehrkräfte — automatisch aus dem Stundenplan, mit Soll und Ist für das ganze Schuljahr.</p>
+          <span class="tile-free">Vollständig kostenlos</span>
+          <span class="tile-coming-soon">Bald im App Store</span>
+        </div>
+        <div class="tile-preview">
+          <picture>
+            <source srcset="images/lehrer-arbeitszeit/screenshots/dark/ipad-analyse.png" media="(prefers-color-scheme: dark)" />
+            <img
+              src="images/lehrer-arbeitszeit/screenshots/light/ipad-analyse.png"
+              alt="Lehrer Arbeitszeit Tracker App-Vorschau"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+      </a>
 
       <!-- TEAM ZUFALL -->
       <a href="team-zufall.html" class="app-tile app-tile--tz">

@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Lehrer Arbeitszeit Tracker – kostenlose Zeiterfassung für Lehrkräfte</title>
+  <meta name="description" content="Zeiterfassung für Lehrkräfte: Arbeitszeit automatisch aus dem Stundenplan erfassen, Soll und Ist im Schuljahr vergleichen. Ferien und Feiertage aller 16 Bundesländer. Vollständig kostenlos für iPhone und iPad." />
+  <link rel="canonical" href="https://crabucate.de/lehrer-arbeitszeit.html" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/lehrer-arbeitszeit.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/lehrer-arbeitszeit.html" />
+  <meta property="og:title" content="Lehrer Arbeitszeit Tracker – kostenlose Zeiterfassung für Lehrkräfte" />
+  <meta property="og:description" content="Arbeitszeit automatisch aus dem Stundenplan erfassen, Soll und Ist im Schuljahr vergleichen. Vollständig kostenlos für iPhone und iPad." />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- JSON-LD: App -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Lehrer Arbeitszeit Tracker",
+    "operatingSystem": "iOS",
+    "applicationCategory": "BusinessApplication",
+    "description": "Zeiterfassung für Lehrkräfte: Arbeitszeit automatisch aus dem Stundenplan erfassen, per Timer mitlaufen lassen oder nachtragen. Soll- und Ist-Stunden des Schuljahres im Vergleich, Ferien und Feiertage aller 16 Bundesländer. Für iPhone und iPad.",
+    "keywords": "Zeiterfassung Lehrer, Arbeitszeit Lehrkräfte, Deputat, Stundenplan, Überstunden, Mehrarbeit, Dienstzeit, Zeitkonto, Schule",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ist der Lehrer Arbeitszeit Tracker wirklich kostenlos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, vollständig. Es gibt keine In-App-Käufe, kein Abo, keine Pro-Version, keine Werbung und keine Funktion, die hinter einer Bezahlschranke liegt. Die App kostet nichts und wird auch später nichts kosten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie erfasst die App meine Arbeitszeit automatisch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Du trägst deinen Stundenplan einmal in ein Raster ein — Unterrichtsstunden und Pausenaufsichten. Ab dann werden diese Zeiten an jedem Schultag von selbst erfasst. Ferien und Feiertage deines Bundeslandes bleiben ausgenommen, weil beides in der App hinterlegt ist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie wird die Soll-Arbeitszeit eines Schuljahres berechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die App rechnet mit einer 40-Stunden-Woche, 30 Urlaubstagen und den gesetzlichen Feiertagen deines Bundeslandes; das Schuljahr läuft vom 1. August bis zum 31. Juli. Für eine Vollzeitstelle ergibt das rund 1.760 Stunden. Bei Teilzeit wird der Wert mit deinem Deputat skaliert. Die Zahlen sind eine Orientierung, keine dienstrechtlich verbindliche Auskunft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funktioniert die App auch bei Teilzeit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Du hinterlegst dein eigenes Deputat, und alle Soll-Werte — Tag, Woche, Monat, Schuljahr — werden entsprechend heruntergerechnet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sind meine Daten sicher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deine Einträge liegen auf deinem Gerät und, wenn du den Abgleich einschaltest, in deiner eigenen privaten iCloud. Es gibt kein Benutzerkonto, keine Anmeldung, keine Werbung und keine Analyse-Dienste. Außer der iCloud-Verbindung stellt die App überhaupt keine Netzwerkverbindung her."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Gleicht die App zwischen iPhone und iPad ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Einträge, Stundenplan und Einstellungen gleichen sich über iCloud ab. Startest du einen Timer auf dem einen Gerät, siehst du ihn auf dem anderen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Für welche Bundesländer sind Ferien und Feiertage hinterlegt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für alle 16. Die Ferientermine sind bis zum Schuljahr 2029/30 in der App hinterlegt, die Feiertage werden berechnet. Beides funktioniert deshalb auch ohne Internetverbindung."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/base.css" />
+  <style>
+
+    :root {
+      /* Rahmenfarben des iPhone-Mockups und die beiden Datenfarben des
+         Rechners. Doppelt notiert wie die Tokens in base.css: Media Query
+         fuer den automatischen Fall, Attributselektor fuer die manuelle Wahl. */
+      --frame-a: #E6E0D7;
+      --frame-b: #C4BCB1;
+      --frame-c: #F6F2EC;
+      --frame-rim: rgba(36,31,26,0.22);
+      --soll: #0A84FF;
+      --ist: #2FA84F;
+      --over: #D9452B;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --frame-a: #3B342C;
+        --frame-b: #191410;
+        --frame-c: #4A423A;
+        --frame-rim: rgba(0,0,0,0.6);
+        --soll: #4DA3FF;
+        --ist: #5FD37E;
+        --over: #FF7A5E;
+      }
+    }
+    :root[data-theme="dark"] {
+      --frame-a: #3B342C;
+      --frame-b: #191410;
+      --frame-c: #4A423A;
+      --frame-rim: rgba(0,0,0,0.6);
+      --soll: #4DA3FF;
+      --ist: #5FD37E;
+      --over: #FF7A5E;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-logo img {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 3.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 420px;
+      background: radial-gradient(ellipse, var(--la-dim), transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 21px;
+      display: block;
+      margin: 0 auto 1.75rem;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 5.4vw, 4.6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      color: var(--fg);
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
+    }
+
+    .tagline {
+      margin: 1.25rem auto 0;
+      font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 48ch;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.4s forwards;
+    }
+
+    .price-tag {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      margin-top: 2rem;
+      padding: 0.7rem 1.6rem 0.75rem;
+      border-radius: 100px;
+      background: var(--la-dim);
+      border: 1px solid rgba(247,157,57,0.3);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    .price-tag b {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--la-text);
+    }
+
+    .price-tag span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 620px) {
+      .price-tag {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        padding: 0.85rem 1.6rem 0.95rem;
+      }
+      .price-tag b { white-space: nowrap; }
+      .stat-row { grid-template-columns: 1fr; }
+    }
+
+    .coming-soon {
+      margin-top: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid rgba(247,157,57,0.35);
+      border-radius: 100px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--la-text);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.6s forwards;
+    }
+
+    .coming-soon::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--la);
+      flex-shrink: 0;
+      animation: pulse 2.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+
+    .hero-meta {
+      margin-top: 1.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .hero-meta span { white-space: nowrap; }
+    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
+
+    /* ── ABSCHNITTS-GRUNDGERUEST ── */
+    .section-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--fg);
+      max-width: 22ch;
+      margin: 0 auto 1rem;
+    }
+
+    .section-lead {
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 0 auto 3rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── KONTEXT / AKTUELLE LAGE ── */
+    .context {
+      padding: 5.5rem clamp(1.5rem, 8vw, 8rem) 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .tl-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.75rem 1.75rem 1.9rem;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+    }
+
+    .tl-year {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--la-text);
+      background: var(--la-dim);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .tl-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.55rem;
+    }
+
+    .tl-card p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      padding: 2rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .stat {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .stat b {
+      display: block;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--la-text);
+      margin-bottom: 0.6rem;
+    }
+
+    .stat span {
+      display: block;
+      font-size: 0.83rem;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 26ch;
+      margin: 0 auto;
+    }
+
+    .sources {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 1.8;
+      color: var(--muted);
+      opacity: 0.85;
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── RECHNER ── */
+    .calc-section {
+      padding: 4rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .calc {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: clamp(1.5rem, 4vw, 2.75rem);
+      box-shadow: 0 2px 12px rgba(176,77,28,0.06), 0 18px 44px rgba(36,31,26,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.75rem, 4vw, 3rem);
+      align-items: start;
+    }
+
+    @media (max-width: 820px) {
+      .calc { grid-template-columns: 1fr; }
+    }
+
+    .calc-field { margin-bottom: 1.6rem; }
+    .calc-field:last-child { margin-bottom: 0; }
+
+    .calc-field label {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.15rem;
+    }
+
+    .calc-field output {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      color: var(--la-text);
+      white-space: nowrap;
+    }
+
+    .calc-field .hint {
+      display: block;
+      font-size: 0.76rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .calc-field input[type="range"] {
+      width: 100%;
+      accent-color: var(--la);
+      cursor: pointer;
+      height: 1.5rem;
+    }
+
+    .calc-out {
+      background: var(--la-dim);
+      border-radius: 18px;
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    .calc-scope {
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--la-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .bar-row { margin-bottom: 1.35rem; }
+
+    .bar-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--fg);
+      margin-bottom: 0.45rem;
+    }
+
+    .bar-head b {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .bar-head .b-soll { color: var(--soll); }
+    .bar-head .b-ist { color: var(--ist); }
+
+    .bar-track {
+      height: 14px;
+      border-radius: 100px;
+      background: rgba(120,110,100,0.16);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      width: 0;
+      transition: width 0.55s cubic-bezier(0.16,1,0.3,1), background 0.3s;
+    }
+
+    .bar-soll { background: var(--soll); }
+
+    .calc-verdict {
+      margin-top: 1.6rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--fg);
+    }
+
+    .calc-verdict b {
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calc-verdict .over { color: var(--over); }
+    .calc-verdict .under { color: var(--ist); }
+
+    .calc-details {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .calc-details summary {
+      cursor: pointer;
+      color: var(--la-text);
+      font-weight: 600;
+      list-style: none;
+    }
+
+    .calc-details summary::-webkit-details-marker { display: none; }
+    .calc-details summary::after { content: ' ▸'; }
+    .calc-details[open] summary::after { content: ' ▾'; }
+
+    .calc-details dl {
+      margin-top: 0.9rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.4rem 1rem;
+      line-height: 1.6;
+    }
+
+    .calc-details dd {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calc-details .sum {
+      font-weight: 700;
+      color: var(--fg);
+      border-top: 1px solid var(--line);
+      padding-top: 0.4rem;
+    }
+
+    .calc-note {
+      margin-top: 1.5rem;
+      font-size: 0.76rem;
+      line-height: 1.7;
+      color: var(--muted);
+      text-align: center;
+      max-width: 62ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calc-cta {
+      margin-top: 1.25rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--la-text);
+      letter-spacing: -0.01em;
+    }
+
+    /* ── SCREENSHOTS IM IPHONE-RAHMEN ── */
+    .shots {
+      padding: 4rem clamp(1.5rem, 6vw, 6rem) 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .phone {
+      width: min(300px, 78vw);
+      margin: 0 auto;
+      aspect-ratio: 1284 / 2778;
+      border-radius: 13.5%/6.2%;
+      padding: 0.75%;
+      background: linear-gradient(150deg, var(--frame-c) 0%, var(--frame-a) 35%, var(--frame-b) 70%, var(--frame-c) 100%);
+      box-shadow:
+        0 0 0 1px var(--frame-rim),
+        0 26px 60px rgba(36,31,26,0.24),
+        0 6px 16px rgba(36,31,26,0.12);
+      position: relative;
+    }
+
+    .phone-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 12.8%/5.9%;
+      overflow: hidden;
+      background: var(--bg);
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35);
+    }
+
+    .phone-screen .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      display: block;
+    }
+
+    .phone-screen .slide.active { opacity: 1; }
+
+    .phone-island {
+      position: absolute;
+      top: 1.35%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      height: 4.1%;
+      border-radius: 100px;
+      background: #000;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .shot-caption {
+      text-align: center;
+      margin-top: 1.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      min-height: 1.4em;
+    }
+
+    .shot-sub {
+      text-align: center;
+      margin-top: 0.3rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      max-width: 42ch;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 2.6em;
+    }
+
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .dot.active { background: var(--la-text); transform: scale(1.4); }
+
+    /* ── DREI WEGE ── */
+    .ways {
+      padding: 4rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .way-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2rem 1.9rem 2.15rem;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .way-card:hover { border-color: rgba(247,157,57,0.35); transform: translateY(-4px); }
+
+    .way-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--la-text);
+      margin-bottom: 1.1rem;
+    }
+
+    .way-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+
+    .way-card p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 4rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 2rem 2rem 2.25rem;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.3s;
+    }
+
+    .feature-card:hover { border-color: rgba(247,157,57,0.22); }
+
+    .feat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      background: var(--la-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      color: var(--la-text);
+    }
+
+    .feat-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.65rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── IPAD ── */
+    .ipad-section {
+      padding: 4rem clamp(1.5rem, 6vw, 6rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ipad-mockup {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      filter: drop-shadow(0 30px 70px rgba(36,31,26,0.18));
+    }
+
+    .ipad-mockup .ipad-bezel {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ipad-mockup .ipad-screen {
+      position: absolute;
+      top: 5.8%;
+      left: 3.85%;
+      width: 92.4%;
+      height: 88.5%;
+      z-index: 1;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .ipad-screen .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      display: block;
+    }
+
+    .ipad-screen .slide.active { opacity: 1; }
+
+    /* ── KOSTENLOS ── */
+    .free {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .free-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 2rem 0 2rem;
+    }
+
+    .free-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: var(--card-bg);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    .free-badges svg {
+      width: 14px;
+      height: 14px;
+      color: var(--ist);
+      flex-shrink: 0;
+    }
+
+    .free p {
+      font-size: 0.92rem;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 4rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 8rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center bottom, rgba(247,157,57,0.08), transparent 65%);
+      pointer-events: none;
+    }
+
+    .final-cta > * { position: relative; }
+
+    .final-cta-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.75rem;
+    }
+
+    .final-cta-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 46ch;
+      margin: 0 auto 2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .hero-icon, .hero h1, .tagline, .price-tag, .coming-soon, .hero-meta { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-link">← Alle Apps</a>
+      <button class="theme-toggle" type="button" title="Design: automatisch" aria-label="Design: automatisch">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <picture>
+      <source srcset="images/lehrer-arbeitszeit/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img
+        src="images/lehrer-arbeitszeit/icons/light/icon.png"
+        alt="Lehrer Arbeitszeit Tracker App Icon"
+        class="hero-icon"
+      />
+    </picture>
+    <h1>Lehrer Arbeitszeit&nbsp;Tracker</h1>
+    <p class="tagline">Zeiterfassung für Lehrkräfte. Deine Unterrichtsstunden erfasst die App von selbst aus dem Stundenplan — den Rest legst du daneben und siehst am Ende des Schuljahres, wie viel es wirklich war.</p>
+    <div class="price-tag">
+      <b>Vollständig kostenlos</b>
+      <span>keine In-App-Käufe · kein Abo · keine Werbung</span>
+    </div>
+    <div><span class="coming-soon">Bald im App Store</span></div>
+    <p class="hero-meta">
+      <span>iPhone &amp; iPad</span><span class="sep">·</span><span>Ohne Konto</span><span class="sep">·</span><span>iCloud-Abgleich</span><span class="sep">·</span><span>Alle 16 Bundesländer</span>
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- KONTEXT -->
+  <section class="context">
+    <p class="section-eyebrow">Warum jetzt</p>
+    <h2 class="section-title">Die Arbeitszeit von Lehrkräften wird gerade sichtbar gemacht</h2>
+    <p class="section-lead">Erst hat der Europäische Gerichtshof entschieden, dann das Bundesarbeitsgericht — und inzwischen sind die ersten Länder dabei, die Arbeitszeit ihrer Lehrkräfte tatsächlich zu messen. Wer seine eigenen Zahlen kennt, muss nicht darauf warten.</p>
+
+    <div class="timeline">
+      <div class="tl-card">
+        <span class="tl-year">Mai 2019</span>
+        <h3>Das Stechuhr-Urteil</h3>
+        <p>Der Europäische Gerichtshof verpflichtet die Mitgliedstaaten, ein objektives und verlässliches System zur Messung der täglich geleisteten Arbeitszeit einzuführen. Eine Frist nennt das Urteil nicht.</p>
+      </div>
+      <div class="tl-card">
+        <span class="tl-year">September 2022</span>
+        <h3>Das Bundesarbeitsgericht zieht nach</h3>
+        <p>Ein Grundsatzbeschluss überträgt die Pflicht zur Arbeitszeiterfassung auf das deutsche Recht. Damit erreicht die Debatte auch die Schulen — bislang wird dort fast nirgends erfasst.</p>
+      </div>
+      <div class="tl-card">
+        <span class="tl-year">August 2026</span>
+        <h3>Bremen macht den Anfang</h3>
+        <p>Als erstes Bundesland startet Bremen an neun Schulen die digitale Arbeitszeiterfassung für Lehrkräfte — samt Vorbereitung, Korrekturen und Elterngesprächen. Berlin und Sachsen erheben parallel Daten.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <b>3&nbsp;h</b>
+        <span>mehr pro Woche als vorgesehen — im Mittel über das ganze Jahr, Ferien eingerechnet</span>
+      </div>
+      <div class="stat">
+        <b>ein Drittel</b>
+        <span>der Vollzeitkräfte arbeitet in Schulwochen über 48 Stunden — der arbeitsschutzrechtlichen Höchstgrenze</span>
+      </div>
+      <div class="stat">
+        <b>100&nbsp;h</b>
+        <span>unbezahlte Mehrarbeit pro Kopf und Jahr, hochgerechnet allein in Berlin über zwei Millionen Stunden</span>
+      </div>
+    </div>
+
+    <p class="sources">Quellen: Arbeitszeitstudien der Kooperationsstelle Hochschulen und Gewerkschaften der Universität Göttingen für Sachsen (2022) und Berlin (2025); Bremer Pilotprojekt zur digitalen Arbeitszeiterfassung ab dem Schuljahr 2026/27.</p>
+  </section>
+
+  <!-- RECHNER -->
+  <section class="calc-section" id="rechner">
+    <p class="section-eyebrow">Überschlag</p>
+    <h2 class="section-title">Wie viel arbeitest du wirklich?</h2>
+    <p class="section-lead">Drei Schieberegler, deine eigenen Zahlen. Der Rechner stellt dein Jahres-Soll deiner eigenen Schätzung gegenüber — genau so, wie es die App später mit gemessenen Werten tut.</p>
+
+    <div class="calc">
+      <div class="calc-inputs">
+
+        <div class="calc-field">
+          <label for="deputat">Dein Deputat <output id="outDeputat" for="deputat">25 Std.</output></label>
+          <span class="hint">Unterrichtsstunden pro Woche, die du laut Stundenplan hältst.</span>
+          <input type="range" id="deputat" min="0" max="30" step="0.5" value="25" />
+        </div>
+
+        <div class="calc-field">
+          <label for="vollzeit">Vollzeit an deiner Schulart <output id="outVollzeit" for="vollzeit">25 Std.</output></label>
+          <span class="hint">Das Pflichtstundenmaß für eine volle Stelle — je nach Land und Schulart etwa 23 bis 28 Stunden.</span>
+          <input type="range" id="vollzeit" min="20" max="30" step="0.5" value="25" />
+        </div>
+
+        <div class="calc-field">
+          <label for="schulwoche">Arbeit in einer Schulwoche <output id="outSchulwoche" for="schulwoche">48 Std.</output></label>
+          <span class="hint">Alles zusammen: Unterricht, Vorbereitung, Korrekturen, Konferenzen, Elterngespräche, Verwaltung.</span>
+          <input type="range" id="schulwoche" min="10" max="70" step="0.5" value="48" />
+        </div>
+
+        <div class="calc-field">
+          <label for="ferienwoche">Arbeit pro Ferienwoche <output id="outFerienwoche" for="ferienwoche">6 Std.</output></label>
+          <span class="hint">Was in den 12 Ferienwochen im Schnitt trotzdem anfällt.</span>
+          <input type="range" id="ferienwoche" min="0" max="40" step="0.5" value="6" />
+        </div>
+
+      </div>
+
+      <div class="calc-out">
+        <p class="calc-scope">Ein Schuljahr · <span id="outUmfang">100 % Stelle</span></p>
+
+        <div class="bar-row">
+          <div class="bar-head"><span>Soll-Arbeitsstunden</span><b class="b-soll" id="outSoll">1.760 h</b></div>
+          <div class="bar-track"><div class="bar-fill bar-soll" id="barSoll"></div></div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-head"><span>Deine Hochrechnung</span><b class="b-ist" id="outIst">1.992 h</b></div>
+          <div class="bar-track"><div class="bar-fill" id="barIst"></div></div>
+        </div>
+
+        <p class="calc-verdict" id="verdict"></p>
+
+        <details class="calc-details">
+          <summary>Wie wird gerechnet?</summary>
+          <dl>
+            <dt>Wochentage im Schuljahr (Mo–Fr)</dt><dd>261 Tage</dd>
+            <dt>Wochenarbeitszeit einer vollen Stelle</dt><dd>40 h</dd>
+            <dt>Bruttoarbeitsstunden</dt><dd>2.088 h</dd>
+            <dt>− Urlaubstage (30)</dt><dd>240 h</dd>
+            <dt>− gesetzliche Feiertage (11)</dt><dd>88 h</dd>
+            <dt class="sum">= Soll bei voller Stelle</dt><dd class="sum">1.760 h</dd>
+            <dt>× dein Beschäftigungsumfang</dt><dd id="outFaktor">100 %</dd>
+          </dl>
+          <p style="margin-top:0.9rem;">Die Hochrechnung nimmt 40 Schulwochen und 12 Ferienwochen an. Dieselbe Formel steckt in der App — dort allerdings mit den Feiertagen deines Bundeslandes statt eines Mittelwerts.</p>
+        </details>
+      </div>
+    </div>
+
+    <p class="calc-cta">Das ist geschätzt. Gemessen sieht es meistens anders aus.</p>
+    <p class="calc-note">Der Überschlag rechnet mit einer 40-Stunden-Woche, 30 Urlaubstagen und elf Feiertagen. Er ersetzt keine dienstrechtlich verbindliche Auskunft und keine Regelung deines Landes — er soll dir nur eine Größenordnung geben.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SCREENSHOTS -->
+  <section class="shots" aria-label="App-Screenshots">
+    <p class="section-eyebrow">Die App</p>
+    <h2 class="section-title">Sieben Bildschirme, eine Frage</h2>
+    <p class="section-lead">Tippe auf das Display oder die Punkte, um weiterzublättern.</p>
+
+    <div class="phone">
+      <div class="phone-screen" id="phoneScreen">
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-tracker.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide active" src="images/lehrer-arbeitszeit/screenshots/light/iphone-tracker.png" alt="Tracker-Ansicht mit laufendem Timer für die Kategorie Korrektur und der Liste der heutigen Einträge" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-stundenplan.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/iphone-stundenplan.png" alt="Stundenplan als Raster: markierte Unterrichtsstunden von Montag bis Freitag für die automatische Zeiterfassung" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-analyse.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/iphone-analyse.png" alt="Analyse-Ansicht mit den Summen für heute, diese Woche und diesen Monat samt Hochrechnung" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-verlauf.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/iphone-verlauf.png" alt="Jahresverlauf als Balkendiagramm über alle Monate des Schuljahres mit Gesamtsumme und Monatsdurchschnitt" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-vergleich.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/iphone-vergleich.png" alt="Jahresarbeitszeit-Karte: Soll-Stunden und tatsächlich erfasste Stunden des Schuljahres als Balken gegenübergestellt" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-eintraege.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/iphone-eintraege.png" alt="Liste aller Einträge nach Kategorie und Datum, filterbar nach Tag, Woche und Monat" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/iphone-erfassung.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/iphone-erfassung.png" alt="Übersicht der drei Erfassungswege: automatisch aus dem Stundenplan, live per Timer oder nachträglich eintragen" loading="lazy" />
+        </picture>
+        <span class="phone-island" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <p class="shot-caption" id="shotCaption">Tracker</p>
+    <p class="shot-sub" id="shotSub">Ein Timer für alles, was nicht im Stundenplan steht — er läuft auf dem Sperrbildschirm weiter.</p>
+
+    <div class="slideshow-dots" id="phoneDots">
+      <button class="dot active" aria-label="Bild 1"></button>
+      <button class="dot" aria-label="Bild 2"></button>
+      <button class="dot" aria-label="Bild 3"></button>
+      <button class="dot" aria-label="Bild 4"></button>
+      <button class="dot" aria-label="Bild 5"></button>
+      <button class="dot" aria-label="Bild 6"></button>
+      <button class="dot" aria-label="Bild 7"></button>
+    </div>
+  </section>
+
+  <!-- DREI WEGE -->
+  <section class="ways">
+    <p class="section-eyebrow">So kommt die Zeit hinein</p>
+    <h2 class="section-title">Drei Wege — und der wichtigste läuft von allein</h2>
+    <p class="section-lead">Du musst nicht alles selbst eintippen. Je nachdem, was du gerade tust, passt ein anderer Weg.</p>
+
+    <div class="ways-grid">
+      <div class="way-card">
+        <p class="way-num">01</p>
+        <h3>Automatisch aus dem Stundenplan</h3>
+        <p>Stundenplan einmal ins Raster tippen. Ab dann werden Unterricht und Pausenaufsichten an jedem Schultag von selbst erfasst — Ferien und Feiertage deines Bundeslandes bleiben ausgenommen.</p>
+      </div>
+      <div class="way-card">
+        <p class="way-num">02</p>
+        <h3>Live mitlaufen lassen</h3>
+        <p>Für Vorbereitung, Korrekturen oder eine Vertretung startest du einen Timer. Er läuft als Live Activity auf dem Sperrbildschirm weiter und lässt sich dort auch wieder beenden.</p>
+      </div>
+      <div class="way-card">
+        <p class="way-num">03</p>
+        <h3>Nachträglich eintragen</h3>
+        <p>Das Elterngespräch am Abend, die Konferenz von gestern: Was du vergessen hast, ergänzt du hinterher mit Datum und Dauer. Auch automatisch Erfasstes lässt sich ändern.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FEATURES -->
+  <section class="features">
+    <p class="section-eyebrow">Features</p>
+    <h2 class="section-title">Was die App daraus macht</h2>
+    <p class="section-lead">Erfassen ist die halbe Miete. Die andere Hälfte ist, aus den Zahlen etwas zu sehen.</p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <line x1="2" y1="20" x2="22" y2="20"/>
+          </svg>
+        </div>
+        <h3>Soll und Ist im Schuljahr</h3>
+        <p>Die Jahresarbeitszeit deiner Stelle, deinen erfassten Stunden gegenübergestellt. Das ist die Zahl, um die es eigentlich geht.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15.5 14"/>
+          </svg>
+        </div>
+        <h3>Heute, Woche, Monat</h3>
+        <p>Drei Karten mit Hochrechnung. Du siehst schon am Mittwoch, worauf die Woche hinausläuft — nicht erst am Sonntagabend.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="17" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+          </svg>
+        </div>
+        <h3>Alle 16 Bundesländer</h3>
+        <p>Ferientermine bis zum Schuljahr 2029/30 und die Feiertage deines Landes sind hinterlegt. Kein Abruf, kein Netz nötig.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 8v4l2.5 2.5"/>
+            <path d="M3.5 9.5h4"/>
+          </svg>
+        </div>
+        <h3>Teilzeit mit eigenem Deputat</h3>
+        <p>Halbe Stelle, 18 von 25, Altersermäßigung: Du hinterlegst dein Deputat, und jeder Soll-Wert rechnet sich entsprechend herunter.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 19a4 4 0 0 1-.4-7.98A6 6 0 0 1 17.6 9.4 3.8 3.8 0 0 1 18 17H6z"/>
+          </svg>
+        </div>
+        <h3>iPhone und iPad im Abgleich</h3>
+        <p>Einträge, Stundenplan und Einstellungen wandern über deine private iCloud. Timer auf dem iPhone gestartet? Das iPad zeigt ihn auch.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Keine Datensammlung</h3>
+        <p>Kein Konto, keine Anmeldung, keine Analyse-Dienste. Außer der iCloud-Verbindung stellt die App überhaupt keine Netzwerkverbindung her.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IPAD -->
+  <section class="ipad-section">
+    <p class="section-eyebrow">Auch auf dem iPad</p>
+    <h2 class="section-title">Auf dem Gerät, das gerade dalag</h2>
+    <p class="section-lead">Am Schreibtisch das iPad, in der Schule das iPhone. Beide zeigen dasselbe — auch den laufenden Timer.</p>
+
+    <div class="ipad-mockup">
+      <div class="ipad-screen" id="ipadScreen">
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/ipad-analyse.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide active" src="images/lehrer-arbeitszeit/screenshots/light/ipad-analyse.png" alt="Analyse-Ansicht auf dem iPad mit Tages-, Wochen- und Monatssummen" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/ipad-verlauf.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/ipad-verlauf.png" alt="Jahresverlauf als Balkendiagramm auf dem iPad" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="images/lehrer-arbeitszeit/screenshots/dark/ipad-stundenplan.png" media="(prefers-color-scheme: dark)" />
+          <img class="slide" src="images/lehrer-arbeitszeit/screenshots/light/ipad-stundenplan.png" alt="Stundenplan-Raster auf dem iPad" loading="lazy" />
+        </picture>
+      </div>
+      <img class="ipad-bezel" src="images/ipad-bezel.png" alt="" aria-hidden="true" />
+    </div>
+
+    <div class="slideshow-dots" id="ipadDots">
+      <button class="dot active" aria-label="Bild 1"></button>
+      <button class="dot" aria-label="Bild 2"></button>
+      <button class="dot" aria-label="Bild 3"></button>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- KOSTENLOS -->
+  <section class="free">
+    <p class="section-eyebrow">Preis</p>
+    <h2 class="section-title">Kostenlos. Und zwar ganz.</h2>
+
+    <div class="free-badges">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9.5 17.5 20 6.5"/></svg> Keine In-App-Käufe</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9.5 17.5 20 6.5"/></svg> Kein Abo</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9.5 17.5 20 6.5"/></svg> Keine Pro-Version</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9.5 17.5 20 6.5"/></svg> Keine Werbung</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9.5 17.5 20 6.5"/></svg> Keine Registrierung</span>
+    </div>
+
+    <p>Es gibt keine Funktion, die hinter einer Bezahlschranke liegt, und keinen Punkt, an dem die App nach Geld fragt. Der Grund ist unspektakulär: Eine App, die dir zeigt, wie viel du unbezahlt arbeitest, sollte dich nicht auch noch etwas kosten.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <p class="section-eyebrow">FAQ</p>
+
+    <div class="faq-item">
+      <h3>Ist die App wirklich kostenlos?</h3>
+      <p>Ja, vollständig. Keine In-App-Käufe, kein Abo, keine Pro-Version, keine Werbung. Es gibt keine Funktion, die hinter einer Bezahlschranke liegt.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Wie erfasst die App meine Arbeitszeit automatisch?</h3>
+      <p>Du trägst deinen Stundenplan einmal in ein Raster ein — Unterrichtsstunden und Pausenaufsichten. Ab dann werden diese Zeiten an jedem Schultag von selbst erfasst. Ferien und Feiertage deines Bundeslandes bleiben ausgenommen, weil beides in der App hinterlegt ist.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Wie wird die Soll-Arbeitszeit eines Schuljahres berechnet?</h3>
+      <p>Mit einer 40-Stunden-Woche, 30 Urlaubstagen und den gesetzlichen Feiertagen deines Bundeslandes; das Schuljahr läuft vom 1. August bis zum 31. Juli. Für eine volle Stelle ergibt das rund 1.760 Stunden, bei Teilzeit skaliert der Wert mit deinem Deputat. Das ist eine Orientierung für dich, keine dienstrechtlich verbindliche Auskunft.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Funktioniert die App auch bei Teilzeit?</h3>
+      <p>Ja. Du hinterlegst dein eigenes Deputat, und alle Soll-Werte — Tag, Woche, Monat, Schuljahr — werden entsprechend heruntergerechnet.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Was passiert mit meinen Daten?</h3>
+      <p>Sie bleiben auf deinem Gerät und, wenn du den Abgleich einschaltest, in deiner eigenen privaten iCloud. Es gibt kein Benutzerkonto, keine Anmeldung, keine Werbung und keine Analyse-Dienste. Außer der iCloud-Verbindung stellt die App überhaupt keine Netzwerkverbindung her — auch Ferientermine werden nicht abgerufen, sondern sind mitgeliefert.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Gleicht die App zwischen iPhone und iPad ab?</h3>
+      <p>Ja, über iCloud: Einträge, Stundenplan und Einstellungen. Startest du einen Timer auf dem einen Gerät, siehst du ihn auf dem anderen.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Für welche Bundesländer sind Ferien und Feiertage hinterlegt?</h3>
+      <p>Für alle 16. Die Ferientermine reichen bis zum Schuljahr 2029/30, die Feiertage werden berechnet. Beides funktioniert deshalb auch im Flugmodus.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Ersetzt die App eine dienstliche Zeiterfassung?</h3>
+      <p>Nein. Sie ist ein persönliches Werkzeug für deine eigene Übersicht. Wo dein Land eine dienstliche Erfassung vorschreibt, gilt weiterhin deren System.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <p class="final-cta-title">Ein Schuljahr lang mitschreiben.</p>
+    <p class="final-cta-sub">Dann steht am 31. Juli eine Zahl da, über die sich reden lässt — statt eines Gefühls.</p>
+    <p><span class="coming-soon" style="animation:none;opacity:1;">Bald im App Store</span></p>
+  </section>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="lehrer-arbeitszeit-privacy.html">Datenschutz</a>
+  </footer>
+
+  <script>
+    /* ── Jahresarbeitszeit-Rechner ──────────────────────────────────────────
+       Dieselbe Formel wie in der App: 261 Wochentage à 8 h, minus 30 Urlaubs-
+       und 11 Feiertage. Die App nimmt die Feiertage des gewaehlten Bundes-
+       landes, hier steht ein Mittelwert. */
+    (function () {
+      var SOLL_VOLLZEIT = 1760;   // 261*8 - 30*8 - 11*8
+      var SCHULWOCHEN = 40;
+      var FERIENWOCHEN = 12;
+
+      var f = {
+        deputat: document.getElementById('deputat'),
+        vollzeit: document.getElementById('vollzeit'),
+        schulwoche: document.getElementById('schulwoche'),
+        ferienwoche: document.getElementById('ferienwoche')
+      };
+      var out = {
+        deputat: document.getElementById('outDeputat'),
+        vollzeit: document.getElementById('outVollzeit'),
+        schulwoche: document.getElementById('outSchulwoche'),
+        ferienwoche: document.getElementById('outFerienwoche'),
+        umfang: document.getElementById('outUmfang'),
+        faktor: document.getElementById('outFaktor'),
+        soll: document.getElementById('outSoll'),
+        ist: document.getElementById('outIst'),
+        barSoll: document.getElementById('barSoll'),
+        barIst: document.getElementById('barIst'),
+        verdict: document.getElementById('verdict')
+      };
+
+      var nf = new Intl.NumberFormat('de-DE');
+      function h(n) { return nf.format(Math.round(n)) + ' h'; }
+      function std(n) { return nf.format(n) + ' Std.'; }
+
+      function update() {
+        var deputat = parseFloat(f.deputat.value);
+        var vollzeit = parseFloat(f.vollzeit.value);
+        var woche = parseFloat(f.schulwoche.value);
+        var ferien = parseFloat(f.ferienwoche.value);
+
+        out.deputat.textContent = std(deputat);
+        out.vollzeit.textContent = std(vollzeit);
+        out.schulwoche.textContent = std(woche);
+        out.ferienwoche.textContent = std(ferien);
+
+        var umfang = Math.min(deputat / vollzeit, 1.5);
+        var soll = SOLL_VOLLZEIT * umfang;
+        var ist = woche * SCHULWOCHEN + ferien * FERIENWOCHEN;
+        var max = Math.max(soll, ist, 1);
+
+        var pct = Math.round(umfang * 100);
+        out.umfang.textContent = pct + ' % Stelle';
+        out.faktor.textContent = pct + ' %';
+        out.soll.textContent = h(soll);
+        out.ist.textContent = h(ist);
+
+        out.barSoll.style.width = (soll / max * 100) + '%';
+        out.barIst.style.width = (ist / max * 100) + '%';
+
+        /* Der Anteil ueber dem Soll wird im selben Balken rot weitergefuehrt —
+           gruen bis zum Soll, darueber der Ueberhang. */
+        var cs = getComputedStyle(document.documentElement);
+        var cIst = cs.getPropertyValue('--ist').trim();
+        var cOver = cs.getPropertyValue('--over').trim();
+        if (ist > soll && soll > 0) {
+          var knick = (soll / ist * 100).toFixed(2);
+          out.barIst.style.background =
+            'linear-gradient(90deg, ' + cIst + ' 0 ' + knick + '%, ' + cOver + ' ' + knick + '% 100%)';
+        } else {
+          out.barIst.style.background = cIst;
+        }
+
+        var diff = ist - soll;
+        var tage = Math.round(Math.abs(diff) / 8);
+        if (deputat === 0) {
+          out.verdict.innerHTML = 'Ohne Deputat gibt es kein Soll, an dem sich etwas messen liesse.';
+        } else if (diff > 20) {
+          out.verdict.innerHTML = 'Das sind <b class="over">' + h(diff) + '</b> über dem Soll — rund <b>' +
+            nf.format(tage) + ' zusätzliche Arbeitstage</b> zu je acht Stunden, jedes Schuljahr.';
+        } else if (diff < -20) {
+          out.verdict.innerHTML = 'Das sind <b class="under">' + h(-diff) + '</b> unter dem Soll. ' +
+            'Falls sich das falsch anfühlt: geschätzte Wochenstunden fallen fast immer zu niedrig aus.';
+        } else {
+          out.verdict.innerHTML = 'Du liegst ziemlich genau auf dem Soll — jedenfalls nach deiner Schätzung.';
+        }
+      }
+
+      Object.keys(f).forEach(function (k) {
+        f[k].addEventListener('input', update);
+      });
+      update();
+    })();
+
+    /* ── Slideshows ──────────────────────────────────────────────────────── */
+    (function () {
+      var TEXTS = [
+        ['Tracker', 'Ein Timer für alles, was nicht im Stundenplan steht — er läuft auf dem Sperrbildschirm weiter.'],
+        ['Stundenplan', 'Einmal ins Raster tippen. Ab dann trägt sich der Unterricht an jedem Schultag von selbst ein.'],
+        ['Analyse', 'Heute, diese Woche, dieser Monat — jeweils mit Hochrechnung auf den Rest des Zeitraums.'],
+        ['Jahresverlauf', 'Jeder Monat des Schuljahres als Balken. Die Korrekturphasen sieht man sofort.'],
+        ['Jahresarbeitszeit', 'Soll-Stunden deiner Stelle gegen deine tatsächlich erfassten Stunden. Die Kernfrage der App.'],
+        ['Alle Einträge', 'Jede erfasste Stunde nach Kategorie und Datum — filterbar, änderbar, löschbar.'],
+        ['Drei Wege', 'Automatisch, live oder nachträglich. Du entscheidest, wie viel Aufwand du treibst.']
+      ];
+
+      function wire(screenId, dotsId, texts) {
+        var screen = document.getElementById(screenId);
+        var dots = document.getElementById(dotsId).querySelectorAll('.dot');
+        if (!screen) return;
+        var slides = screen.querySelectorAll('.slide');
+        var caption = texts ? document.getElementById('shotCaption') : null;
+        var sub = texts ? document.getElementById('shotSub') : null;
+        var current = 0;
+
+        function go(n) {
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+          if (caption) {
+            caption.textContent = texts[current][0];
+            sub.textContent = texts[current][1];
+          }
+        }
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () { go(i); });
+        });
+        screen.addEventListener('click', function () { go(current + 1); });
+      }
+
+      wire('phoneScreen', 'phoneDots', TEXTS);
+      wire('ipadScreen', 'ipadDots', null);
+    })();
+  </script>
+
+  <script src="assets/theme.js" defer></script>
+</body>
+</html>
