@@ -59,6 +59,21 @@
 
   <!-- Ratgeber / Guides -->
   <url>
+    <loc>https://crabucate.de/guides/arbeitszeiterfassung-lehrer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/guides/jahresarbeitszeit-lehrer-berechnen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/guides/ueberstunden-lehrer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/guides/sitzplan-erstellen.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-erstellen.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/create-seating-chart.html"/>

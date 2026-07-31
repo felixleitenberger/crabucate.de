@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static website at `crabucate.de`, hosted on IONOS webhosting. There is no build step, no framework, and no dependencies — 37 hand-written HTML pages.
+A static website at `crabucate.de`, hosted on IONOS webhosting. There is no build step, no framework, and no dependencies — 40 hand-written HTML pages.
 
 ## Deployment
 
@@ -18,7 +18,7 @@ The workflow mirrors with `--delete`, so files removed here are removed on the s
 
 ## Structure
 
-German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (9) and `/en/guides/` (8).
+German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (12) and `/en/guides/` (8). The three newest — `arbeitszeiterfassung-lehrer`, `jahresarbeitszeit-lehrer-berechnen`, `ueberstunden-lehrer` — belong to the Lehrer Arbeitszeit Tracker and are German-only like the app page itself.
 
 `lehrer-arbeitszeit.html` and `lehrer-arbeitszeit-privacy.html` are **deliberately German-only** and have no `/en/` counterpart: the app ships the Ferien- and Feiertagstermine of the sixteen German states and is useless elsewhere. Their `hreflang` therefore names only `de`, and the English start page lists two apps, not three. Do not "fix" that asymmetry by machine-translating the pages.
 
@@ -50,7 +50,7 @@ location.
 
 Load order matters: `base.css` comes before the inline `<style>`, so a page can override any shared rule simply by declaring it. That is how pages with a different `nav`, `footer`, `body` or `.nav-logo` keep their own version — those genuinely differ and were deliberately left inline.
 
-When adding a rule, ask whether it is identical everywhere. If yes it belongs in `base.css`; if not, keep it inline. Do not move `nav`, `footer`, `.nav-logo` or `body` into `base.css` without checking all 34 pages — they have several legitimate variants.
+When adding a rule, ask whether it is identical everywhere. If yes it belongs in `base.css`; if not, keep it inline. Do not move `nav`, `footer`, `.nav-logo` or `body` into `base.css` without checking all 39 pages — they have several legitimate variants.
 
 The font stack is system-native (`-apple-system, BlinkMacSystemFont, …`), no webfonts.
 

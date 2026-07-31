@@ -143,14 +143,29 @@
       padding: 2.75rem 2.5rem;
     }
 
+    /* Anders als bei den beiden Marketing-Bildern der anderen Kacheln ist das
+       hier eine rohe Aufnahme. Sie wird deshalb ganz gezeigt statt formatfuellend
+       beschnitten — mit etwas Rand, damit sie nicht an den Kanten klebt. */
     .app-tile--featured .tile-preview {
       flex: 1 1 56%;
       border-top: none;
       border-left: 1px solid var(--line);
       min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 2.25rem;
+      background: var(--la-dim);
     }
 
-    .app-tile--featured .tile-preview img { object-position: top left; }
+    .app-tile--featured .tile-preview img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(36,31,26,0.16);
+    }
 
     @media (max-width: 860px) {
       .app-tile--featured { flex-direction: column; }
@@ -458,6 +473,9 @@
     <section class="ratgeber" aria-label="Ratgeber">
       <p class="ratgeber-title">Ratgeber für Lehrkräfte</p>
       <div class="ratgeber-links">
+        <a href="guides/arbeitszeiterfassung-lehrer.html">Arbeitszeiterfassung für Lehrer</a>
+        <a href="guides/jahresarbeitszeit-lehrer-berechnen.html">Jahresarbeitszeit berechnen</a>
+        <a href="guides/ueberstunden-lehrer.html">Überstunden als Lehrkraft</a>
         <a href="guides/sitzplan-erstellen.html">Sitzplan erstellen</a>
         <a href="guides/sitzplan-generator.html">Sitzplan-Generator</a>
         <a href="guides/sitzordnung-klassenzimmer.html">Sitzordnung im Klassenzimmer</a>
