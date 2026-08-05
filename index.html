@@ -239,6 +239,7 @@
       letter-spacing: 0.01em;
     }
 
+    .tile-cta--la { color: var(--la-text); }
     .tile-cta--tz { color: var(--tz-text); }
     .tile-cta--pw { color: var(--pw-text); }
 
@@ -247,34 +248,6 @@
       width: auto;
       display: block;
       opacity: 0.9;
-    }
-
-    .tile-coming-soon {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--la-text);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      align-self: flex-start;
-    }
-
-    .tile-coming-soon::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--la);
-      flex-shrink: 0;
-      animation: pulse 2.5s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.8); }
     }
 
     /* Screenshot preview area */
@@ -406,7 +379,7 @@
           <h2 class="tile-name">Lehrer Arbeitszeit Tracker</h2>
           <p class="tile-tagline">Zeiterfassung für Lehrkräfte — automatisch aus dem Stundenplan, mit Soll und Ist für das ganze Schuljahr.</p>
           <span class="tile-free">Vollständig kostenlos</span>
-          <span class="tile-coming-soon">Bald im App Store</span>
+          <span class="tile-cta tile-cta--la">Im App Store &nbsp;→</span>
         </div>
         <div class="tile-preview">
           <picture>

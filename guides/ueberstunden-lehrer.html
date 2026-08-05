@@ -199,28 +199,11 @@
       margin-top: 3rem;
     }
 
-    .cta-box .cta-soon {
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      padding: 0.55rem 1.4rem; border: 1px solid rgba(247,157,57,0.35);
-      border-radius: 100px; font-size: 0.76rem; font-weight: 500;
-      color: var(--app-text); letter-spacing: 0.05em; text-transform: uppercase;
-    }
-    .cta-box .cta-soon::before {
-      content: ''; display: block; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--app); flex-shrink: 0; animation: pulse 2.5s ease infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
     .calc-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.5rem; font-size: 0.9rem; }
     .calc-table th, .calc-table td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); color: var(--prose); }
     .calc-table th { font-weight: 600; color: var(--fg); }
     .calc-table td:last-child, .calc-table th:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .calc-table tr.sum td { font-weight: 700; color: var(--fg); border-bottom: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .cta-box .cta-soon::before { animation: none; }
-    }
 </style>
 </head>
 <body>
@@ -289,7 +272,9 @@
     </picture>
     <p class="cta-title">Lehrer Arbeitszeit Tracker</p>
     <p class="cta-sub">Vollständig kostenlos · keine In-App-Käufe · iPhone &amp; iPad · ohne Konto</p>
-    <p><span class="cta-soon">Bald im App Store</span></p>
+    <a class="badge" href="https://apps.apple.com/de/app/lehrer-arbeitszeit-tracker/id6796359379" target="_blank" rel="noopener">
+      <img src="../images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+    </a>
     <a class="cta-alt" href="../lehrer-arbeitszeit.html">App ansehen und Jahresarbeitszeit berechnen →</a>
   </div>
 

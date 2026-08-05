@@ -30,6 +30,7 @@
     "applicationCategory": "BusinessApplication",
     "description": "Zeiterfassung für Lehrkräfte: Arbeitszeit automatisch aus dem Stundenplan erfassen, per Timer mitlaufen lassen oder nachtragen. Soll- und Ist-Stunden des Schuljahres im Vergleich, Ferien und Feiertage aller 16 Bundesländer. Für iPhone und iPad.",
     "keywords": "Zeiterfassung Lehrer, Arbeitszeit Lehrkräfte, Deputat, Stundenplan, Überstunden, Mehrarbeit, Dienstzeit, Zeitkonto, Schule",
+    "url": "https://apps.apple.com/de/app/lehrer-arbeitszeit-tracker/id6796359379",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
   }
@@ -269,38 +270,15 @@
       .stat-row { grid-template-columns: 1fr; }
     }
 
-    .coming-soon {
-      margin-top: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.55rem 1.4rem;
-      border: 1px solid rgba(247,157,57,0.35);
-      border-radius: 100px;
-      font-size: 0.76rem;
-      font-weight: 500;
-      color: var(--la-text);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .app-store-badge {
+      display: inline-block;
+      margin-top: 1.75rem;
       opacity: 0;
       animation: fadeUp 1s ease 0.6s forwards;
+      transition: opacity 0.2s;
     }
 
-    .coming-soon::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--la);
-      flex-shrink: 0;
-      animation: pulse 2.5s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
+    .app-store-badge:hover { opacity: 0.75 !important; }
 
     .hero-meta {
       margin-top: 1.4rem;
@@ -1075,7 +1053,7 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-      .hero-icon, .hero h1, .tagline, .price-tag, .coming-soon, .hero-meta { opacity: 1; }
+      .hero-icon, .hero h1, .tagline, .price-tag, .app-store-badge, .hero-meta { opacity: 1; }
     }
   </style>
 </head>
@@ -1112,7 +1090,11 @@
       <b>Vollständig kostenlos</b>
       <span>keine In-App-Käufe · kein Abo · keine Werbung</span>
     </div>
-    <div><span class="coming-soon">Bald im App Store</span></div>
+    <div>
+      <a class="app-store-badge" href="https://apps.apple.com/de/app/lehrer-arbeitszeit-tracker/id6796359379" target="_blank" rel="noopener">
+        <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+      </a>
+    </div>
     <p class="hero-meta">
       <span>iPhone &amp; iPad</span><span class="sep">·</span><span>Ohne Konto</span><span class="sep">·</span><span>iCloud-Abgleich</span><span class="sep">·</span><span>Alle 16 Bundesländer</span>
     </p>
@@ -1519,7 +1501,9 @@
   <section class="final-cta">
     <p class="final-cta-title">Ein Schuljahr lang mitschreiben.</p>
     <p class="final-cta-sub">Dann steht am 31. Juli eine Zahl da, über die sich reden lässt — statt eines Gefühls.</p>
-    <p><span class="coming-soon" style="animation:none;opacity:1;">Bald im App Store</span></p>
+    <a href="https://apps.apple.com/de/app/lehrer-arbeitszeit-tracker/id6796359379" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" style="height:48px; width:auto; display:block;" />
+    </a>
   </section>
 
   <footer>
