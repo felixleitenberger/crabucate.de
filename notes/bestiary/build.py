@@ -80,6 +80,16 @@ THEME_SNIPPET = (
     "catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>"
 )
 
+GLOBE = ('<svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+         'stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/>'
+         '<path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg>')
+CARET = ('<svg class="lang-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" '
+         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+         '<path d="M2 4.5 6 8.5l4-4"/></svg>')
+CHECK = ('<svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" '
+         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+         '<path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>')
+
 TOGGLE = """<button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
         <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
         <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
@@ -152,27 +162,9 @@ CHROME_CSS = """
       z-index: 1;
     }
 
-    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-links { line-height: 2; }
     .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
 
-    .foot-langs {
-      font-size: 0.75rem;
-      line-height: 2.1;
-      max-width: 640px;
-      margin: 0 auto;
-      opacity: 0.85;
-    }
-    .foot-langs strong {
-      display: block;
-      font-weight: 600;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-bottom: 0.4rem;
-    }
-    .foot-langs a { color: inherit; }
-    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
 """
 
 PROSE_CSS = """
@@ -237,7 +229,7 @@ PROSE_CSS = """
 
     a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     a:hover { border-color: currentColor; }
-    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+    .nav-logo, .back-link, .foot-links a { border-bottom: 0; }
 """
 
 INDEX_CSS = """
@@ -497,7 +489,36 @@ def head(lang_code: str, hreflang: str, locale: str, title: str, description: st
 PAGE_OF: dict[str, str] = {}
 
 
-def nav(up: str, back_href: str, back_label: str) -> str:
+def lang_menu(data: dict, lang: str, page: str, up: str) -> str:
+    """Der Sprachwaehler oben rechts, mit allen zehn Sprachen dieser Seite.
+
+    Die Adressen zeigen jeweils auf dieselbe Seite in der anderen Sprache, nicht
+    auf deren Startseite: Wer die Datenschutzerklaerung auf Koreanisch sucht,
+    landet auf der koreanischen Datenschutzerklaerung.
+    """
+    label = e(data["common"]["language_choose"])
+    own = dict((code, name) for code, _, _, name, _ in LANGS)[lang]
+
+    items = []
+    for code, hreflang, _, name, prefix in LANGS:
+        if code == lang:
+            items.append(f'          <span class="lang-item lang-item--active" '
+                         f'aria-current="true">{CHECK}{e(name)}</span>')
+        else:
+            target = f"{up}bestiary/" + (f"{prefix}/" if prefix else "") + (f"{page}/" if page else "")
+            items.append(f'          <a class="lang-item" hreflang="{hreflang}" lang="{hreflang}" '
+                         f'href="{target}">{CHECK}{e(name)}</a>')
+
+    return (f'      <details class="lang-menu">\n'
+            f'        <summary aria-label="{label}" title="{label}">'
+            f'{GLOBE}<span class="lang-current">{e(own)}</span>{CARET}</summary>\n'
+            f'        <div class="lang-panel">\n'
+            + "\n".join(items) + "\n"
+            f'        </div>\n'
+            f'      </details>')
+
+
+def nav(up: str, back_href: str, back_label: str, menu: str) -> str:
     return f"""
   <nav>
     <a href="{up}" class="nav-logo">
@@ -506,6 +527,7 @@ def nav(up: str, back_href: str, back_label: str) -> str:
     </a>
     <div class="nav-right">
       <a href="{back_href}" class="back-link">{back_label}</a>
+{menu}
       {TOGGLE}
     </div>
   </nav>
@@ -528,22 +550,14 @@ def footer(data: dict, lang: str, page: str, up: str) -> str:
             links.append(f'<a href="{app_root}{slug}/">{e(c["nav_" + key])}</a>')
     links.append(f'<a href="{imprint}">{e(c["imprint"])}</a>')
 
-    langs = []
-    for code, _, _, name, prefix in LANGS:
-        target = f"{up}bestiary/" + (f"{prefix}/" if prefix else "") + (f"{page}/" if page else "")
-        if code == lang:
-            langs.append(f'<span class="lang-active">{e(name)}</span>')
-        else:
-            langs.append(f'<a href="{target}">{e(name)}</a>')
-
     sep = '<span class="foot-sep">·</span>'
     return f"""
   <footer>
     <div class="foot-links">{sep.join(links)}</div>
-    <div class="foot-langs"><strong>{e(c["language"])}</strong>{sep.join(langs)}</div>
   </footer>
 
   <script src="{up}assets/theme.js" defer></script>
+  <script src="{up}assets/lang.js" defer></script>
 </body>
 </html>
 """
@@ -599,7 +613,7 @@ def render_prose(data: dict, lang: str, hreflang: str, locale: str, page: str) -
     body = [
         head(lang, hreflang, locale, d["title"], d["description"], canonical, up,
              CHROME_CSS + PROSE_CSS, robots=d.get("robots", "index, follow")),
-        nav(up, app_root, "← Daily Bestiary"),
+        nav(up, app_root, "← Daily Bestiary", lang_menu(data, lang, page, up)),
         "\n  <main>",
         f'    <p class="page-label">{e(d["label"])}</p>',
         f'    <h1>{e(d["h1"])}</h1>',
@@ -673,7 +687,7 @@ def render_index(data: dict, lang: str, hreflang: str, locale: str) -> str:
              CHROME_CSS + INDEX_CSS),
         f'  <script type="application/ld+json">\n{json.dumps(app_ld, ensure_ascii=False, indent=2)}\n  </script>',
         f'  <script type="application/ld+json">\n{json.dumps(faq_ld, ensure_ascii=False, indent=2)}\n  </script>',
-        nav(up, f"{up}", f'← {e(c["all_apps"])}'),
+        nav(up, f"{up}", f'← {e(c["all_apps"])}', lang_menu(data, lang, "", up)),
         "\n  <main>",
         '    <section class="hero">',
         f'      <img class="hero-icon" src="{up}images/bestiary/icon.png" width="108" height="108" alt="Daily Bestiary" />',

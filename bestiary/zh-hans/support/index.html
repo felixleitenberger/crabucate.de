@@ -97,27 +97,9 @@
       z-index: 1;
     }
 
-    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-links { line-height: 2; }
     .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
 
-    .foot-langs {
-      font-size: 0.75rem;
-      line-height: 2.1;
-      max-width: 640px;
-      margin: 0 auto;
-      opacity: 0.85;
-    }
-    .foot-langs strong {
-      display: block;
-      font-weight: 600;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-bottom: 0.4rem;
-    }
-    .foot-langs a { color: inherit; }
-    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
 
     main {
       padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 6rem;
@@ -180,7 +162,7 @@
 
     a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     a:hover { border-color: currentColor; }
-    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+    .nav-logo, .back-link, .foot-links a { border-bottom: 0; }
   </style>
 </head>
 <body>
@@ -193,6 +175,21 @@
     </a>
     <div class="nav-right">
       <a href="../" class="back-link">← Daily Bestiary</a>
+      <details class="lang-menu">
+        <summary aria-label="选择语言" title="选择语言"><svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg><span class="lang-current">简体中文</span><svg class="lang-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5 6 8.5l4-4"/></svg></summary>
+        <div class="lang-panel">
+          <a class="lang-item" hreflang="en" lang="en" href="../../../bestiary/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>English</a>
+          <a class="lang-item" hreflang="de" lang="de" href="../../../bestiary/de/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Deutsch</a>
+          <a class="lang-item" hreflang="fr" lang="fr" href="../../../bestiary/fr/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Français</a>
+          <a class="lang-item" hreflang="es" lang="es" href="../../../bestiary/es/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Español</a>
+          <a class="lang-item" hreflang="it" lang="it" href="../../../bestiary/it/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Italiano</a>
+          <a class="lang-item" hreflang="pt-BR" lang="pt-BR" href="../../../bestiary/pt-br/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Português</a>
+          <a class="lang-item" hreflang="ja" lang="ja" href="../../../bestiary/ja/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>日本語</a>
+          <a class="lang-item" hreflang="ko" lang="ko" href="../../../bestiary/ko/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>한국어</a>
+          <span class="lang-item lang-item--active" aria-current="true"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>简体中文</span>
+          <a class="lang-item" hreflang="zh-Hant" lang="zh-Hant" href="../../../bestiary/zh-hant/support/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>繁體中文</a>
+        </div>
+      </details>
       <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
         <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
         <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
@@ -250,9 +247,9 @@
 
   <footer>
     <div class="foot-links"><a href="../../../">crabucate</a><span class="foot-sep">·</span><a href="../">Daily Bestiary</a><span class="foot-sep">·</span><a href="../privacy/">隐私</a><span class="foot-sep">·</span><a href="../terms/">使用条款</a><span class="foot-sep">·</span><span>支持</span><span class="foot-sep">·</span><a href="../../../en/impressum.html">法律声明</a></div>
-    <div class="foot-langs"><strong>语言</strong><a href="../../../bestiary/support/">English</a><span class="foot-sep">·</span><a href="../../../bestiary/de/support/">Deutsch</a><span class="foot-sep">·</span><a href="../../../bestiary/fr/support/">Français</a><span class="foot-sep">·</span><a href="../../../bestiary/es/support/">Español</a><span class="foot-sep">·</span><a href="../../../bestiary/it/support/">Italiano</a><span class="foot-sep">·</span><a href="../../../bestiary/pt-br/support/">Português</a><span class="foot-sep">·</span><a href="../../../bestiary/ja/support/">日本語</a><span class="foot-sep">·</span><a href="../../../bestiary/ko/support/">한국어</a><span class="foot-sep">·</span><span class="lang-active">简体中文</span><span class="foot-sep">·</span><a href="../../../bestiary/zh-hant/support/">繁體中文</a></div>
   </footer>
 
   <script src="../../../assets/theme.js" defer></script>
+  <script src="../../../assets/lang.js" defer></script>
 </body>
 </html>

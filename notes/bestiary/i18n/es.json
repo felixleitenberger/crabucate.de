@@ -6,9 +6,9 @@
     "nav_support": "Soporte",
     "imprint": "Aviso legal",
     "language": "Idioma",
-    "all_apps": "Todas las apps"
+    "all_apps": "Todas las apps",
+    "language_choose": "Elegir idioma"
   },
-
   "index": {
     "title": "Daily Bestiary – Una nueva carta de animal cada día | iPhone",
     "description": "Cada día una nueva carta de animal dibujada a mano: desbloquéala, dale la vuelta, aprende tres cosas, juega al quiz. Las tres primeras son gratis. Para iPhone.",
@@ -20,16 +20,29 @@
     ],
     "badge_alt": "Consíguelo en el App Store",
     "cta_note": "Daily Bestiary llegará al App Store muy pronto. En cuanto se publique, este botón llevará directamente a la ficha.",
-
     "features_title": "Qué incluye",
     "features": [
-      { "t": "Una carta al día", "d": "Una, nunca más. La carta del día se calcula a partir de tu propia fecha de inicio, no de una fecha del calendario: empiezas cuando quieras." },
-      { "t": "Una foto y tres datos", "d": "Cada dorso lleva una fotografía real del animal, tres datos y el nombre científico." },
-      { "t": "Un quiz por animal", "d": "Cuatro preguntas para cada animal, revisadas por un profesor de biología. Siempre se pueden repetir." },
-      { "t": "Una colección que crece", "d": "El álbum muestra solo tus propias cartas. Sin huecos vacíos, sin «x de y», sin carrera." },
-      { "t": "Cartas holográficas", "d": "Algunas cartas brillan: inclina el teléfono y la luz recorre la superficie." }
+      {
+        "t": "Una carta al día",
+        "d": "Una, nunca más. La carta del día se calcula a partir de tu propia fecha de inicio, no de una fecha del calendario: empiezas cuando quieras."
+      },
+      {
+        "t": "Una foto y tres datos",
+        "d": "Cada dorso lleva una fotografía real del animal, tres datos y el nombre científico."
+      },
+      {
+        "t": "Un quiz por animal",
+        "d": "Cuatro preguntas para cada animal, revisadas por un profesor de biología. Siempre se pueden repetir."
+      },
+      {
+        "t": "Una colección que crece",
+        "d": "El álbum muestra solo tus propias cartas. Sin huecos vacíos, sin «x de y», sin carrera."
+      },
+      {
+        "t": "Cartas holográficas",
+        "d": "Algunas cartas brillan: inclina el teléfono y la luz recorre la superficie."
+      }
     ],
-
     "shots_title": "Así se ve",
     "shots": [
       "La carta del día: una al día, cambia a medianoche.",
@@ -38,342 +51,556 @@
       "El dorso: fotografía, tres datos, nombre científico y crédito de la imagen.",
       "Cuatro preguntas para cada animal."
     ],
-
     "collector_title": "Collector",
     "collector": [
       "Collector abre el archivo: un día perdido todavía se puede recuperar. La carta del día está incluida cada día, y obtienes tus estadísticas del quiz de toda la colección.",
       "Collector es una suscripción y se renueva hasta que la canceles. Puedes cancelarla en cualquier momento en los ajustes de tu cuenta de Apple. Los precios y las duraciones vigentes aparecen en el App Store, porque varían según el país."
     ],
-
     "privacy_title": "Sin cuenta, sin feed, sin anuncios",
     "privacy": [
       "No hay registro ni inicio de sesión. Tu colección vive en tu dispositivo y —si has iniciado sesión en iCloud— se sincroniza de forma privada entre tus propios dispositivos. El desarrollador no tiene acceso a ella.",
       "No hay nada que deslizar ni nada que farmear. Sin anuncios, sin redes publicitarias, sin seguimiento entre apps. Las compras se gestionan a través de un proveedor de servicios; la política de privacidad detalla exactamente qué llega hasta él."
     ],
-
     "credits_title": "Créditos de las fotos",
     "credits": [
       "Los dibujos del anverso de las cartas están hechos a mano. Las fotografías del dorso proceden de fuentes libres: Pixabay, Unsplash y Wikimedia Commons.",
       "Cada fotografía está acreditada al dorso de su propia carta, con el autor, la licencia y un enlace a la fuente. No en la letra pequeña, sino allí donde está la imagen."
     ],
-
     "faq_title": "Preguntas frecuentes",
     "faq": [
-      { "q": "¿Cuánto cuesta Daily Bestiary?", "a": "La descarga es gratuita y las tres primeras cartas son gratis, con dorso, datos y quiz. A partir de ahí desbloqueas la carta del día por separado, compras un paquete de diez o te suscribes a Collector. Los precios vigentes aparecen en el App Store; varían según el país." },
-      { "q": "¿Necesito una cuenta?", "a": "No. No hay registro, ni inicio de sesión, ni perfil. La app nunca pide un nombre ni una dirección de correo." },
-      { "q": "¿Cuántas cartas hay en total?", "a": "No se dice en ningún sitio: ni en la app ni aquí. Un total convierte el coleccionar en una barra de progreso, y eso es justo lo que no queremos. Cuando tengas todas las cartas que existen, la app te lo dirá." },
-      { "q": "¿Qué pasa si me salto un día?", "a": "Esa carta no se pierde. Collector abre el archivo, donde los días perdidos se pueden recuperar. Sin Collector, al día siguiente simplemente llega la siguiente carta." },
-      { "q": "¿Se sincroniza mi colección entre iPhone y iPad?", "a": "Sí, siempre que ambos dispositivos hayan iniciado sesión en iCloud con la misma cuenta de Apple. La sincronización pasa por tu base de datos privada de iCloud, que el desarrollador no puede consultar." },
-      { "q": "He reinstalado la app: ¿he perdido mis compras?", "a": "No. En los ajustes de la app y en cada pantalla de compra está «Restaurar compras». Eso vuelve a vincular tu suscripción y el saldo restante a tu cuenta de Apple. La colección regresa por iCloud." },
-      { "q": "¿Cómo cancelo Collector?", "a": "A través de Apple, no de la app: Ajustes → tu nombre → Suscripciones. Allí se puede cancelar en cualquier momento, con efecto al final del periodo en curso. La app ofrece el mismo camino desde el Customer Center en sus ajustes." },
-      { "q": "¿Funciona la app sin conexión a internet?", "a": "Sí. Todas las cartas, fotografías y preguntas están dentro de la app y no se descargan. Solo hace falta conexión para las compras y para la sincronización con iCloud." }
+      {
+        "q": "¿Cuánto cuesta Daily Bestiary?",
+        "a": "La descarga es gratuita y las tres primeras cartas son gratis, con dorso, datos y quiz. A partir de ahí desbloqueas la carta del día por separado, compras un paquete de diez o te suscribes a Collector. Los precios vigentes aparecen en el App Store; varían según el país."
+      },
+      {
+        "q": "¿Necesito una cuenta?",
+        "a": "No. No hay registro, ni inicio de sesión, ni perfil. La app nunca pide un nombre ni una dirección de correo."
+      },
+      {
+        "q": "¿Cuántas cartas hay en total?",
+        "a": "No se dice en ningún sitio: ni en la app ni aquí. Un total convierte el coleccionar en una barra de progreso, y eso es justo lo que no queremos. Cuando tengas todas las cartas que existen, la app te lo dirá."
+      },
+      {
+        "q": "¿Qué pasa si me salto un día?",
+        "a": "Esa carta no se pierde. Collector abre el archivo, donde los días perdidos se pueden recuperar. Sin Collector, al día siguiente simplemente llega la siguiente carta."
+      },
+      {
+        "q": "¿Se sincroniza mi colección entre iPhone y iPad?",
+        "a": "Sí, siempre que ambos dispositivos hayan iniciado sesión en iCloud con la misma cuenta de Apple. La sincronización pasa por tu base de datos privada de iCloud, que el desarrollador no puede consultar."
+      },
+      {
+        "q": "He reinstalado la app: ¿he perdido mis compras?",
+        "a": "No. En los ajustes de la app y en cada pantalla de compra está «Restaurar compras». Eso vuelve a vincular tu suscripción y el saldo restante a tu cuenta de Apple. La colección regresa por iCloud."
+      },
+      {
+        "q": "¿Cómo cancelo Collector?",
+        "a": "A través de Apple, no de la app: Ajustes → tu nombre → Suscripciones. Allí se puede cancelar en cualquier momento, con efecto al final del periodo en curso. La app ofrece el mismo camino desde el Customer Center en sus ajustes."
+      },
+      {
+        "q": "¿Funciona la app sin conexión a internet?",
+        "a": "Sí. Todas las cartas, fotografías y preguntas están dentro de la app y no se descargan. Solo hace falta conexión para las compras y para la sincronización con iCloud."
+      }
     ]
   },
-
   "privacy": {
     "title": "Política de privacidad de Daily Bestiary — crabucate",
     "description": "Política de privacidad de la app Daily Bestiary: qué permanece en tu dispositivo, qué llega a RevenueCat al comprar y qué derechos tienes.",
     "label": "Aviso legal",
     "h1": "Política de privacidad",
-
     "sections": [
       {
         "h": "En resumen",
         "blocks": [
-          { "p": "Esta app no tiene cuenta de usuario ni servidor propio. Tus cartas, tus resultados del quiz y tus ajustes permanecen en tu dispositivo y —si has iniciado sesión en iCloud— en tu propio iCloud privado. El desarrollador no tiene acceso a nada de eso." },
-          { "p": "Solo en un punto sale algo de tu dispositivo: las compras se gestionan a través de un proveedor de servicios (RevenueCat). No se transmite <strong>ningún</strong> dato que te identifique: ni nombre, ni dirección de correo, ni identificador publicitario. El apartado 5 detalla exactamente qué llega allí." },
-          { "p": "No hay publicidad, ni seguimiento entre apps, ni cesión a intermediarios de datos." }
+          {
+            "p": "Esta app no tiene cuenta de usuario ni servidor propio. Tus cartas, tus resultados del quiz y tus ajustes permanecen en tu dispositivo y —si has iniciado sesión en iCloud— en tu propio iCloud privado. El desarrollador no tiene acceso a nada de eso."
+          },
+          {
+            "p": "Solo en un punto sale algo de tu dispositivo: las compras se gestionan a través de un proveedor de servicios (RevenueCat). No se transmite <strong>ningún</strong> dato que te identifique: ni nombre, ni dirección de correo, ni identificador publicitario. El apartado 5 detalla exactamente qué llega allí."
+          },
+          {
+            "p": "No hay publicidad, ni seguimiento entre apps, ni cesión a intermediarios de datos."
+          }
         ]
       },
       {
         "h": "1. Responsable del tratamiento",
         "blocks": [
-          { "p": "Responsable en el sentido del Reglamento General de Protección de Datos (RGPD):" },
-          { "address": "Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Alemania<br />Correo: __MAIL__" }
+          {
+            "p": "Responsable en el sentido del Reglamento General de Protección de Datos (RGPD):"
+          },
+          {
+            "address": "Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Alemania<br />Correo: __MAIL__"
+          }
         ]
       },
       {
         "h": "2. Qué datos trata la app",
         "blocks": [
-          { "p": "La app guarda únicamente lo que surge al jugar:" },
-          { "ul": [
-            "<strong>Tus cartas</strong>: qué carta posees y cuándo la desbloqueaste",
-            "<strong>Resultados del quiz</strong>: qué preguntas acertaste de cada animal",
-            "<strong>Saldo</strong>: cuántos desbloqueos de un paquete comprado quedan pendientes",
-            "<strong>Ajustes</strong>: si se ha completado la introducción y si quieres el recordatorio diario"
-          ] },
-          { "p": "La app <strong>no</strong> pide datos identificativos: ni nombre, ni correo electrónico, ni fecha de nacimiento, ni dirección, ni teléfono. <strong>No</strong> accede a la ubicación, la cámara, el micrófono, las fotos, los contactos, el calendario ni los datos de salud." },
-          { "p": "El día en que empieza tu serie no se guarda por separado: se calcula a partir de la fecha de tu carta más antigua." }
+          {
+            "p": "La app guarda únicamente lo que surge al jugar:"
+          },
+          {
+            "ul": [
+              "<strong>Tus cartas</strong>: qué carta posees y cuándo la desbloqueaste",
+              "<strong>Resultados del quiz</strong>: qué preguntas acertaste de cada animal",
+              "<strong>Saldo</strong>: cuántos desbloqueos de un paquete comprado quedan pendientes",
+              "<strong>Ajustes</strong>: si se ha completado la introducción y si quieres el recordatorio diario"
+            ]
+          },
+          {
+            "p": "La app <strong>no</strong> pide datos identificativos: ni nombre, ni correo electrónico, ni fecha de nacimiento, ni dirección, ni teléfono. <strong>No</strong> accede a la ubicación, la cámara, el micrófono, las fotos, los contactos, el calendario ni los datos de salud."
+          },
+          {
+            "p": "El día en que empieza tu serie no se guarda por separado: se calcula a partir de la fecha de tu carta más antigua."
+          }
         ]
       },
       {
         "h": "3. Dónde están esos datos",
         "blocks": [
-          { "h3": "En tu dispositivo" },
-          { "p": "Todo lo anterior se guarda localmente en un área protegida de la app que el sistema operativo aísla del acceso de otras aplicaciones." },
-          { "h3": "En tu iCloud" },
-          { "p": "Si en el dispositivo has iniciado sesión en iCloud, los mismos datos se guardan además en la <strong>base de datos privada</strong> de tu cuenta de iCloud (Apple CloudKit). Sirve únicamente para sincronizar tu colección entre tus propios dispositivos y para recuperarla al cambiar de dispositivo." },
-          { "p": "Esa base de datos pertenece a tu cuenta de Apple. El desarrollador no puede consultarla técnicamente: no tiene acceso a las bases de datos privadas de CloudKit de las personas usuarias, y no existe ningún servidor suyo al que se transmitan esos datos." },
-          { "p": "La sincronización se controla desde iCloud en los ajustes del sistema de tu dispositivo. El tratamiento dentro de tu iCloud se rige por la <a href=\"https://www.apple.com/legal/privacy/es/\" target=\"_blank\" rel=\"noopener\">política de privacidad de Apple</a>." },
-          { "h3": "En ningún servidor del desarrollador" },
-          { "p": "No existe ninguno. Cartas, fotografías y preguntas van incluidas en la app y nunca se descargan. Salvo la conexión con iCloud y la gestión de compras descrita en el apartado 5, la app no establece ninguna conexión de red." }
+          {
+            "h3": "En tu dispositivo"
+          },
+          {
+            "p": "Todo lo anterior se guarda localmente en un área protegida de la app que el sistema operativo aísla del acceso de otras aplicaciones."
+          },
+          {
+            "h3": "En tu iCloud"
+          },
+          {
+            "p": "Si en el dispositivo has iniciado sesión en iCloud, los mismos datos se guardan además en la <strong>base de datos privada</strong> de tu cuenta de iCloud (Apple CloudKit). Sirve únicamente para sincronizar tu colección entre tus propios dispositivos y para recuperarla al cambiar de dispositivo."
+          },
+          {
+            "p": "Esa base de datos pertenece a tu cuenta de Apple. El desarrollador no puede consultarla técnicamente: no tiene acceso a las bases de datos privadas de CloudKit de las personas usuarias, y no existe ningún servidor suyo al que se transmitan esos datos."
+          },
+          {
+            "p": "La sincronización se controla desde iCloud en los ajustes del sistema de tu dispositivo. El tratamiento dentro de tu iCloud se rige por la <a href=\"https://www.apple.com/legal/privacy/es/\" target=\"_blank\" rel=\"noopener\">política de privacidad de Apple</a>."
+          },
+          {
+            "h3": "En ningún servidor del desarrollador"
+          },
+          {
+            "p": "No existe ninguno. Cartas, fotografías y preguntas van incluidas en la app y nunca se descargan. Salvo la conexión con iCloud y la gestión de compras descrita en el apartado 5, la app no establece ninguna conexión de red."
+          }
         ]
       },
       {
         "h": "4. Compras a través del App Store",
         "blocks": [
-          { "p": "Todas las compras se realizan a través del App Store. La otra parte del contrato de compra es Apple, no el desarrollador de esta app. Los datos de pago los trata exclusivamente Apple; el desarrollador no conoce ni tu nombre ni tu medio de pago." },
-          { "p": "Apple solo pone a disposición del desarrollador informes agregados, como cifras de ventas por país. No permiten extraer conclusiones sobre personas concretas." }
+          {
+            "p": "Todas las compras se realizan a través del App Store. La otra parte del contrato de compra es Apple, no el desarrollador de esta app. Los datos de pago los trata exclusivamente Apple; el desarrollador no conoce ni tu nombre ni tu medio de pago."
+          },
+          {
+            "p": "Apple solo pone a disposición del desarrollador informes agregados, como cifras de ventas por país. No permiten extraer conclusiones sobre personas concretas."
+          }
         ]
       },
       {
         "h": "5. RevenueCat: comprobación de las compras",
         "blocks": [
-          { "p": "Para que la app sepa si una compra es válida y si una suscripción sigue activa, se emplea el servicio <strong>RevenueCat</strong> (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, EE. UU.). Comprueba el recibo con Apple y responde a la app qué contenidos están desbloqueados." },
-          { "p": "En ese proceso se tratan:" },
-          { "ul": [
-            "un <strong>identificador generado al azar</strong> que la app crea en el primer arranque y que no está vinculado a ningún dato tuyo (ID de usuario anónimo)",
-            "el <strong>recibo de Apple</strong>, con el producto, la fecha de compra, el identificador de transacción, el país de la tienda y el estado de una suscripción",
-            "<strong>datos de dispositivo y sistema</strong> como el modelo, la versión del sistema operativo, la versión de la app, el idioma y la zona horaria",
-            "la <strong>dirección IP</strong> de la petición, que RevenueCat usa para determinar el país y prevenir abusos",
-            "cinco <strong>recuentos de tu progreso</strong>: cuántas cartas tienes, cuántas compras sueltas has hecho, cuánto saldo te queda, cuántos días has perdido y cuántas rondas de quiz has jugado"
-          ] },
-          { "p": "Esos cinco recuentos determinan qué opción de compra se te ofrece: quien ha perdido tres días ve la oferta del archivo en lugar de la carta suelta. No contienen nada del contenido de tu colección ni indican qué animales posees." },
-          { "p": "<strong>Sin seguimiento, sin publicidad.</strong> RevenueCat no recibe ningún identificador publicitario (IDFA), no se combinan datos entre dispositivos y nada se cede a redes publicitarias." },
-          { "p": "<strong>La base jurídica</strong> es el art. 6.1.b del RGPD: sin esa comprobación no se podría entregar una compra ni desbloquear una suscripción. Para elegir la oferta adecuada, es el art. 6.1.f del RGPD (interés legítimo en presentar una opción de compra razonable)." },
-          { "p": "<strong>Transferencia a EE. UU.:</strong> RevenueCat trata estos datos en los Estados Unidos. Existe un contrato de encargo del tratamiento que incorpora las cláusulas contractuales tipo de la Comisión Europea. Más detalles en la <a href=\"https://www.revenuecat.com/privacy/\" target=\"_blank\" rel=\"noopener\">política de privacidad de RevenueCat</a>." },
-          { "p": "<strong>Plazo de conservación:</strong> el historial de compras se conserva mientras sea necesario para desbloquear lo que has comprado. Si borras la app, el identificador anónimo queda sin dispositivo; no puede atribuirse a ninguna persona." }
+          {
+            "p": "Para que la app sepa si una compra es válida y si una suscripción sigue activa, se emplea el servicio <strong>RevenueCat</strong> (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, EE. UU.). Comprueba el recibo con Apple y responde a la app qué contenidos están desbloqueados."
+          },
+          {
+            "p": "En ese proceso se tratan:"
+          },
+          {
+            "ul": [
+              "un <strong>identificador generado al azar</strong> que la app crea en el primer arranque y que no está vinculado a ningún dato tuyo (ID de usuario anónimo)",
+              "el <strong>recibo de Apple</strong>, con el producto, la fecha de compra, el identificador de transacción, el país de la tienda y el estado de una suscripción",
+              "<strong>datos de dispositivo y sistema</strong> como el modelo, la versión del sistema operativo, la versión de la app, el idioma y la zona horaria",
+              "la <strong>dirección IP</strong> de la petición, que RevenueCat usa para determinar el país y prevenir abusos",
+              "cinco <strong>recuentos de tu progreso</strong>: cuántas cartas tienes, cuántas compras sueltas has hecho, cuánto saldo te queda, cuántos días has perdido y cuántas rondas de quiz has jugado"
+            ]
+          },
+          {
+            "p": "Esos cinco recuentos determinan qué opción de compra se te ofrece: quien ha perdido tres días ve la oferta del archivo en lugar de la carta suelta. No contienen nada del contenido de tu colección ni indican qué animales posees."
+          },
+          {
+            "p": "<strong>Sin seguimiento, sin publicidad.</strong> RevenueCat no recibe ningún identificador publicitario (IDFA), no se combinan datos entre dispositivos y nada se cede a redes publicitarias."
+          },
+          {
+            "p": "<strong>La base jurídica</strong> es el art. 6.1.b del RGPD: sin esa comprobación no se podría entregar una compra ni desbloquear una suscripción. Para elegir la oferta adecuada, es el art. 6.1.f del RGPD (interés legítimo en presentar una opción de compra razonable)."
+          },
+          {
+            "p": "<strong>Transferencia a EE. UU.:</strong> RevenueCat trata estos datos en los Estados Unidos. Existe un contrato de encargo del tratamiento que incorpora las cláusulas contractuales tipo de la Comisión Europea. Más detalles en la <a href=\"https://www.revenuecat.com/privacy/\" target=\"_blank\" rel=\"noopener\">política de privacidad de RevenueCat</a>."
+          },
+          {
+            "p": "<strong>Plazo de conservación:</strong> el historial de compras se conserva mientras sea necesario para desbloquear lo que has comprado. Si borras la app, el identificador anónimo queda sin dispositivo; no puede atribuirse a ninguna persona."
+          }
         ]
       },
       {
         "h": "6. Notificaciones",
         "blocks": [
-          { "p": "Si quieres un recordatorio diario de la nueva carta, la app pide una vez permiso para enviar notificaciones. Solo lo pide después de que hayas desbloqueado tu primera carta: antes no sabrías a qué estás accediendo." },
-          { "p": "Esos recordatorios se generan y programan <strong>en tu dispositivo</strong>. No se envía ningún mensaje desde un servidor ni se transmite dato alguno. Puedes retirar el permiso en cualquier momento en los ajustes del sistema." },
-          { "p": "Con independencia de eso, la app se registra para notificaciones silenciosas del sistema con las que iCloud anuncia cambios en tu colección. Provienen de Apple, no contienen texto visible y sirven únicamente para la sincronización." }
+          {
+            "p": "Si quieres un recordatorio diario de la nueva carta, la app pide una vez permiso para enviar notificaciones. Solo lo pide después de que hayas desbloqueado tu primera carta: antes no sabrías a qué estás accediendo."
+          },
+          {
+            "p": "Esos recordatorios se generan y programan <strong>en tu dispositivo</strong>. No se envía ningún mensaje desde un servidor ni se transmite dato alguno. Puedes retirar el permiso en cualquier momento en los ajustes del sistema."
+          },
+          {
+            "p": "Con independencia de eso, la app se registra para notificaciones silenciosas del sistema con las que iCloud anuncia cambios en tu colección. Provienen de Apple, no contienen texto visible y sirven únicamente para la sincronización."
+          }
         ]
       },
       {
         "h": "7. Sin seguimiento",
         "blocks": [
-          { "p": "No se realiza seguimiento en el sentido del marco App Tracking Transparency de Apple. La app no utiliza identificador publicitario, no elabora perfiles de uso entre proveedores y no contiene redes publicitarias, ni herramientas de análisis de terceros (como Google Analytics, Firebase o Crashlytics), ni bibliotecas de seguimiento. Por eso nunca solicita permiso de seguimiento." }
+          {
+            "p": "No se realiza seguimiento en el sentido del marco App Tracking Transparency de Apple. La app no utiliza identificador publicitario, no elabora perfiles de uso entre proveedores y no contiene redes publicitarias, ni herramientas de análisis de terceros (como Google Analytics, Firebase o Crashlytics), ni bibliotecas de seguimiento. Por eso nunca solicita permiso de seguimiento."
+          }
         ]
       },
       {
         "h": "8. El papel de Apple",
         "blocks": [
-          { "p": "Con independencia de esta app, Apple trata datos bajo su propia responsabilidad:" },
-          { "ul": [
-            "<strong>Al descargar la app</strong> del App Store y en cada compra (cuenta de Apple, pago, información del dispositivo)",
-            "<strong>En la sincronización con iCloud</strong>, si has iniciado sesión",
-            "<strong>En forma de estadísticas agregadas</strong> que Apple facilita al desarrollador a través de App Store Connect, como cifras de descargas o informes de fallos. Son datos agregados; no permiten al desarrollador extraer conclusiones sobre personas concretas. Tu participación se ajusta en <em>Ajustes → Privacidad y seguridad → Análisis y mejoras</em>."
-          ] },
-          { "p": "Se aplica la <a href=\"https://www.apple.com/legal/privacy/es/\" target=\"_blank\" rel=\"noopener\">política de privacidad de Apple</a>." }
+          {
+            "p": "Con independencia de esta app, Apple trata datos bajo su propia responsabilidad:"
+          },
+          {
+            "ul": [
+              "<strong>Al descargar la app</strong> del App Store y en cada compra (cuenta de Apple, pago, información del dispositivo)",
+              "<strong>En la sincronización con iCloud</strong>, si has iniciado sesión",
+              "<strong>En forma de estadísticas agregadas</strong> que Apple facilita al desarrollador a través de App Store Connect, como cifras de descargas o informes de fallos. Son datos agregados; no permiten al desarrollador extraer conclusiones sobre personas concretas. Tu participación se ajusta en <em>Ajustes → Privacidad y seguridad → Análisis y mejoras</em>."
+            ]
+          },
+          {
+            "p": "Se aplica la <a href=\"https://www.apple.com/legal/privacy/es/\" target=\"_blank\" rel=\"noopener\">política de privacidad de Apple</a>."
+          }
         ]
       },
       {
         "h": "9. Contacto",
         "blocks": [
-          { "p": "Si escribes al desarrollador por correo —con una pregunta o un fallo—, los datos que envíes (dirección de correo, contenido del mensaje) se tratan para atender tu solicitud y se eliminan en cuanto dejan de ser necesarios y no lo impide ningún plazo legal de conservación. La base jurídica es el art. 6.1.f del RGPD." }
+          {
+            "p": "Si escribes al desarrollador por correo —con una pregunta o un fallo—, los datos que envíes (dirección de correo, contenido del mensaje) se tratan para atender tu solicitud y se eliminan en cuanto dejan de ser necesarios y no lo impide ningún plazo legal de conservación. La base jurídica es el art. 6.1.f del RGPD."
+          }
         ]
       },
       {
         "h": "10. Tus derechos",
         "blocks": [
-          { "p": "Conforme al RGPD, tienes los siguientes derechos frente al responsable:" },
-          { "ul": [
-            "<strong>Acceso</strong> a los datos tratados (art. 15)",
-            "<strong>Rectificación</strong> de datos inexactos (art. 16)",
-            "<strong>Supresión</strong> (art. 17)",
-            "<strong>Limitación del tratamiento</strong> (art. 18)",
-            "<strong>Portabilidad de los datos</strong> (art. 20)",
-            "<strong>Oposición</strong> al tratamiento (art. 21)",
-            "<strong>Reclamación ante una autoridad de control</strong> (art. 77)"
-          ] },
-          { "p": "Una nota práctica: el desarrollador no dispone de ningún dato que te identifique. Sobre tu colección no puede informar ni borrar nada, porque está en tu poder. El control es tuyo:" },
-          { "ul": [
-            "<strong>Tu colección</strong> desaparece cuando borras la app del dispositivo y eliminas los datos de la app en los ajustes de iCloud de tu cuenta de Apple.",
-            "<strong>El registro que guarda RevenueCat</strong> puede borrarse a petición: escribe al desarrollador. Para localizarlo hace falta el ID de usuario anónimo, que aparece en los ajustes de la app."
-          ] },
-          { "p": "La autoridad de control competente se determina por el domicilio del responsable (véase el apartado 1)." }
+          {
+            "p": "Conforme al RGPD, tienes los siguientes derechos frente al responsable:"
+          },
+          {
+            "ul": [
+              "<strong>Acceso</strong> a los datos tratados (art. 15)",
+              "<strong>Rectificación</strong> de datos inexactos (art. 16)",
+              "<strong>Supresión</strong> (art. 17)",
+              "<strong>Limitación del tratamiento</strong> (art. 18)",
+              "<strong>Portabilidad de los datos</strong> (art. 20)",
+              "<strong>Oposición</strong> al tratamiento (art. 21)",
+              "<strong>Reclamación ante una autoridad de control</strong> (art. 77)"
+            ]
+          },
+          {
+            "p": "Una nota práctica: el desarrollador no dispone de ningún dato que te identifique. Sobre tu colección no puede informar ni borrar nada, porque está en tu poder. El control es tuyo:"
+          },
+          {
+            "ul": [
+              "<strong>Tu colección</strong> desaparece cuando borras la app del dispositivo y eliminas los datos de la app en los ajustes de iCloud de tu cuenta de Apple.",
+              "<strong>El registro que guarda RevenueCat</strong> puede borrarse a petición: escribe al desarrollador. Para localizarlo hace falta el ID de usuario anónimo, que aparece en los ajustes de la app."
+            ]
+          },
+          {
+            "p": "La autoridad de control competente se determina por el domicilio del responsable (véase el apartado 1)."
+          }
         ]
       },
       {
         "h": "11. Menores",
         "blocks": [
-          { "p": "La app está clasificada para mayores de 4 años y no contiene nada inadecuado para menores. No se recogen a sabiendas datos de menores: no se recoge dato alguno que identifique a una persona. Las compras en el App Store pueden limitarse o desactivarse por completo con los ajustes de Tiempo de uso de Apple." }
+          {
+            "p": "La app está clasificada para mayores de 4 años y no contiene nada inadecuado para menores. No se recogen a sabiendas datos de menores: no se recoge dato alguno que identifique a una persona. Las compras en el App Store pueden limitarse o desactivarse por completo con los ajustes de Tiempo de uso de Apple."
+          }
         ]
       },
       {
         "h": "12. Cambios en esta política",
         "blocks": [
-          { "p": "Esta política se adaptará cuando cambie la app o el marco legal. Rige siempre la versión publicada aquí; la fecha indicada arriba señala su última revisión." }
+          {
+            "p": "Esta política se adaptará cuando cambie la app o el marco legal. Rige siempre la versión publicada aquí; la fecha indicada arriba señala su última revisión."
+          }
         ]
       }
     ]
   },
-
   "terms": {
     "title": "Condiciones de uso de Daily Bestiary — crabucate",
     "description": "Condiciones de uso de la app Daily Bestiary: licencia, compras y suscripción, derechos de imagen, responsabilidad.",
     "label": "Aviso legal",
     "h1": "Condiciones de uso",
-
     "sections": [
       {
         "h": "1. Objeto",
         "blocks": [
-          { "p": "Estas condiciones regulan el uso de la app <strong>Daily Bestiary</strong> para iOS. La app la ofrece:" },
-          { "address": "Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Alemania<br />Correo: __MAIL__" },
-          { "p": "Se aplican <strong>además</strong> de las condiciones de Apple, en particular del <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\" rel=\"noopener\">contrato de licencia de usuario final estándar de Apple</a>. En caso de contradicción, para la licencia sobre la app prevalece el contrato de Apple." }
+          {
+            "p": "Estas condiciones regulan el uso de la app <strong>Daily Bestiary</strong> para iOS. La app la ofrece:"
+          },
+          {
+            "address": "Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Alemania<br />Correo: __MAIL__"
+          },
+          {
+            "p": "Se aplican <strong>además</strong> de las condiciones de Apple, en particular del <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\" rel=\"noopener\">contrato de licencia de usuario final estándar de Apple</a>. En caso de contradicción, para la licencia sobre la app prevalece el contrato de Apple."
+          }
         ]
       },
       {
         "h": "2. Qué hace la app",
         "blocks": [
-          { "p": "Daily Bestiary ofrece una carta de animal al día. Cuál sea, lo calcula la app a partir del día en que recibiste tu primera carta, no de una fecha fija del calendario. El día cambia a medianoche en la zona horaria de tu dispositivo." },
-          { "p": "En el primer arranque recibes tres cartas gratis. Con ellas la app es completa en sí misma: anverso, dorso, datos, crédito de la imagen, colección y quiz. Para todo eso no hace falta ninguna compra." },
-          { "p": "Todos los contenidos van incluidos en la app. No se descarga nada y no se genera nada." }
+          {
+            "p": "Daily Bestiary ofrece una carta de animal al día. Cuál sea, lo calcula la app a partir del día en que recibiste tu primera carta, no de una fecha fija del calendario. El día cambia a medianoche en la zona horaria de tu dispositivo."
+          },
+          {
+            "p": "En el primer arranque recibes tres cartas gratis. Con ellas la app es completa en sí misma: anverso, dorso, datos, crédito de la imagen, colección y quiz. Para todo eso no hace falta ninguna compra."
+          },
+          {
+            "p": "Todos los contenidos van incluidos en la app. No se descarga nada y no se genera nada."
+          }
         ]
       },
       {
         "h": "3. Derecho de uso",
         "blocks": [
-          { "p": "Recibes un derecho simple y no transferible a usar la app en los dispositivos asociados a tu cuenta de Apple, con fines privados. Las cartas, los dibujos, los textos y las preguntas del quiz siguen protegidos por derechos de autor." },
-          { "p": "No están permitidos, en particular: la ingeniería inversa, la modificación o la elusión de la app y de su verificación de compras; la extracción y redifusión de los dibujos, fotografías, textos o preguntas que contiene; y el uso de esos contenidos en una oferta propia." },
-          { "p": "El uso en clase es expresamente bienvenido: basta con mostrar la app en el propio dispositivo." }
+          {
+            "p": "Recibes un derecho simple y no transferible a usar la app en los dispositivos asociados a tu cuenta de Apple, con fines privados. Las cartas, los dibujos, los textos y las preguntas del quiz siguen protegidos por derechos de autor."
+          },
+          {
+            "p": "No están permitidos, en particular: la ingeniería inversa, la modificación o la elusión de la app y de su verificación de compras; la extracción y redifusión de los dibujos, fotografías, textos o preguntas que contiene; y el uso de esos contenidos en una oferta propia."
+          },
+          {
+            "p": "El uso en clase es expresamente bienvenido: basta con mostrar la app en el propio dispositivo."
+          }
         ]
       },
       {
         "h": "4. Compras",
         "blocks": [
-          { "p": "Hay tres tipos de compra:" },
-          { "ul": [
-            "<strong>Carta del día</strong>: desbloquea la carta de hoy. Repetible, una vez al día.",
-            "<strong>Paquete de diez</strong>: saldo para diez desbloqueos. El saldo no caduca y se emplea en la carta del día.",
-            "<strong>Collector</strong>: una suscripción. Abre además el archivo, con el que se recuperan los días perdidos, incluye la carta del día y muestra las estadísticas del quiz de toda la colección."
-          ] },
-          { "p": "<strong>La otra parte del contrato de compra es Apple</strong>, no el desarrollador. La facturación se realiza a través de tu cuenta de Apple y se aplican las condiciones del App Store." },
-          { "p": "Los precios, las duraciones y las condiciones de renovación se muestran en la app antes de comprar. Varían según el país y por eso no se indican aquí." }
+          {
+            "p": "Hay tres tipos de compra:"
+          },
+          {
+            "ul": [
+              "<strong>Carta del día</strong>: desbloquea la carta de hoy. Repetible, una vez al día.",
+              "<strong>Paquete de diez</strong>: saldo para diez desbloqueos. El saldo no caduca y se emplea en la carta del día.",
+              "<strong>Collector</strong>: una suscripción. Abre además el archivo, con el que se recuperan los días perdidos, incluye la carta del día y muestra las estadísticas del quiz de toda la colección."
+            ]
+          },
+          {
+            "p": "<strong>La otra parte del contrato de compra es Apple</strong>, no el desarrollador. La facturación se realiza a través de tu cuenta de Apple y se aplican las condiciones del App Store."
+          },
+          {
+            "p": "Los precios, las duraciones y las condiciones de renovación se muestran en la app antes de comprar. Varían según el país y por eso no se indican aquí."
+          }
         ]
       },
       {
         "h": "5. Suscripción, renovación y cancelación",
         "blocks": [
-          { "p": "Collector se renueva automáticamente al final de cada periodo mientras no se cancele. El cargo se realiza en tu cuenta de Apple dentro de las 24 horas previas al final del periodo en curso." },
-          { "p": "Puedes cancelar en cualquier momento a través de Apple: <em>Ajustes → tu nombre → Suscripciones</em>. La cancelación surte efecto al final del periodo en curso; hasta entonces conservas el acceso. Si cancelas durante un periodo de prueba gratuito, no se cobra nada siempre que canceles al menos 24 horas antes de que termine." },
-          { "p": "El desarrollador no puede cancelar una suscripción en tu nombre; Apple reserva esa posibilidad únicamente a ti." },
-          { "p": "Cuando termina la suscripción, el archivo se cierra. <strong>Las cartas que posees siguen siendo tuyas</strong>, incluidas las recuperadas del archivo. El saldo de los paquetes de diez tampoco se ve afectado." }
+          {
+            "p": "Collector se renueva automáticamente al final de cada periodo mientras no se cancele. El cargo se realiza en tu cuenta de Apple dentro de las 24 horas previas al final del periodo en curso."
+          },
+          {
+            "p": "Puedes cancelar en cualquier momento a través de Apple: <em>Ajustes → tu nombre → Suscripciones</em>. La cancelación surte efecto al final del periodo en curso; hasta entonces conservas el acceso. Si cancelas durante un periodo de prueba gratuito, no se cobra nada siempre que canceles al menos 24 horas antes de que termine."
+          },
+          {
+            "p": "El desarrollador no puede cancelar una suscripción en tu nombre; Apple reserva esa posibilidad únicamente a ti."
+          },
+          {
+            "p": "Cuando termina la suscripción, el archivo se cierra. <strong>Las cartas que posees siguen siendo tuyas</strong>, incluidas las recuperadas del archivo. El saldo de los paquetes de diez tampoco se ve afectado."
+          }
         ]
       },
       {
         "h": "6. Desistimiento y reembolsos",
         "blocks": [
-          { "p": "Como el contrato de compra se celebra con Apple, el desistimiento y los reembolsos se rigen por las condiciones de Apple. El reembolso se solicita en <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>." },
-          { "p": "En los contenidos digitales suministrados de inmediato, el derecho legal de desistimiento puede extinguirse una vez que la ejecución ha comenzado con tu consentimiento expreso. El detalle lo regulan las condiciones de venta de Apple." },
-          { "p": "El desarrollador no puede reembolsar por sí mismo, porque no cobra el importe. Si algo ha fallado técnicamente, te ayudará igualmente con gusto: la dirección está en la página de <a href=\"../support/\">soporte</a>." }
+          {
+            "p": "Como el contrato de compra se celebra con Apple, el desistimiento y los reembolsos se rigen por las condiciones de Apple. El reembolso se solicita en <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>."
+          },
+          {
+            "p": "En los contenidos digitales suministrados de inmediato, el derecho legal de desistimiento puede extinguirse una vez que la ejecución ha comenzado con tu consentimiento expreso. El detalle lo regulan las condiciones de venta de Apple."
+          },
+          {
+            "p": "El desarrollador no puede reembolsar por sí mismo, porque no cobra el importe. Si algo ha fallado técnicamente, te ayudará igualmente con gusto: la dirección está en la página de <a href=\"../support/\">soporte</a>."
+          }
         ]
       },
       {
         "h": "7. Imágenes y derechos de terceros",
         "blocks": [
-          { "p": "Los dibujos del anverso de las cartas son del desarrollador. Las fotografías del dorso proceden de fuentes libres (entre ellas Pixabay, Unsplash y Wikimedia Commons) y se usan con las licencias indicadas en cada caso, incluidas licencias Creative Commons." },
-          { "p": "El autor, la licencia y la fuente figuran al dorso de cada carta. Si crees que una imagen se usa sin derecho o está mal acreditada, escribe a __MAIL__: el crédito se corregirá o la imagen se retirará." }
+          {
+            "p": "Los dibujos del anverso de las cartas son del desarrollador. Las fotografías del dorso proceden de fuentes libres (entre ellas Pixabay, Unsplash y Wikimedia Commons) y se usan con las licencias indicadas en cada caso, incluidas licencias Creative Commons."
+          },
+          {
+            "p": "El autor, la licencia y la fuente figuran al dorso de cada carta. Si crees que una imagen se usa sin derecho o está mal acreditada, escribe a __MAIL__: el crédito se corregirá o la imagen se retirará."
+          }
         ]
       },
       {
         "h": "8. Qué no se garantiza",
         "blocks": [
-          { "p": "La app se sigue desarrollando. No se garantizan:" },
-          { "ul": [
-            "un <strong>número</strong> determinado de cartas, ahora o en el futuro",
-            "la <strong>disponibilidad</strong> permanente de la app en el App Store o en futuras versiones del sistema",
-            "que toda versión futura incluya todas las funciones actuales"
-          ] },
-          { "p": "Cuando tu serie de cartas llega a su fin, la app te lo dice; no empieza nada de nuevo y no se repite nada." },
-          { "p": "La app no sustituye a una fuente científica. Los datos y las preguntas se han reunido con cuidado y los ha revisado un profesor de biología, pero no sirven como referencia en un trabajo académico." }
+          {
+            "p": "La app se sigue desarrollando. No se garantizan:"
+          },
+          {
+            "ul": [
+              "un <strong>número</strong> determinado de cartas, ahora o en el futuro",
+              "la <strong>disponibilidad</strong> permanente de la app en el App Store o en futuras versiones del sistema",
+              "que toda versión futura incluya todas las funciones actuales"
+            ]
+          },
+          {
+            "p": "Cuando tu serie de cartas llega a su fin, la app te lo dice; no empieza nada de nuevo y no se repite nada."
+          },
+          {
+            "p": "La app no sustituye a una fuente científica. Los datos y las preguntas se han reunido con cuidado y los ha revisado un profesor de biología, pero no sirven como referencia en un trabajo académico."
+          }
         ]
       },
       {
         "h": "9. Tus datos",
         "blocks": [
-          { "p": "Tu colección vive en tu dispositivo y en tu propio iCloud. El desarrollador no tiene acceso a ella y por eso no puede entregarla ni restaurarla. Haz copia de seguridad de tu dispositivo si la colección te importa; la sincronización con iCloud no es una copia de seguridad en sentido estricto." },
-          { "p": "Qué trata la app y qué llega a un proveedor de servicios al comprar se explica en la <a href=\"../privacy/\">política de privacidad</a>." }
+          {
+            "p": "Tu colección vive en tu dispositivo y en tu propio iCloud. El desarrollador no tiene acceso a ella y por eso no puede entregarla ni restaurarla. Haz copia de seguridad de tu dispositivo si la colección te importa; la sincronización con iCloud no es una copia de seguridad en sentido estricto."
+          },
+          {
+            "p": "Qué trata la app y qué llega a un proveedor de servicios al comprar se explica en la <a href=\"../privacy/\">política de privacidad</a>."
+          }
         ]
       },
       {
         "h": "10. Responsabilidad",
         "blocks": [
-          { "p": "El desarrollador responde sin limitación en caso de dolo y culpa grave, así como por lesiones a la vida, la integridad física o la salud, y conforme a la ley alemana de responsabilidad por productos defectuosos." },
-          { "p": "En caso de negligencia leve responde únicamente por el incumplimiento de una obligación cuyo cumplimiento hace posible el uso adecuado de la app y en cuya observancia puedes confiar; en tal caso la responsabilidad se limita al daño previsible y típico de este tipo de contrato." },
-          { "p": "No se asume responsabilidad más amplia. Los derechos legales por defectos quedan intactos." }
+          {
+            "p": "El desarrollador responde sin limitación en caso de dolo y culpa grave, así como por lesiones a la vida, la integridad física o la salud, y conforme a la ley alemana de responsabilidad por productos defectuosos."
+          },
+          {
+            "p": "En caso de negligencia leve responde únicamente por el incumplimiento de una obligación cuyo cumplimiento hace posible el uso adecuado de la app y en cuya observancia puedes confiar; en tal caso la responsabilidad se limita al daño previsible y típico de este tipo de contrato."
+          },
+          {
+            "p": "No se asume responsabilidad más amplia. Los derechos legales por defectos quedan intactos."
+          }
         ]
       },
       {
         "h": "11. Apple",
         "blocks": [
-          { "p": "Apple no es el proveedor de esta app ni responde por ella. Apple no está obligada a prestar mantenimiento ni soporte. Las reclamaciones relativas a la app —por defectos, responsabilidad por producto o infracción de derechos de terceros— deben dirigirse al desarrollador, no a Apple." },
-          { "p": "Apple y sus filiales son terceros beneficiarios de estas condiciones y están facultadas para hacerlas valer frente a ti." }
+          {
+            "p": "Apple no es el proveedor de esta app ni responde por ella. Apple no está obligada a prestar mantenimiento ni soporte. Las reclamaciones relativas a la app —por defectos, responsabilidad por producto o infracción de derechos de terceros— deben dirigirse al desarrollador, no a Apple."
+          },
+          {
+            "p": "Apple y sus filiales son terceros beneficiarios de estas condiciones y están facultadas para hacerlas valer frente a ti."
+          }
         ]
       },
       {
         "h": "12. Cambios en estas condiciones",
         "blocks": [
-          { "p": "Estas condiciones pueden adaptarse si cambian la app, el marco legal o los requisitos de Apple. Rige siempre la versión publicada aquí; la fecha indicada arriba señala su última revisión. Los cambios sustanciales se anuncian en la app." }
+          {
+            "p": "Estas condiciones pueden adaptarse si cambian la app, el marco legal o los requisitos de Apple. Rige siempre la versión publicada aquí; la fecha indicada arriba señala su última revisión. Los cambios sustanciales se anuncian en la app."
+          }
         ]
       },
       {
         "h": "13. Ley aplicable y resolución de conflictos",
         "blocks": [
-          { "p": "Se aplica el Derecho alemán. Si eres consumidor, quedan intactas las disposiciones imperativas de protección al consumidor del Estado en el que tengas tu residencia habitual." },
-          { "p": "El desarrollador no está dispuesto ni obligado a participar en un procedimiento de resolución de conflictos ante una entidad de resolución alternativa de litigios de consumo." }
+          {
+            "p": "Se aplica el Derecho alemán. Si eres consumidor, quedan intactas las disposiciones imperativas de protección al consumidor del Estado en el que tengas tu residencia habitual."
+          },
+          {
+            "p": "El desarrollador no está dispuesto ni obligado a participar en un procedimiento de resolución de conflictos ante una entidad de resolución alternativa de litigios de consumo."
+          }
         ]
       }
     ]
   },
-
   "support": {
     "title": "Soporte de Daily Bestiary — crabucate",
     "description": "Ayuda con Daily Bestiary: restaurar compras, cancelar la suscripción, sincronización con iCloud, notificaciones y cómo contactar con el desarrollador.",
     "label": "Ayuda",
     "h1": "Soporte",
-
     "sections": [
       {
         "h": "Escribe sin más",
         "blocks": [
-          { "p": "Detrás de esta app hay una persona, no un equipo de soporte. Preguntas, errores y sugerencias van a:" },
-          { "address": "__MAIL__" },
-          { "p": "La respuesta suele llegar en pocos días. En español, alemán o inglés; otros idiomas también valen, solo que la respuesta tarda algo más." },
-          { "p": "Ante un fallo ayuda mucho que el mensaje incluya tres datos: <strong>qué dispositivo</strong>, <strong>qué versión de iOS</strong> y <strong>qué versión de la app</strong> (está al final de los ajustes de la app). Y qué estabas haciendo cuando ocurrió." }
+          {
+            "p": "Detrás de esta app hay una persona, no un equipo de soporte. Preguntas, errores y sugerencias van a:"
+          },
+          {
+            "address": "__MAIL__"
+          },
+          {
+            "p": "La respuesta suele llegar en pocos días. En español, alemán o inglés; otros idiomas también valen, solo que la respuesta tarda algo más."
+          },
+          {
+            "p": "Ante un fallo ayuda mucho que el mensaje incluya tres datos: <strong>qué dispositivo</strong>, <strong>qué versión de iOS</strong> y <strong>qué versión de la app</strong> (está al final de los ajustes de la app). Y qué estabas haciendo cuando ocurrió."
+          }
         ]
       },
       {
         "h": "Los casos más frecuentes",
         "blocks": [
-          { "h3": "Una compra no ha llegado" },
-          { "p": "Abre los ajustes de la app y toca <em>Restaurar compras</em>. El mismo botón está en cada pantalla de compra. Así la app vuelve a vincular tu suscripción y el saldo restante a tu cuenta de Apple. Si Apple ha cobrado y la restauración no ayuda, escribe indicando la fecha de la compra." },
-          { "h3": "Dispositivo nuevo, colección antigua" },
-          { "p": "Inicia sesión en iCloud en el dispositivo nuevo con la misma cuenta de Apple e instala la app. La colección vuelve por tu iCloud privado; puede tardar unos minutos tras el primer arranque. Las compras se recuperan además con <em>Restaurar compras</em>." },
-          { "h3": "La colección no se sincroniza" },
-          { "p": "Comprueba que ambos dispositivos tengan la misma cuenta de Apple y iCloud Drive activado. La sincronización necesita conexión y funciona en segundo plano; a veces ayuda cerrar la app y volver a abrirla. Si un dispositivo va más avanzado, prevalece el inicio más temprano de tu serie: no se pierde ninguna carta." },
-          { "h3": "Cancelar Collector" },
-          { "p": "A través de Apple: <em>Ajustes → tu nombre → Suscripciones → Collector → Cancelar suscripción</em>. En los ajustes de la app, el mismo camino pasa por el Customer Center. El acceso se mantiene hasta el final del periodo pagado; tus cartas son tuyas en cualquier caso." },
-          { "h3": "Recuperar el dinero" },
-          { "p": "Los reembolsos se tramitan exclusivamente con Apple: <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. El desarrollador no puede gestionar nada allí, porque no cobra el importe." },
-          { "h3": "No llega el recordatorio diario" },
-          { "p": "La app solo pide permiso después de que desbloquees tu primera carta. Si entonces lo rechazaste, actívalo de nuevo en <em>Ajustes → Notificaciones → Bestiary</em>. El recordatorio llega a las nueve de la mañana, hora local." },
-          { "h3": "Se me ha pasado un día" },
-          { "p": "La carta no se pierde. Collector abre el archivo, donde los días perdidos se pueden recuperar. Sin Collector, al día siguiente llega simplemente la siguiente carta." },
-          { "h3": "Un crédito de imagen es incorrecto" },
-          { "p": "Escríbenos, con el nombre del animal y lo que falta o está mal. El crédito se corregirá o la imagen se sustituirá." }
+          {
+            "h3": "Una compra no ha llegado"
+          },
+          {
+            "p": "Abre los ajustes de la app y toca <em>Restaurar compras</em>. El mismo botón está en cada pantalla de compra. Así la app vuelve a vincular tu suscripción y el saldo restante a tu cuenta de Apple. Si Apple ha cobrado y la restauración no ayuda, escribe indicando la fecha de la compra."
+          },
+          {
+            "h3": "Dispositivo nuevo, colección antigua"
+          },
+          {
+            "p": "Inicia sesión en iCloud en el dispositivo nuevo con la misma cuenta de Apple e instala la app. La colección vuelve por tu iCloud privado; puede tardar unos minutos tras el primer arranque. Las compras se recuperan además con <em>Restaurar compras</em>."
+          },
+          {
+            "h3": "La colección no se sincroniza"
+          },
+          {
+            "p": "Comprueba que ambos dispositivos tengan la misma cuenta de Apple y iCloud Drive activado. La sincronización necesita conexión y funciona en segundo plano; a veces ayuda cerrar la app y volver a abrirla. Si un dispositivo va más avanzado, prevalece el inicio más temprano de tu serie: no se pierde ninguna carta."
+          },
+          {
+            "h3": "Cancelar Collector"
+          },
+          {
+            "p": "A través de Apple: <em>Ajustes → tu nombre → Suscripciones → Collector → Cancelar suscripción</em>. En los ajustes de la app, el mismo camino pasa por el Customer Center. El acceso se mantiene hasta el final del periodo pagado; tus cartas son tuyas en cualquier caso."
+          },
+          {
+            "h3": "Recuperar el dinero"
+          },
+          {
+            "p": "Los reembolsos se tramitan exclusivamente con Apple: <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. El desarrollador no puede gestionar nada allí, porque no cobra el importe."
+          },
+          {
+            "h3": "No llega el recordatorio diario"
+          },
+          {
+            "p": "La app solo pide permiso después de que desbloquees tu primera carta. Si entonces lo rechazaste, actívalo de nuevo en <em>Ajustes → Notificaciones → Bestiary</em>. El recordatorio llega a las nueve de la mañana, hora local."
+          },
+          {
+            "h3": "Se me ha pasado un día"
+          },
+          {
+            "p": "La carta no se pierde. Collector abre el archivo, donde los días perdidos se pueden recuperar. Sin Collector, al día siguiente llega simplemente la siguiente carta."
+          },
+          {
+            "h3": "Un crédito de imagen es incorrecto"
+          },
+          {
+            "p": "Escríbenos, con el nombre del animal y lo que falta o está mal. El crédito se corregirá o la imagen se sustituirá."
+          }
         ]
       },
       {
         "h": "Lo que no está aquí",
         "blocks": [
-          { "p": "Cuántas cartas hay en total no se revela, ni siquiera si se pregunta. Cuando tengas todas las que existen, la app te lo dirá." },
-          { "p": "Cómo se tratan tus datos se explica en la <a href=\"../privacy/\">política de privacidad</a>. Las reglas de las compras y la suscripción están en las <a href=\"../terms/\">condiciones de uso</a>." }
+          {
+            "p": "Cuántas cartas hay en total no se revela, ni siquiera si se pregunta. Cuando tengas todas las que existen, la app te lo dirá."
+          },
+          {
+            "p": "Cómo se tratan tus datos se explica en la <a href=\"../privacy/\">política de privacidad</a>. Las reglas de las compras y la suscripción están en las <a href=\"../terms/\">condiciones de uso</a>."
+          }
         ]
       }
     ]

@@ -72,6 +72,7 @@ There is still no build step. Shared code lives in `/assets/`, page-specific cod
 |-------|------|
 | `assets/base.css` | Design tokens, dark mode, reset, nav/footer/toggle chrome — everything that was byte-identical across pages |
 | `assets/theme.js` | The theme toggle, loaded with `defer` |
+| `assets/lang.js` | The language switcher's outside-click and Escape handling, loaded with `defer` |
 | inline `<style>` | Everything specific to one page or page family (layout, hero, guide article styles) |
 | inline `<script>` in `<head>` | Only the 150-byte anti-flash snippet, see below |
 
@@ -89,6 +90,33 @@ When adding a rule, ask whether it is identical everywhere. If yes it belongs in
 The font stack is system-native (`-apple-system, BlinkMacSystemFont, …`), no webfonts.
 
 DE and EN counterparts reference each other via `hreflang` and each carry a `canonical` link — keep both in sync when adding pages, and add new URLs to `sitemap.xml`.
+
+## The language switcher
+
+Top right in the nav, between the back link and the theme toggle, on all 72
+pages that exist in more than one language. It is a `<details class="lang-menu">`
+— opening and closing is the element's own doing, so it works with JavaScript
+switched off; `assets/lang.js` only adds closing on a click elsewhere and on
+Escape, and stores an explicit DE/EN choice in `localStorage.lang` (which is
+what the start page's inline redirect reads). The eight further languages exist
+only under `/bestiary/` and would steer nothing, so they are not stored.
+
+Every language of a page stands as a real link in its markup, the current one
+as a `<span class="lang-item--active">`. The links point at the **same page** in
+the other language, never at its start page. Under `/bestiary/` `build.py`
+writes them; everywhere else they are in the file. There is no shared include —
+this site has no build step — so a new translated page needs its entry adding on
+both sides, exactly as `hreflang` does.
+
+The six deliberately German-only pages (`lehrer-arbeitszeit.html`, its privacy
+page, the three Arbeitszeit guides, `sitzplan-grundschule.html`) get **no**
+switcher: a menu with one entry is a dead control. `404.html` has none either.
+
+The styles sit in `base.css` because they are identical everywhere. One rule
+there is load-bearing: `.lang-item { border-bottom: 0 }`. Eight legal pages
+colour and underline every `a` in their own inline `<style>`, which is loaded
+after `base.css` — a class beats a type selector regardless of order, which is
+the only reason the switcher does not turn orange and underlined there.
 
 ## Design tokens (CSS custom properties)
 

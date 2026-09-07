@@ -99,11 +99,81 @@ picture { display: contents; }
 .nav-link { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .nav-link:hover { color: var(--fg); }
 
-.lang-switch { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; }
-.lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.lang-switch a:hover { color: var(--fg); }
-.lang-sep { color: var(--muted); opacity: 0.3; }
-.lang-active { color: var(--fg); }
+/* Sprachwaehler. Ein <details>, damit er ohne JavaScript auf- und zugeht;
+   assets/lang.js ergaenzt nur Schliessen bei Klick daneben und mit Escape.
+   Die Sprachen stehen als Links im Markup jeder Seite — zwei auf den meisten,
+   zehn unter /bestiary/. Seiten, die es nur in einer Sprache gibt, bekommen
+   den Waehler gar nicht: ein Menue mit einem Eintrag waere ein totes Element. */
+.lang-menu { position: relative; }
+
+.lang-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+.lang-menu > summary::-webkit-details-marker { display: none; }
+.lang-menu > summary:hover { color: var(--fg); background: var(--line); }
+.lang-menu[open] > summary { color: var(--fg); }
+
+.lang-globe { width: 15px; height: 15px; flex-shrink: 0; }
+.lang-caret { width: 9px; height: 9px; flex-shrink: 0; opacity: 0.6; transition: transform 0.2s; }
+.lang-menu[open] .lang-caret { transform: rotate(180deg); }
+
+/* Auf schmalen Schirmen zaehlt jeder Millimeter in der Leiste: dort bleibt
+   die Weltkugel stehen und der Sprachname geht. */
+@media (max-width: 560px) {
+  .lang-menu .lang-current { display: none; }
+  .lang-menu .lang-caret { display: none; }
+}
+
+.lang-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 200;
+  min-width: 168px;
+  max-height: min(70vh, 26rem);
+  overflow-y: auto;
+  padding: 0.35rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(36,31,26,0.16);
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+  /* Die Rechtsseiten faerben und unterstreichen jedes `a` in ihrem eigenen
+     <style>. Das steht zwar spaeter, verliert aber gegen eine Klasse. */
+  border-bottom: 0;
+}
+
+.lang-item:hover { color: var(--fg); background: var(--line); }
+.lang-item--active { color: var(--fg); font-weight: 600; }
+
+/* Der Haken steht in jeder Zeile, damit die Namen aller Sprachen an derselben
+   Kante beginnen; sichtbar ist er nur beim aktiven Eintrag. */
+.lang-check { width: 13px; height: 13px; flex-shrink: 0; visibility: hidden; }
+.lang-item--active .lang-check { visibility: visible; }
 
 footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--accent); }
