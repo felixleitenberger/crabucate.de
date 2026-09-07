@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Daily Bestiary プライバシーポリシー — crabucate</title>
+  <meta name="description" content="Daily Bestiary のプライバシーポリシー。端末に留まるもの、購入時にRevenueCatへ渡るもの、そしてあなたの権利について。" />
+  <link rel="canonical" href="https://crabucate.de/bestiary/ja/privacy/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/privacy/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/privacy/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/privacy/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/privacy/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/privacy/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/privacy/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/privacy/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/privacy/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/privacy/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/privacy/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/privacy/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/ja/privacy/" />
+  <meta property="og:title" content="Daily Bestiary プライバシーポリシー — crabucate" />
+  <meta property="og:description" content="Daily Bestiary のプライバシーポリシー。端末に留まるもの、購入時にRevenueCatへ渡るもの、そしてあなたの権利について。" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <link rel="stylesheet" href="../../../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main {
+      padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 6rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 2.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.75rem; }
+    ul, ol { margin: 0 0 0.75rem 1.1rem; padding: 0; }
+    li { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.2rem; }
+
+    .address {
+      font-size: 0.875rem;
+      line-height: 1.9;
+      color: var(--muted);
+      border-left: 2px solid var(--line);
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: currentColor; }
+    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <a href="../../../" class="nav-logo">
+      <img src="../../../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../" class="back-link">← Daily Bestiary</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <p class="page-label">法的事項</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="meta">Daily Bestiary · 最終更新: 2026年9月7日</p>
+
+      <h2>要点</h2>
+      <p>このApp にはユーザーアカウントも独自のサーバーもありません。カード、クイズの成績、設定は端末の中に留まり、iCloudにサインインしていれば、あなた自身の非公開iCloudに保存されます。開発者はそのいずれにもアクセスできません。</p>
+      <p>端末から情報が出ていくのは1か所だけです。購入処理は外部のサービス（RevenueCat）を通じて行われます。そこへあなたを特定する情報は<strong>一切</strong>送られません。氏名も、メールアドレスも、広告識別子もです。何が渡るかは第5項に詳しく記載しています。</p>
+      <p>広告はなく、Appをまたぐトラッキングもなく、データ仲介業者への提供もありません。</p>
+
+      <h2>1. 管理者</h2>
+      <p>EU一般データ保護規則（GDPR）にいう管理者は次のとおりです。</p>
+      <p class="address">Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />ドイツ<br />メール: <a class="mail" href="#">info(at)crabucate.de</a></p>
+
+      <h2>2. App が扱う情報</h2>
+      <p>App が保存するのは、遊ぶ中で生まれるものだけです。</p>
+      <ul>
+        <li><strong>あなたのカード</strong> — どのカードを持っていて、いつ手に入れたか</li>
+        <li><strong>クイズの成績</strong> — どの動物のどの問題に正解したか</li>
+        <li><strong>クレジット</strong> — 購入したパックのうち、あと何回分の解放が残っているか</li>
+        <li><strong>設定</strong> — 最初の案内を終えたかどうか、毎日のリマインダーを希望するかどうか</li>
+      </ul>
+      <p>App は身元に関する情報を<strong>一切</strong>尋ねません。氏名、メールアドレス、生年月日、住所、電話番号のいずれもです。位置情報、カメラ、マイク、写真、連絡先、カレンダー、ヘルスケアデータにも<strong>アクセスしません</strong>。</p>
+      <p>あなたの連続日数が始まった日は、別途保存されていません。いちばん古いカードの取得日時から計算されます。</p>
+
+      <h2>3. 情報の保存場所</h2>
+      <h3>端末の中</h3>
+      <p>上記のすべては、他のAppからのアクセスをOSが遮断する保護領域に、端末内で保存されます。</p>
+      <h3>あなたのiCloud</h3>
+      <p>端末でiCloudにサインインしている場合、同じ内容がiCloudアカウントの<strong>非公開データベース</strong>（Apple CloudKit）にも保存されます。これは、あなた自身の端末どうしでコレクションを同期し、機種変更のあとに元に戻すためだけのものです。</p>
+      <p>このデータベースはあなたのApple アカウントに属します。開発者は技術的にその中を見ることができません。利用者の非公開CloudKitデータベースへのアクセス手段はなく、これらの情報が送られる開発者のサーバーも存在しません。</p>
+      <p>同期は端末の設定のiCloudから管理できます。iCloud内での取り扱いについては、<a href="https://www.apple.com/legal/privacy/ja/" target="_blank" rel="noopener">Appleのプライバシーポリシー</a>が適用されます。</p>
+      <h3>開発者のサーバーには保存されません</h3>
+      <p>そもそも存在しません。カード、写真、クイズはすべてApp に同梱されており、ダウンロードされることはありません。iCloudとの通信と、第5項に記載した購入処理を除き、App はネットワーク接続を行いません。</p>
+
+      <h2>4. App Store での購入</h2>
+      <p>購入はすべてApp Store を通じて行われます。購入契約の相手方はAppleであり、このApp の開発者ではありません。支払い情報はAppleのみが取り扱い、開発者はあなたの氏名も支払い手段も知りません。</p>
+      <p>Appleが開発者に提供するのは、国別の販売数などの集計データのみです。そこから個人を特定することはできません。</p>
+
+      <h2>5. RevenueCat — 購入の確認</h2>
+      <p>購入が有効かどうか、サブスクリプションが継続中かどうかをApp が知るために、<strong>RevenueCat</strong>（RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, USA）を利用しています。RevenueCat はレシートをAppleに照会し、何が利用可能かをApp に返します。</p>
+      <p>その際に取り扱われるのは次のとおりです。</p>
+      <ul>
+        <li>App が初回起動時に発行する<strong>ランダムな識別子</strong>。あなたに関するいかなる情報とも結び付いていません（匿名App ユーザーID）</li>
+        <li><strong>Appleのレシート</strong>。製品、購入日時、トランザクションID、ストアの国、サブスクリプションの状態を含みます</li>
+        <li><strong>端末とシステムの情報</strong>。機種、OSバージョン、Appのバージョン、言語、タイムゾーンなど</li>
+        <li>リクエストの<strong>IPアドレス</strong>。RevenueCat が国の判定と不正防止のために使用します</li>
+        <li>進行状況に関する<strong>5つの数値</strong>。所持カード数、単品購入の回数、残クレジット、逃した日数、遊んだクイズの回数</li>
+      </ul>
+      <p>この5つの数値は、どの購入方法を提示するかを決めるためのものです。3日逃した人には、単品ではなくアーカイブの案内が表示されます。コレクションの中身は含まれず、どの動物を持っているかも分かりません。</p>
+      <p><strong>トラッキングなし、広告なし。</strong> RevenueCat に広告識別子（IDFA）は渡りません。端末をまたいだ結合も行われず、広告ネットワークへの提供もありません。</p>
+      <p><strong>法的根拠</strong>はGDPR第6条1項(b)です。この確認がなければ、購入した内容を提供することも、サブスクリプションを有効にすることもできません。提示する案内の選択については、GDPR第6条1項(f)（適切な購入方法を示すことへの正当な利益）に基づきます。</p>
+      <p><strong>米国への移転:</strong> RevenueCat は米国でこれらの情報を取り扱います。欧州委員会の標準契約条項を含むデータ処理契約を締結しています。詳細は<a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">RevenueCat のプライバシーポリシー</a>をご覧ください。</p>
+      <p><strong>保存期間:</strong> 購入履歴は、購入した内容を有効にするために必要な間だけ保存されます。App を削除すると、匿名の識別子は端末のないまま残りますが、それを個人に結び付けることはできません。</p>
+
+      <h2>6. 通知</h2>
+      <p>新しいカードを毎日お知らせしてほしい場合、App は通知の許可を一度だけ求めます。尋ねるのは、最初のカードを手に入れたあとです。それ以前では、何のための許可かが分からないからです。</p>
+      <p>このリマインダーは<strong>端末の中で</strong>作成・予約されます。サーバーからメッセージが送られることも、サーバーへ情報が送られることもありません。許可は端末の設定からいつでも取り消せます。</p>
+      <p>これとは別に、App はiCloudがコレクションの変更を知らせるための無音のシステム通知を受け取る登録をしています。これはAppleから送られ、表示されるテキストはなく、同期のためだけに使われます。</p>
+
+      <h2>7. トラッキングは行いません</h2>
+      <p>Appleのアプリのトラッキングの透明性（App Tracking Transparency）にいうトラッキングは行っていません。広告識別子は使用せず、事業者をまたぐ利用プロファイルも作成せず、広告ネットワーク、第三者の分析ツール（Google Analytics、Firebase、Crashlytics など）、トラッキングライブラリのいずれも含んでいません。したがってトラッキングの許可を求めることもありません。</p>
+
+      <h2>8. Apple の役割</h2>
+      <p>このApp とは別に、Apple は自らの責任で情報を取り扱います。</p>
+      <ul>
+        <li><strong>App Store からのダウンロード時</strong>および購入のたび（Apple アカウント、支払い、端末情報）</li>
+        <li><strong>iCloud 同期時</strong>（サインインしている場合）</li>
+        <li><strong>集計された統計として</strong>。App Store Connect を通じて開発者に提供されるダウンロード数やクラッシュレポートなどです。これらは集計されたもので、開発者が個人を特定することはできません。参加するかどうかは<em>設定 → プライバシーとセキュリティ → 解析と改善</em>で選べます。</li>
+      </ul>
+      <p><a href="https://www.apple.com/legal/privacy/ja/" target="_blank" rel="noopener">Appleのプライバシーポリシー</a>が適用されます。</p>
+
+      <h2>9. お問い合わせ</h2>
+      <p>ご質問や不具合の報告を開発者にメールでお送りいただいた場合、そこに含まれる情報（メールアドレス、本文）は、お問い合わせへの対応のために取り扱われ、必要がなくなり法定の保存義務もなくなりしだい削除されます。法的根拠はGDPR第6条1項(f)です。</p>
+
+      <h2>10. あなたの権利</h2>
+      <p>GDPRにより、管理者に対して次の権利があります。</p>
+      <ul>
+        <li>取り扱われている情報への<strong>アクセス</strong>（第15条）</li>
+        <li>不正確な情報の<strong>訂正</strong>（第16条）</li>
+        <li><strong>消去</strong>（第17条）</li>
+        <li><strong>取扱いの制限</strong>（第18条）</li>
+        <li><strong>データポータビリティ</strong>（第20条）</li>
+        <li>取扱いへの<strong>異議</strong>（第21条）</li>
+        <li><strong>監督機関への苦情申立て</strong>（第77条）</li>
+      </ul>
+      <p>実務上の補足です。開発者はあなたを特定する情報を一切保有していません。コレクションについては、開示も削除もできません。それはあなたの手元にあります。管理はあなた自身が行えます。</p>
+      <ul>
+        <li><strong>コレクション</strong>は、App を端末から削除し、Apple アカウントのiCloud設定でApp のデータを削除すれば消えます。</li>
+        <li><strong>RevenueCat にある記録</strong>は、ご依頼により削除できます。開発者までご連絡ください。特定には匿名App ユーザーIDが必要です。App の設定に表示されています。</li>
+      </ul>
+      <p>管轄の監督機関は、管理者の所在地により定まります（第1項参照）。</p>
+
+      <h2>11. お子さまについて</h2>
+      <p>本App の年齢制限は4+で、お子さまに不適切な内容は含まれていません。お子さまの情報を意図的に収集することはありません。そもそも個人を特定する情報を一切収集していません。App Store での購入は、Appleのスクリーンタイムの設定で制限したり、完全に無効にしたりできます。</p>
+
+      <h2>12. 本ポリシーの変更</h2>
+      <p>App または法令の変更にあわせて、本ポリシーを改定することがあります。適用されるのは、常にここに掲載されている版です。改定日は冒頭に記載しています。</p>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../../../">crabucate</a><span class="foot-sep">·</span><a href="../">Daily Bestiary</a><span class="foot-sep">·</span><span>プライバシー</span><span class="foot-sep">·</span><a href="../terms/">利用規約</a><span class="foot-sep">·</span><a href="../support/">サポート</a><span class="foot-sep">·</span><a href="../../../en/impressum.html">運営者情報</a></div>
+    <div class="foot-langs"><strong>言語</strong><a href="../../../bestiary/privacy/">English</a><span class="foot-sep">·</span><a href="../../../bestiary/de/privacy/">Deutsch</a><span class="foot-sep">·</span><a href="../../../bestiary/fr/privacy/">Français</a><span class="foot-sep">·</span><a href="../../../bestiary/es/privacy/">Español</a><span class="foot-sep">·</span><a href="../../../bestiary/it/privacy/">Italiano</a><span class="foot-sep">·</span><a href="../../../bestiary/pt-br/privacy/">Português</a><span class="foot-sep">·</span><span class="lang-active">日本語</span><span class="foot-sep">·</span><a href="../../../bestiary/ko/privacy/">한국어</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hans/privacy/">简体中文</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hant/privacy/">繁體中文</a></div>
+  </footer>
+
+  <script src="../../../assets/theme.js" defer></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static website at `crabucate.de`, hosted on IONOS webhosting. There is no build step, no framework, and no dependencies — 40 hand-written HTML pages.
+A static website at `crabucate.de`, hosted on IONOS webhosting. There is no build step, no framework, and no dependencies — 40 hand-written HTML pages plus the forty generated ones under `/bestiary/` (see below).
 
 ## Deployment
 
@@ -12,7 +12,7 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which mirrors the rep
 
 Credentials live in GitHub repository secrets: `IONOS_SFTP_HOST`, `IONOS_SFTP_USER`, `IONOS_SFTP_PASSWORD`.
 
-The workflow mirrors with `--delete`, so files removed here are removed on the server. Repository-only files (`CLAUDE.md`, `app.md`, `notes/`, `og-image.html`, `.github/`, `.claude/`) are excluded — extend that list when adding files that must not be published. `notes/` holds the per-app working documents (App-Store-Checklisten, Textentwürfe, Datenschutz-Quelltexte) that must never reach the webspace.
+The workflow mirrors with `--delete`, so files removed here are removed on the server. Repository-only files (`CLAUDE.md`, `app.md`, `notes/`, `og-image.html`, `.github/`, `.claude/`) are excluded — extend that list when adding files that must not be published. `notes/` holds the per-app working documents (App-Store-Checklisten, Textentwürfe, Datenschutz-Quelltexte) that must never reach the webspace — including `notes/bestiary/`, the source of the forty `/bestiary/` pages.
 
 `.htaccess` handles what GitHub Pages used to do implicitly: HTTPS enforcement, `www` → apex redirect, compression, cache headers, and `ErrorDocument 404 /404.html`.
 
@@ -20,10 +20,44 @@ The workflow mirrors with `--delete`, so files removed here are removed on the s
 
 German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (12) and `/en/guides/` (8). The three newest — `arbeitszeiterfassung-lehrer`, `jahresarbeitszeit-lehrer-berechnen`, `ueberstunden-lehrer` — belong to the Lehrer Arbeitszeit Tracker and are German-only like the app page itself.
 
-`lehrer-arbeitszeit.html` and `lehrer-arbeitszeit-privacy.html` are **deliberately German-only** and have no `/en/` counterpart: the app ships the Ferien- and Feiertagstermine of the sixteen German states and is useless elsewhere. Their `hreflang` therefore names only `de`, and the English start page lists two apps, not three. Do not "fix" that asymmetry by machine-translating the pages.
+### `/bestiary/` — Daily Bestiary in ten languages
+
+The app ships in the ten languages the App Store entry is localised for, so the
+page does too. It is the one section with its own URL shape, and the shape is
+not negotiable: App Store Connect stores `crabucate.de/bestiary`,
+`/bestiary/privacy`, `/bestiary/support` and `/bestiary/terms`, the app's
+settings link to two of them, and every RevenueCat paywall carries the other
+two in its footer. Those four addresses are **English** — the review clicks
+them and the store's base territory is the USA. The other nine languages sit
+beneath: `/bestiary/de/`, `/bestiary/fr/`, `/bestiary/es/`, `/bestiary/it/`,
+`/bestiary/pt-br/`, `/bestiary/ja/`, `/bestiary/ko/`, `/bestiary/zh-hans/`,
+`/bestiary/zh-hant/`, each with its own `privacy/`, `terms/` and `support/`.
+Extensionless URLs come from directories with an `index.html`, not from a
+rewrite rule.
+
+Forty near-identical files are not maintainable by hand, so they are generated:
+
+```
+python3 notes/bestiary/build.py     # schreibt bestiary/** und den Bestiary-Block in sitemap.xml
+```
+
+The texts live one file per language in `notes/bestiary/i18n/<code>.json`, the
+markup and the CSS in `notes/bestiary/build.py`. **Edit those, never the
+generated HTML** — the next run overwrites it. Both stay under `notes/` and
+therefore off the webspace; the generated pages are committed and shipped, so
+the site still has no build step. Adding a language means one JSON file plus
+one row in `LANGS`; the language switcher, the `hreflang` block and the sitemap
+follow from there. The screenshots are the store's own, one set per language,
+under `images/bestiary/screenshots/<code>/`.
+
+`lehrer-arbeitszeit.html` and `lehrer-arbeitszeit-privacy.html` are **deliberately German-only** and have no `/en/` counterpart: the app ships the Ferien- and Feiertagstermine of the sixteen German states and is useless elsewhere. Their `hreflang` therefore names only `de`, and the English start page lists three apps where the German one lists four. Do not "fix" that asymmetry by machine-translating the pages.
 
 Images are grouped per app: `images/<app>/icons/{light,dark}/icon.png` and
-`images/<app>/screenshots/{light,dark}/`. Assets both apps share — the crab logo, the two App Store
+`images/<app>/screenshots/{light,dark}/`. Daily Bestiary is the exception on
+both counts: Icon Composer exports one icon for both themes, so it is a plain
+`images/bestiary/icon.png` with no `<picture>` around it, and its screenshots
+are split by language rather than by theme
+(`images/bestiary/screenshots/<code>/`). Assets both apps share — the crab logo, the two App Store
 badges, the empty iPad bezel — sit directly in `images/`. Only files the site actually references
 are kept; App Store deliverables and raw simulator captures were removed and are recoverable from
 git history if a submission needs them.
@@ -76,6 +110,8 @@ All defined once in `assets/base.css`:
 | `--pw-text`  | `#9C570D`              | `#F0A65B`              | Platzwahl text         |
 | `--la`       | `#F79D39`              | unchanged              | Lehrer-Arbeitszeit accent |
 | `--la-text`  | `#8F4F0E`              | `#F5B06A`              | Lehrer-Arbeitszeit text |
+| `--db`       | `#E8622C`              | unchanged              | Daily Bestiary accent  |
+| `--db-text`  | `#A8421A`              | `#F08A50`              | Daily Bestiary text    |
 
 `lehrer-arbeitszeit.html` declares five further tokens in its own inline `:root` — `--frame-a/-b/-c`
 and `--frame-rim` for the CSS iPhone mockup, plus `--soll`, `--ist` and `--over` for the
@@ -99,7 +135,9 @@ belongs to — `--app: var(--pw); --app-text: var(--pw-text); --app-dim: var(--p
 Follows the OS by default; the nav toggle cycles between auto, light and dark and persists an
 explicit choice in `localStorage.theme` (no entry means auto). All of it lives in `assets/base.css`
 and `assets/theme.js` — a new page needs nothing beyond the `<link>`, the `<script>`, the head
-snippet and the button markup.
+snippet and the button markup. The button's label comes from `TEXTS` in `theme.js`, keyed by
+`<html lang>`; it carries all ten languages of `/bestiary/` and falls back to German for anything
+else.
 
 `base.css` carries the dark tokens twice on purpose:
 

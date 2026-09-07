@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Daily Bestiary 利用規約 — crabucate</title>
+  <meta name="description" content="Daily Bestiary の利用規約。ライセンス、購入とサブスクリプション、画像の権利、責任について。" />
+  <link rel="canonical" href="https://crabucate.de/bestiary/ja/terms/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/terms/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/terms/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/terms/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/terms/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/terms/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/terms/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/terms/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/terms/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/terms/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/terms/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/terms/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/ja/terms/" />
+  <meta property="og:title" content="Daily Bestiary 利用規約 — crabucate" />
+  <meta property="og:description" content="Daily Bestiary の利用規約。ライセンス、購入とサブスクリプション、画像の権利、責任について。" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <link rel="stylesheet" href="../../../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main {
+      padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 6rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 2.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.75rem; }
+    ul, ol { margin: 0 0 0.75rem 1.1rem; padding: 0; }
+    li { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.2rem; }
+
+    .address {
+      font-size: 0.875rem;
+      line-height: 1.9;
+      color: var(--muted);
+      border-left: 2px solid var(--line);
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: currentColor; }
+    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <a href="../../../" class="nav-logo">
+      <img src="../../../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../" class="back-link">← Daily Bestiary</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <p class="page-label">法的事項</p>
+    <h1>利用規約</h1>
+    <p class="meta">Daily Bestiary · 最終更新: 2026年9月7日</p>
+
+      <h2>1. 本規約について</h2>
+      <p>本規約は、iOS用App <strong>Daily Bestiary</strong> の利用について定めるものです。提供者は次のとおりです。</p>
+      <p class="address">Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />ドイツ<br />メール: <a class="mail" href="#">info(at)crabucate.de</a></p>
+      <p>本規約は、Appleの規約、とりわけ<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Appleのライセンス許諾契約（標準EULA）</a>に<strong>加えて</strong>適用されます。両者が矛盾する場合、App のライセンスについてはAppleの契約が優先します。</p>
+
+      <h2>2. App の内容</h2>
+      <p>Daily Bestiary は1日に1枚の動物カードを提供します。どのカードになるかは、カレンダーの固定日ではなく、最初のカードを受け取った日から計算されます。日付は端末のタイムゾーンの深夜0時に切り替わります。</p>
+      <p>初回起動時に3枚のカードを無料で受け取れます。その3枚だけで、表面、裏面、豆知識、写真のクレジット、コレクション、クイズと、App のすべてを体験できます。購入は必要ありません。</p>
+      <p>内容はすべてApp に同梱されています。ダウンロードも自動生成も行いません。</p>
+
+      <h2>3. 利用の許諾</h2>
+      <p>あなたには、Apple アカウントに関連付けられた端末で、私的な目的のために本App を利用する非独占的かつ譲渡不能な権利が与えられます。カード、イラスト、文章、クイズの問題は著作権により保護されています。</p>
+      <p>とりわけ次の行為は認められません。App および購入確認の解析・改変・回避、収録されているイラスト・写真・文章・問題の抽出および再配布、ならびにこれらの内容を自らの提供物に用いること。</p>
+      <p>授業での利用は歓迎します。ご自身の端末でApp を見せていただければ十分です。</p>
+
+      <h2>4. 購入</h2>
+      <p>購入には3つの種類があります。</p>
+      <ul>
+        <li><strong>その日のカード</strong> — 本日のカードを手に入れます。1日1回、繰り返し購入できます。</li>
+        <li><strong>10枚パック</strong> — 10回分のクレジット。有効期限はなく、その日のカードに使われます。</li>
+        <li><strong>Collector</strong> — サブスクリプション。逃した日を取り戻せるアーカイブが追加で開き、その日のカードも含まれ、コレクション全体のクイズ成績が表示されます。</li>
+      </ul>
+      <p><strong>購入契約の相手方はAppleです</strong>。開発者ではありません。支払いはApple アカウントを通じて行われ、AppleのApp Store の規約が適用されます。</p>
+      <p>価格、期間、更新の条件は、購入前にApp 内に表示されます。国によって異なるため、ここには記載していません。</p>
+
+      <h2>5. サブスクリプション、更新、解約</h2>
+      <p>Collector は、解約しないかぎり各期間の終了時に自動更新されます。請求は現在の期間終了の24時間前までにApple アカウントに対して行われます。</p>
+      <p>解約はAppleを通じていつでも可能です。<em>設定 →（自分の名前）→ サブスクリプション</em>。解約は現在の期間の終了時に有効となり、それまでは引き続き利用できます。無料トライアル中に解約する場合、終了の24時間以上前に解約すれば料金は発生しません。</p>
+      <p>開発者があなたに代わって解約することはできません。Appleはその操作をご本人にのみ認めています。</p>
+      <p>サブスクリプションが終了するとアーカイブは閉じます。<strong>手に入れたカードはあなたのものとして残ります</strong>。アーカイブから取り戻したカードも同じです。10枚パックのクレジットも失われません。</p>
+
+      <h2>6. 撤回と返金</h2>
+      <p>購入契約はAppleとの間で成立するため、撤回と返金はAppleの規約に従います。返金の申請は<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>で行えます。</p>
+      <p>直ちに提供されるデジタルコンテンツについては、あなたの明示的な同意のもとで提供が開始された時点で、法定の撤回権が消滅する場合があります。詳細はAppleの販売条件に定められています。</p>
+      <p>開発者は代金を受け取っていないため、自ら返金することはできません。技術的な不具合の場合は喜んでお手伝いします。連絡先は<a href="../support/">サポート</a>のページに記載しています。</p>
+
+      <h2>7. 画像と第三者の権利</h2>
+      <p>カード表面のイラストは開発者によるものです。裏面の写真は自由に利用できる情報源（Pixabay、Unsplash、Wikimedia Commons など）から得たもので、それぞれ記載のライセンス（クリエイティブ・コモンズ・ライセンスを含む）に従って使用しています。</p>
+      <p>撮影者、ライセンス、出典は各カードの裏面に記載しています。権利なく使用されている、あるいはクレジットが誤っているとお考えの場合は、<a class="mail" href="#">info(at)crabucate.de</a> までご連絡ください。クレジットを訂正するか、画像を削除します。</p>
+
+      <h2>8. 保証しないこと</h2>
+      <p>App は今後も更新されます。次の点は保証しません。</p>
+      <ul>
+        <li>カードの<strong>枚数</strong>（現在も将来も）</li>
+        <li>App Store での、あるいは将来のOSバージョンでの<strong>継続的な提供</strong></li>
+        <li>将来のすべての版が、現在のすべての機能を備えていること</li>
+      </ul>
+      <p>カードの並びが終わりに達したときは、App がそう伝えます。最初に戻ることも、同じカードが繰り返されることもありません。</p>
+      <p>App は学術的な出典に代わるものではありません。豆知識とクイズの問題は丁寧にまとめられ、生物教師が内容を確認していますが、論文等の典拠には適しません。</p>
+
+      <h2>9. あなたのデータ</h2>
+      <p>コレクションは端末とあなた自身のiCloudにあります。開発者はそれにアクセスできないため、引き渡すことも復元することもできません。コレクションが大切な場合は端末のバックアップをお取りください。iCloud同期は本来の意味でのバックアップではありません。</p>
+      <p>App が扱う情報と、購入時に外部サービスへ渡る情報については、<a href="../privacy/">プライバシーポリシー</a>をご覧ください。</p>
+
+      <h2>10. 責任</h2>
+      <p>開発者は、故意および重過失の場合、ならびに生命・身体・健康の侵害の場合、およびドイツ製造物責任法に基づく場合には、無制限に責任を負います。</p>
+      <p>軽過失の場合は、その履行によってはじめてApp の適切な利用が可能となり、あなたがその遵守を信頼してよい義務に違反したときにかぎり責任を負います。その場合の責任は、この種の契約において通常予見しうる損害に限定されます。</p>
+      <p>これを超える責任は負いません。瑕疵に関する法定の権利は影響を受けません。</p>
+
+      <h2>11. Apple について</h2>
+      <p>Apple は本App の提供者ではなく、本App について責任を負いません。Apple には保守やサポートを提供する義務はありません。本App に関する請求（瑕疵、製造物責任、第三者の権利侵害など）は、Apple ではなく開発者にお申し出ください。</p>
+      <p>Apple およびその子会社は本規約の第三受益者であり、あなたに対して本規約を行使する権利を有します。</p>
+
+      <h2>12. 本規約の変更</h2>
+      <p>App、法令、またはAppleの要件の変更にあわせて、本規約を改定することがあります。適用されるのは、常にここに掲載されている版です。改定日は冒頭に記載しています。重要な変更はApp 内でお知らせします。</p>
+
+      <h2>13. 準拠法と紛争解決</h2>
+      <p>本規約にはドイツ法が適用されます。あなたが消費者である場合、常居所地の国の強行的な消費者保護規定は影響を受けません。</p>
+      <p>開発者は、消費者仲裁機関における紛争解決手続に参加する用意はなく、その義務も負いません。</p>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../../../">crabucate</a><span class="foot-sep">·</span><a href="../">Daily Bestiary</a><span class="foot-sep">·</span><a href="../privacy/">プライバシー</a><span class="foot-sep">·</span><span>利用規約</span><span class="foot-sep">·</span><a href="../support/">サポート</a><span class="foot-sep">·</span><a href="../../../en/impressum.html">運営者情報</a></div>
+    <div class="foot-langs"><strong>言語</strong><a href="../../../bestiary/terms/">English</a><span class="foot-sep">·</span><a href="../../../bestiary/de/terms/">Deutsch</a><span class="foot-sep">·</span><a href="../../../bestiary/fr/terms/">Français</a><span class="foot-sep">·</span><a href="../../../bestiary/es/terms/">Español</a><span class="foot-sep">·</span><a href="../../../bestiary/it/terms/">Italiano</a><span class="foot-sep">·</span><a href="../../../bestiary/pt-br/terms/">Português</a><span class="foot-sep">·</span><span class="lang-active">日本語</span><span class="foot-sep">·</span><a href="../../../bestiary/ko/terms/">한국어</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hans/terms/">简体中文</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hant/terms/">繁體中文</a></div>
+  </footer>
+
+  <script src="../../../assets/theme.js" defer></script>
+</body>
+</html>

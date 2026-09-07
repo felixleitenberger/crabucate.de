@@ -1,0 +1,381 @@
+{
+  "common": {
+    "updated": "Stand: 7. September 2026",
+    "nav_privacy": "Datenschutz",
+    "nav_terms": "Nutzungsbedingungen",
+    "nav_support": "Support",
+    "imprint": "Impressum",
+    "language": "Sprache",
+    "all_apps": "Alle Apps"
+  },
+
+  "index": {
+    "title": "Daily Bestiary – Jeden Tag eine neue Tierkarte | iPhone",
+    "description": "Jeden Tag eine neue, von Hand gezeichnete Tierkarte: freischalten, umdrehen, drei Fakten lernen, Quiz spielen. Die ersten drei Karten gehen aufs Haus. Für iPhone.",
+    "eyebrow": "App für iPhone",
+    "tagline": "Seltene Tierkarten sammeln",
+    "lead": [
+      "Jeden Tag wartet eine neue, von Hand gezeichnete Tierkarte auf dich. Schalte sie frei, dann gehört sie dir: Auf der Rückseite stehen ein echtes Foto, drei Fakten, der wissenschaftliche Name und ein Quiz mit vier Fragen.",
+      "Die ersten drei Karten gehen aufs Haus. Eine davon ist eine Holo-Karte — neige dein Telefon, und der Glanz wandert über sie."
+    ],
+    "badge_alt": "Laden im App Store",
+    "cta_note": "Daily Bestiary erscheint in Kürze im App Store. Sobald die App freigegeben ist, führt dieser Knopf direkt zum Eintrag.",
+
+    "features_title": "Was du bekommst",
+    "features": [
+      { "t": "Eine Karte pro Tag", "d": "Eine, nie mehr. Die Karte des Tages wird aus deinem eigenen Startdatum berechnet, nicht aus einem Kalenderdatum — du fängst an, wann du willst." },
+      { "t": "Foto und drei Fakten", "d": "Jede Rückseite zeigt ein echtes Foto des Tieres, drei Fakten und den wissenschaftlichen Namen." },
+      { "t": "Ein Quiz je Tier", "d": "Vier Fragen zu jedem Tier, von einem Biologielehrer gegengelesen. Wiederholen geht immer." },
+      { "t": "Eine Sammlung, die wächst", "d": "Das Album zeigt nur deine eigenen Karten. Keine leeren Plätze, kein „x von y“, kein Wettlauf." },
+      { "t": "Holo-Karten", "d": "Einige Karten glänzen: Neige dein Telefon, und das Licht wandert über die Oberfläche." }
+    ],
+
+    "shots_title": "So sieht das aus",
+    "shots": [
+      "Die Karte des Tages — eine pro Tag, um Mitternacht wechselt sie.",
+      "Deine Sammlung wächst mit jeder freigeschalteten Karte.",
+      "Jede Karte ist von Hand gezeichnet.",
+      "Die Rückseite: Foto, drei Fakten, wissenschaftlicher Name, Bildnachweis.",
+      "Vier Fragen zu jedem Tier."
+    ],
+
+    "collector_title": "Collector",
+    "collector": [
+      "Collector öffnet das Archiv: Ein verpasster Tag lässt sich nachholen. Die Karte des Tages ist jeden Tag enthalten, dazu kommt die Quiz-Statistik über die ganze Sammlung.",
+      "Collector ist ein Abonnement und verlängert sich, bis du es kündigst. Kündigen geht jederzeit in den Einstellungen deiner Apple-Account-Verwaltung. Die aktuellen Preise und Laufzeiten stehen im App Store, weil sie sich je nach Land unterscheiden."
+    ],
+
+    "privacy_title": "Kein Konto, kein Feed, keine Werbung",
+    "privacy": [
+      "Es gibt keine Anmeldung und keine Registrierung. Deine Sammlung liegt auf deinem Gerät und gleicht sich — wenn du in iCloud angemeldet bist — über deine eigene private iCloud zwischen deinen Geräten ab. Der Anbieter dieser App hat darauf keinen Zugriff.",
+      "Es gibt nichts zu scrollen und nichts zu grinden. Keine Werbung, keine Werbenetzwerke, kein Tracking über App-Grenzen hinweg. Für die Abwicklung der Käufe wird ein Dienstleister eingesetzt; was dabei übertragen wird, steht in der Datenschutzerklärung."
+    ],
+
+    "credits_title": "Bildnachweise",
+    "credits": [
+      "Die Zeichnungen auf den Kartenvorderseiten sind von Hand entstanden. Die Fotos auf den Rückseiten stammen aus freien Quellen — Pixabay, Unsplash und Wikimedia Commons.",
+      "Jedes Foto ist auf der Rückseite seiner eigenen Karte nachgewiesen, mit Urheber, Lizenz und Link zur Quelle. Nicht im Kleingedruckten, sondern dort, wo das Bild zu sehen ist."
+    ],
+
+    "faq_title": "Häufige Fragen",
+    "faq": [
+      { "q": "Was kostet Daily Bestiary?", "a": "Der Download ist kostenlos, und die ersten drei Karten gehen aufs Haus — mit Rückseite, Fakten und Quiz. Danach schaltest du die Karte des Tages einzeln frei, kaufst eine Zehnerkarte oder abonnierst Collector. Die aktuellen Preise stehen im App Store; sie unterscheiden sich je nach Land." },
+      { "q": "Brauche ich ein Benutzerkonto?", "a": "Nein. Es gibt keine Registrierung, keine Anmeldung und kein Profil. Die App fragt weder nach Namen noch nach E-Mail-Adresse." },
+      { "q": "Wie viele Karten gibt es insgesamt?", "a": "Das steht nirgends — weder in der App noch hier. Eine Gesamtzahl macht aus dem Sammeln eine Fortschrittsanzeige, und genau das soll es nicht sein. Wenn du alles hast, was es gibt, sagt die App es dir." },
+      { "q": "Was passiert, wenn ich einen Tag verpasse?", "a": "Die Karte dieses Tages ist nicht verloren. Mit Collector öffnet sich das Archiv, und du holst verpasste Tage nach. Ohne Collector geht es am nächsten Tag mit der nächsten Karte weiter." },
+      { "q": "Gleichen sich meine Karten zwischen iPhone und iPad ab?", "a": "Ja, sofern du auf beiden Geräten mit demselben Apple-Account in iCloud angemeldet bist. Der Abgleich läuft über deine private iCloud-Datenbank; der Anbieter der App kann sie nicht einsehen." },
+      { "q": "Ich habe die App neu installiert — sind meine Käufe weg?", "a": "Nein. In den Einstellungen der App und auf jeder Kaufseite gibt es „Käufe wiederherstellen“. Damit werden dein Abonnement und dein Guthaben deinem Apple-Account wieder zugeordnet. Deine Sammlung selbst kommt über iCloud zurück." },
+      { "q": "Wie kündige ich Collector?", "a": "Über Apple, nicht über die App: Einstellungen → dein Name → Abonnements. Dort lässt sich das Abonnement jederzeit zum Ende der laufenden Periode kündigen. Die App zeigt denselben Weg über das Customer Center in ihren Einstellungen." },
+      { "q": "Funktioniert die App ohne Internetverbindung?", "a": "Ja. Alle Karten, Fotos und Quizfragen sind in der App enthalten und werden nicht nachgeladen. Eine Verbindung braucht es nur für Käufe und für den iCloud-Abgleich." }
+    ]
+  },
+
+  "privacy": {
+    "title": "Datenschutzerklärung Daily Bestiary — crabucate",
+    "description": "Datenschutzerklärung für die App Daily Bestiary: welche Daten auf dem Gerät bleiben, was beim Kauf an RevenueCat geht und welche Rechte du hast.",
+    "label": "Rechtliches",
+    "h1": "Datenschutzerklärung",
+
+    "sections": [
+      {
+        "h": "Kurz gesagt",
+        "blocks": [
+          { "p": "Für diese App gibt es kein Benutzerkonto und keinen eigenen Server. Deine Karten, deine Quizergebnisse und deine Einstellungen bleiben auf deinem Gerät und — wenn du in iCloud angemeldet bist — in deiner eigenen privaten iCloud. Der Anbieter dieser App hat darauf keinen Zugriff." },
+          { "p": "Nur an einer Stelle verlässt etwas dein Gerät: Käufe werden über einen Dienstleister abgewickelt (RevenueCat). Dabei wird <strong>keine</strong> Angabe übertragen, die dich benennt — kein Name, keine E-Mail-Adresse, keine Werbekennung. Ziffer 5 beschreibt genau, was dort ankommt." },
+          { "p": "Es gibt keine Werbung, kein Tracking über App-Grenzen hinweg und keine Weitergabe an Datenhändler." }
+        ]
+      },
+      {
+        "h": "1. Verantwortlicher",
+        "blocks": [
+          { "p": "Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO):" },
+          { "address": "Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Deutschland<br />E-Mail: __MAIL__" }
+        ]
+      },
+      {
+        "h": "2. Welche Daten die App verarbeitet",
+        "blocks": [
+          { "p": "Die App legt ausschließlich das an, was beim Spielen entsteht:" },
+          { "ul": [
+            "<strong>Deine Karten</strong> — welche Karte du besitzt und wann du sie freigeschaltet hast",
+            "<strong>Quizergebnisse</strong> — welche Fragen du zu welchem Tier richtig beantwortet hast",
+            "<strong>Guthaben</strong> — wie viele Freischaltungen aus gekauften Paketen noch offen sind",
+            "<strong>Einstellungen</strong> — ob das Onboarding gelaufen ist und ob du die tägliche Erinnerung möchtest"
+          ] },
+          { "p": "Die App fragt <strong>keine</strong> Bestandsdaten ab: keinen Namen, keine E-Mail-Adresse, kein Geburtsdatum, keine Anschrift, keine Telefonnummer. Sie greift <strong>nicht</strong> auf Standort, Kamera, Mikrofon, Fotos, Kontakte, Kalender oder Gesundheitsdaten zu." },
+          { "p": "Der Tag, an dem deine Serie beginnt, wird nicht gesondert gespeichert, sondern aus dem Zeitpunkt deiner ältesten Karte berechnet." }
+        ]
+      },
+      {
+        "h": "3. Wo diese Daten liegen",
+        "blocks": [
+          { "h3": "Auf deinem Gerät" },
+          { "p": "Alles Genannte wird lokal in einem geschützten Bereich der App gespeichert, den das Betriebssystem gegen den Zugriff anderer Apps abschirmt." },
+          { "h3": "In deiner iCloud" },
+          { "p": "Bist du auf dem Gerät in iCloud angemeldet, werden dieselben Angaben zusätzlich in der <strong>privaten Datenbank</strong> deines iCloud-Accounts abgelegt (Apple CloudKit). Das dient allein dazu, deine Sammlung zwischen deinen eigenen Geräten abzugleichen — und dazu, dass sie nach einem Gerätewechsel wieder da ist." },
+          { "p": "Diese Datenbank gehört zu deinem Apple-Account. Der Anbieter dieser App kann sie technisch nicht einsehen: Er hat keinen Zugriff auf die privaten CloudKit-Datenbanken der Nutzerinnen und Nutzer, und es existiert kein Server des Anbieters, an den diese Daten übertragen würden." },
+          { "p": "Den Abgleich steuerst du über iCloud in den Systemeinstellungen deines Geräts. Die Verarbeitung in deiner iCloud richtet sich im Übrigen nach der <a href=\"https://www.apple.com/legal/privacy/de-ww/\" target=\"_blank\" rel=\"noopener\">Datenschutzrichtlinie von Apple</a>." },
+          { "h3": "Nicht auf einem Server des Anbieters" },
+          { "p": "Es gibt keinen. Karten, Fotos und Quizfragen sind vollständig in der App enthalten und werden nicht nachgeladen. Außer der iCloud-Verbindung und der unter Ziffer 5 beschriebenen Kaufabwicklung stellt die App keine Netzwerkverbindung her." }
+        ]
+      },
+      {
+        "h": "4. Käufe über den App Store",
+        "blocks": [
+          { "p": "Alle Käufe laufen über den App Store. Vertragspartner beim Kauf ist Apple, nicht der Anbieter dieser App. Zahlungsdaten werden ausschließlich von Apple verarbeitet; der Anbieter erfährt weder deinen Namen noch deine Zahlungsmittel." },
+          { "p": "Apple stellt dem Anbieter ausschließlich zusammengefasste Auswertungen zur Verfügung — etwa Verkaufszahlen je Land. Ein Rückschluss auf einzelne Personen ist darüber nicht möglich." }
+        ]
+      },
+      {
+        "h": "5. RevenueCat — Prüfung der Käufe",
+        "blocks": [
+          { "p": "Damit die App weiß, ob ein Kauf gültig ist und ob ein Abonnement noch läuft, wird der Dienst <strong>RevenueCat</strong> eingesetzt (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, USA). Er prüft den Kaufbeleg gegen Apple und beantwortet der App die Frage, welche Inhalte freigeschaltet sind." },
+          { "p": "Dabei werden verarbeitet:" },
+          { "ul": [
+            "eine <strong>zufällig erzeugte Kennung</strong>, die die App beim ersten Start vergibt und die mit keiner Angabe zu deiner Person verknüpft ist (anonyme App-User-ID)",
+            "der <strong>Kaufbeleg von Apple</strong> mit Produkt, Kaufzeitpunkt, Transaktionskennung, Land des Stores und Status eines Abonnements",
+            "<strong>Geräte- und Systemangaben</strong> wie Gerätetyp, Betriebssystemversion, App-Version, Sprache und Zeitzone",
+            "die <strong>IP-Adresse</strong> des Aufrufs, die RevenueCat zur Bestimmung des Landes und zur Abwehr von Missbrauch verwendet",
+            "fünf <strong>Kennzahlen aus deinem Spielstand</strong>: die Anzahl deiner Karten, die Anzahl deiner Einzelkäufe, das verbleibende Guthaben, die Anzahl verpasster Tage und die Anzahl gespielter Quizrunden"
+          ] },
+          { "p": "Die fünf Kennzahlen entscheiden, welche Kaufmöglichkeit dir angeboten wird — wer drei Tage verpasst hat, sieht das Archiv-Angebot statt der Einzelkarte. Sie enthalten keine Inhalte deiner Sammlung und keine Angabe, welche Tiere du besitzt." },
+          { "p": "<strong>Kein Tracking, keine Werbung.</strong> RevenueCat erhält keine Werbekennung (IDFA), es findet keine geräteübergreifende Zusammenführung statt und die Daten werden nicht an Werbenetzwerke weitergegeben." },
+          { "p": "<strong>Rechtsgrundlage</strong> ist Art. 6 Abs. 1 lit. b DSGVO: Ohne diese Prüfung ließe sich ein Kauf nicht ausliefern und ein Abonnement nicht freischalten. Für die Zuordnung des passenden Angebots ist es Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sinnvollen Kaufauswahl)." },
+          { "p": "<strong>Übermittlung in die USA:</strong> RevenueCat verarbeitet die Daten in den Vereinigten Staaten. Mit RevenueCat besteht ein Auftragsverarbeitungsvertrag, der die Standardvertragsklauseln der Europäischen Kommission einschließt. Näheres steht in der <a href=\"https://www.revenuecat.com/privacy/\" target=\"_blank\" rel=\"noopener\">Datenschutzerklärung von RevenueCat</a>." },
+          { "p": "<strong>Speicherdauer:</strong> Die Kaufhistorie bleibt gespeichert, solange sie zur Freischaltung deiner Käufe gebraucht wird. Löschst du die App, bleibt die anonyme Kennung ohne Gerät zurück; sie lässt sich keiner Person zuordnen." }
+        ]
+      },
+      {
+        "h": "6. Mitteilungen",
+        "blocks": [
+          { "p": "Möchtest du täglich an die neue Karte erinnert werden, bittet die App einmalig um die Erlaubnis, Mitteilungen zu senden. Gefragt wird erst, nachdem du deine erste Karte freigeschaltet hast — vorher weißt du nicht, wofür du sie gibst." },
+          { "p": "Diese Erinnerungen werden <strong>auf deinem Gerät</strong> erzeugt und geplant. Es wird dafür keine Nachricht von einem Server geschickt und keine Angabe an einen Server übertragen. Du kannst die Erlaubnis jederzeit in den Systemeinstellungen deines Geräts widerrufen." },
+          { "p": "Unabhängig davon meldet die App sich für stille Systemmitteilungen an, mit denen iCloud Änderungen an deiner Sammlung ankündigt. Diese Mitteilungen kommen von Apple, enthalten keinen sichtbaren Text und dienen allein dem Abgleich." }
+        ]
+      },
+      {
+        "h": "7. Kein Tracking",
+        "blocks": [
+          { "p": "Es findet kein Tracking im Sinne des App-Tracking-Transparenz-Rahmenwerks statt. Die App verwendet keine Werbekennung, erstellt keine anbieterübergreifenden Nutzungsprofile und enthält keine Werbenetzwerke, keine Analyse-Frameworks von Drittanbietern (etwa Google Analytics, Firebase oder Crashlytics) und keine Tracking-Bibliotheken. Entsprechend fragt sie auch keine Tracking-Erlaubnis ab." }
+        ]
+      },
+      {
+        "h": "8. Rolle von Apple",
+        "blocks": [
+          { "p": "Unabhängig von dieser App verarbeitet Apple Daten in eigener Verantwortung:" },
+          { "ul": [
+            "<strong>Beim Laden der App</strong> aus dem App Store und bei jedem Kauf (Apple-ID, Zahlung, Geräteinformationen)",
+            "<strong>Beim iCloud-Abgleich</strong>, sofern du in iCloud angemeldet bist",
+            "<strong>In Form aggregierter Statistiken</strong>, die Apple dem Anbieter über App Store Connect bereitstellt — etwa Downloadzahlen oder Absturzberichte. Diese Auswertungen sind zusammengefasst; ein Rückschluss auf einzelne Personen ist dem Anbieter darüber nicht möglich. Ob du daran teilnimmst, steuerst du unter <em>Einstellungen → Datenschutz &amp; Sicherheit → Analyse &amp; Verbesserungen</em>."
+          ] },
+          { "p": "Es gelten die <a href=\"https://www.apple.com/legal/privacy/de-ww/\" target=\"_blank\" rel=\"noopener\">Datenschutzrichtlinien von Apple</a>." }
+        ]
+      },
+      {
+        "h": "9. Kontaktaufnahme",
+        "blocks": [
+          { "p": "Schreibst du dem Anbieter per E-Mail — etwa zu einer Frage oder einem Fehler —, werden die dabei übermittelten Angaben (E-Mail-Adresse, Inhalt der Nachricht) zur Bearbeitung deines Anliegens verarbeitet und gelöscht, sobald sie nicht mehr benötigt werden und keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO." }
+        ]
+      },
+      {
+        "h": "10. Deine Rechte",
+        "blocks": [
+          { "p": "Nach der DSGVO stehen dir gegenüber dem Verantwortlichen die folgenden Rechte zu:" },
+          { "ul": [
+            "<strong>Auskunft</strong> über verarbeitete Daten (Art. 15)",
+            "<strong>Berichtigung</strong> unrichtiger Daten (Art. 16)",
+            "<strong>Löschung</strong> (Art. 17)",
+            "<strong>Einschränkung der Verarbeitung</strong> (Art. 18)",
+            "<strong>Datenübertragbarkeit</strong> (Art. 20)",
+            "<strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21)",
+            "<strong>Beschwerde bei einer Aufsichtsbehörde</strong> (Art. 77)"
+          ] },
+          { "p": "Ein Hinweis zur Praxis: Der Anbieter verfügt über keine Daten, die dich benennen. Zu deiner Sammlung kann er weder Auskunft erteilen noch etwas löschen — sie liegt bei dir. Du hast die Kontrolle darüber selbst:" },
+          { "ul": [
+            "<strong>Deine Sammlung</strong> entfernst du, indem du die App vom Gerät löschst und die App-Daten in den iCloud-Einstellungen deines Apple-Accounts entfernst.",
+            "<strong>Den Datensatz bei RevenueCat</strong> lässt du löschen, indem du dem Anbieter schreibst. Zur Zuordnung wird die anonyme App-User-ID gebraucht; sie steht in den Einstellungen der App."
+          ] },
+          { "p": "Die zuständige Aufsichtsbehörde richtet sich nach dem Sitz des Verantwortlichen (siehe Ziffer 1)." }
+        ]
+      },
+      {
+        "h": "11. Kinder",
+        "blocks": [
+          { "p": "Die App ist ab 4 Jahren freigegeben und enthält keine für Kinder ungeeigneten Inhalte. Es werden wissentlich keine Daten von Kindern erhoben — es werden überhaupt keine Angaben erhoben, die eine Person benennen. Käufe im App Store lassen sich über die Bildschirmzeit-Einstellungen von Apple einschränken oder ganz abschalten." }
+        ]
+      },
+      {
+        "h": "12. Änderungen dieser Erklärung",
+        "blocks": [
+          { "p": "Diese Erklärung wird angepasst, wenn sich die App oder die Rechtslage ändert. Es gilt jeweils die hier veröffentlichte Fassung; das Datum oben nennt den Stand." }
+        ]
+      }
+    ]
+  },
+
+  "terms": {
+    "title": "Nutzungsbedingungen Daily Bestiary — crabucate",
+    "description": "Nutzungsbedingungen für die App Daily Bestiary: Nutzungsrecht, Käufe und Abonnement, Bildrechte, Haftung.",
+    "label": "Rechtliches",
+    "h1": "Nutzungsbedingungen",
+
+    "sections": [
+      {
+        "h": "1. Worum es hier geht",
+        "blocks": [
+          { "p": "Diese Bedingungen regeln die Nutzung der App <strong>Daily Bestiary</strong> für iOS. Anbieter der App ist:" },
+          { "address": "Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Deutschland<br />E-Mail: __MAIL__" },
+          { "p": "Sie gelten <strong>zusätzlich</strong> zu den Bedingungen von Apple, insbesondere zur <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\" rel=\"noopener\">Standard-Lizenzvereinbarung für Programme von Apple</a>. Wo beide sich widersprechen, gilt für die Lizenz an der App die Vereinbarung von Apple." }
+        ]
+      },
+      {
+        "h": "2. Was die App tut",
+        "blocks": [
+          { "p": "Daily Bestiary bietet jeden Tag eine Tierkarte an. Welche Karte das ist, berechnet die App aus dem Tag, an dem du deine erste Karte erhalten hast — nicht aus einem festen Kalenderdatum. Der Tag wechselt um Mitternacht in der Zeitzone deines Geräts." },
+          { "p": "Beim ersten Start erhältst du drei Karten kostenlos. Mit ihnen ist die App vollständig erlebbar: Vorderseite, Rückseite, Fakten, Bildnachweis, Sammlung und Quiz. Ein Kauf ist dafür nicht nötig." },
+          { "p": "Alle Inhalte sind in der App enthalten. Es werden keine Inhalte nachgeladen und keine erzeugt." }
+        ]
+      },
+      {
+        "h": "3. Nutzungsrecht",
+        "blocks": [
+          { "p": "Du erhältst ein einfaches, nicht übertragbares Recht, die App auf den Geräten zu nutzen, die deinem Apple-Account zugeordnet sind, und zwar zu privaten Zwecken. Die Karten, Zeichnungen, Texte und Quizfragen bleiben urheberrechtlich geschützt." },
+          { "p": "Nicht erlaubt sind insbesondere: das Zurückentwickeln, Verändern oder Umgehen der App und ihrer Kaufprüfung; das Auslesen und Weiterverbreiten der enthaltenen Zeichnungen, Fotos, Texte oder Quizfragen; und die Nutzung der Inhalte für eigene Angebote." },
+          { "p": "Der Einsatz im Unterricht ist ausdrücklich willkommen — dafür genügt es, die App auf dem eigenen Gerät zu zeigen." }
+        ]
+      },
+      {
+        "h": "4. Käufe",
+        "blocks": [
+          { "p": "Es gibt drei Arten von Käufen:" },
+          { "ul": [
+            "<strong>Karte des Tages</strong> — schaltet die heutige Karte frei. Wiederholt kaufbar, einmal pro Tag.",
+            "<strong>Zehnerkarte</strong> — Guthaben für zehn Freischaltungen. Das Guthaben verfällt nicht und wird jeweils für die Karte des Tages verwendet.",
+            "<strong>Collector</strong> — ein Abonnement. Es öffnet zusätzlich das Archiv, mit dem sich verpasste Tage nachholen lassen, enthält die Karte des Tages und zeigt die Quiz-Statistik über die ganze Sammlung."
+          ] },
+          { "p": "<strong>Vertragspartner beim Kauf ist Apple</strong>, nicht der Anbieter. Die Abrechnung läuft über deinen Apple-Account; es gelten die Bedingungen von Apple für den App Store." },
+          { "p": "Preise, Laufzeiten und Bedingungen einer Verlängerung werden dir vor dem Kauf in der App angezeigt. Sie unterscheiden sich je nach Land und werden deshalb hier nicht genannt." }
+        ]
+      },
+      {
+        "h": "5. Abonnement, Verlängerung und Kündigung",
+        "blocks": [
+          { "p": "Collector verlängert sich automatisch am Ende jeder Laufzeit, solange du nicht kündigst. Die Abbuchung erfolgt innerhalb von 24 Stunden vor Ablauf der laufenden Periode über deinen Apple-Account." },
+          { "p": "Kündigen kannst du jederzeit über Apple: <em>Einstellungen → dein Name → Abonnements</em>. Die Kündigung wirkt zum Ende der laufenden Periode; bis dahin bleibt der Zugang bestehen. Wird während einer kostenlosen Testphase gekündigt, entfällt die Zahlung, sofern die Kündigung mindestens 24 Stunden vor deren Ende erfolgt." },
+          { "p": "Der Anbieter kann ein Abonnement nicht in deinem Namen kündigen; diese Möglichkeit gibt Apple nur dir selbst." },
+          { "p": "Endet das Abonnement, schließt sich das Archiv. <strong>Karten, die du besitzt, bleiben dir</strong> — auch die, die du über das Archiv geholt hast. Auch das Guthaben aus Zehnerkarten bleibt erhalten." }
+        ]
+      },
+      {
+        "h": "6. Widerruf und Erstattungen",
+        "blocks": [
+          { "p": "Da der Kaufvertrag mit Apple zustande kommt, richten sich Widerruf und Erstattung nach den Bedingungen von Apple. Eine Erstattung beantragst du unter <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>." },
+          { "p": "Bei digitalen Inhalten, die sofort bereitgestellt werden, kann das gesetzliche Widerrufsrecht erlöschen, sobald die Ausführung mit deiner ausdrücklichen Zustimmung begonnen hat. Die Einzelheiten regelt Apple in seinen Verkaufsbedingungen." },
+          { "p": "Der Anbieter kann Zahlungen nicht selbst erstatten, weil er sie nicht selbst vereinnahmt. Bei einem technischen Fehler hilft er trotzdem gern weiter — die Adresse steht unter <a href=\"../support/\">Support</a>." }
+        ]
+      },
+      {
+        "h": "7. Bilder und Rechte Dritter",
+        "blocks": [
+          { "p": "Die Zeichnungen auf den Kartenvorderseiten stammen vom Anbieter. Die Fotos auf den Rückseiten stammen aus freien Quellen (unter anderem Pixabay, Unsplash und Wikimedia Commons) und stehen unter den jeweils angegebenen Lizenzen, darunter Creative-Commons-Lizenzen." },
+          { "p": "Urheber, Lizenz und Quelle stehen auf der Rückseite jeder einzelnen Karte. Wer meint, ein Bild werde zu Unrecht oder falsch nachgewiesen verwendet, schreibe bitte an __MAIL__ — der Nachweis wird dann berichtigt oder das Bild entfernt." }
+        ]
+      },
+      {
+        "h": "8. Was nicht zugesichert wird",
+        "blocks": [
+          { "p": "Die App wird laufend weiterentwickelt. Nicht zugesichert werden:" },
+          { "ul": [
+            "eine bestimmte <strong>Anzahl</strong> von Karten, jetzt oder in Zukunft",
+            "die dauerhafte <strong>Verfügbarkeit</strong> der App im App Store oder auf künftigen Betriebssystemversionen",
+            "dass jede künftige Fassung jede heutige Funktion enthält"
+          ] },
+          { "p": "Ist die Reihe deiner Karten am Ende angelangt, sagt die App es dir; es beginnt dann nichts von vorn und es wiederholt sich nichts." },
+          { "p": "Die App ersetzt keine wissenschaftliche Quelle. Die Fakten und Quizfragen sind sorgfältig zusammengetragen und fachlich gegengelesen, taugen aber nicht als Beleg in einer Arbeit." }
+        ]
+      },
+      {
+        "h": "9. Deine Daten",
+        "blocks": [
+          { "p": "Deine Sammlung liegt auf deinem Gerät und in deiner eigenen iCloud. Der Anbieter hat darauf keinen Zugriff und kann sie deshalb weder herausgeben noch wiederherstellen. Sichere dein Gerät, wenn dir die Sammlung wichtig ist; der iCloud-Abgleich ist keine Sicherung im eigentlichen Sinn." },
+          { "p": "Was die App verarbeitet und was beim Kauf an einen Dienstleister übertragen wird, steht in der <a href=\"../privacy/\">Datenschutzerklärung</a>." }
+        ]
+      },
+      {
+        "h": "10. Haftung",
+        "blocks": [
+          { "p": "Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei der Verletzung von Leben, Körper oder Gesundheit und nach dem Produkthaftungsgesetz." },
+          { "p": "Bei einfacher Fahrlässigkeit haftet er nur bei der Verletzung einer Pflicht, deren Erfüllung die ordnungsgemäße Nutzung der App überhaupt erst ermöglicht und auf deren Einhaltung du vertrauen darfst; in diesem Fall ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt." },
+          { "p": "Eine weitergehende Haftung besteht nicht. Gesetzliche Mängelrechte bleiben unberührt." }
+        ]
+      },
+      {
+        "h": "11. Apple",
+        "blocks": [
+          { "p": "Apple ist nicht Anbieter dieser App und für sie nicht verantwortlich. Apple ist nicht verpflichtet, Wartung oder Support zu leisten. Ansprüche wegen der App — etwa wegen Mängeln, Produkthaftung oder der Verletzung von Rechten Dritter — sind an den Anbieter zu richten, nicht an Apple." },
+          { "p": "Apple und seine Tochtergesellschaften sind Drittbegünstigte dieser Bedingungen und berechtigt, sie dir gegenüber durchzusetzen." }
+        ]
+      },
+      {
+        "h": "12. Änderungen dieser Bedingungen",
+        "blocks": [
+          { "p": "Diese Bedingungen können angepasst werden, wenn sich die App, die Rechtslage oder die Vorgaben von Apple ändern. Es gilt jeweils die hier veröffentlichte Fassung; das Datum oben nennt den Stand. Wesentliche Änderungen werden in der App angezeigt." }
+        ]
+      },
+      {
+        "h": "13. Anwendbares Recht und Streitbeilegung",
+        "blocks": [
+          { "p": "Es gilt deutsches Recht. Ist der Nutzer Verbraucher, bleiben die zwingenden Verbraucherschutzvorschriften des Staates unberührt, in dem er seinen gewöhnlichen Aufenthalt hat." },
+          { "p": "Der Anbieter ist nicht bereit und nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen." }
+        ]
+      }
+    ]
+  },
+
+  "support": {
+    "title": "Support Daily Bestiary — crabucate",
+    "description": "Hilfe zu Daily Bestiary: Käufe wiederherstellen, Abonnement kündigen, iCloud-Abgleich, Mitteilungen — und wie du den Anbieter erreichst.",
+    "label": "Hilfe",
+    "h1": "Support",
+
+    "sections": [
+      {
+        "h": "Schreib einfach",
+        "blocks": [
+          { "p": "Hinter dieser App steht eine Person, kein Support-Team. Fragen, Fehlermeldungen und Wünsche gehen an:" },
+          { "address": "__MAIL__" },
+          { "p": "Die Antwort kommt in der Regel innerhalb weniger Tage. Auf Deutsch oder Englisch — andere Sprachen gehen auch, dann dauert die Antwort etwas länger." },
+          { "p": "Bei einem Fehler hilft es sehr, wenn drei Angaben in der Mail stehen: <strong>welches Gerät</strong>, <strong>welche iOS-Version</strong> und <strong>welche Version der App</strong> (sie steht in den Einstellungen der App ganz unten). Und was du getan hast, bevor es schiefging." }
+        ]
+      },
+      {
+        "h": "Die häufigsten Fälle",
+        "blocks": [
+          { "h3": "Ein Kauf ist nicht angekommen" },
+          { "p": "Öffne die Einstellungen der App und tippe auf <em>Käufe wiederherstellen</em>. Denselben Knopf gibt es auf jeder Kaufseite. Damit ordnet die App deinem Apple-Account das Abonnement und offenes Guthaben wieder zu. Hat Apple die Zahlung abgebucht und die Wiederherstellung hilft nicht, schreib bitte — nenne dabei den Zeitpunkt des Kaufs." },
+          { "h3": "Neues Gerät, alte Sammlung" },
+          { "p": "Melde dich auf dem neuen Gerät mit demselben Apple-Account in iCloud an und installiere die App. Die Sammlung kommt über deine private iCloud zurück; das kann nach dem ersten Start ein paar Minuten dauern. Käufe holst du zusätzlich über <em>Käufe wiederherstellen</em> zurück." },
+          { "h3": "Die Sammlung gleicht sich nicht ab" },
+          { "p": "Prüfe, ob auf beiden Geräten derselbe Apple-Account angemeldet ist und iCloud Drive eingeschaltet ist. Der Abgleich braucht eine Netzverbindung und läuft im Hintergrund; manchmal hilft es, die App einmal zu schließen und neu zu öffnen. Ist die Sammlung auf einem Gerät neuer, gewinnt der jeweils frühere Beginn deiner Serie — deine Karten gehen dabei nicht verloren." },
+          { "h3": "Collector kündigen" },
+          { "p": "Über Apple: <em>Einstellungen → dein Name → Abonnements → Collector → Abonnement kündigen</em>. In den Einstellungen der App führt derselbe Weg über das Customer Center. Der Zugang bleibt bis zum Ende der bezahlten Periode bestehen; deine Karten behältst du in jedem Fall." },
+          { "h3": "Geld zurück" },
+          { "p": "Erstattungen laufen ausschließlich über Apple: <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. Der Anbieter kann dort nichts veranlassen, weil er die Zahlung nicht selbst vereinnahmt." },
+          { "h3": "Keine tägliche Erinnerung" },
+          { "p": "Die App fragt erst nach der Erlaubnis, nachdem du deine erste Karte freigeschaltet hast. Hast du damals abgelehnt, schaltest du sie unter <em>Einstellungen → Mitteilungen → Bestiary</em> wieder ein. Die Erinnerung kommt um neun Uhr Ortszeit." },
+          { "h3": "Einen Tag verpasst" },
+          { "p": "Die Karte ist nicht verloren. Mit Collector öffnet sich das Archiv, in dem sich verpasste Tage nachholen lassen. Ohne Collector geht es am nächsten Tag mit der nächsten Karte weiter." },
+          { "h3": "Ein Bildnachweis stimmt nicht" },
+          { "p": "Bitte schreib — mit dem Namen des Tieres und dem, was fehlt oder falsch ist. Der Nachweis wird dann berichtigt oder das Bild ersetzt." }
+        ]
+      },
+      {
+        "h": "Was hier nicht steht",
+        "blocks": [
+          { "p": "Wie viele Karten es insgesamt gibt, wird nicht verraten — auch nicht auf Nachfrage. Wenn du alles hast, was es gibt, sagt die App es dir." },
+          { "p": "Wie deine Daten verarbeitet werden, steht in der <a href=\"../privacy/\">Datenschutzerklärung</a>. Die Bedingungen für Käufe und Abonnement stehen in den <a href=\"../terms/\">Nutzungsbedingungen</a>." }
+        ]
+      }
+    ]
+  }
+}

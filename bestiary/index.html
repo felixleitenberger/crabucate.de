@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Daily Bestiary – One new animal card every day | iPhone</title>
+  <meta name="description" content="A new hand-drawn animal card every day: unlock it, turn it over, learn three things, play the quiz. Your first three cards are on the house. For iPhone." />
+  <link rel="canonical" href="https://crabucate.de/bestiary/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/" />
+  <meta property="og:title" content="Daily Bestiary – One new animal card every day | iPhone" />
+  <meta property="og:description" content="A new hand-drawn animal card every day: unlock it, turn it over, learn three things, play the quiz. Your first three cards are on the house. For iPhone." />
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="stylesheet" href="../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main { position: relative; z-index: 1; }
+
+    section { padding: 0 clamp(1.5rem, 6vw, 5rem); }
+
+    .wrap { max-width: 1000px; margin: 0 auto; }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: calc(60px + 5rem);
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      display: block;
+      margin: 0 auto 1.6rem;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      color: var(--db-text);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero .lead {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--prose);
+      max-width: 620px;
+      margin: 0 auto 1rem;
+    }
+
+    .cta { margin-top: 2.2rem; }
+    .cta img { height: 52px; width: auto; display: block; margin: 0 auto; }
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* ── ABSCHNITTE ── */
+    .band { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .band--tint { background: var(--db-dim); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.6rem;
+      text-align: center;
+    }
+
+    .band p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--prose);
+      max-width: 620px;
+      margin: 0 auto 0.9rem;
+      text-align: center;
+    }
+
+    .features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .features li {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+    }
+
+    .features h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+      color: var(--fg);
+    }
+
+    .features p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0;
+      text-align: left;
+      max-width: none;
+    }
+
+    /* ── BILDSCHIRMFOTOS ── */
+    .shots {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding: 0.5rem clamp(1.5rem, 6vw, 5rem) 1.5rem;
+      margin: 0 calc(-1 * clamp(1.5rem, 6vw, 5rem));
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Fuenf Bilder plus vier Abstaende bleiben so unter der 1000px der .wrap
+       und stehen auf breiten Schirmen vollstaendig da; schmaler wird gescrollt. */
+    .shot { flex: 0 0 auto; width: 180px; scroll-snap-align: center; }
+
+    .shot img {
+      width: 180px;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(43,33,24,0.14);
+      background: var(--card-bg);
+    }
+
+    .shot figcaption {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-top: 0.85rem;
+      text-align: center;
+    }
+
+    /* ── FAQ ── */
+    .faq { max-width: 720px; margin: 0 auto; }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 1.1rem 0;
+    }
+
+    .faq summary {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq summary::after {
+      content: '+';
+      color: var(--db-text);
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .faq details[open] summary::after { content: '−'; }
+
+    .faq details p {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin: 0.8rem 0 0;
+      text-align: left;
+      max-width: none;
+    }
+
+    .legal-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+      margin-top: 1.8rem;
+    }
+
+    .legal-row a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--db-text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .legal-row a:hover { border-color: var(--db); background: var(--db-dim); }
+
+    a { color: var(--db-text); }
+  </style>
+</head>
+<body>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Daily Bestiary",
+  "operatingSystem": "iOS",
+  "applicationCategory": "EducationApplication",
+  "description": "A new hand-drawn animal card every day: unlock it, turn it over, learn three things, play the quiz. Your first three cards are on the house. For iPhone.",
+  "inLanguage": "en",
+  "url": "https://apps.apple.com/app/id6808938974",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "crabucate",
+    "url": "https://crabucate.de"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Daily Bestiary cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The download is free, and your first three cards are on the house — with the back, the facts and the quiz. After that you unlock today's card on its own, buy a ten-card pack, or subscribe to Collector. Current prices are shown in the App Store; they differ from country to country."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no sign-up, no login and no profile. The app never asks for a name or an email address."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many cards are there in total?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is not stated anywhere — not in the app, not here. A total turns collecting into a progress bar, and that is exactly what this is not. When you have every card there is, the app will tell you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I miss a day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That card is not lost. Collector opens the archive, where missed days can be claimed later. Without Collector, the next day simply brings the next card."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my collection sync between iPhone and iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as long as both devices are signed in to iCloud with the same Apple Account. Syncing runs through your own private iCloud database, which the developer cannot see."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I reinstalled the app — are my purchases gone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. In the app's settings and on every purchase screen there is “Restore purchases”. That reattaches your subscription and any remaining credit to your Apple Account. Your collection itself comes back through iCloud."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I cancel Collector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through Apple rather than the app: Settings → your name → Subscriptions. You can cancel there at any time, effective at the end of the current period. The app offers the same route through the Customer Center in its settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the app work without an internet connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every card, photograph and quiz question ships inside the app and nothing is downloaded. A connection is only needed for purchases and for iCloud syncing."
+      }
+    }
+  ]
+}
+  </script>
+
+  <nav>
+    <a href="../" class="nav-logo">
+      <img src="../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../" class="back-link">← All apps</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <section class="hero">
+      <img class="hero-icon" src="../images/bestiary/icon.png" width="108" height="108" alt="Daily Bestiary" />
+      <p class="eyebrow">App for iPhone</p>
+      <h1>Daily Bestiary</h1>
+      <p class="tagline">Rare animal cards to collect</p>
+      <p class="lead">Every day a new hand-drawn animal card is waiting for you. Unlock it and it is yours: turn it over for a real photograph, three facts, the scientific name and a four-question quiz.</p>
+      <p class="lead">Your first three cards are on the house. One of them is a holo card — tilt your phone and the sheen moves across it.</p>
+      <div class="cta">
+        <a href="https://apps.apple.com/app/id6808938974"><img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" /></a>
+        <p class="cta-note">Daily Bestiary is coming to the App Store shortly. Once it is released, this button takes you straight to it.</p>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>What you get</h2>
+        <ul class="features">
+        <li>
+          <h3>A card a day</h3>
+          <p>One, never more. Today's card is worked out from the day you started, not from a fixed calendar date — so you begin whenever you like.</p>
+        </li>
+        <li>
+          <h3>A photograph and three facts</h3>
+          <p>Every back carries a real photograph of the animal, three facts and the scientific name.</p>
+        </li>
+        <li>
+          <h3>A quiz for every animal</h3>
+          <p>Four questions per animal, read over by a biology teacher. You can always play them again.</p>
+        </li>
+        <li>
+          <h3>A collection that grows</h3>
+          <p>The album shows your own cards and nothing else. No empty slots, no “x of y”, no race.</p>
+        </li>
+        <li>
+          <h3>Holo cards</h3>
+          <p>Some cards shine: tilt your phone and the light travels across the surface.</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+    <section class="band band--tint">
+      <div class="wrap">
+        <h2>What it looks like</h2>
+        <div class="shots">
+        <figure class="shot">
+          <img src="../images/bestiary/screenshots/en/01_today.png" width="405" height="880" loading="lazy" alt="Today&#x27;s card — one a day, changing at midnight." />
+          <figcaption>Today's card — one a day, changing at midnight.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../images/bestiary/screenshots/en/02_collection.png" width="405" height="880" loading="lazy" alt="Your collection grows with every card you unlock." />
+          <figcaption>Your collection grows with every card you unlock.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../images/bestiary/screenshots/en/03_card_front.png" width="405" height="880" loading="lazy" alt="Every card is drawn by hand." />
+          <figcaption>Every card is drawn by hand.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../images/bestiary/screenshots/en/04_card_back.png" width="405" height="880" loading="lazy" alt="The back: photograph, three facts, scientific name, photo credit." />
+          <figcaption>The back: photograph, three facts, scientific name, photo credit.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../images/bestiary/screenshots/en/05_quiz.png" width="405" height="880" loading="lazy" alt="Four questions for every animal." />
+          <figcaption>Four questions for every animal.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>Collector</h2>
+      <p>Collector opens the archive, so a day you missed can still be claimed. Today's card is included every day, and you get your quiz statistics across the whole collection.</p>
+      <p>Collector is a subscription and renews until you cancel it. You can cancel at any time in your Apple account settings. Current prices and terms are shown in the App Store, because they differ from country to country.</p>
+      </div>
+    </section>
+    <section class="band band--tint">
+      <div class="wrap">
+        <h2>No account, no feed, no ads</h2>
+      <p>There is no sign-up and no login. Your collection lives on your device and — if you are signed in to iCloud — syncs privately between your own devices. The developer has no access to it.</p>
+      <p>There is nothing to scroll and nothing to grind. No ads, no ad networks, no tracking across apps. Purchases are handled through a service provider; the privacy policy says exactly what reaches it.</p>
+        <div class="legal-row">
+          <a href="privacy/">Privacy</a>
+          <a href="terms/">Terms</a>
+          <a href="support/">Support</a>
+        </div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>Photo credits</h2>
+      <p>The drawings on the fronts of the cards were made by hand. The photographs on the backs come from open sources — Pixabay, Unsplash and Wikimedia Commons.</p>
+      <p>Every photograph is credited on the back of its own card, with the photographer, the licence and a link to the source. Not in the small print, but where the picture is.</p>
+      </div>
+    </section>
+    <section class="band band--tint">
+      <div class="wrap">
+        <h2>Frequently asked</h2>
+        <div class="faq">
+        <details>
+          <summary>What does Daily Bestiary cost?</summary>
+          <p>The download is free, and your first three cards are on the house — with the back, the facts and the quiz. After that you unlock today's card on its own, buy a ten-card pack, or subscribe to Collector. Current prices are shown in the App Store; they differ from country to country.</p>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. There is no sign-up, no login and no profile. The app never asks for a name or an email address.</p>
+        </details>
+        <details>
+          <summary>How many cards are there in total?</summary>
+          <p>That is not stated anywhere — not in the app, not here. A total turns collecting into a progress bar, and that is exactly what this is not. When you have every card there is, the app will tell you.</p>
+        </details>
+        <details>
+          <summary>What happens if I miss a day?</summary>
+          <p>That card is not lost. Collector opens the archive, where missed days can be claimed later. Without Collector, the next day simply brings the next card.</p>
+        </details>
+        <details>
+          <summary>Does my collection sync between iPhone and iPad?</summary>
+          <p>Yes, as long as both devices are signed in to iCloud with the same Apple Account. Syncing runs through your own private iCloud database, which the developer cannot see.</p>
+        </details>
+        <details>
+          <summary>I reinstalled the app — are my purchases gone?</summary>
+          <p>No. In the app's settings and on every purchase screen there is “Restore purchases”. That reattaches your subscription and any remaining credit to your Apple Account. Your collection itself comes back through iCloud.</p>
+        </details>
+        <details>
+          <summary>How do I cancel Collector?</summary>
+          <p>Through Apple rather than the app: Settings → your name → Subscriptions. You can cancel there at any time, effective at the end of the current period. The app offers the same route through the Customer Center in its settings.</p>
+        </details>
+        <details>
+          <summary>Does the app work without an internet connection?</summary>
+          <p>Yes. Every card, photograph and quiz question ships inside the app and nothing is downloaded. A connection is only needed for purchases and for iCloud syncing.</p>
+        </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../">crabucate</a><span class="foot-sep">·</span><a href="./privacy/">Privacy</a><span class="foot-sep">·</span><a href="./terms/">Terms</a><span class="foot-sep">·</span><a href="./support/">Support</a><span class="foot-sep">·</span><a href="../en/impressum.html">Legal notice</a></div>
+    <div class="foot-langs"><strong>Language</strong><span class="lang-active">English</span><span class="foot-sep">·</span><a href="../bestiary/de/">Deutsch</a><span class="foot-sep">·</span><a href="../bestiary/fr/">Français</a><span class="foot-sep">·</span><a href="../bestiary/es/">Español</a><span class="foot-sep">·</span><a href="../bestiary/it/">Italiano</a><span class="foot-sep">·</span><a href="../bestiary/pt-br/">Português</a><span class="foot-sep">·</span><a href="../bestiary/ja/">日本語</a><span class="foot-sep">·</span><a href="../bestiary/ko/">한국어</a><span class="foot-sep">·</span><a href="../bestiary/zh-hans/">简体中文</a><span class="foot-sep">·</span><a href="../bestiary/zh-hant/">繁體中文</a></div>
+  </footer>
+
+  <script src="../assets/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Support for Daily Bestiary — crabucate</title>
+  <meta name="description" content="Help with Daily Bestiary: restoring purchases, cancelling the subscription, iCloud syncing, notifications — and how to reach the developer." />
+  <link rel="canonical" href="https://crabucate.de/bestiary/support/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/support/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/support/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/support/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/support/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/support/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/support/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/support/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/support/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/support/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/support/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/support/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/support/" />
+  <meta property="og:title" content="Support for Daily Bestiary — crabucate" />
+  <meta property="og:description" content="Help with Daily Bestiary: restoring purchases, cancelling the subscription, iCloud syncing, notifications — and how to reach the developer." />
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="stylesheet" href="../../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main {
+      padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 6rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 2.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.75rem; }
+    ul, ol { margin: 0 0 0.75rem 1.1rem; padding: 0; }
+    li { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.2rem; }
+
+    .address {
+      font-size: 0.875rem;
+      line-height: 1.9;
+      color: var(--muted);
+      border-left: 2px solid var(--line);
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: currentColor; }
+    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <a href="../../" class="nav-logo">
+      <img src="../../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../" class="back-link">← Daily Bestiary</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <p class="page-label">Help</p>
+    <h1>Support</h1>
+    <p class="meta">Daily Bestiary · Last updated 7 September 2026</p>
+
+      <h2>Just write</h2>
+      <p>There is one person behind this app, not a support team. Questions, bug reports and wishes all go to:</p>
+      <p class="address"><a class="mail" href="#">info(at)crabucate.de</a></p>
+      <p>A reply usually arrives within a few days. English or German is easiest — other languages are fine too, the answer just takes a little longer.</p>
+      <p>For a bug it helps a great deal if three things are in the message: <strong>which device</strong>, <strong>which version of iOS</strong> and <strong>which version of the app</strong> (it is at the very bottom of the app's settings). And what you were doing when it went wrong.</p>
+
+      <h2>The usual cases</h2>
+      <h3>A purchase did not arrive</h3>
+      <p>Open the app's settings and tap <em>Restore purchases</em>. The same button is on every purchase screen. It reattaches your subscription and any remaining credit to your Apple Account. If Apple has taken the payment and restoring does not help, please write — and mention when you bought it.</p>
+      <h3>New device, old collection</h3>
+      <p>Sign in to iCloud on the new device with the same Apple Account and install the app. The collection comes back through your private iCloud; that can take a few minutes after the first launch. Purchases come back on top of that via <em>Restore purchases</em>.</p>
+      <h3>The collection is not syncing</h3>
+      <p>Check that both devices are signed in to the same Apple Account and that iCloud Drive is on. Syncing needs a network connection and runs in the background; closing and reopening the app sometimes helps. If one device is further along, the earlier start of your series wins — no cards are lost in the process.</p>
+      <h3>Cancelling Collector</h3>
+      <p>Through Apple: <em>Settings → your name → Subscriptions → Collector → Cancel Subscription</em>. In the app's settings the same route runs through the Customer Center. Access remains until the end of the period you paid for; your cards are yours either way.</p>
+      <h3>Getting a refund</h3>
+      <p>Refunds run through Apple alone: <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. The developer cannot arrange anything there, because he does not collect the payment.</p>
+      <h3>No daily reminder</h3>
+      <p>The app only asks for permission after you have unlocked your first card. If you declined back then, switch it on again under <em>Settings → Notifications → Bestiary</em>. The reminder arrives at nine in the morning, local time.</p>
+      <h3>Missed a day</h3>
+      <p>That card is not lost. Collector opens the archive, where missed days can be claimed. Without Collector, the next day simply brings the next card.</p>
+      <h3>A photo credit is wrong</h3>
+      <p>Please write — with the name of the animal and what is missing or incorrect. The credit will be corrected or the picture replaced.</p>
+
+      <h2>What is not here</h2>
+      <p>How many cards there are in total is not disclosed — not even on request. When you have every card there is, the app will tell you.</p>
+      <p>How your data is processed is set out in the <a href="../privacy/">privacy policy</a>. The terms for purchases and the subscription are in the <a href="../terms/">terms of use</a>.</p>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../../">crabucate</a><span class="foot-sep">·</span><a href="../">Daily Bestiary</a><span class="foot-sep">·</span><a href="../privacy/">Privacy</a><span class="foot-sep">·</span><a href="../terms/">Terms</a><span class="foot-sep">·</span><span>Support</span><span class="foot-sep">·</span><a href="../../en/impressum.html">Legal notice</a></div>
+    <div class="foot-langs"><strong>Language</strong><span class="lang-active">English</span><span class="foot-sep">·</span><a href="../../bestiary/de/support/">Deutsch</a><span class="foot-sep">·</span><a href="../../bestiary/fr/support/">Français</a><span class="foot-sep">·</span><a href="../../bestiary/es/support/">Español</a><span class="foot-sep">·</span><a href="../../bestiary/it/support/">Italiano</a><span class="foot-sep">·</span><a href="../../bestiary/pt-br/support/">Português</a><span class="foot-sep">·</span><a href="../../bestiary/ja/support/">日本語</a><span class="foot-sep">·</span><a href="../../bestiary/ko/support/">한국어</a><span class="foot-sep">·</span><a href="../../bestiary/zh-hans/support/">简体中文</a><span class="foot-sep">·</span><a href="../../bestiary/zh-hant/support/">繁體中文</a></div>
+  </footer>
+
+  <script src="../../assets/theme.js" defer></script>
+</body>
+</html>

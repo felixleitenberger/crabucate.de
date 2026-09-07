@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Daily Bestiary – 每天一張新的動物卡片 | iPhone</title>
+  <meta name="description" content="每天一張手繪的新動物卡片：解鎖、翻面、學到三件事、玩測驗。前三張免費。適用於 iPhone。" />
+  <link rel="canonical" href="https://crabucate.de/bestiary/zh-hant/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/zh-hant/" />
+  <meta property="og:title" content="Daily Bestiary – 每天一張新的動物卡片 | iPhone" />
+  <meta property="og:description" content="每天一張手繪的新動物卡片：解鎖、翻面、學到三件事、玩測驗。前三張免費。適用於 iPhone。" />
+  <meta property="og:locale" content="zh_TW" />
+
+  <link rel="stylesheet" href="../../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main { position: relative; z-index: 1; }
+
+    section { padding: 0 clamp(1.5rem, 6vw, 5rem); }
+
+    .wrap { max-width: 1000px; margin: 0 auto; }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: calc(60px + 5rem);
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      display: block;
+      margin: 0 auto 1.6rem;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      color: var(--db-text);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero .lead {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--prose);
+      max-width: 620px;
+      margin: 0 auto 1rem;
+    }
+
+    .cta { margin-top: 2.2rem; }
+    .cta img { height: 52px; width: auto; display: block; margin: 0 auto; }
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* ── ABSCHNITTE ── */
+    .band { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .band--tint { background: var(--db-dim); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.6rem;
+      text-align: center;
+    }
+
+    .band p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--prose);
+      max-width: 620px;
+      margin: 0 auto 0.9rem;
+      text-align: center;
+    }
+
+    .features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .features li {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+    }
+
+    .features h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+      color: var(--fg);
+    }
+
+    .features p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0;
+      text-align: left;
+      max-width: none;
+    }
+
+    /* ── BILDSCHIRMFOTOS ── */
+    .shots {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding: 0.5rem clamp(1.5rem, 6vw, 5rem) 1.5rem;
+      margin: 0 calc(-1 * clamp(1.5rem, 6vw, 5rem));
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Fuenf Bilder plus vier Abstaende bleiben so unter der 1000px der .wrap
+       und stehen auf breiten Schirmen vollstaendig da; schmaler wird gescrollt. */
+    .shot { flex: 0 0 auto; width: 180px; scroll-snap-align: center; }
+
+    .shot img {
+      width: 180px;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(43,33,24,0.14);
+      background: var(--card-bg);
+    }
+
+    .shot figcaption {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-top: 0.85rem;
+      text-align: center;
+    }
+
+    /* ── FAQ ── */
+    .faq { max-width: 720px; margin: 0 auto; }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 1.1rem 0;
+    }
+
+    .faq summary {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq summary::after {
+      content: '+';
+      color: var(--db-text);
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .faq details[open] summary::after { content: '−'; }
+
+    .faq details p {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin: 0.8rem 0 0;
+      text-align: left;
+      max-width: none;
+    }
+
+    .legal-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+      margin-top: 1.8rem;
+    }
+
+    .legal-row a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--db-text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .legal-row a:hover { border-color: var(--db); background: var(--db-dim); }
+
+    a { color: var(--db-text); }
+  </style>
+</head>
+<body>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Daily Bestiary",
+  "operatingSystem": "iOS",
+  "applicationCategory": "EducationApplication",
+  "description": "每天一張手繪的新動物卡片：解鎖、翻面、學到三件事、玩測驗。前三張免費。適用於 iPhone。",
+  "inLanguage": "zh-Hant",
+  "url": "https://apps.apple.com/app/id6808938974",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "crabucate",
+    "url": "https://crabucate.de"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-Hant",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Daily Bestiary 要收費嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "下載免費，前三張卡片也免費——背面、知識和測驗一應俱全。之後你可以單獨解鎖當天的卡片、購買十張裝，或是訂閱 Collector。目前價格請以 App Store 為準，各地並不相同。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要註冊帳號嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。沒有註冊、沒有登入、沒有個人檔案。App 不會索取姓名或電子郵件地址。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "總共有多少張卡片？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "任何地方都沒有寫——App 裡沒有，這裡也沒有。寫出總數，收藏就變成了進度列，而那正是我們不想要的。當你集滿現有的全部卡片時，App 會告訴你。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "錯過一天會怎樣？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "那張卡片不會消失。Collector 會打開封存，可以把錯過的日子補回來。沒有 Collector 的話，第二天就是下一張卡片。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "iPhone 和 iPad 之間會同步嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "會，只要兩部裝置用同一個 Apple 帳號登入 iCloud。同步透過你自己的私人 iCloud 資料庫進行，開發者無法查看。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "重新安裝 App 之後，購買紀錄不見了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "沒有不見。App 的設定裡和每個購買頁面上都有「回復購買項目」。它會把訂閱和剩餘次數重新連結到你的 Apple 帳號。收藏本身則透過 iCloud 回來。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何取消 Collector？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "透過 Apple 而不是 App：設定 → 你的名稱 → 訂閱項目。可以隨時取消，於目前週期結束時生效。App 設定中的 Customer Center 也會前往同一個頁面。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "沒有網路能用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。所有卡片、照片和題目都隨 App 一起提供，不會另行下載。只有購買和 iCloud 同步需要連線。"
+      }
+    }
+  ]
+}
+  </script>
+
+  <nav>
+    <a href="../../" class="nav-logo">
+      <img src="../../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../../" class="back-link">← 全部 App</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <section class="hero">
+      <img class="hero-icon" src="../../images/bestiary/icon.png" width="108" height="108" alt="Daily Bestiary" />
+      <p class="eyebrow">iPhone App</p>
+      <h1>Daily Bestiary</h1>
+      <p class="tagline">值得收藏的稀有動物卡</p>
+      <p class="lead">每天都有一張手繪的新動物卡片等著你。解鎖之後它就是你的：翻到背面，有一張照片、三條知識、學名，以及四道測驗題。</p>
+      <p class="lead">前三張卡片免費。其中一張是閃卡——傾斜手機，光澤會在卡面上流動。</p>
+      <div class="cta">
+        <a href="https://apps.apple.com/app/id6808938974"><img src="../../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="在 App Store 下載" /></a>
+        <p class="cta-note">Daily Bestiary 即將在 App Store 推出。上架之後，這個按鈕會直接前往 App 頁面。</p>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>你會得到</h2>
+        <ul class="features">
+        <li>
+          <h3>每天一張</h3>
+          <p>一張，不會更多。當天的卡片依你自己的起始日推算，而不是依日曆日期——什麼時候開始都可以。</p>
+        </li>
+        <li>
+          <h3>一張照片和三條知識</h3>
+          <p>每張背面都有該動物的真實照片、三條知識和學名。</p>
+        </li>
+        <li>
+          <h3>每種動物一套測驗</h3>
+          <p>每種動物四道題，由一位生物老師審訂。隨時可以重玩。</p>
+        </li>
+        <li>
+          <h3>一份不斷長大的收藏</h3>
+          <p>相簿裡只有你自己的卡片。沒有空位，沒有「幾分之幾」，也沒有比拼。</p>
+        </li>
+        <li>
+          <h3>閃卡</h3>
+          <p>有些卡片會發光：傾斜手機，光澤就會在卡面上移動。</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+    <section class="band band--tint">
+      <div class="wrap">
+        <h2>看看畫面</h2>
+        <div class="shots">
+        <figure class="shot">
+          <img src="../../images/bestiary/screenshots/zh-hant/01_today.png" width="405" height="880" loading="lazy" alt="當天的卡片——每天一張，午夜更換。" />
+          <figcaption>當天的卡片——每天一張，午夜更換。</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../../images/bestiary/screenshots/zh-hant/02_collection.png" width="405" height="880" loading="lazy" alt="每解鎖一張，收藏就長大一點。" />
+          <figcaption>每解鎖一張，收藏就長大一點。</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../../images/bestiary/screenshots/zh-hant/03_card_front.png" width="405" height="880" loading="lazy" alt="每張卡片都是手繪的。" />
+          <figcaption>每張卡片都是手繪的。</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../../images/bestiary/screenshots/zh-hant/04_card_back.png" width="405" height="880" loading="lazy" alt="背面：照片、三條知識、學名和圖片來源。" />
+          <figcaption>背面：照片、三條知識、學名和圖片來源。</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../../images/bestiary/screenshots/zh-hant/05_quiz.png" width="405" height="880" loading="lazy" alt="每種動物四道題。" />
+          <figcaption>每種動物四道題。</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>Collector</h2>
+      <p>Collector 會打開封存：錯過的那一天仍然可以補回來。每天的卡片也包含在內，你還能看到整份收藏的測驗統計。</p>
+      <p>Collector 是訂閱，在你取消之前會自動續訂。隨時可以在 Apple 帳號設定中取消。目前的價格與週期請以 App Store 為準，各個國家或地區並不相同。</p>
+      </div>
+    </section>
+    <section class="band band--tint">
+      <div class="wrap">
+        <h2>無帳號、無資訊流、無廣告</h2>
+      <p>沒有註冊，也沒有登入。你的收藏保存在裝置上；如果你登入了 iCloud，它會在你自己的裝置之間私密同步。開發者無法存取。</p>
+      <p>沒有可刷的內容，也沒有要肝的任務。沒有廣告、沒有廣告聯播網，也沒有跨 App 的追蹤。購買透過一家服務供應商處理，究竟傳送了什麼，隱私政策裡寫得清清楚楚。</p>
+        <div class="legal-row">
+          <a href="privacy/">隱私</a>
+          <a href="terms/">使用條款</a>
+          <a href="support/">支援</a>
+        </div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>圖片來源</h2>
+      <p>卡片正面的插畫為手繪。背面的照片來自可自由使用的來源——Pixabay、Unsplash 與 Wikimedia Commons。</p>
+      <p>每張照片都在自己那張卡片的背面標註了攝影者、授權條款和來源連結。不是藏在細則裡，而是就在圖片所在的地方。</p>
+      </div>
+    </section>
+    <section class="band band--tint">
+      <div class="wrap">
+        <h2>常見問題</h2>
+        <div class="faq">
+        <details>
+          <summary>Daily Bestiary 要收費嗎？</summary>
+          <p>下載免費，前三張卡片也免費——背面、知識和測驗一應俱全。之後你可以單獨解鎖當天的卡片、購買十張裝，或是訂閱 Collector。目前價格請以 App Store 為準，各地並不相同。</p>
+        </details>
+        <details>
+          <summary>需要註冊帳號嗎？</summary>
+          <p>不需要。沒有註冊、沒有登入、沒有個人檔案。App 不會索取姓名或電子郵件地址。</p>
+        </details>
+        <details>
+          <summary>總共有多少張卡片？</summary>
+          <p>任何地方都沒有寫——App 裡沒有，這裡也沒有。寫出總數，收藏就變成了進度列，而那正是我們不想要的。當你集滿現有的全部卡片時，App 會告訴你。</p>
+        </details>
+        <details>
+          <summary>錯過一天會怎樣？</summary>
+          <p>那張卡片不會消失。Collector 會打開封存，可以把錯過的日子補回來。沒有 Collector 的話，第二天就是下一張卡片。</p>
+        </details>
+        <details>
+          <summary>iPhone 和 iPad 之間會同步嗎？</summary>
+          <p>會，只要兩部裝置用同一個 Apple 帳號登入 iCloud。同步透過你自己的私人 iCloud 資料庫進行，開發者無法查看。</p>
+        </details>
+        <details>
+          <summary>重新安裝 App 之後，購買紀錄不見了？</summary>
+          <p>沒有不見。App 的設定裡和每個購買頁面上都有「回復購買項目」。它會把訂閱和剩餘次數重新連結到你的 Apple 帳號。收藏本身則透過 iCloud 回來。</p>
+        </details>
+        <details>
+          <summary>如何取消 Collector？</summary>
+          <p>透過 Apple 而不是 App：設定 → 你的名稱 → 訂閱項目。可以隨時取消，於目前週期結束時生效。App 設定中的 Customer Center 也會前往同一個頁面。</p>
+        </details>
+        <details>
+          <summary>沒有網路能用嗎？</summary>
+          <p>可以。所有卡片、照片和題目都隨 App 一起提供，不會另行下載。只有購買和 iCloud 同步需要連線。</p>
+        </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../../">crabucate</a><span class="foot-sep">·</span><a href="./privacy/">隱私</a><span class="foot-sep">·</span><a href="./terms/">使用條款</a><span class="foot-sep">·</span><a href="./support/">支援</a><span class="foot-sep">·</span><a href="../../en/impressum.html">法律聲明</a></div>
+    <div class="foot-langs"><strong>語言</strong><a href="../../bestiary/">English</a><span class="foot-sep">·</span><a href="../../bestiary/de/">Deutsch</a><span class="foot-sep">·</span><a href="../../bestiary/fr/">Français</a><span class="foot-sep">·</span><a href="../../bestiary/es/">Español</a><span class="foot-sep">·</span><a href="../../bestiary/it/">Italiano</a><span class="foot-sep">·</span><a href="../../bestiary/pt-br/">Português</a><span class="foot-sep">·</span><a href="../../bestiary/ja/">日本語</a><span class="foot-sep">·</span><a href="../../bestiary/ko/">한국어</a><span class="foot-sep">·</span><a href="../../bestiary/zh-hans/">简体中文</a><span class="foot-sep">·</span><span class="lang-active">繁體中文</span></div>
+  </footer>
+
+  <script src="../../assets/theme.js" defer></script>
+</body>
+</html>

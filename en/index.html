@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS Apps for iPhone and iPad</title>
-  <meta name="description" content="iOS apps by crabucate: Team Zufall and Platzwahl — simple, local, no distractions." />
+  <meta name="description" content="iOS apps by crabucate: Daily Bestiary, Team Zufall and Platzwahl — simple, local, no distractions." />
   <link rel="canonical" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/en/" />
   <meta property="og:title" content="crabucate — iOS Apps for iPhone and iPad" />
-  <meta property="og:description" content="Small apps for real problems. For iPhone and iPad." />
+  <meta property="og:description" content="Small apps for real problems. Daily Bestiary, Team Zufall and Platzwahl, for iPhone and iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -95,11 +95,11 @@
     /* ── APP TILES GRID ── */
     .apps-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 860px) {
       .apps-grid { grid-template-columns: 1fr; }
     }
 
@@ -118,11 +118,41 @@
       animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) var(--delay, 0.25s) forwards;
     }
 
-    .app-tile--tz { --delay: 0.2s; }
-    .app-tile--pw { --delay: 0.35s; }
+    .app-tile--db { --delay: 0.2s; }
+    .app-tile--tz { --delay: 0.3s; }
+    .app-tile--pw { --delay: 0.4s; }
 
     .app-tile--tz:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(240,125,74,0.18); }
     .app-tile--pw:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(245,146,58,0.18); }
+    .app-tile--db:hover { border-color: rgba(232,98,44,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(232,98,44,0.18); }
+
+    /* Daily Bestiary is iPhone only, so its preview stands upright while the
+       other two lie flat. It is shown whole on a tinted ground instead of
+       being cropped to fill. */
+    .app-tile--db .tile-preview {
+      background: var(--db-dim);
+      padding: 1.4rem 1.4rem 0;
+    }
+
+    .app-tile--db .tile-preview img {
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+
+    .tile-flag {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      background: var(--db-dim);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
 
     .tile-content {
       padding: 2.25rem 2.5rem 1.75rem;
@@ -164,6 +194,7 @@
 
     .tile-cta--tz { color: var(--tz-text); }
     .tile-cta--pw { color: var(--pw-text); }
+    .tile-cta--db { color: var(--db-text); }
 
     .tile-preview {
       flex: 1;
@@ -279,6 +310,27 @@
     <div class="apps-grid">
 
       <!-- TEAM ZUFALL -->
+      <a href="../bestiary/" class="app-tile app-tile--db">
+        <div class="tile-content">
+          <span class="tile-flag">Soon</span>
+          <img
+            src="../images/bestiary/icon.png"
+            alt="Daily Bestiary app icon"
+            class="tile-icon"
+          />
+          <h2 class="tile-name">Daily Bestiary</h2>
+          <p class="tile-tagline">A new hand-drawn animal card every day — with a photograph, three facts and a quiz.</p>
+          <span class="tile-cta tile-cta--db">See the app &nbsp;&rarr;</span>
+        </div>
+        <div class="tile-preview">
+          <img
+            src="../images/bestiary/screenshots/en/03_card_front.png"
+            alt="Daily Bestiary app preview"
+            loading="lazy"
+          />
+        </div>
+      </a>
+
       <a href="team-zufall.html" class="app-tile app-tile--tz">
         <div class="tile-content">
           <picture>

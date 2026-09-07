@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Informativa sulla privacy di Daily Bestiary — crabucate</title>
+  <meta name="description" content="Informativa sulla privacy dell’app Daily Bestiary: che cosa resta sul dispositivo, che cosa arriva a RevenueCat con un acquisto e quali diritti hai." />
+  <link rel="canonical" href="https://crabucate.de/bestiary/it/privacy/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/privacy/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/privacy/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/privacy/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/privacy/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/privacy/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/privacy/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/privacy/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/privacy/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/privacy/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/privacy/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/privacy/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/it/privacy/" />
+  <meta property="og:title" content="Informativa sulla privacy di Daily Bestiary — crabucate" />
+  <meta property="og:description" content="Informativa sulla privacy dell’app Daily Bestiary: che cosa resta sul dispositivo, che cosa arriva a RevenueCat con un acquisto e quali diritti hai." />
+  <meta property="og:locale" content="it_IT" />
+
+  <link rel="stylesheet" href="../../../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main {
+      padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 6rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 2.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.75rem; }
+    ul, ol { margin: 0 0 0.75rem 1.1rem; padding: 0; }
+    li { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.2rem; }
+
+    .address {
+      font-size: 0.875rem;
+      line-height: 1.9;
+      color: var(--muted);
+      border-left: 2px solid var(--line);
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: currentColor; }
+    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <a href="../../../" class="nav-logo">
+      <img src="../../../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../" class="back-link">← Daily Bestiary</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <p class="page-label">Note legali</p>
+    <h1>Informativa sulla privacy</h1>
+    <p class="meta">Daily Bestiary · Aggiornato il 7 settembre 2026</p>
+
+      <h2>In breve</h2>
+      <p>Questa app non ha né account utente né un server proprio. Le tue carte, i risultati del quiz e le impostazioni restano sul dispositivo e — se hai eseguito l’accesso a iCloud — nel tuo iCloud privato. Lo sviluppatore non vi ha alcun accesso.</p>
+      <p>Soltanto in un punto qualcosa lascia il dispositivo: gli acquisti sono gestiti tramite un fornitore di servizi (RevenueCat). Non viene trasmesso <strong>nessun</strong> dato che ti identifichi: né nome, né indirizzo e-mail, né identificativo pubblicitario. Il punto 5 descrive esattamente che cosa arriva lì.</p>
+      <p>Non c’è pubblicità, non c’è tracciamento tra app e non c’è cessione a intermediari di dati.</p>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>Titolare ai sensi del Regolamento generale sulla protezione dei dati (GDPR):</p>
+      <p class="address">Felix Leitenberger<br />Kreuzenstr. 32<br />82041 Furth<br />Germania<br />E-mail: <a class="mail" href="#">info(at)crabucate.de</a></p>
+
+      <h2>2. Quali dati tratta l’app</h2>
+      <p>L’app registra soltanto ciò che nasce giocando:</p>
+      <ul>
+        <li><strong>Le tue carte</strong>: quale carta possiedi e quando l’hai sbloccata</li>
+        <li><strong>Risultati del quiz</strong>: a quali domande hai risposto correttamente per ciascun animale</li>
+        <li><strong>Credito</strong>: quanti sblocchi di un pacchetto acquistato sono ancora disponibili</li>
+        <li><strong>Impostazioni</strong>: se l’introduzione è stata completata e se desideri il promemoria quotidiano</li>
+      </ul>
+      <p>L’app <strong>non</strong> chiede dati anagrafici: né nome, né indirizzo e-mail, né data di nascita, né indirizzo, né numero di telefono. <strong>Non</strong> accede a posizione, fotocamera, microfono, foto, contatti, calendario o dati sulla salute.</p>
+      <p>Il giorno in cui comincia la tua serie non viene registrato a parte: si calcola dalla data della tua carta più vecchia.</p>
+
+      <h2>3. Dove si trovano questi dati</h2>
+      <h3>Sul tuo dispositivo</h3>
+      <p>Tutto quanto sopra è memorizzato localmente in un’area protetta dell’app, che il sistema operativo isola dall’accesso di altre applicazioni.</p>
+      <h3>Nel tuo iCloud</h3>
+      <p>Se sul dispositivo hai eseguito l’accesso a iCloud, gli stessi dati vengono inoltre depositati nel <strong>database privato</strong> del tuo account iCloud (Apple CloudKit). Serve unicamente a sincronizzare la collezione tra i tuoi dispositivi e a ritrovarla dopo un cambio di dispositivo.</p>
+      <p>Quel database appartiene al tuo account Apple. Lo sviluppatore non può tecnicamente consultarlo: non ha accesso ai database CloudKit privati degli utenti e non esiste alcun suo server verso cui questi dati vengano trasmessi.</p>
+      <p>La sincronizzazione si controlla tramite iCloud nelle impostazioni di sistema del dispositivo. Il trattamento all’interno del tuo iCloud è per il resto disciplinato dall’<a href="https://www.apple.com/legal/privacy/it/" target="_blank" rel="noopener">informativa sulla privacy di Apple</a>.</p>
+      <h3>Su nessun server dello sviluppatore</h3>
+      <p>Non ne esiste alcuno. Carte, fotografie e domande del quiz sono interamente contenute nell’app e non vengono mai scaricate. A parte la connessione a iCloud e la gestione degli acquisti descritta al punto 5, l’app non stabilisce alcuna connessione di rete.</p>
+
+      <h2>4. Acquisti tramite App Store</h2>
+      <p>Tutti gli acquisti passano da App Store. La controparte contrattuale nell’acquisto è Apple, non lo sviluppatore di questa app. I dati di pagamento sono trattati esclusivamente da Apple; lo sviluppatore non conosce né il tuo nome né il tuo metodo di pagamento.</p>
+      <p>Apple mette a disposizione dello sviluppatore soltanto rendiconti aggregati, ad esempio le vendite per paese. Non consentono alcuna conclusione su singole persone.</p>
+
+      <h2>5. RevenueCat — verifica degli acquisti</h2>
+      <p>Perché l’app sappia se un acquisto è valido e se un abbonamento è ancora attivo, viene impiegato il servizio <strong>RevenueCat</strong> (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, USA). Verifica la ricevuta presso Apple e risponde all’app su che cosa è sbloccato.</p>
+      <p>In questo processo vengono trattati:</p>
+      <ul>
+        <li>un <strong>identificativo generato in modo casuale</strong>, assegnato dall’app al primo avvio e non collegato ad alcun dato che ti riguardi (ID utente anonimo)</li>
+        <li>la <strong>ricevuta di Apple</strong>, con prodotto, data d’acquisto, identificativo della transazione, paese dello store e stato di un abbonamento</li>
+        <li><strong>dati di dispositivo e sistema</strong> come modello, versione del sistema operativo, versione dell’app, lingua e fuso orario</li>
+        <li>l’<strong>indirizzo IP</strong> della richiesta, che RevenueCat usa per determinare il paese e prevenire abusi</li>
+        <li>cinque <strong>conteggi sul tuo avanzamento</strong>: quante carte possiedi, quanti acquisti singoli hai fatto, quanto credito resta, quanti giorni hai saltato e quante partite di quiz hai giocato</li>
+      </ul>
+      <p>Questi cinque conteggi determinano quale offerta d’acquisto ti viene proposta: chi ha saltato tre giorni vede l’offerta dell’archivio invece della carta singola. Non contengono nulla del contenuto della tua collezione e non dicono quali animali possiedi.</p>
+      <p><strong>Nessun tracciamento, nessuna pubblicità.</strong> RevenueCat non riceve alcun identificativo pubblicitario (IDFA), non avviene alcun collegamento tra dispositivi e nulla viene ceduto a circuiti pubblicitari.</p>
+      <p><strong>La base giuridica</strong> è l’art. 6, par. 1, lett. b, del GDPR: senza questa verifica un acquisto non potrebbe essere consegnato né un abbonamento sbloccato. Per la scelta dell’offerta da mostrare è l’art. 6, par. 1, lett. f, del GDPR (legittimo interesse a proporre un’opzione d’acquisto sensata).</p>
+      <p><strong>Trasferimento negli USA:</strong> RevenueCat tratta questi dati negli Stati Uniti. È stato stipulato un accordo sul trattamento dei dati che incorpora le clausole contrattuali tipo della Commissione europea. Ulteriori dettagli nell’<a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">informativa sulla privacy di RevenueCat</a>.</p>
+      <p><strong>Conservazione:</strong> la cronologia degli acquisti resta memorizzata finché serve a sbloccare ciò che hai comprato. Se elimini l’app, l’identificativo anonimo resta senza dispositivo; non è riconducibile ad alcuna persona.</p>
+
+      <h2>6. Notifiche</h2>
+      <p>Se desideri un promemoria quotidiano sulla nuova carta, l’app chiede una volta il permesso di inviare notifiche. Lo chiede solo dopo che hai sbloccato la prima carta: prima non sapresti a che cosa stai acconsentendo.</p>
+      <p>Questi promemoria sono creati e programmati <strong>sul tuo dispositivo</strong>. Non viene inviato alcun messaggio da un server e non viene trasmesso alcun dato. Puoi revocare il permesso in qualsiasi momento nelle impostazioni di sistema del dispositivo.</p>
+      <p>Indipendentemente da ciò, l’app si registra per le notifiche di sistema silenziose con cui iCloud annuncia modifiche alla tua collezione. Provengono da Apple, non contengono testo visibile e servono solo alla sincronizzazione.</p>
+
+      <h2>7. Nessun tracciamento</h2>
+      <p>Non ha luogo alcun tracciamento ai sensi del quadro App Tracking Transparency di Apple. L’app non usa identificativi pubblicitari, non crea profili d’uso tra fornitori diversi e non contiene circuiti pubblicitari, strumenti di analisi di terzi (come Google Analytics, Firebase o Crashlytics) né librerie di tracciamento. Di conseguenza non chiede mai il permesso di tracciamento.</p>
+
+      <h2>8. Il ruolo di Apple</h2>
+      <p>Indipendentemente da questa app, Apple tratta dati sotto la propria responsabilità:</p>
+      <ul>
+        <li><strong>Al download dell’app</strong> da App Store e a ogni acquisto (account Apple, pagamento, informazioni sul dispositivo)</li>
+        <li><strong>Nella sincronizzazione iCloud</strong>, se hai eseguito l’accesso</li>
+        <li><strong>Sotto forma di statistiche aggregate</strong> che Apple mette a disposizione dello sviluppatore tramite App Store Connect, ad esempio numeri di download o rapporti di arresto anomalo. Sono aggregate; non consentono allo sviluppatore alcuna conclusione su singole persone. La tua partecipazione si regola in <em>Impostazioni → Privacy e sicurezza → Analisi e migliorie</em>.</li>
+      </ul>
+      <p>Si applica l’<a href="https://www.apple.com/legal/privacy/it/" target="_blank" rel="noopener">informativa sulla privacy di Apple</a>.</p>
+
+      <h2>9. Contatti</h2>
+      <p>Se scrivi allo sviluppatore per e-mail — per una domanda o un errore — i dati trasmessi (indirizzo e-mail, contenuto del messaggio) sono trattati per dar seguito alla tua richiesta e cancellati non appena non servono più e non vi si oppone alcun obbligo legale di conservazione. La base giuridica è l’art. 6, par. 1, lett. f, del GDPR.</p>
+
+      <h2>10. I tuoi diritti</h2>
+      <p>Ai sensi del GDPR hai i seguenti diritti nei confronti del titolare:</p>
+      <ul>
+        <li><strong>Accesso</strong> ai dati trattati (art. 15)</li>
+        <li><strong>Rettifica</strong> dei dati inesatti (art. 16)</li>
+        <li><strong>Cancellazione</strong> (art. 17)</li>
+        <li><strong>Limitazione del trattamento</strong> (art. 18)</li>
+        <li><strong>Portabilità dei dati</strong> (art. 20)</li>
+        <li><strong>Opposizione</strong> al trattamento (art. 21)</li>
+        <li><strong>Reclamo a un’autorità di controllo</strong> (art. 77)</li>
+      </ul>
+      <p>Una nota pratica: lo sviluppatore non dispone di alcun dato che ti identifichi. Sulla tua collezione non può né fornire informazioni né cancellare nulla, perché è presso di te. Il controllo è tuo:</p>
+      <ul>
+        <li><strong>La tua collezione</strong> scompare quando elimini l’app dal dispositivo e rimuovi i dati dell’app nelle impostazioni iCloud del tuo account Apple.</li>
+        <li><strong>Il record conservato da RevenueCat</strong> può essere cancellato su richiesta: scrivi allo sviluppatore. Per individuarlo serve l’ID utente anonimo, che compare nelle impostazioni dell’app.</li>
+      </ul>
+      <p>L’autorità di controllo competente si determina in base alla sede del titolare (vedi punto 1).</p>
+
+      <h2>11. Minori</h2>
+      <p>L’app è classificata 4+ e non contiene nulla di inadatto ai minori. Non vengono raccolti consapevolmente dati di minori: non viene raccolto alcun dato che identifichi una persona. Gli acquisti su App Store possono essere limitati o disattivati del tutto tramite le impostazioni «Tempo di utilizzo» di Apple.</p>
+
+      <h2>12. Modifiche a questa informativa</h2>
+      <p>Questa informativa sarà adeguata se cambiano l’app o il quadro normativo. Vale sempre la versione qui pubblicata; la data in alto indica l’ultima revisione.</p>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../../../">crabucate</a><span class="foot-sep">·</span><a href="../">Daily Bestiary</a><span class="foot-sep">·</span><span>Privacy</span><span class="foot-sep">·</span><a href="../terms/">Condizioni d’uso</a><span class="foot-sep">·</span><a href="../support/">Assistenza</a><span class="foot-sep">·</span><a href="../../../en/impressum.html">Note legali</a></div>
+    <div class="foot-langs"><strong>Lingua</strong><a href="../../../bestiary/privacy/">English</a><span class="foot-sep">·</span><a href="../../../bestiary/de/privacy/">Deutsch</a><span class="foot-sep">·</span><a href="../../../bestiary/fr/privacy/">Français</a><span class="foot-sep">·</span><a href="../../../bestiary/es/privacy/">Español</a><span class="foot-sep">·</span><span class="lang-active">Italiano</span><span class="foot-sep">·</span><a href="../../../bestiary/pt-br/privacy/">Português</a><span class="foot-sep">·</span><a href="../../../bestiary/ja/privacy/">日本語</a><span class="foot-sep">·</span><a href="../../../bestiary/ko/privacy/">한국어</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hans/privacy/">简体中文</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hant/privacy/">繁體中文</a></div>
+  </footer>
+
+  <script src="../../../assets/theme.js" defer></script>
+</body>
+</html>

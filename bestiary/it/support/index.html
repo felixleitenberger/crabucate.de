@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Assistenza per Daily Bestiary — crabucate</title>
+  <meta name="description" content="Aiuto su Daily Bestiary: ripristinare gli acquisti, disdire l’abbonamento, sincronizzazione iCloud, notifiche e come contattare lo sviluppatore." />
+  <link rel="canonical" href="https://crabucate.de/bestiary/it/support/" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/bestiary/support/" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/bestiary/de/support/" />
+  <link rel="alternate" hreflang="fr" href="https://crabucate.de/bestiary/fr/support/" />
+  <link rel="alternate" hreflang="es" href="https://crabucate.de/bestiary/es/support/" />
+  <link rel="alternate" hreflang="it" href="https://crabucate.de/bestiary/it/support/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://crabucate.de/bestiary/pt-br/support/" />
+  <link rel="alternate" hreflang="ja" href="https://crabucate.de/bestiary/ja/support/" />
+  <link rel="alternate" hreflang="ko" href="https://crabucate.de/bestiary/ko/support/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://crabucate.de/bestiary/zh-hans/support/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://crabucate.de/bestiary/zh-hant/support/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/bestiary/support/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crabucate.de/bestiary/it/support/" />
+  <meta property="og:title" content="Assistenza per Daily Bestiary — crabucate" />
+  <meta property="og:description" content="Aiuto su Daily Bestiary: ripristinare gli acquisti, disdire l’abbonamento, sincronizzazione iCloud, notifiche e come contattare lo sviluppatore." />
+  <meta property="og:locale" content="it_IT" />
+
+  <link rel="stylesheet" href="../../../assets/base.css" />
+  <style>
+
+    /* Die Farben der App (--db, --db-text, --db-dim) stehen in base.css bei
+       denen der anderen drei Apps — die Startseite braucht sie fuer ihre
+       Kachel genauso. Hier steht nur, was diese Seitenfamilie ausmacht. */
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--fg); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot-links { margin-bottom: 1.4rem; line-height: 2; }
+    .foot-sep { opacity: 0.35; margin: 0 0.15rem; }
+
+    .foot-langs {
+      font-size: 0.75rem;
+      line-height: 2.1;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .foot-langs strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+    .foot-langs a { color: inherit; }
+    .foot-langs .lang-active { color: var(--db-text); font-weight: 600; }
+
+    main {
+      padding: calc(60px + 5rem) clamp(1.5rem, 9vw, 9rem) 6rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--db-text);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 2.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.75rem; }
+    ul, ol { margin: 0 0 0.75rem 1.1rem; padding: 0; }
+    li { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.2rem; }
+
+    .address {
+      font-size: 0.875rem;
+      line-height: 1.9;
+      color: var(--muted);
+      border-left: 2px solid var(--line);
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a { color: var(--db-text); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: currentColor; }
+    .nav-logo, .back-link, .foot-links a, .foot-langs a { border-bottom: 0; }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <a href="../../../" class="nav-logo">
+      <img src="../../../images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="../" class="back-link">← Daily Bestiary</a>
+      <button class="theme-toggle" type="button" title="Theme" aria-label="Theme">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <main>
+    <p class="page-label">Aiuto</p>
+    <h1>Assistenza</h1>
+    <p class="meta">Daily Bestiary · Aggiornato il 7 settembre 2026</p>
+
+      <h2>Scrivi e basta</h2>
+      <p>Dietro questa app c’è una persona, non un team di assistenza. Domande, segnalazioni di errori e richieste vanno a:</p>
+      <p class="address"><a class="mail" href="#">info(at)crabucate.de</a></p>
+      <p>La risposta arriva di norma entro pochi giorni. In italiano, tedesco o inglese; anche altre lingue vanno bene, la risposta richiede solo un po’ più di tempo.</p>
+      <p>In caso di errore aiuta molto avere tre indicazioni nel messaggio: <strong>quale dispositivo</strong>, <strong>quale versione di iOS</strong> e <strong>quale versione dell’app</strong> (si trova in fondo alle impostazioni dell’app). E che cosa stavi facendo quando è successo.</p>
+
+      <h2>I casi più frequenti</h2>
+      <h3>Un acquisto non è arrivato</h3>
+      <p>Apri le impostazioni dell’app e tocca <em>Ripristina acquisti</em>. Lo stesso pulsante è su ogni schermata d’acquisto. Così l’app riassocia al tuo account Apple l’abbonamento e il credito residuo. Se Apple ha addebitato il pagamento e il ripristino non aiuta, scrivi indicando la data dell’acquisto.</p>
+      <h3>Dispositivo nuovo, collezione vecchia</h3>
+      <p>Esegui l’accesso a iCloud sul nuovo dispositivo con lo stesso account Apple e installa l’app. La collezione torna dal tuo iCloud privato; dopo il primo avvio può volerci qualche minuto. Gli acquisti si recuperano inoltre con <em>Ripristina acquisti</em>.</p>
+      <h3>La collezione non si sincronizza</h3>
+      <p>Verifica che entrambi i dispositivi abbiano lo stesso account Apple e che iCloud Drive sia attivo. La sincronizzazione richiede una connessione e avviene in background; a volte aiuta chiudere e riaprire l’app. Se un dispositivo è più avanti, prevale l’inizio più antico della tua serie: nessuna carta va persa.</p>
+      <h3>Disdire Collector</h3>
+      <p>Tramite Apple: <em>Impostazioni → il tuo nome → Abbonamenti → Collector → Annulla abbonamento</em>. Nelle impostazioni dell’app lo stesso percorso passa dal Customer Center. L’accesso resta fino alla fine del periodo pagato; le tue carte restano tue in ogni caso.</p>
+      <h3>Riavere i soldi</h3>
+      <p>I rimborsi passano esclusivamente da Apple: <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. Lo sviluppatore non può fare nulla lì, perché non incassa il pagamento.</p>
+      <h3>Nessun promemoria quotidiano</h3>
+      <p>L’app chiede il permesso solo dopo che hai sbloccato la prima carta. Se allora hai rifiutato, riattivalo in <em>Impostazioni → Notifiche → Bestiary</em>. Il promemoria arriva alle nove del mattino, ora locale.</p>
+      <h3>Ho saltato un giorno</h3>
+      <p>La carta non è persa. Collector apre l’archivio, dove i giorni saltati si possono recuperare. Senza Collector, il giorno dopo arriva semplicemente la carta successiva.</p>
+      <h3>Un credito fotografico è errato</h3>
+      <p>Scrivi pure, indicando il nome dell’animale e che cosa manca o è sbagliato. Il credito sarà corretto o l’immagine sostituita.</p>
+
+      <h2>Che cosa non trovi qui</h2>
+      <p>Quante carte ci siano in tutto non viene rivelato, nemmeno su richiesta. Quando avrai tutte quelle esistenti, l’app te lo dirà.</p>
+      <p>Come vengono trattati i tuoi dati è spiegato nell’<a href="../privacy/">informativa sulla privacy</a>. Le regole su acquisti e abbonamento sono nelle <a href="../terms/">condizioni d’uso</a>.</p>
+  </main>
+
+  <script>
+    (function () {
+      var boxes = document.querySelectorAll('.mail');
+      for (var i = 0; i < boxes.length; i++) {
+        var a = boxes[i];
+        a.href = 'mailto:' + 'info' + '@' + 'crabucate.de';
+        a.textContent = 'info' + '@' + 'crabucate.de';
+      }
+    })();
+  </script>
+
+
+  <footer>
+    <div class="foot-links"><a href="../../../">crabucate</a><span class="foot-sep">·</span><a href="../">Daily Bestiary</a><span class="foot-sep">·</span><a href="../privacy/">Privacy</a><span class="foot-sep">·</span><a href="../terms/">Condizioni d’uso</a><span class="foot-sep">·</span><span>Assistenza</span><span class="foot-sep">·</span><a href="../../../en/impressum.html">Note legali</a></div>
+    <div class="foot-langs"><strong>Lingua</strong><a href="../../../bestiary/support/">English</a><span class="foot-sep">·</span><a href="../../../bestiary/de/support/">Deutsch</a><span class="foot-sep">·</span><a href="../../../bestiary/fr/support/">Français</a><span class="foot-sep">·</span><a href="../../../bestiary/es/support/">Español</a><span class="foot-sep">·</span><span class="lang-active">Italiano</span><span class="foot-sep">·</span><a href="../../../bestiary/pt-br/support/">Português</a><span class="foot-sep">·</span><a href="../../../bestiary/ja/support/">日本語</a><span class="foot-sep">·</span><a href="../../../bestiary/ko/support/">한국어</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hans/support/">简体中文</a><span class="foot-sep">·</span><a href="../../../bestiary/zh-hant/support/">繁體中文</a></div>
+  </footer>
+
+  <script src="../../../assets/theme.js" defer></script>
+</body>
+</html>

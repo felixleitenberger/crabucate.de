@@ -14,11 +14,21 @@
   var btn = document.querySelector('.theme-toggle');
   if (!btn) return;
 
+  /* Die Sprachen der Seite. /bestiary/ gibt es in zehn, der Rest in zwei —
+   * ein unbekanntes root.lang faellt auf Deutsch zurueck. */
   var TEXTS = {
     de: { auto: 'Design: automatisch', light: 'Design: hell', dark: 'Design: dunkel' },
-    en: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' }
+    en: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' },
+    fr: { auto: 'Thème : automatique', light: 'Thème : clair', dark: 'Thème : sombre' },
+    es: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
+    it: { auto: 'Tema: automatico', light: 'Tema: chiaro', dark: 'Tema: scuro' },
+    'pt-BR': { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: escuro' },
+    ja: { auto: 'テーマ: 自動', light: 'テーマ: ライト', dark: 'テーマ: ダーク' },
+    ko: { auto: '테마: 자동', light: '테마: 밝게', dark: '테마: 어둡게' },
+    'zh-Hans': { auto: '主题：自动', light: '主题：浅色', dark: '主题：深色' },
+    'zh-Hant': { auto: '主題：自動', light: '主題：淺色', dark: '主題：深色' }
   };
-  var labels = TEXTS[root.lang === 'en' ? 'en' : 'de'];
+  var labels = TEXTS[root.lang] || TEXTS.de;
   var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
   function systemTheme() {
