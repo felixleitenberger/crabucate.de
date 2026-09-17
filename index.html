@@ -2,7 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){var p=localStorage.getItem('lang');if(p==='en'||(!p&&navigator.language.startsWith('en')))location.replace('/en/');})();</script>
+  <!-- Nur eine ausdrueckliche Wahl leitet um. Eine Umleitung nach
+       navigator.language traf auch den Googlebot, dessen Renderer sich als
+       en-US meldet — die deutsche Startseite galt dadurch als
+       "Seite mit Weiterleitung" und fiel aus dem Index. -->
+  <script>(function(){var p;try{p=localStorage.getItem('lang')}catch(e){}if(p==='en')location.replace('/en/');})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
   <meta name="color-scheme" content="light dark" />
@@ -13,6 +17,7 @@
   <link rel="canonical" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
@@ -371,7 +376,7 @@
         <summary aria-label="Sprache wählen" title="Sprache wählen"><svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg><span class="lang-current">Deutsch</span><svg class="lang-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5 6 8.5l4-4"/></svg></summary>
         <div class="lang-panel">
           <span class="lang-item lang-item--active" aria-current="true"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Deutsch</span>
-          <a class="lang-item" hreflang="en" lang="en" href="en/index.html"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>English</a>
+          <a class="lang-item" hreflang="en" lang="en" href="en/"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>English</a>
         </div>
       </details>
       <button class="theme-toggle" type="button" title="Design: automatisch" aria-label="Design: automatisch">
