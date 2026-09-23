@@ -288,11 +288,6 @@ INDEX_CSS = """
 
     .cta { margin-top: 2.2rem; }
     .cta img { height: 52px; width: auto; display: block; margin: 0 auto; }
-    .cta-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
 
     /* ── ABSCHNITTE ── */
     .band { padding-top: 4.5rem; padding-bottom: 4.5rem; }
@@ -697,7 +692,6 @@ def render_index(data: dict, lang: str, hreflang: str, locale: str) -> str:
         paras("lead", "lead"),
         '      <div class="cta">',
         f'        <a href="{APPSTORE}"><img src="{up}images/{badge}" alt="{html.escape(d["badge_alt"])}" /></a>',
-        f'        <p class="cta-note">{d["cta_note"]}</p>',
         "      </div>",
         "    </section>",
 
