@@ -45,6 +45,40 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Ruhe -->
+  <url>
+    <loc>https://crabucate.de/ruhe.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/ruhe.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/ruhe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/ruhe.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/ruhe.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/ruhe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe-privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/ruhe-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/ruhe-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe-privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/ruhe-privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/ruhe-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/ruhe-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe-privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
   <!-- Team Zufall -->
   <url>
     <loc>https://crabucate.de/team-zufall.html</loc>

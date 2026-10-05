@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.dataset.theme=t;d.className+=' js'})();</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
+  <title>Ruhe – Lärmampel für Schulen | iPad &amp; iPhone</title>
+  <meta name="description" content="Die freundliche Lärmampel fürs Klassenzimmer: Ruhe wird mit Flammen belohnt, Lärm nicht bestraft. Mit Timer und Beamer-Ansicht für iPad und iPhone." />
+  <link rel="canonical" href="https://crabucate.de/ruhe.html" />
+  <link rel="alternate" hreflang="de" href="https://crabucate.de/ruhe.html" />
+  <link rel="alternate" hreflang="en" href="https://crabucate.de/en/ruhe.html" />
+  <link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe.html" />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/base.css" />
+  <style>
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-logo img {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, var(--ru-dim), transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 21px;
+      display: block;
+      margin: 0 auto 1.75rem;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--fg);
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
+    }
+
+    .tagline {
+      margin-top: 1.25rem;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 46ch;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.4s forwards;
+    }
+
+    .hero .app-store-badge {
+      display: inline-block;
+      margin-top: 2.25rem;
+    }
+
+    .hero-meta {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .hero-meta span { white-space: nowrap; }
+    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
+
+    .coming-soon {
+      margin-top: 2.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid rgba(255,147,0,0.35);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ru);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .coming-soon::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ru);
+      flex-shrink: 0;
+      animation: pulse 2.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+
+    /* ── SCREENSHOTS ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      max-width: 1100px;
+      margin: 1rem auto 0;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 2rem 2rem 2.25rem;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover { border-color: rgba(255,147,0,0.22); }
+
+    .feat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      background: var(--ru-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      color: var(--ru-text);
+    }
+
+    .feat-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.65rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── DESCRIPTION ── */
+    .description {
+      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .description p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 auto;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
+
+    .how-steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 0 0 2rem 3.6rem;
+    }
+
+    .how-steps li:last-child { padding-bottom: 0; }
+
+    .how-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: var(--ru-dim);
+      color: var(--ru-text);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .how-steps h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .how-steps p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── GUIDES ── */
+    .faq {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-eyebrow {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .faq-more {
+      display: inline-block;
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ru-text);
+      text-decoration: none;
+    }
+
+    .faq-more:hover { text-decoration: underline; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center bottom, rgba(255,147,0,0.07), transparent 65%);
+      pointer-events: none;
+    }
+
+    .final-cta > * { position: relative; }
+
+    .final-cta-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 0.75rem;
+    }
+
+    .final-cta-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem 3.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .hero-icon, .hero h1, .tagline, .coming-soon { opacity: 1; }
+    }
+
+    .hero, .final-cta { overflow-x: clip; }
+    .faq-item p a { color: var(--ru-text); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .faq-item p a:hover { border-color: var(--ru-text); }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="images/crabucateSquare.jpg" alt="" />
+      crabucate
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-link">← Alle Apps</a>
+      <details class="lang-menu">
+        <summary aria-label="Sprache wählen" title="Sprache wählen"><svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg><span class="lang-current">Deutsch</span><svg class="lang-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5 6 8.5l4-4"/></svg></summary>
+        <div class="lang-panel">
+          <span class="lang-item lang-item--active" aria-current="true"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>Deutsch</span>
+          <a class="lang-item" hreflang="en" lang="en" href="en/ruhe.html"><svg class="lang-check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6.5 4.5 9.5 10.5 3"/></svg>English</a>
+        </div>
+      </details>
+      <button class="theme-toggle" type="button" title="Design: automatisch" aria-label="Design: automatisch">
+        <svg class="ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <svg class="ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <picture>
+      <source srcset="images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="hero-icon" />
+    </picture>
+    <h1>Ruhe</h1>
+    <p class="tagline">Die freundliche Lärmampel fürs Klassenzimmer: Leises Arbeiten wird mit Flammen belohnt – Lärm wird nicht bestraft.</p>
+    <p class="coming-soon">Bald im App Store</p>
+    <p class="hero-meta">
+      <span>iPad &amp; iPhone</span><span class="sep">·</span><span>Kein Konto</span><span class="sep">·</span><span>Nichts wird aufgenommen</span>
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FEATURES -->
+  <section class="features">
+    <p class="section-eyebrow">Features</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="19" rx="3"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></div>
+        <h3>Lärmampel mit Maskottchen</h3>
+        <p>Grün, Gelb, Rot – ein fröhliches Gesicht zeigt, wie laut es gerade ist. Bei Gelb macht es leise „Pssst“, bei Rot hält es sich die Ohren zu.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.8 7-6.8 0-4.2-3.3-6.6-4.4-10.7-.2-.8-1.2-1-1.6-.3C11.6 6.6 10 8 9 9.4 8.4 8.6 7.9 8 7.5 7.7 6.2 9.6 5 11.8 5 15.2 5 19.2 8 22 12 22z"/><path d="M12 22c-1.7 0-3-1.2-3-3 0-2 1.6-3 3-5 1.4 2 3 3 3 5 0 1.8-1.3 3-3 3z"/></svg></div>
+        <h3>Flammen statt Strafen</h3>
+        <p>Solange es ruhig ist, entzündet sich eine Flamme nach der anderen. Zwölf Flammen ergeben einen vollen Kranz, und das wird gefeiert. Wird es zu laut, gehen die Flammen aus.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg></div>
+        <h3>Timer im Blick</h3>
+        <p>Der Ring um das Maskottchen zeigt die Restzeit. Start und Stopp direkt neben der Zeit, am Ende pausiert die Messung.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></div>
+        <h3>Beamer-Ansicht</h3>
+        <p>Am Beamer oder zweiten Bildschirm erscheint die Lärmampel im Vollbild – die Bedienung bleibt auf deinem iPad.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></div>
+        <h3>Passend für jede Klasse</h3>
+        <p>Ab wann Gelb und Rot gelten, stellst du mit zwei Reglern ein – oder Ruhe misst 5 Sekunden lang und kalibriert sich selbst.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Bedienung sperren</h3>
+        <p>Mit Face ID oder Code gesperrt, damit niemand aus der Klasse etwas verstellt.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- HOW -->
+  <section class="how">
+    <p class="section-eyebrow">So funktioniert’s</p>
+    <ol class="how-steps">
+      <li>
+        <h3>iPad hinstellen</h3>
+        <p>Ruhe öffnen und aufs Gesicht tippen – die Messung startet.</p>
+      </li>
+      <li>
+        <h3>Arbeiten lassen</h3>
+        <p>Das Maskottchen zeigt der Klasse, wie laut es ist, und sammelt Flammen für jede ruhige Phase.</p>
+      </li>
+      <li>
+        <h3>Erfolg sehen</h3>
+        <p>Am Ende der Stunde zählt, was geklappt hat: der Flammenkranz.</p>
+      </li>
+    </ol>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SUPPORT -->
+  <section class="faq" id="support">
+    <p class="faq-eyebrow">Hilfe &amp; Support</p>
+    <div class="faq-item">
+      <h3>Ruhe misst nichts – was tun?</h3>
+      <p>Ruhe braucht Zugriff aufs Mikrofon. Erlaube ihn in den iOS-Einstellungen unter Datenschutz &amp; Sicherheit → Mikrofon → Ruhe.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Die Ampel springt zu schnell oder zu spät auf Rot.</h3>
+      <p>Tippe in der Leiste auf das Regler-Symbol und verschiebe die Schwellen für Gelb und Rot – oder nutze „Automatisch einstellen“, während die Klasse normal arbeitet.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Wie zeige ich Ruhe am Beamer?</h3>
+      <p>Verbinde das iPad per Kabel oder AirPlay mit dem Beamer. Ruhe zeigt dort automatisch die Lärmampel im Vollbild, auf dem iPad bleibt die Bedienung.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Wie setze ich die Flammen zurück?</h3>
+      <p>Tippe oben links auf den Flammenzähler. Dort kannst du Flammen korrigieren oder alle auf 0 setzen. War Ruhe länger als 10 Minuten im Hintergrund, beginnt die nächste Stunde ohnehin bei 0.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Wird etwas aufgenommen?</h3>
+      <p>Nein. Ruhe misst nur die Lautstärke, nichts wird aufgenommen, gespeichert oder gesendet. Details stehen in der <a href="ruhe-privacy.html">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Eine Frage ist nicht dabei?</h3>
+      <p>Schreib an <a href="mailto:info@crabucate.de">info@crabucate.de</a> – ich antworte in der Regel innerhalb von ein, zwei Tagen.</p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <p class="final-cta-title">Ruhe, die sich gut anfühlt.</p>
+    <p class="final-cta-sub">Für iPad und iPhone – bald im App Store.</p>
+  </section>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="ruhe-privacy.html">Datenschutz</a>
+  </footer>
+
+  <script src="assets/theme.js" defer></script>
+  <script src="assets/lang.js" defer></script>
+</body>
+</html>

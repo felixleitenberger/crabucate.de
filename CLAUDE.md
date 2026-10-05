@@ -140,6 +140,8 @@ All defined once in `assets/base.css`:
 | `--la-text`  | `#8F4F0E`              | `#F5B06A`              | Lehrer-Arbeitszeit text |
 | `--db`       | `#E8622C`              | unchanged              | Daily Bestiary accent  |
 | `--db-text`  | `#A8421A`              | `#F08A50`              | Daily Bestiary text    |
+| `--ru`       | `#FF9300`              | unchanged              | Ruhe accent            |
+| `--ru-text`  | `#9E5600`              | `#FFB04D`              | Ruhe text              |
 
 `lehrer-arbeitszeit.html` declares five further tokens in its own inline `:root` — `--frame-a/-b/-c`
 and `--frame-rim` for the CSS iPhone mockup, plus `--soll`, `--ist` and `--over` for the
