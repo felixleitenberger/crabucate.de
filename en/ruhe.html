@@ -165,6 +165,31 @@
     }
 
     /* ── SCREENSHOTS ── */
+    /* The store images carry their own headline, so no caption.
+       Five times 200px plus gaps need about 1090px; narrower screens scroll. */
+    .shots {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0.5rem clamp(1.5rem, 6vw, 6rem) 4rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shots img {
+      flex: 0 0 auto;
+      width: 200px;
+      height: auto;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(36,31,26,0.14);
+      scroll-snap-align: center;
+    }
+
+    @media (min-width: 1240px) { .shots { justify-content: center; } }
+
     .divider {
       border: none;
       border-top: 1px solid var(--line);
@@ -454,6 +479,15 @@
       <span>iPad &amp; iPhone</span><span class="sep">·</span><span>No account</span><span class="sep">·</span><span>Nothing is recorded</span>
     </p>
   </section>
+
+  <!-- SCREENSHOTS -->
+  <div class="shots">
+    <img src="../images/ruhe/screenshots/en/01_belohnt.png" width="552" height="1200" alt="Quiet gets rewarded: the mascot Pip with a full ring of flames" />
+    <img src="../images/ruhe/screenshots/en/02_ampel.png" width="552" height="1200" loading="lazy" alt="Pip shows how loud it is: yellow for “A little quieter”, red for “Too loud”" />
+    <img src="../images/ruhe/screenshots/en/03_timer.png" width="552" height="1200" loading="lazy" alt="Quiet work, on the clock: timer ring around the mascot" />
+    <img src="../images/ruhe/screenshots/en/04_beamer.png" width="552" height="1200" loading="lazy" alt="Big on the wall: full-screen projector view, controls stay on the iPhone" />
+    <img src="../images/ruhe/screenshots/en/05_datenschutz.png" width="552" height="1200" loading="lazy" alt="Nothing gets recorded: no account, no ads, no tracking" />
+  </div>
 
   <hr class="divider" />
 

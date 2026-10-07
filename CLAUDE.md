@@ -57,7 +57,10 @@ Images are grouped per app: `images/<app>/icons/{light,dark}/icon.png` and
 both counts: Icon Composer exports one icon for both themes, so it is a plain
 `images/bestiary/icon.png` with no `<picture>` around it, and its screenshots
 are split by language rather than by theme
-(`images/bestiary/screenshots/<code>/`). Assets both apps share — the crab logo, the two App Store
+(`images/bestiary/screenshots/<code>/`). Ruhe keeps the usual `icons/{light,dark}/` but likewise
+splits its screenshots by language (`images/ruhe/screenshots/{de,en}/`): they are the store's
+marketing images with the headline burned in, resized to 552 px and run through `pngquant`.
+`images/ruhe/header.png` is the text-free store header and serves as the start-page preview. Assets both apps share — the crab logo, the two App Store
 badges, the empty iPad bezel — sit directly in `images/`. Only files the site actually references
 are kept; App Store deliverables and raw simulator captures were removed and are recoverable from
 git history if a submission needs them.
