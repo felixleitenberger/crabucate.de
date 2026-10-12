@@ -1,0 +1,102 @@
+{
+  "lang_choose": "Dil seç",
+  "all_apps": "← Tüm uygulamalar",
+  "title": "Ruhe – Sınıf için gürültü ışığı | iPad ve iPhone",
+  "description": "Sınıf için sevimli gürültü ışığı: sessizlik alevlerle ödüllendirilir, gürültü asla cezalandırılmaz. iPad ve iPhone için zamanlayıcı ve projeksiyon görünümüyle.",
+  "icon_alt": "Ruhe uygulama simgesi",
+  "tagline": "Sınıf için sevimli gürültü ışığı: sessiz çalışmak alev kazandırır – gürültü asla cezalandırılmaz.",
+  "badge_alt": "App Store’dan indirin",
+  "meta": ["Hesap yok", "Hiçbir şey kaydedilmez"],
+  "shots": [
+    "Sessizlik ödüllendirilir: tam alev çelengiyle maskot Pip",
+    "Pip ne kadar gürültü olduğunu gösterir: “Biraz daha sessiz” için sarı, “Çok gürültülü!” için kırmızı",
+    "Zamanlayıcı gözünün önünde: maskotun etrafında bir halka",
+    "Duvarda büyük: tam ekran projeksiyon görünümü, kontroller iPhone’da kalır",
+    "Hiçbir şey kaydedilmez: hesap yok, reklam yok, izleme yok"
+  ],
+  "features_eyebrow": "Özellikler",
+  "features": [
+    ["Maskotlu gürültü ışığı", "Yeşil, sarı, kırmızı – neşeli bir yüz sınıfın ne kadar gürültülü olduğunu gösterir. Sarıda usulca “şşş” der, kırmızıda kulaklarını kapatır."],
+    ["Ceza yerine alevler", "Sessizlik sürdükçe alevler birer birer yanar. On iki alev tam bir çelenk oluşturur ve bu kutlanır. Ses çok yükselirse alevler söner."],
+    ["Zamanlayıcı gözünün önünde", "Maskotun etrafındaki halka kalan süreyi gösterir. Başlat ve durdur hemen sürenin yanında; süre bitince ölçüm duraklar."],
+    ["Projeksiyon görünümü", "Projeksiyonda veya ikinci bir ekranda gürültü ışığı tam ekran görünür – kontroller iPad’inde kalır."],
+    ["Her sınıfa uygun", "Sarının ve kırmızının ne zaman başlayacağını iki sürgüyle ayarlarsın – ya da Ruhe 5 saniye dinleyip kendini ayarlar."],
+    ["Kontrolleri kilitle", "Face ID veya parolayla kilitlenir, böylece sınıftan kimse bir şey değiştiremez."]
+  ],
+  "how_eyebrow": "Nasıl çalışır",
+  "how": [
+    ["iPad’i yerleştir", "Ruhe’yi aç ve yüze dokun – ölçüm başlar."],
+    ["Sınıfı çalıştır", "Maskot sınıfa ne kadar gürültü olduğunu gösterir ve her sessiz an için alev toplar."],
+    ["Başarıyı gör", "Dersin sonunda önemli olan, işe yarayandır: alev çelengi."]
+  ],
+  "support_eyebrow": "Yardım ve destek",
+  "faq": [
+    ["Ruhe hiçbir şey ölçmüyor – ne yapmalıyım?", "Ruhe’nin mikrofona erişmesi gerekir. Ayarlar → Gizlilik ve Güvenlik → Mikrofon → Ruhe bölümünden izin ver."],
+    ["Işık çok erken ya da çok geç kırmızıya dönüyor.", "Araç çubuğundaki sürgü simgesine dokun ve sarı ile kırmızı eşiklerini kaydır – ya da sınıf normal çalışırken “Otomatik ayarla”yı kullan."],
+    ["Ruhe’yi projeksiyonda nasıl gösteririm?", "iPad’i kabloyla veya AirPlay ile projeksiyona bağla. Ruhe orada gürültü ışığını otomatik olarak tam ekran gösterir, kontroller iPad’de kalır."],
+    ["Alevleri nasıl sıfırlarım?", "Sol üstteki alev sayacına dokun. Orada alevleri düzeltebilir ya da hepsini 0’a ayarlayabilirsin. Ruhe 10 dakikadan uzun süre arka planda kaldıysa sonraki ders zaten 0’dan başlar."],
+    ["Bir şey kaydediliyor mu?", "Hayır. Ruhe yalnızca ses düzeyini ölçer – hiçbir şey kaydedilmez, saklanmaz veya gönderilmez. Ayrıntılar [[privacy:gizlilik politikasında]]."],
+    ["Sorun burada yok mu?", "{mail} adresine yaz – genellikle bir iki gün içinde yanıt veririm."]
+  ],
+  "final_title": "İyi hissettiren sessizlik.",
+  "final_sub": "iPad ve iPhone için – şimdi App Store’da.",
+  "imprint": "Künye",
+  "privacy": "Gizlilik",
+  "privacy_page": {
+    "title": "Ruhe Gizlilik Politikası — crabucate",
+    "label": "Yasal",
+    "h1": "Gizlilik Politikası",
+    "meta": "Ruhe · Son güncelleme: Ekim 2026",
+    "sections": [
+      ["Genel bakış", [
+        "Ruhe kişisel veri toplamaz, izleme veya analiz aracı kullanmaz. Cihazından yalnızca tek bir noktada bir şey çıkar: satın almalar ve abonelikler bir hizmet sağlayıcı (RevenueCat) üzerinden doğrulanır. Bu sırada seni tanımlayan **hiçbir** bilgi aktarılmaz – ad, e-posta adresi veya reklam kimliği yok. “Satın almalar ve abonelikler” bölümü oraya tam olarak neyin ulaştığını açıklar.",
+        "Reklam yok, uygulamalar arası izleme yok, veri simsarlarına aktarım yok."
+      ]],
+      ["Mikrofon", [
+        "Ruhe mikrofonu yalnızca odadaki anlık ses düzeyini belirlemek için kullanır. Ses sinyali bellekte kısa süreliğine tek bir ses düzeyi değerine dönüştürülür ve hemen silinir.",
+        "Hiçbir kayıt yapılmaz, hiçbir konuşma analiz edilmez, hiçbir ses verisi saklanmaz veya aktarılmaz. Mikrofon erişimini istediğin zaman Ayarlar → Gizlilik ve Güvenlik → Mikrofon bölümünden geri alabilirsin."
+      ]],
+      ["Face ID", [
+        "Kontrolleri kilitlersen Face ID veya cihaz parolanla açabilirsin. Doğrulamayı iOS yapar – Ruhe yalnızca kilit açmanın başarılı olup olmadığını öğrenir ve biyometrik verilere erişemez."
+      ]],
+      ["Satın almalar ve abonelikler (RevenueCat)", [
+        "Ödeme yalnızca Apple ve App Store üzerinden yapılır; crabucate’in ödeme bilgilerine erişimi yoktur. Uygulamanın bir satın almanın geçerli olup olmadığını ve aboneliğin sürüp sürmediğini bilmesi için **RevenueCat** hizmeti kullanılır (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, ABD). Hizmet satın alma makbuzunu Apple ile doğrular ve uygulamaya “Ruhe Pro”nun açık olup olmadığını bildirir.",
+        "İşlenen veriler:",
+        [
+          "uygulamanın ilk açılışta oluşturduğu ve seninle ilgili hiçbir bilgiye bağlı olmayan **rastgele üretilmiş bir kimlik** (anonim uygulama kullanıcı kimliği)",
+          "ürün, satın alma zamanı, işlem kimliği, mağaza ülkesi ve abonelik durumunu içeren **Apple makbuzu**",
+          "cihaz modeli, işletim sistemi sürümü, uygulama sürümü, dil ve saat dilimi gibi **cihaz ve sistem bilgileri**",
+          "RevenueCat’in ülkeyi belirlemek ve kötüye kullanımı önlemek için kullandığı isteğin **IP adresi**"
+        ],
+        "**İzleme yok, reklam yok.** RevenueCat reklam kimliği (IDFA) almaz, cihazlar arasında eşleştirme yapılmaz ve hiçbir veri reklam ağlarına aktarılmaz. Mikrofon verileri asla aktarılmaz.",
+        "**Hukuki dayanak:** AB Genel Veri Koruma Tüzüğü (GDPR) md. 6(1)(b) – bu doğrulama olmadan bir satın alma teslim edilemez ve abonelik açılamazdı.",
+        "**ABD’ye aktarım:** RevenueCat verileri Amerika Birleşik Devletleri’nde işler. RevenueCat ile Avrupa Komisyonu’nun standart sözleşme maddelerini içeren bir veri işleme sözleşmesi bulunmaktadır. Ayrıntılar [[revenuecat:RevenueCat gizlilik politikasında]].",
+        "**Saklama süresi:** satın alma geçmişi, satın aldıklarını açmak için gerektiği sürece saklanır. Uygulamayı silersen anonim kimlik cihazsız kalır; hiçbir kişiyle ilişkilendirilemez."
+      ]],
+      ["Cihazda neler saklanır", [
+        "Ruhe cihazında yerel olarak yalnızca ayarlarını (ör. hassasiyet, zamanlayıcı süresi, bitiş sesi) ve uygulamanın yalnızca nadiren puan istemesi için başarıyla biten derslerin sayısını tutan bir sayacı saklar. Ayrıca uygulama, ilk açılıştaki tanıtımın gösterilip gösterilmediğini ve hangi kullanım ipuçlarını zaten gördüğünü hatırlar (Apple’ın TipKit’i ile, yine yalnızca cihazda).",
+        "Toplanan alevler ve zamanlayıcı durumu kalıcı olarak saklanmaz. Öğrencilere ait ad veya başka veri toplanmaz."
+      ]],
+      ["Puanlamalar", [
+        "Ruhe ara sıra iOS puanlama penceresini gösterir. Puan verip vermediğin ve nasıl verdiğin yalnızca Apple tarafından işlenir. [[apple:Apple Gizlilik Politikası]] geçerlidir."
+      ]],
+      ["Üçüncü taraflar", [
+        "Satın almaları doğrulamak için kullanılan RevenueCat dışında uygulamada üçüncü taraf SDK’ları, reklam ağları veya analiz hizmetleri yoktur. İzleme yapılmaz."
+      ]],
+      ["Çocuklar", [
+        "Ruhe öğretmenler için bir araçtır. Çocuklar ekranı görse veya cihazın yakınında konuşsa bile onlar hakkında veri toplanmaz – mikrofon uygulamaya yalnızca bir ses düzeyi değeri verir."
+      ]],
+      ["Cihaz depolaması ve yedeklemeler", [
+        "Cihaz ayarlarına bağlı olarak yerel olarak saklanan ayarlar bir iCloud veya Finder yedeğinin parçası olabilir. Bu yedek o durumda Apple tarafından kendi gizlilik politikasına göre işlenir."
+      ]],
+      ["Hakların", [
+        "Ayarların yalnızca cihazındadır; uygulamayı kaldırarak bunları tamamen silersin. RevenueCat’te yalnızca yukarıda açıklanan satın alma verileri, crabucate’in hiçbir kişiyle ilişkilendiremediği anonim bir kimlik altında bulunur. GDPR md. 15–17 kapsamında erişim veya silme talep etmek istersen aşağıdaki adrese yaz – ilgili kimliği bulmana yardımcı oluruz. Ayrıca bir veri koruma denetim makamına şikâyette bulunma hakkın vardır."
+      ]],
+      ["Değişiklikler", [
+        "Bu politikayı etkileyen önemli bir değişiklik olursa politikayı güncelleriz. Yukarıdaki tarih son değişikliğin ne zaman yapıldığını gösterir."
+      ]]
+    ],
+    "contact_title": "İletişim",
+    "contact": "Sorular için:"
+  }
+}

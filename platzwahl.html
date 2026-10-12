@@ -221,39 +221,6 @@
     .hero-meta span { white-space: nowrap; }
     .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
 
-    .coming-soon {
-      margin-top: 2.25rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.55rem 1.4rem;
-      border: 1px solid rgba(245,146,58,0.35);
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--pw);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .coming-soon::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--pw);
-      flex-shrink: 0;
-      animation: pulse 2.5s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
-
     /* ── SCREENSHOTS ── */
     .screenshots-section {
       position: relative;
@@ -603,7 +570,7 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-      .hero-icon, .hero h1, .tagline, .coming-soon { opacity: 1; }
+      .hero-icon, .hero h1, .tagline { opacity: 1; }
     }
   </style>
 </head>

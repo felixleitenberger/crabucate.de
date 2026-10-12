@@ -1,0 +1,102 @@
+{
+  "lang_choose": "Taal kiezen",
+  "all_apps": "← Alle apps",
+  "title": "Ruhe – Geluidsstoplicht voor de klas | iPad & iPhone",
+  "description": "Het vriendelijke geluidsstoplicht voor de klas: stilte wordt beloond met vlammen, lawaai wordt nooit bestraft. Met timer en beamerweergave voor iPad en iPhone.",
+  "icon_alt": "App-icoon van Ruhe",
+  "tagline": "Het vriendelijke geluidsstoplicht voor de klas: stil werken levert vlammen op – lawaai wordt nooit bestraft.",
+  "badge_alt": "Download in de App Store",
+  "meta": ["Geen account", "Er wordt niets opgenomen"],
+  "shots": [
+    "Stilte wordt beloond: mascotte Pip met een volle krans van vlammen",
+    "Pip laat zien hoe luid het is: geel bij ‘Iets zachter’, rood bij ‘Te luid!’",
+    "De timer in beeld: een ring rond de mascotte",
+    "Groot op de muur: beamerweergave op volledig scherm, de bediening blijft op de iPhone",
+    "Er wordt niets opgenomen: geen account, geen advertenties, geen tracking"
+  ],
+  "features_eyebrow": "Functies",
+  "features": [
+    ["Geluidsstoplicht met mascotte", "Groen, geel, rood – een vrolijk gezicht laat zien hoe luid het is. Bij geel zegt het zachtjes ‘sst’, bij rood houdt het zijn oren dicht."],
+    ["Vlammen in plaats van straf", "Zolang het stil is, gaat de ene vlam na de andere aan. Twaalf vlammen vormen een volle krans, en dat wordt gevierd. Wordt het te luid, dan gaan de vlammen uit."],
+    ["Timer in beeld", "De ring rond de mascotte toont de resterende tijd. Starten en stoppen direct naast de tijd; aan het eind pauzeert de meting."],
+    ["Beamerweergave", "Op een beamer of tweede scherm verschijnt het geluidsstoplicht op volledig scherm – de bediening blijft op je iPad."],
+    ["Past bij elke klas", "Met twee schuifregelaars stel je in wanneer geel en rood beginnen – of Ruhe luistert 5 seconden en kalibreert zichzelf."],
+    ["Bediening vergrendelen", "Vergrendeld met Face ID of toegangscode, zodat niemand in de klas iets verandert."]
+  ],
+  "how_eyebrow": "Zo werkt het",
+  "how": [
+    ["iPad neerzetten", "Open Ruhe en tik op het gezicht – de meting start."],
+    ["Laten werken", "De mascotte laat de klas zien hoe luid het is en verzamelt vlammen voor elke stille periode."],
+    ["Succes zien", "Aan het eind van de les telt wat gelukt is: de krans van vlammen."]
+  ],
+  "support_eyebrow": "Hulp & support",
+  "faq": [
+    ["Ruhe meet niets – wat nu?", "Ruhe heeft toegang tot de microfoon nodig. Sta die toe via Instellingen → Privacy en beveiliging → Microfoon → Ruhe."],
+    ["Het licht springt te snel of te laat op rood.", "Tik in de balk op het schuifregelaar-symbool en verschuif de drempels voor geel en rood – of gebruik ‘Automatisch instellen’ terwijl de klas normaal werkt."],
+    ["Hoe laat ik Ruhe op de beamer zien?", "Verbind de iPad via een kabel of AirPlay met de beamer. Ruhe toont daar automatisch het geluidsstoplicht op volledig scherm; de bediening blijft op de iPad."],
+    ["Hoe zet ik de vlammen terug op nul?", "Tik linksboven op de vlammenteller. Daar kun je vlammen corrigeren of alles op 0 zetten. Was Ruhe langer dan 10 minuten op de achtergrond, dan begint de volgende les sowieso bij 0."],
+    ["Wordt er iets opgenomen?", "Nee. Ruhe meet alleen het geluidsniveau – er wordt niets opgenomen, opgeslagen of verstuurd. Details staan in de [[privacy:privacyverklaring]]."],
+    ["Staat je vraag er niet bij?", "Mail naar {mail} – ik antwoord meestal binnen een of twee dagen."]
+  ],
+  "final_title": "Rust die goed voelt.",
+  "final_sub": "Voor iPad en iPhone – nu in de App Store.",
+  "imprint": "Colofon",
+  "privacy": "Privacy",
+  "privacy_page": {
+    "title": "Privacyverklaring Ruhe — crabucate",
+    "label": "Juridisch",
+    "h1": "Privacyverklaring",
+    "meta": "Ruhe · Laatst bijgewerkt: oktober 2026",
+    "sections": [
+      ["Overzicht", [
+        "Ruhe verzamelt geen persoonsgegevens en gebruikt geen tracking of analytics. Er is maar één plek waar iets je apparaat verlaat: aankopen en abonnementen worden via een dienstverlener gecontroleerd (RevenueCat). Daarbij wordt **geen** gegeven verstuurd dat jou identificeert – geen naam, geen e-mailadres, geen advertentie-ID. In het onderdeel ‘Aankopen en abonnementen’ staat precies wat daar aankomt.",
+        "Er zijn geen advertenties, geen tracking over apps heen en geen doorgifte aan databrokers."
+      ]],
+      ["Microfoon", [
+        "Ruhe gebruikt de microfoon uitsluitend om het huidige geluidsniveau in de ruimte te bepalen. Het audiosignaal wordt kort in het werkgeheugen omgerekend naar één geluidswaarde en direct weggegooid.",
+        "Er worden geen opnames gemaakt, geen gesprekken geanalyseerd en geen audiogegevens opgeslagen of verstuurd. Je kunt de toegang tot de microfoon altijd intrekken via Instellingen → Privacy en beveiliging → Microfoon."
+      ]],
+      ["Face ID", [
+        "Als je de bediening vergrendelt, kun je die ontgrendelen met Face ID of de toegangscode van je apparaat. iOS voert de controle uit – Ruhe hoort alleen of het ontgrendelen gelukt is en heeft geen toegang tot biometrische gegevens."
+      ]],
+      ["Aankopen en abonnementen (RevenueCat)", [
+        "Betalen gaat uitsluitend via Apple en de App Store; crabucate heeft geen toegang tot je betaalgegevens. Zodat de app weet of een aankoop geldig is en of een abonnement nog loopt, wordt de dienst **RevenueCat** gebruikt (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, VS). Die controleert het aankoopbewijs bij Apple en laat de app weten of ‘Ruhe Pro’ ontgrendeld is.",
+        "Daarbij worden verwerkt:",
+        [
+          "een **willekeurig gegenereerde ID** die de app bij de eerste start aanmaakt en die aan geen enkel gegeven over jou gekoppeld is (anonieme app-gebruikers-ID)",
+          "het **aankoopbewijs van Apple** met product, aankoopmoment, transactie-ID, land van de store en status van een abonnement",
+          "**apparaat- en systeemgegevens** zoals apparaattype, versie van het besturingssysteem, appversie, taal en tijdzone",
+          "het **IP-adres** van het verzoek, dat RevenueCat gebruikt om het land te bepalen en misbruik te voorkomen"
+        ],
+        "**Geen tracking, geen advertenties.** RevenueCat ontvangt geen advertentie-ID (IDFA), er worden geen gegevens over apparaten heen gekoppeld en niets gaat naar advertentienetwerken. Microfoongegevens worden nooit verstuurd.",
+        "**Rechtsgrond** is art. 6 lid 1 sub b AVG: zonder deze controle kan een aankoop niet worden geleverd en een abonnement niet worden ontgrendeld.",
+        "**Doorgifte naar de VS:** RevenueCat verwerkt de gegevens in de Verenigde Staten. Met RevenueCat is een verwerkersovereenkomst gesloten die de standaardcontractbepalingen van de Europese Commissie omvat. Meer staat in de [[revenuecat:privacyverklaring van RevenueCat]].",
+        "**Bewaartermijn:** de aankoopgeschiedenis blijft bewaard zolang die nodig is om je aankopen te ontgrendelen. Verwijder je de app, dan blijft de anonieme ID zonder apparaat achter; die is aan geen persoon te koppelen."
+      ]],
+      ["Wat er op het apparaat wordt opgeslagen", [
+        "Ruhe slaat lokaal op je apparaat alleen je instellingen op (bijv. gevoeligheid, timerduur, eindgeluid) en een teller die bijhoudt hoe vaak een les geslaagd is afgerond, zodat de app maar zelden om een beoordeling vraagt. Daarnaast onthoudt de app of de introductie bij de eerste start al getoond is en welke gebruikstips je al gezien hebt (via TipKit van Apple, eveneens alleen op het apparaat).",
+        "Verzamelde vlammen en timerstanden worden niet blijvend opgeslagen. Er worden geen namen of andere gegevens van leerlingen verzameld."
+      ]],
+      ["Beoordelingen", [
+        "Af en toe toont Ruhe het beoordelingsvenster van iOS. Of en hoe je beoordeelt, wordt uitsluitend door Apple verwerkt. Het [[apple:privacybeleid van Apple]] is van toepassing."
+      ]],
+      ["Derden", [
+        "Behalve RevenueCat voor het controleren van aankopen bevat de app geen SDK’s van derden, advertentienetwerken of analysediensten. Er vindt geen tracking plaats."
+      ]],
+      ["Kinderen", [
+        "Ruhe is een hulpmiddel voor leraren. Ook als kinderen het scherm zien of in de buurt van het apparaat praten, worden er geen gegevens over hen verzameld – de microfoon geeft de app alleen een geluidswaarde."
+      ]],
+      ["Opslag en back-ups", [
+        "Afhankelijk van je apparaatinstellingen kunnen de lokaal opgeslagen instellingen deel uitmaken van een iCloud- of Finder-back-up. Die back-up wordt dan door Apple verwerkt volgens het eigen privacybeleid."
+      ]],
+      ["Je rechten", [
+        "Je instellingen staan alleen op je apparaat; je verwijdert ze volledig door de app te verwijderen. Bij RevenueCat staan alleen de hierboven genoemde aankoopgegevens, onder een anonieme ID die crabucate aan geen persoon kan koppelen. Wil je inzage of verwijdering vragen op grond van art. 15–17 AVG, mail dan naar het adres hieronder – we helpen je de betreffende ID te vinden. Je hebt ook het recht een klacht in te dienen bij een toezichthoudende autoriteit voor gegevensbescherming."
+      ]],
+      ["Wijzigingen", [
+        "Verandert er iets wezenlijks dat deze verklaring raakt, dan werken we haar bij. De datum bovenaan laat zien wanneer ze voor het laatst is gewijzigd."
+      ]]
+    ],
+    "contact_title": "Contact",
+    "contact": "Vragen:"
+  }
+}

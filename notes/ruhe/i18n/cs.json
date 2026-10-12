@@ -1,0 +1,102 @@
+{
+  "lang_choose": "Vybrat jazyk",
+  "all_apps": "← Všechny aplikace",
+  "title": "Ruhe – Hlukový semafor do třídy | iPad a iPhone",
+  "description": "Přátelský hlukový semafor do třídy: ticho se odměňuje plameny, hluk se nikdy netrestá. S časovačem a zobrazením na projektoru pro iPad a iPhone.",
+  "icon_alt": "Ikona aplikace Ruhe",
+  "tagline": "Přátelský hlukový semafor do třídy: tichá práce přináší plameny – hluk se nikdy netrestá.",
+  "badge_alt": "Stáhnout v App Storu",
+  "meta": ["Bez účtu", "Nic se nenahrává"],
+  "shots": [
+    "Ticho se vyplácí: maskot Pip s plným věncem plamenů",
+    "Pip ukazuje, jak je hlučno: žlutá u „Trochu tišeji“, červená u „Moc nahlas!“",
+    "Časovač na očích: kruh kolem maskota",
+    "Ve velkém na zdi: zobrazení na projektoru přes celou obrazovku, ovládání zůstává na iPhonu",
+    "Nic se nenahrává: bez účtu, bez reklam, bez sledování"
+  ],
+  "features_eyebrow": "Funkce",
+  "features": [
+    ["Hlukový semafor s maskotem", "Zelená, žlutá, červená – veselý obličej ukazuje, jak je ve třídě hlučno. Při žluté tiše řekne „pšš“, při červené si zacpe uši."],
+    ["Plameny místo trestů", "Dokud je ticho, rozsvěcuje se jeden plamen za druhým. Dvanáct plamenů tvoří plný věnec – a to se slaví. Když je moc hluku, plameny zhasnou."],
+    ["Časovač na očích", "Kruh kolem maskota ukazuje zbývající čas. Spuštění a zastavení hned vedle času; na konci se měření pozastaví."],
+    ["Zobrazení na projektoru", "Na projektoru nebo druhém displeji se semafor zobrazí přes celou obrazovku – ovládání zůstává na vašem iPadu."],
+    ["Pro každou třídu", "Dvěma posuvníky nastavíte, kdy začíná žlutá a červená – nebo Ruhe 5 sekund poslouchá a zkalibruje se sám."],
+    ["Zamknout ovládání", "Zamčené pomocí Face ID nebo kódu, aby nikdo ze třídy nic nezměnil."]
+  ],
+  "how_eyebrow": "Jak to funguje",
+  "how": [
+    ["Postavte iPad", "Otevřete Ruhe a klepněte na obličej – měření začne."],
+    ["Nechte třídu pracovat", "Maskot ukazuje třídě, jak je hlučno, a sbírá plameny za každou chvíli ticha."],
+    ["Uvidíte úspěch", "Na konci hodiny se počítá to, co se povedlo: věnec plamenů."]
+  ],
+  "support_eyebrow": "Nápověda a podpora",
+  "faq": [
+    ["Ruhe nic neměří – co dělat?", "Ruhe potřebuje přístup k mikrofonu. Povolte ho v Nastavení → Soukromí a zabezpečení → Mikrofon → Ruhe."],
+    ["Semafor přeskočí na červenou příliš brzy nebo příliš pozdě.", "Klepněte v liště na ikonu posuvníků a posuňte prahy pro žlutou a červenou – nebo použijte „Nastavit automaticky“, zatímco třída normálně pracuje."],
+    ["Jak zobrazím Ruhe na projektoru?", "Připojte iPad k projektoru kabelem nebo přes AirPlay. Ruhe tam automaticky zobrazí semafor přes celou obrazovku a ovládání zůstane na iPadu."],
+    ["Jak vynuluji plameny?", "Klepněte na počítadlo plamenů vlevo nahoře. Tam můžete plameny opravit nebo všechny nastavit na 0. Pokud byl Ruhe déle než 10 minut na pozadí, další hodina začíná stejně od 0."],
+    ["Nahrává se něco?", "Ne. Ruhe měří jen hlasitost – nic se nenahrává, neukládá ani neodesílá. Podrobnosti najdete v [[privacy:zásadách ochrany osobních údajů]]."],
+    ["Vaše otázka tu není?", "Napište na {mail} – obvykle odpovídám do jednoho až dvou dnů."]
+  ],
+  "final_title": "Ticho, které dělá dobře.",
+  "final_sub": "Pro iPad a iPhone – nyní v App Storu.",
+  "imprint": "Právní informace",
+  "privacy": "Soukromí",
+  "privacy_page": {
+    "title": "Zásady ochrany osobních údajů Ruhe — crabucate",
+    "label": "Právní informace",
+    "h1": "Zásady ochrany osobních údajů",
+    "meta": "Ruhe · Poslední aktualizace: říjen 2026",
+    "sections": [
+      ["Přehled", [
+        "Ruhe neshromažďuje žádné osobní údaje a nepoužívá sledování ani analytiku. Jen na jednom místě něco opouští vaše zařízení: nákupy a předplatná se ověřují prostřednictvím poskytovatele služeb (RevenueCat). Přitom se nepřenáší **žádný** údaj, který by vás identifikoval – žádné jméno, žádná e-mailová adresa, žádný reklamní identifikátor. Oddíl „Nákupy a předplatná“ přesně popisuje, co se tam dostane.",
+        "Nejsou zde žádné reklamy, žádné sledování napříč aplikacemi a žádné předávání obchodníkům s daty."
+      ]],
+      ["Mikrofon", [
+        "Ruhe používá mikrofon výhradně k určení aktuální hlasitosti v místnosti. Zvukový signál se v paměti krátce převede na jedinou hodnotu hlasitosti a okamžitě se zahodí.",
+        "Nevznikají žádné nahrávky, neanalyzují se žádné rozhovory a žádná zvuková data se neukládají ani nepřenášejí. Přístup k mikrofonu můžete kdykoli odvolat v Nastavení → Soukromí a zabezpečení → Mikrofon."
+      ]],
+      ["Face ID", [
+        "Pokud ovládání zamknete, můžete ho odemknout pomocí Face ID nebo kódu zařízení. Ověření provádí iOS – Ruhe se dozví jen to, zda odemknutí proběhlo úspěšně, a nemá přístup k biometrickým údajům."
+      ]],
+      ["Nákupy a předplatná (RevenueCat)", [
+        "Platí se výhradně přes Apple a App Store; crabucate nemá přístup k vašim platebním údajům. Aby aplikace věděla, zda je nákup platný a zda předplatné stále běží, používá službu **RevenueCat** (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, USA). Ta ověří doklad o nákupu u Applu a sdělí aplikaci, zda je „Ruhe Pro“ odemčeno.",
+        "Zpracovávají se:",
+        [
+          "**náhodně vygenerovaný identifikátor**, který aplikace vytvoří při prvním spuštění a který není spojen s žádným údajem o vás (anonymní ID uživatele aplikace)",
+          "**doklad o nákupu od Applu** s produktem, časem nákupu, identifikátorem transakce, zemí obchodu a stavem předplatného",
+          "**údaje o zařízení a systému**, jako je model zařízení, verze operačního systému, verze aplikace, jazyk a časové pásmo",
+          "**IP adresa** požadavku, kterou RevenueCat používá k určení země a k prevenci zneužití"
+        ],
+        "**Žádné sledování, žádné reklamy.** RevenueCat nedostává reklamní identifikátor (IDFA), údaje se nespojují napříč zařízeními a nic se nepředává reklamním sítím. Data z mikrofonu se nikdy nepřenášejí.",
+        "**Právním základem** je čl. 6 odst. 1 písm. b) obecného nařízení o ochraně osobních údajů (GDPR): bez tohoto ověření by nebylo možné nákup doručit ani předplatné odemknout.",
+        "**Předání do USA:** RevenueCat zpracovává údaje ve Spojených státech. S RevenueCat je uzavřena smlouva o zpracování osobních údajů, která zahrnuje standardní smluvní doložky Evropské komise. Více najdete v [[revenuecat:zásadách ochrany osobních údajů RevenueCat]].",
+        "**Doba uložení:** historie nákupů se uchovává, dokud je potřebná k odemčení vašich nákupů. Pokud aplikaci smažete, anonymní identifikátor zůstane bez zařízení; nelze ho přiřadit žádné osobě."
+      ]],
+      ["Co se ukládá v zařízení", [
+        "Ruhe ukládá lokálně ve vašem zařízení jen vaše nastavení (např. citlivost, délku časovače, závěrečný zvuk) a počítadlo úspěšně dokončených hodin, aby aplikace žádala o hodnocení jen zřídka. Kromě toho si aplikace pamatuje, zda už byl zobrazen úvod při prvním spuštění a které tipy k ovládání jste už viděli (pomocí TipKit od Applu, rovněž jen v zařízení).",
+        "Nasbírané plameny a stav časovače se trvale neukládají. Neshromažďují se žádná jména ani jiné údaje o žácích."
+      ]],
+      ["Hodnocení", [
+        "Ruhe občas zobrazí dialog pro hodnocení v iOS. Zda a jak hodnotíte, zpracovává výhradně Apple. Platí [[apple:zásady ochrany osobních údajů společnosti Apple]]."
+      ]],
+      ["Třetí strany", [
+        "Kromě RevenueCat pro ověřování nákupů aplikace neobsahuje žádné SDK třetích stran, reklamní sítě ani analytické služby. Žádné sledování neprobíhá."
+      ]],
+      ["Děti", [
+        "Ruhe je nástroj pro učitele. I když děti vidí obrazovku nebo mluví v blízkosti zařízení, neshromažďují se o nich žádné údaje – mikrofon aplikaci poskytuje pouze hodnotu hlasitosti."
+      ]],
+      ["Úložiště a zálohy", [
+        "V závislosti na nastavení zařízení mohou být lokálně uložená nastavení součástí zálohy na iCloudu nebo ve Finderu. Takovou zálohu pak zpracovává Apple podle svých zásad ochrany osobních údajů."
+      ]],
+      ["Vaše práva", [
+        "Vaše nastavení jsou uložena jen ve vašem zařízení; úplně je smažete odinstalováním aplikace. RevenueCat uchovává jen výše popsané údaje o nákupech pod anonymním identifikátorem, který crabucate nedokáže přiřadit žádné osobě. Chcete-li požádat o přístup nebo výmaz podle čl. 15–17 GDPR, napište na adresu níže – pomůžeme vám dotyčný identifikátor najít. Máte také právo podat stížnost u dozorového úřadu pro ochranu osobních údajů."
+      ]],
+      ["Změny", [
+        "Pokud se změní něco podstatného, co se týká těchto zásad, aktualizujeme je. Datum nahoře ukazuje, kdy byly naposledy změněny."
+      ]]
+    ],
+    "contact_title": "Kontakt",
+    "contact": "Dotazy:"
+  }
+}

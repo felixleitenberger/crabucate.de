@@ -1,0 +1,102 @@
+{
+  "lang_choose": "Valitse kieli",
+  "all_apps": "← Kaikki sovellukset",
+  "title": "Ruhe – Meluvalo luokkahuoneeseen | iPad & iPhone",
+  "description": "Ystävällinen meluvalo luokkahuoneeseen: hiljaisuudesta palkitaan liekeillä, melusta ei koskaan rangaista. Ajastin ja projektorinäkymä iPadille ja iPhonelle.",
+  "icon_alt": "Ruhe-sovelluksen kuvake",
+  "tagline": "Ystävällinen meluvalo luokkahuoneeseen: hiljainen työskentely tuo liekkejä – melusta ei koskaan rangaista.",
+  "badge_alt": "Lataa App Storesta",
+  "meta": ["Ei tiliä", "Mitään ei tallenneta"],
+  "shots": [
+    "Hiljaisuus palkitaan: maskotti Pip ja täysi liekkiseppele",
+    "Pip näyttää, kuinka kovaa on: keltainen kohdassa ”Vähän hiljempaa”, punainen kohdassa ”Liian kovaa!”",
+    "Ajastin näkyvillä: rengas maskotin ympärillä",
+    "Isona seinällä: projektorinäkymä koko näytöllä, säätimet pysyvät iPhonessa",
+    "Mitään ei tallenneta: ei tiliä, ei mainoksia, ei seurantaa"
+  ],
+  "features_eyebrow": "Ominaisuudet",
+  "features": [
+    ["Meluvalo ja maskotti", "Vihreä, keltainen, punainen – iloiset kasvot näyttävät, kuinka kovaa luokassa on. Keltaisella ne sanovat hiljaa ”shh”, punaisella ne peittävät korvansa."],
+    ["Liekkejä rangaistusten sijaan", "Niin kauan kuin on hiljaista, syttyy liekki toisensa jälkeen. Kaksitoista liekkiä muodostaa täyden seppeleen, ja sitä juhlitaan. Jos ääni nousee liian kovaksi, liekit sammuvat."],
+    ["Ajastin näkyvillä", "Maskotin ympärillä oleva rengas näyttää jäljellä olevan ajan. Käynnistä ja pysäytä suoraan ajan vierestä; lopussa mittaus pysähtyy."],
+    ["Projektorinäkymä", "Projektorilla tai toisella näytöllä meluvalo näkyy koko näytöllä – säätimet pysyvät iPadillasi."],
+    ["Sopii jokaiselle luokalle", "Kahdella liukusäätimellä päätät, milloin keltainen ja punainen alkavat – tai Ruhe kuuntelee 5 sekuntia ja kalibroi itsensä."],
+    ["Lukitse säätimet", "Lukittu Face ID:llä tai pääsykoodilla, jotta kukaan luokassa ei muuta mitään."]
+  ],
+  "how_eyebrow": "Näin se toimii",
+  "how": [
+    ["Aseta iPad paikalleen", "Avaa Ruhe ja napauta kasvoja – mittaus alkaa."],
+    ["Anna luokan työskennellä", "Maskotti näyttää luokalle, kuinka kovaa on, ja kerää liekkejä jokaisesta hiljaisesta hetkestä."],
+    ["Näe onnistuminen", "Tunnin lopussa ratkaisee se, mikä onnistui: liekkiseppele."]
+  ],
+  "support_eyebrow": "Ohjeet ja tuki",
+  "faq": [
+    ["Ruhe ei mittaa mitään – mitä teen?", "Ruhe tarvitsee pääsyn mikrofoniin. Salli se kohdassa Asetukset → Tietosuoja ja suojaus → Mikrofoni → Ruhe."],
+    ["Valo muuttuu punaiseksi liian aikaisin tai liian myöhään.", "Napauta työkalupalkin liukusäädinkuvaketta ja siirrä keltaisen ja punaisen rajoja – tai käytä toimintoa ”Säädä automaattisesti”, kun luokka työskentelee normaalisti."],
+    ["Miten näytän Ruhen projektorilla?", "Yhdistä iPad projektoriin kaapelilla tai AirPlaylla. Ruhe näyttää siellä automaattisesti meluvalon koko näytöllä, ja säätimet pysyvät iPadilla."],
+    ["Miten nollaan liekit?", "Napauta vasemmassa yläkulmassa olevaa liekkilaskuria. Siellä voit korjata liekkien määrän tai nollata kaikki. Jos Ruhe on ollut taustalla yli 10 minuuttia, seuraava tunti alkaa joka tapauksessa nollasta."],
+    ["Tallennetaanko mitään?", "Ei. Ruhe mittaa vain äänenvoimakkuutta – mitään ei tallenneta, säilytetä eikä lähetetä. Tarkemmat tiedot löytyvät [[privacy:tietosuojaselosteesta]]."],
+    ["Eikö kysymystäsi löydy?", "Kirjoita osoitteeseen {mail} – vastaan yleensä päivän tai kahden sisällä."]
+  ],
+  "final_title": "Hiljaisuutta, joka tuntuu hyvältä.",
+  "final_sub": "iPadille ja iPhonelle – nyt App Storessa.",
+  "imprint": "Oikeudelliset tiedot",
+  "privacy": "Tietosuoja",
+  "privacy_page": {
+    "title": "Ruhen tietosuojaseloste — crabucate",
+    "label": "Oikeudelliset tiedot",
+    "h1": "Tietosuojaseloste",
+    "meta": "Ruhe · Päivitetty viimeksi: lokakuu 2026",
+    "sections": [
+      ["Yleiskatsaus", [
+        "Ruhe ei kerää henkilötietoja eikä käytä seurantaa tai analytiikkaa. Vain yhdessä kohdassa jotain lähtee laitteeltasi: ostot ja tilaukset tarkistetaan palveluntarjoajan (RevenueCat) kautta. Tällöin **mitään** sinut yksilöivää tietoa ei siirretä – ei nimeä, ei sähköpostiosoitetta, ei mainostunnistetta. Kohta ”Ostot ja tilaukset” kertoo tarkalleen, mitä sinne päätyy.",
+        "Ei mainoksia, ei sovellusten välistä seurantaa eikä tietojen luovutusta tietokauppiaille."
+      ]],
+      ["Mikrofoni", [
+        "Ruhe käyttää mikrofonia ainoastaan huoneen nykyisen äänenvoimakkuuden määrittämiseen. Äänisignaali muunnetaan hetkeksi muistissa yhdeksi äänenvoimakkuusarvoksi ja hylätään välittömästi.",
+        "Mitään ei äänitetä, keskusteluja ei analysoida eikä äänidataa tallenneta tai siirretä. Voit perua mikrofonin käyttöoikeuden milloin tahansa kohdassa Asetukset → Tietosuoja ja suojaus → Mikrofoni."
+      ]],
+      ["Face ID", [
+        "Jos lukitset säätimet, voit avata ne Face ID:llä tai laitteen pääsykoodilla. Tarkistuksen tekee iOS – Ruhe saa tietää vain, onnistuiko avaus, eikä sillä ole pääsyä biometrisiin tietoihin."
+      ]],
+      ["Ostot ja tilaukset (RevenueCat)", [
+        "Maksaminen tapahtuu yksinomaan Applen ja App Storen kautta; crabucatella ei ole pääsyä maksutietoihisi. Jotta sovellus tietää, onko ostos voimassa ja onko tilaus yhä käynnissä, käytetään **RevenueCat**-palvelua (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, Yhdysvallat). Se tarkistaa kuitin Applelta ja kertoo sovellukselle, onko ”Ruhe Pro” avattu.",
+        "Tällöin käsitellään:",
+        [
+          "**satunnaisesti luotu tunniste**, jonka sovellus luo ensimmäisellä käynnistyskerralla ja jota ei ole yhdistetty mihinkään sinua koskevaan tietoon (anonyymi sovelluskäyttäjätunnus)",
+          "**Applen kuitti**, jossa on tuote, ostohetki, maksutapahtuman tunniste, kaupan maa ja tilauksen tila",
+          "**laite- ja järjestelmätiedot**, kuten laitemalli, käyttöjärjestelmän versio, sovelluksen versio, kieli ja aikavyöhyke",
+          "pyynnön **IP-osoite**, jota RevenueCat käyttää maan määrittämiseen ja väärinkäytösten estämiseen"
+        ],
+        "**Ei seurantaa, ei mainoksia.** RevenueCat ei saa mainostunnistetta (IDFA), tietoja ei yhdistetä laitteiden välillä eikä mitään luovuteta mainosverkostoille. Mikrofonidataa ei koskaan siirretä.",
+        "**Oikeusperuste** on EU:n tietosuoja-asetuksen (GDPR) 6 artiklan 1 kohdan b alakohta: ilman tätä tarkistusta ostosta ei voitaisi toimittaa eikä tilausta avata.",
+        "**Siirto Yhdysvaltoihin:** RevenueCat käsittelee tiedot Yhdysvalloissa. RevenueCatin kanssa on tehty tietojenkäsittelysopimus, joka sisältää Euroopan komission vakiosopimuslausekkeet. Lisätietoja on [[revenuecat:RevenueCatin tietosuojaselosteessa]].",
+        "**Säilytysaika:** ostohistoria säilytetään niin kauan kuin sitä tarvitaan ostostesi avaamiseen. Jos poistat sovelluksen, anonyymi tunniste jää ilman laitetta; sitä ei voi yhdistää kehenkään henkilöön."
+      ]],
+      ["Mitä laitteelle tallennetaan", [
+        "Ruhe tallentaa laitteellesi paikallisesti vain asetuksesi (esim. herkkyys, ajastimen kesto, loppuääni) sekä laskurin siitä, kuinka usein tunti on päättynyt onnistuneesti, jotta sovellus pyytää arviota vain harvoin. Lisäksi sovellus muistaa, onko ensimmäisen käynnistyksen esittely jo näytetty ja mitkä käyttövinkit olet jo nähnyt (Applen TipKitin avulla, samoin vain laitteella).",
+        "Kerättyjä liekkejä ja ajastimen tilaa ei tallenneta pysyvästi. Oppilaiden nimiä tai muita tietoja ei kerätä."
+      ]],
+      ["Arviot", [
+        "Ruhe näyttää ajoittain iOS:n arviointi-ikkunan. Sen, arvioitko ja miten, käsittelee yksinomaan Apple. Siihen sovelletaan [[apple:Applen tietosuojakäytäntöä]]."
+      ]],
+      ["Kolmannet osapuolet", [
+        "RevenueCatia lukuun ottamatta sovelluksessa ei ole kolmansien osapuolten SDK:ita, mainosverkostoja tai analytiikkapalveluja. Seurantaa ei ole."
+      ]],
+      ["Lapset", [
+        "Ruhe on opettajien työkalu. Vaikka lapset näkisivät näytön tai puhuisivat laitteen lähellä, heistä ei kerätä tietoja – mikrofoni antaa sovellukselle vain äänenvoimakkuusarvon."
+      ]],
+      ["Tallennus ja varmuuskopiot", [
+        "Laitteen asetuksista riippuen paikallisesti tallennetut asetukset voivat sisältyä iCloud- tai Finder-varmuuskopioon. Apple käsittelee varmuuskopion tällöin oman tietosuojakäytäntönsä mukaisesti."
+      ]],
+      ["Oikeutesi", [
+        "Asetuksesi ovat vain laitteellasi; poistat ne kokonaan poistamalla sovelluksen. RevenueCatilla on vain edellä kuvatut ostotiedot anonyymin tunnisteen alla, jota crabucate ei voi yhdistää kehenkään. Jos haluat pyytää tietoja tai niiden poistamista GDPR:n 15–17 artiklan nojalla, kirjoita alla olevaan osoitteeseen – autamme sinua löytämään kyseisen tunnisteen. Sinulla on myös oikeus tehdä valitus tietosuojavalvontaviranomaiselle."
+      ]],
+      ["Muutokset", [
+        "Jos jokin olennainen tätä selostetta koskeva asia muuttuu, päivitämme sen. Yllä oleva päivämäärä kertoo, milloin selostetta on viimeksi muutettu."
+      ]]
+    ],
+    "contact_title": "Yhteystiedot",
+    "contact": "Kysymykset:"
+  }
+}

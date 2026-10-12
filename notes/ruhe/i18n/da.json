@@ -1,0 +1,102 @@
+{
+  "lang_choose": "Vælg sprog",
+  "all_apps": "← Alle apps",
+  "title": "Ruhe – Støjlys til klasseværelset | iPad & iPhone",
+  "description": "Det venlige støjlys til klasseværelset: ro belønnes med flammer, larm straffes aldrig. Med timer og projektorvisning til iPad og iPhone.",
+  "icon_alt": "Ruhe-appikon",
+  "tagline": "Det venlige støjlys til klasseværelset: stille arbejde giver flammer – larm bliver aldrig straffet.",
+  "badge_alt": "Hent i App Store",
+  "meta": ["Ingen konto", "Intet optages"],
+  "shots": [
+    "Ro bliver belønnet: maskotten Pip med en fuld krans af flammer",
+    "Pip viser, hvor højt der er: gul ved »Lidt mere stille«, rød ved »For højt!«",
+    "Timeren i syne: en ring rundt om maskotten",
+    "Stort på væggen: projektorvisning i fuld skærm, betjeningen bliver på iPhonen",
+    "Intet optages: ingen konto, ingen reklamer, ingen sporing"
+  ],
+  "features_eyebrow": "Funktioner",
+  "features": [
+    ["Støjlys med maskot", "Grøn, gul, rød – et glad ansigt viser, hvor højt der er. Ved gul siger det stille »shh«, ved rød holder det sig for ørerne."],
+    ["Flammer i stedet for straf", "Så længe der er ro, tændes den ene flamme efter den anden. Tolv flammer giver en fuld krans, og det bliver fejret. Bliver det for højt, går flammerne ud."],
+    ["Timeren i syne", "Ringen rundt om maskotten viser den resterende tid. Start og stop lige ved siden af tiden; når den løber ud, sættes målingen på pause."],
+    ["Projektorvisning", "På en projektor eller en ekstra skærm vises støjlyset i fuld skærm – betjeningen bliver på din iPad."],
+    ["Passer til alle klasser", "Med to skydere bestemmer du, hvornår gul og rød begynder – eller Ruhe lytter i 5 sekunder og kalibrerer sig selv."],
+    ["Lås betjeningen", "Låst med Face ID eller kode, så ingen i klassen ændrer noget."]
+  ],
+  "how_eyebrow": "Sådan virker det",
+  "how": [
+    ["Stil iPad’en op", "Åbn Ruhe, og tryk på ansigtet – målingen starter."],
+    ["Lad klassen arbejde", "Maskotten viser klassen, hvor højt der er, og samler flammer for hver rolig periode."],
+    ["Se succesen", "Når timen slutter, er det det, der lykkedes, der tæller: flammekransen."]
+  ],
+  "support_eyebrow": "Hjælp & support",
+  "faq": [
+    ["Ruhe måler ikke noget – hvad gør jeg?", "Ruhe skal have adgang til mikrofonen. Tillad det i Indstillinger → Anonymitet og sikkerhed → Mikrofon → Ruhe."],
+    ["Lyset skifter til rødt for tidligt eller for sent.", "Tryk på skyder-symbolet i værktøjslinjen, og flyt grænserne for gul og rød – eller brug »Indstil automatisk«, mens klassen arbejder som normalt."],
+    ["Hvordan viser jeg Ruhe på projektoren?", "Forbind iPad’en med projektoren via kabel eller AirPlay. Ruhe viser automatisk støjlyset i fuld skærm dér, og betjeningen bliver på iPad’en."],
+    ["Hvordan nulstiller jeg flammerne?", "Tryk på flammetælleren øverst til venstre. Der kan du rette flammerne eller sætte dem alle til 0. Har Ruhe været i baggrunden i mere end 10 minutter, starter næste time alligevel på 0."],
+    ["Bliver noget optaget?", "Nej. Ruhe måler kun lydniveauet – intet bliver optaget, gemt eller sendt. Detaljerne står i [[privacy:privatlivspolitikken]]."],
+    ["Er dit spørgsmål ikke med?", "Skriv til {mail} – jeg svarer som regel inden for en dag eller to."]
+  ],
+  "final_title": "Ro, der føles godt.",
+  "final_sub": "Til iPad og iPhone – nu i App Store.",
+  "imprint": "Juridiske oplysninger",
+  "privacy": "Privatliv",
+  "privacy_page": {
+    "title": "Privatlivspolitik for Ruhe — crabucate",
+    "label": "Juridisk",
+    "h1": "Privatlivspolitik",
+    "meta": "Ruhe · Senest opdateret: oktober 2026",
+    "sections": [
+      ["Overblik", [
+        "Ruhe indsamler ingen personoplysninger og bruger hverken sporing eller analyseværktøjer. Kun ét sted forlader noget din enhed: Køb og abonnementer kontrolleres via en tjenesteudbyder (RevenueCat). Der overføres **ingen** oplysninger, der identificerer dig – intet navn, ingen e-mailadresse, intet annonce-id. Afsnittet »Køb og abonnementer« beskriver præcis, hvad der sendes dertil.",
+        "Der er ingen reklamer, ingen sporing på tværs af apps og ingen videregivelse til datamæglere."
+      ]],
+      ["Mikrofon", [
+        "Ruhe bruger kun mikrofonen til at bestemme det aktuelle lydniveau i rummet. Lydsignalet omregnes kortvarigt i hukommelsen til én enkelt lydværdi og kasseres med det samme.",
+        "Der laves ingen optagelser, ingen samtaler analyseres, og ingen lyddata gemmes eller overføres. Du kan til enhver tid tilbagekalde adgangen til mikrofonen i Indstillinger → Anonymitet og sikkerhed → Mikrofon."
+      ]],
+      ["Face ID", [
+        "Hvis du låser betjeningen, kan du låse den op med Face ID eller din enheds kode. Kontrollen foretages af iOS – Ruhe får kun at vide, om oplåsningen lykkedes, og har ingen adgang til biometriske data."
+      ]],
+      ["Køb og abonnementer (RevenueCat)", [
+        "Betaling sker udelukkende via Apple og App Store; crabucate har ingen adgang til dine betalingsoplysninger. For at appen kan vide, om et køb er gyldigt, og om et abonnement stadig løber, bruges tjenesten **RevenueCat** (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, USA). Den kontrollerer kvitteringen hos Apple og fortæller appen, om »Ruhe Pro« er låst op.",
+        "Følgende behandles:",
+        [
+          "et **tilfældigt genereret id**, som appen opretter ved første start, og som ikke er knyttet til nogen oplysninger om dig (anonymt app-bruger-id)",
+          "**kvitteringen fra Apple** med produkt, købstidspunkt, transaktions-id, butikkens land og status for et abonnement",
+          "**enheds- og systemoplysninger** som enhedstype, styresystemversion, appversion, sprog og tidszone",
+          "**IP-adressen** for forespørgslen, som RevenueCat bruger til at bestemme landet og forhindre misbrug"
+        ],
+        "**Ingen sporing, ingen reklamer.** RevenueCat modtager intet annonce-id (IDFA), der sker ingen sammenkædning på tværs af enheder, og intet videregives til annoncenetværk. Mikrofondata overføres aldrig.",
+        "**Retsgrundlaget** er art. 6, stk. 1, litra b, i databeskyttelsesforordningen (GDPR): Uden denne kontrol kunne et køb ikke leveres og et abonnement ikke låses op.",
+        "**Overførsel til USA:** RevenueCat behandler oplysningerne i USA. Der er indgået en databehandleraftale med RevenueCat, som omfatter Europa-Kommissionens standardkontraktbestemmelser. Mere står i [[revenuecat:RevenueCats privatlivspolitik]].",
+        "**Opbevaring:** Købshistorikken gemmes, så længe den er nødvendig for at låse dine køb op. Sletter du appen, bliver det anonyme id tilbage uden enhed; det kan ikke henføres til nogen person."
+      ]],
+      ["Hvad der gemmes på enheden", [
+        "Ruhe gemmer kun dine indstillinger lokalt på din enhed (f.eks. følsomhed, timerlængde, slutlyd) samt en tæller for, hvor ofte en time er sluttet med succes, så appen kun sjældent beder om en bedømmelse. Desuden husker appen, om introduktionen ved første start allerede er vist, og hvilke brugstip du allerede har set (via Apples TipKit, ligeledes kun på enheden).",
+        "Indsamlede flammer og timerstatus gemmes ikke varigt. Der indsamles ingen navne eller andre oplysninger om elever."
+      ]],
+      ["Bedømmelser", [
+        "Af og til viser Ruhe bedømmelsesdialogen i iOS. Om og hvordan du bedømmer, behandles udelukkende af Apple. [[apple:Apples privatlivspolitik]] gælder."
+      ]],
+      ["Tredjeparter", [
+        "Bortset fra RevenueCat til kontrol af køb indeholder appen ingen tredjeparts-SDK’er, annoncenetværk eller analysetjenester. Der finder ingen sporing sted."
+      ]],
+      ["Børn", [
+        "Ruhe er et værktøj til lærere. Selv hvis børn ser skærmen eller taler i nærheden af enheden, indsamles der ingen oplysninger om dem – mikrofonen giver kun appen en lydværdi."
+      ]],
+      ["Lagring og sikkerhedskopier", [
+        "Afhængigt af dine enhedsindstillinger kan de lokalt gemte indstillinger indgå i en iCloud- eller Finder-sikkerhedskopi. Den behandles så af Apple efter Apples privatlivspolitik."
+      ]],
+      ["Dine rettigheder", [
+        "Dine indstillinger ligger kun på din enhed; du sletter dem helt ved at afinstallere appen. Hos RevenueCat ligger kun de købsoplysninger, der er nævnt ovenfor, under et anonymt id, som crabucate ikke kan knytte til en person. Vil du bede om indsigt eller sletning efter art. 15–17 i GDPR, så skriv til adressen nedenfor – vi hjælper dig med at finde det pågældende id. Du har også ret til at klage til en databeskyttelsesmyndighed."
+      ]],
+      ["Ændringer", [
+        "Hvis der sker en væsentlig ændring, der berører denne politik, opdaterer vi den. Datoen øverst viser, hvornår den sidst blev ændret."
+      ]]
+    ],
+    "contact_title": "Kontakt",
+    "contact": "Spørgsmål:"
+  }
+}

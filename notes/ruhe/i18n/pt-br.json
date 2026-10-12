@@ -1,0 +1,102 @@
+{
+  "lang_choose": "Escolher idioma",
+  "all_apps": "← Todos os apps",
+  "title": "Ruhe – Semáforo do barulho para a sala de aula | iPad e iPhone",
+  "description": "O semáforo do barulho amigável para a sala de aula: o silêncio é recompensado com chamas, o barulho nunca é punido. Com timer e modo projetor para iPad e iPhone.",
+  "icon_alt": "Ícone do app Ruhe",
+  "tagline": "O semáforo do barulho amigável para a sala de aula: trabalhar em silêncio rende chamas – o barulho nunca é punido.",
+  "badge_alt": "Baixar na App Store",
+  "meta": ["Sem conta", "Nada é gravado"],
+  "shots": [
+    "O silêncio vale prêmio: o mascote Pip com uma coroa de chamas completa",
+    "Pip mostra o nível de barulho: amarelo para “Um pouco mais baixo”, vermelho para “Barulho demais!”",
+    "O timer sempre à vista: um anel em volta do mascote",
+    "Grande na parede: modo projetor em tela cheia, os controles ficam no iPhone",
+    "Nada é gravado: sem conta, sem anúncios, sem rastreamento"
+  ],
+  "features_eyebrow": "Recursos",
+  "features": [
+    ["Semáforo com mascote", "Verde, amarelo, vermelho – um rostinho alegre mostra o nível de barulho. No amarelo ele faz “psiu” baixinho, no vermelho tapa os ouvidos."],
+    ["Chamas em vez de castigo", "Enquanto a turma fica em silêncio, uma chama se acende após a outra. Doze chamas formam uma coroa completa – e isso é comemorado. Se o barulho passar do ponto, as chamas se apagam."],
+    ["Timer à vista", "O anel em volta do mascote mostra o tempo restante. Iniciar e parar logo ao lado do horário; no fim, a medição pausa."],
+    ["Modo projetor", "No projetor ou em uma segunda tela, o semáforo aparece em tela cheia – os controles ficam no seu iPad."],
+    ["Para qualquer turma", "Com dois controles deslizantes você define quando começam o amarelo e o vermelho – ou o Ruhe escuta por 5 segundos e se calibra sozinho."],
+    ["Bloquear os controles", "Bloqueados com Face ID ou código, para que ninguém da turma mude nada."]
+  ],
+  "how_eyebrow": "Como funciona",
+  "how": [
+    ["Posicione o iPad", "Abra o Ruhe e toque no rosto – a medição começa."],
+    ["Deixe a turma trabalhar", "O mascote mostra à turma o nível de barulho e junta chamas a cada momento de silêncio."],
+    ["Veja o resultado", "No fim da aula, o que conta é o que deu certo: a coroa de chamas."]
+  ],
+  "support_eyebrow": "Ajuda e suporte",
+  "faq": [
+    ["O Ruhe não mede nada – o que fazer?", "O Ruhe precisa de acesso ao microfone. Permita em Ajustes → Privacidade e Segurança → Microfone → Ruhe."],
+    ["O semáforo fica vermelho cedo ou tarde demais.", "Toque no ícone dos controles deslizantes na barra e ajuste os limites do amarelo e do vermelho – ou use “Ajustar automaticamente” enquanto a turma trabalha normalmente."],
+    ["Como mostro o Ruhe no projetor?", "Conecte o iPad ao projetor por cabo ou AirPlay. O Ruhe mostra lá automaticamente o semáforo em tela cheia, e os controles ficam no iPad."],
+    ["Como zero as chamas?", "Toque no contador de chamas no canto superior esquerdo. Ali você pode corrigir as chamas ou zerar todas. Se o Ruhe ficou mais de 10 minutos em segundo plano, a próxima aula começa em 0 de qualquer forma."],
+    ["Alguma coisa é gravada?", "Não. O Ruhe só mede o volume – nada é gravado, armazenado ou enviado. Os detalhes estão na [[privacy:política de privacidade]]."],
+    ["Sua pergunta não está aqui?", "Escreva para {mail} – costumo responder em um ou dois dias."]
+  ],
+  "final_title": "Silêncio que faz bem.",
+  "final_sub": "Para iPad e iPhone – já na App Store.",
+  "imprint": "Aviso legal",
+  "privacy": "Privacidade",
+  "privacy_page": {
+    "title": "Política de privacidade do Ruhe — crabucate",
+    "label": "Informações legais",
+    "h1": "Política de privacidade",
+    "meta": "Ruhe · Última atualização: outubro de 2026",
+    "sections": [
+      ["Visão geral", [
+        "O Ruhe não coleta dados pessoais e não usa rastreamento nem ferramentas de análise. Só em um ponto algo sai do seu dispositivo: compras e assinaturas são verificadas por um prestador de serviços (RevenueCat). **Nenhum** dado que identifique você é transmitido – nem nome, nem e-mail, nem identificador de publicidade. A seção “Compras e assinaturas” descreve exatamente o que chega lá.",
+        "Não há anúncios, nem rastreamento entre apps, nem repasse a corretores de dados."
+      ]],
+      ["Microfone", [
+        "O Ruhe usa o microfone exclusivamente para determinar o volume atual da sala. O sinal de áudio é convertido rapidamente na memória em um único valor de volume e descartado na hora.",
+        "Nenhuma gravação é feita, nenhuma conversa é analisada e nenhum dado de áudio é armazenado ou transmitido. Você pode revogar o acesso ao microfone a qualquer momento em Ajustes → Privacidade e Segurança → Microfone."
+      ]],
+      ["Face ID", [
+        "Se você bloquear os controles, pode desbloqueá-los com Face ID ou com o código do dispositivo. Quem faz a verificação é o iOS – o Ruhe só recebe a informação de que o desbloqueio deu certo e não tem acesso a dados biométricos."
+      ]],
+      ["Compras e assinaturas (RevenueCat)", [
+        "O pagamento é feito exclusivamente pela Apple e pela App Store; a crabucate não tem acesso aos seus dados de pagamento. Para que o app saiba se uma compra é válida e se uma assinatura continua ativa, é usado o serviço **RevenueCat** (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, EUA). Ele confere o recibo com a Apple e informa ao app se o “Ruhe Pro” está liberado.",
+        "São tratados:",
+        [
+          "um **identificador gerado aleatoriamente**, criado pelo app na primeira abertura e não vinculado a nenhuma informação sobre você (ID de usuário anônimo)",
+          "o **recibo da Apple** com produto, data da compra, identificador da transação, país da loja e status de uma assinatura",
+          "**dados do dispositivo e do sistema**, como modelo, versão do sistema operacional, versão do app, idioma e fuso horário",
+          "o **endereço IP** da requisição, que o RevenueCat usa para determinar o país e evitar abusos"
+        ],
+        "**Sem rastreamento, sem anúncios.** O RevenueCat não recebe identificador de publicidade (IDFA), não há cruzamento de dados entre dispositivos e nada é repassado a redes de anúncios. Os dados do microfone nunca são transmitidos.",
+        "**Base legal:** art. 6.º, n.º 1, alínea b) do Regulamento Geral sobre a Proteção de Dados (RGPD) da UE – sem essa verificação, uma compra não poderia ser entregue nem uma assinatura liberada.",
+        "**Transferência para os EUA:** o RevenueCat trata os dados nos Estados Unidos. Existe com o RevenueCat um contrato de tratamento de dados que inclui as cláusulas contratuais-padrão da Comissão Europeia. Mais detalhes na [[revenuecat:política de privacidade do RevenueCat]].",
+        "**Prazo de armazenamento:** o histórico de compras é mantido enquanto for necessário para liberar suas compras. Se você apagar o app, o identificador anônimo fica sem dispositivo; ele não pode ser atribuído a nenhuma pessoa."
+      ]],
+      ["O que fica salvo no dispositivo", [
+        "O Ruhe salva localmente no seu dispositivo apenas seus ajustes (por exemplo, sensibilidade, duração do timer, som final) e um contador de quantas aulas terminaram com sucesso, para que o app peça uma avaliação só raramente. O app também lembra se a introdução da primeira abertura já foi mostrada e quais dicas de uso você já viu (via TipKit da Apple, também só no dispositivo).",
+        "As chamas acumuladas e o estado do timer não são salvos de forma permanente. Não são coletados nomes nem outros dados de alunos."
+      ]],
+      ["Avaliações", [
+        "De vez em quando o Ruhe mostra a janela de avaliação do iOS. Se e como você avalia é tratado exclusivamente pela Apple. Vale a [[apple:política de privacidade da Apple]]."
+      ]],
+      ["Terceiros", [
+        "Além do RevenueCat para verificar compras, o app não inclui SDKs de terceiros, redes de anúncios nem serviços de análise. Não há rastreamento."
+      ]],
+      ["Crianças", [
+        "O Ruhe é uma ferramenta para professores. Mesmo que crianças vejam a tela ou falem perto do dispositivo, nenhum dado sobre elas é coletado – o microfone só fornece ao app um valor de volume."
+      ]],
+      ["Armazenamento e backups", [
+        "Dependendo das configurações do dispositivo, os ajustes salvos localmente podem fazer parte de um backup do iCloud ou do Finder. Esse backup é então tratado pela Apple conforme a política de privacidade dela."
+      ]],
+      ["Seus direitos", [
+        "Seus ajustes ficam apenas no seu dispositivo; você os apaga por completo ao desinstalar o app. O RevenueCat guarda somente os dados de compra descritos acima, sob um identificador anônimo que a crabucate não consegue associar a nenhuma pessoa. Se quiser pedir acesso ou exclusão nos termos dos artigos 15 a 17 do RGPD, escreva para o endereço abaixo – ajudaremos você a encontrar o identificador em questão. Você também tem o direito de apresentar uma reclamação a uma autoridade de proteção de dados."
+      ]],
+      ["Alterações", [
+        "Se algo essencial mudar e afetar esta política, vamos atualizá-la. A data acima mostra quando ela foi alterada pela última vez."
+      ]]
+    ],
+    "contact_title": "Contato",
+    "contact": "Dúvidas:"
+  }
+}
