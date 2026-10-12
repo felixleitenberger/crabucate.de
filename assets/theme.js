@@ -14,8 +14,8 @@
   var btn = document.querySelector('.theme-toggle');
   if (!btn) return;
 
-  /* Die Sprachen der Seite. /bestiary/ gibt es in zehn, der Rest in zwei —
-   * ein unbekanntes root.lang faellt auf Deutsch zurueck. */
+  /* Die Sprachen der Seite. /bestiary/ gibt es in zehn, /ruhe/ in neunzehn,
+   * der Rest in zwei — ein unbekanntes root.lang faellt auf Deutsch zurueck. */
   var TEXTS = {
     de: { auto: 'Design: automatisch', light: 'Design: hell', dark: 'Design: dunkel' },
     en: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' },
@@ -23,6 +23,15 @@
     es: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
     it: { auto: 'Tema: automatico', light: 'Tema: chiaro', dark: 'Tema: scuro' },
     'pt-BR': { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: escuro' },
+    nl: { auto: 'Thema: automatisch', light: 'Thema: licht', dark: 'Thema: donker' },
+    da: { auto: 'Tema: automatisk', light: 'Tema: lyst', dark: 'Tema: mørkt' },
+    sv: { auto: 'Tema: automatiskt', light: 'Tema: ljust', dark: 'Tema: mörkt' },
+    nb: { auto: 'Tema: automatisk', light: 'Tema: lyst', dark: 'Tema: mørkt' },
+    fi: { auto: 'Teema: automaattinen', light: 'Teema: vaalea', dark: 'Teema: tumma' },
+    pl: { auto: 'Motyw: automatyczny', light: 'Motyw: jasny', dark: 'Motyw: ciemny' },
+    cs: { auto: 'Vzhled: automaticky', light: 'Vzhled: světlý', dark: 'Vzhled: tmavý' },
+    tr: { auto: 'Tema: otomatik', light: 'Tema: açık', dark: 'Tema: koyu' },
+    uk: { auto: 'Тема: автоматично', light: 'Тема: світла', dark: 'Тема: темна' },
     ja: { auto: 'テーマ: 自動', light: 'テーマ: ライト', dark: 'テーマ: ダーク' },
     ko: { auto: '테마: 자동', light: '테마: 밝게', dark: '테마: 어둡게' },
     'zh-Hans': { auto: '主题：自动', light: '主题：浅色', dark: '主题：深色' },

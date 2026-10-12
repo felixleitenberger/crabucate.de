@@ -50,6 +50,25 @@ one row in `LANGS`; the language switcher, the `hreflang` block and the sitemap
 follow from there. The screenshots are the store's own, one set per language,
 under `images/bestiary/screenshots/<code>/`.
 
+### `/ruhe/` — Ruhe in the app's further languages
+
+Ruhe is localised into 21 languages; the site covers 19 of them (Spanish and
+Portuguese once each, as `es` and `pt-br`). German and English stay
+**hand-written** at `ruhe.html`, `ruhe-privacy.html` and their `/en/`
+counterparts — App Store Connect stores those addresses. The other seventeen
+are generated to `/ruhe/<code>/` and `/ruhe/<code>/privacy/`:
+
+```
+python3 notes/ruhe/build.py     # schreibt ruhe/**, Sprachwähler + hreflang der vier DE/EN-Seiten, Ruhe-Block in sitemap.xml
+```
+
+Texts live in `notes/ruhe/i18n/<code>.json`. The generator takes the inline
+CSS and the feature icons **from `ruhe.html` / `ruhe-privacy.html`**, so a
+design change is made there and then the script is re-run. It also rewrites the
+language menu and the `hreflang` block of the four hand-written pages, so a new
+language is one JSON file plus one row in `LANGS`. Edit the JSON, never the
+generated HTML.
+
 `lehrer-arbeitszeit.html` and `lehrer-arbeitszeit-privacy.html` are **deliberately German-only** and have no `/en/` counterpart: the app ships the Ferien- and Feiertagstermine of the sixteen German states and is useless elsewhere. Their `hreflang` therefore names only `de`, and the English start page lists three apps where the German one lists four. Do not "fix" that asymmetry by machine-translating the pages.
 
 Images are grouped per app: `images/<app>/icons/{light,dark}/icon.png` and
@@ -58,7 +77,7 @@ both counts: Icon Composer exports one icon for both themes, so it is a plain
 `images/bestiary/icon.png` with no `<picture>` around it, and its screenshots
 are split by language rather than by theme
 (`images/bestiary/screenshots/<code>/`). Ruhe keeps the usual `icons/{light,dark}/` but likewise
-splits its screenshots by language (`images/ruhe/screenshots/{de,en}/`): they are the store's
+splits its screenshots by language (`images/ruhe/screenshots/<code>/`, all 19): they are the store's
 marketing images with the headline burned in, resized to 552 px and run through `pngquant`.
 `images/ruhe/header.png` is the text-free store header and serves as the start-page preview. Assets both apps share — the crab logo, the two App Store
 badges, the empty iPad bezel — sit directly in `images/`. Only files the site actually references
