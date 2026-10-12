@@ -98,5 +98,167 @@
     ],
     "contact_title": "Kontakt",
     "contact": "Dotazy:"
+  },
+  "guide": {
+    "eyebrow": "Průvodce",
+    "card_title": "Řízení třídy: zasedací pořádek, skupiny a hluk",
+    "card_text": "Postup pro celou hodinu – od zasedacího pořádku přes spravedlivé skupiny až po klidnou pracovní fázi.",
+    "more": "Přečíst průvodce →",
+    "title": "Řízení třídy: zasedací pořádek, skupiny a hluk pod kontrolou",
+    "description": "Řízení třídy jako postup: zasedací pořádek jako základ, spravedlivé skupiny losováním a zviditelněný hluk. Praktické tipy, ukázková hodina a aplikace pro učitele.",
+    "crumb": "Průvodce",
+    "h1": "Řízení třídy: zasedací pořádek, skupiny a hluk pod kontrolou",
+    "intro": "Dobré řízení třídy není skoro vidět, a přesně o to jde: hodina plyne, přechody fungují a čas patří učení, ne napomínání. V téměř každé hodině se vracejí tři otázky: Kdo sedí kde? Kdo pracuje s kým? A jak hlasitě smí být právě teď? Tento průvodce ukazuje postup, který odpoví na všechny tři dřív, než se z nich stane problém.",
+    "what_h": "Co řízení třídy vlastně znamená",
+    "what": [
+      "Řízení třídy je víc než kázeň. Už v 70. letech americký psycholog Jacob Kounin ukázal, že úspěšní učitelé se neliší ani tak tím, jak reagují na vyrušování, jako tím, jak dobře mu **předcházejí**. K jím popsaným znakům patří:",
+      [
+        [
+          "Všudypřítomnost:",
+          "třída cítí, že máš celou místnost pod dohledem."
+        ],
+        [
+          "Plynulost a tempo:",
+          "přechody mezi fázemi nestojí minuty a hodina neztrácí spád."
+        ],
+        [
+          "Aktivizace skupiny:",
+          "všichni zůstávají zapojení, nejen ten, kdo je právě na řadě."
+        ]
+      ],
+      "Mnoho z toho je postoj a zkušenost. Část je ale prostě organizace, a tu lze připravit. Právě tam nastupuje následující postup."
+    ],
+    "steps": [
+      {
+        "label": "Krok 1 · Jednou předem",
+        "h": "Seznam třídy založit jednou a používat všude",
+        "body": [
+          "Největší žrout času je dělat totéž dvakrát. Exportuj seznam třídy jednou jako CSV z Excelu, Numbers nebo Tabulek Google. [[platzwahl:Platzwahl]] i [[teamzufall:Team Zufall]] tento soubor přímo naimportují a celá třída je založená za pár sekund. Obě aplikace ukládají jména jen místně v zařízení, bez účtu a bez cloudu. U údajů o žácích to není detail, ale podmínka."
+        ]
+      },
+      {
+        "label": "Krok 2 · Základ",
+        "h": "Zasedací pořádek: předcházet vyrušování dřív, než vznikne",
+        "body": [
+          "Zasedací pořádek je nejúčinnější nástroj řízení třídy, protože působí každou minutu, aniž bys musel cokoli říkat. Kdo sedí vedle koho, rozhoduje o vyrušování, rozptýlení i soustředění. Osvědčilo se:",
+          [
+            [
+              "Oddělovat neklidné žáky,",
+              "nejen vedle sebe, ale i za sebou."
+            ],
+            [
+              "Využívat blízkost:",
+              "kdo potřebuje podporu nebo se snadno zasní, sedí v tvém přímém zorném poli."
+            ],
+            [
+              "Rozmístit klidné kotvy",
+              "mezi živější žáky."
+            ],
+            [
+              "Pravidelně měnit,",
+              "třeba po prázdninách nebo každý měsíc, aby nevznikaly trvalé neklidné kouty."
+            ]
+          ],
+          "V [[platzwahl:Platzwahl]] nastavíš tato pravidla pro každého žáka (sklon k vyrušování, místo vpředu, oblíbení sousedé, oddělení) a zasedací pořádek se vypočítá automaticky. Skóre ukazuje, jak dobře jsou všechna pravidla splněna. Hotový plán putuje na katedru jako PDF."
+        ]
+      },
+      {
+        "label": "Krok 3 · Spolupráce",
+        "h": "Spravedlivé skupiny bez dohadování",
+        "body": [
+          "„Můžeme si vybrat sami?“ je otázka, kvůli které je spousta skupinových prací ztracená ještě před začátkem. Volný výběr zabere čas, upevňuje party a vždycky nechá stranou ty samé. Cílené rozdělení je spravedlivé, ale pracné a na deset minut práce ve dvojicích se sotva vyplatí.",
+          "Pro mnoho krátkých fází je **náhoda** nejlepší řešení: je rychlá, nikdo se necítí zvýhodněný a třída se učí spolupracovat se všemi. Důležité je, aby losování bylo **vidět**. Když třída na projektoru sleduje, jak se jména míchají, není o čem diskutovat.",
+          "V [[teamzufall:Team Zufall]] zvolíš počet týmů, jedním klepnutím vyřadíš nepřítomné a losuješ. Týmy lze promítnout na zeď nebo exportovat jako PDF. U delších projektů, kde je třeba se vyhnout určitým kombinacím, zůstává cílené rozdělení lepší volbou."
+        ]
+      },
+      {
+        "label": "Krok 4 · Pracovní fáze",
+        "h": "Zviditelnit hluk místo neustálého utišování",
+        "body": [
+          "Skupinová práce je hlučná, a to je v pořádku. Problém nastává, když už nikdo neví, co je příliš nahlas, a ty trávíš hodinu říkáním „Pst!“. Napomínání se rychle opotřebí a vyrušuje právě ty, kdo pracují soustředěně.",
+          "Lépe fungují tři věci:",
+          [
+            [
+              "Dohodnout hlasitost:",
+              "domluvte se s třídou, co platí v které fázi. Šeptání při samostatné práci, hlas pro dvojici při skupinové práci."
+            ],
+            [
+              "Ukázat hlasitost:",
+              "hlukový semafor na projektoru dává třídě zpětnou vazbu, kterou bys jinak musel dávat nahlas."
+            ],
+            [
+              "Odměňovat klid místo trestání hluku:",
+              "když semafor jen zčervená a něco bere, rychle se z něj stane nástroj nátlaku a jednotliví hluční žáci se stanou obětním beránkem třídy. Lépe funguje společný cíl, kterého může třída dosáhnout."
+            ]
+          ],
+          "Přesně k tomu je [[ruhe:Ruhe]]: maskot ukazuje zelenou, žlutou nebo červenou, a dokud je klid, zapaluje se jeden plamen za druhým. Dvanáct plamenů tvoří plný věnec a to se slaví. Hranice pro žlutou a červenou nastavíš podle fáze, nebo necháš Ruhe, aby se nakalibroval sám. Časovač ukazuje zbývající čas, zobrazení pro projektor dá všechno ve velkém na zeď a ovládání zůstává na tvém iPadu. Ruhe měří jen hlasitost; nic se nenahrává."
+        ]
+      },
+      {
+        "label": "Krok 5 · Závěr",
+        "h": "Zviditelnit úspěchy",
+        "body": [
+          "Na konci hodiny se počítá, co se povedlo. Plný věnec plamenů je dobrý důvod ke krátké pochvale celé třídy. A pokud se to dnes nepovedlo, je to příležitost společně zjistit proč, bez hledání viníků. Opakující se problémy u určitých lavic jsou znamením, že je na řadě nový zasedací pořádek."
+        ]
+      }
+    ],
+    "shot_alts": [
+      "Řízení třídy se zasedacím pořádkem: automaticky vytvořený zasedací pořádek v aplikaci Platzwahl na iPadu",
+      "Rozdělení třídy do skupin: náhodně vylosované týmy v aplikaci Team Zufall",
+      "Hlukový semafor do třídy: aplikace Ruhe ukazuje žlutou u „Trochu tišeji“ a červenou u „Moc nahlas!“"
+    ],
+    "lesson_h": "Takhle vypadá hodina s tímto postupem",
+    "lesson_head": [
+      "Fáze",
+      "Co se děje",
+      "Nástroj"
+    ],
+    "lesson_rows": [
+      [
+        "Před hodinou",
+        "Zasedací pořádek visí, každý ví, kde sedí. Žádné strkání o místa."
+      ],
+      [
+        "Úvod",
+        "Frontální fáze v pevném zasedacím pořádku."
+      ],
+      [
+        "Přechod",
+        "Týmy se losují na projektoru, nepřítomní jsou vyřazeni."
+      ],
+      [
+        "Pracovní fáze",
+        "Hlukový semafor a časovač běží na projektoru, třída sbírá plameny."
+      ],
+      [
+        "Shrnutí",
+        "Návrat na pevná místa, rychlý pohled na věnec plamenů."
+      ]
+    ],
+    "roles": [
+      "Zasedací pořádek jedním klepnutím",
+      "Losování spravedlivých skupin",
+      "Hlukový semafor, který odměňuje"
+    ],
+    "card_cta": "Objevit →",
+    "faq_h": "Časté otázky",
+    "faq": [
+      [
+        "Co znamená řízení třídy?",
+        "Řízení třídy zahrnuje vše, co učitel dělá proto, aby co největší část vyučovací hodiny byla skutečně časem učení: pravidla a rutiny, uspořádání třídy a zasedací pořádek, plynulé přechody a pozornost věnovanou celé třídě. Jde méně o reakce na vyrušování a víc o to, aby vůbec nevznikalo."
+      ],
+      [
+        "Co pomáhá, když je třída neustále příliš hlučná?",
+        "Nejdřív se s třídou domluvit, jaká hlasitost je v které fázi povolená. Pak hlasitost zviditelnit místo neustálého napomínání, například hlukovým semaforem na projektoru. Nejúčinnější je oceňovat klidné fáze, a ne jen trestat hluk."
+      ],
+      [
+        "Má hlukový semafor ve výuce smysl?",
+        "Ano, pokud slouží jako společný cíl, a ne jako nástroj trestu. Hranice by měly odpovídat fázi: skupinová práce smí být hlučnější než samostatná. Semafor, který odměňuje klid místo trestání hluku, zabraňuje tomu, aby se jednotliví hluční žáci stali obětním beránkem třídy."
+      ],
+      [
+        "Dělit skupiny náhodně, nebo cíleně?",
+        "Obojí má své místo. Pro krátké a časté fáze ve dvojicích nebo skupinách je náhoda ideální: rychlá, spravedlivá a bez dohadování, kdo bude s kým. U delších projektů nebo složitých konstelací se cílené rozdělení vyplatí. Samotný zasedací pořádek by se ale měl vždy plánovat promyšleně."
+      ]
+    ]
   }
 }

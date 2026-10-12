@@ -9,8 +9,12 @@ die Vorlage — Stil und Feature-Icons liest das Skript aus ruhe.html bzw.
 ruhe-privacy.html, damit alle Sprachen gleich aussehen. Wer dort etwas am
 Aussehen ändert, lässt das Skript danach einmal laufen.
 
+Dazu kommt der Ratgeber „Classroom Management“ unter
+/ruhe/<code>/classroom-management/; seine DE/EN-Fassung liegt handgeschrieben in
+guides/ bzw. en/guides/ und liefert das CSS.
+
 Das Skript schreibt außerdem den Sprachwähler und die hreflang-Liste in diese
-vier handgeschriebenen Seiten und den Ruhe-Block in sitemap.xml. Eine weitere
+sechs handgeschriebenen Seiten und den Ruhe-Block in sitemap.xml. Eine weitere
 Sprache ist eine Datei in i18n/ plus eine Zeile in LANGS; die Screenshots
 gehören nach images/ruhe/screenshots/<code>/.
 """
@@ -64,7 +68,10 @@ def a(text: str) -> str:
 
 
 def rel(code: str, page: str) -> str:
-    """Pfad einer Seite relativ zum Wurzelverzeichnis. page ist '' oder 'privacy'."""
+    """Pfad einer Seite relativ zum Wurzelverzeichnis. page ist '', 'privacy' oder 'guide'."""
+    if page == "guide":
+        return {"de": "guides/classroom-management.html",
+                "en": "en/guides/classroom-management.html"}.get(code, f"ruhe/{code}/classroom-management/")
     if code == "de":
         return "ruhe-privacy.html" if page else "ruhe.html"
     if code == "en":
@@ -84,13 +91,21 @@ LINKS = {
     "apple": "https://www.apple.com/legal/privacy/",
 }
 
+# Im Ratgeber (/ruhe/<code>/classroom-management/): Platzwahl und Team Zufall
+# gibt es nur auf Deutsch und Englisch, also zeigen sie auf die englische Seite.
+GUIDE_LINKS = {
+    "platzwahl": "../../../en/platzwahl.html",
+    "teamzufall": "../../../en/team-zufall.html",
+    "ruhe": "../",
+}
 
-def inline(text: str) -> str:
+
+def inline(text: str, links: dict = LINKS) -> str:
     text = e(text)
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
 
     def link(m: re.Match) -> str:
-        target = LINKS[m.group(1)]
+        target = links[m.group(1)]
         ext = ' target="_blank" rel="noopener"' if target.startswith("http") else ""
         return f'<a href="{target}"{ext}>{m.group(2)}</a>'
 
@@ -108,6 +123,7 @@ def style_of(path: pathlib.Path) -> str:
 TEMPLATE = (ROOT / "ruhe.html").read_text(encoding="utf-8")
 INDEX_CSS = style_of(ROOT / "ruhe.html")
 PRIVACY_CSS = style_of(ROOT / "ruhe-privacy.html")
+GUIDE_CSS = style_of(ROOT / "guides/classroom-management.html")
 ICONS = re.findall(r'<div class="feat-icon">(.*?)</div>', TEMPLATE)
 assert len(ICONS) == 6, "ruhe.html sollte sechs Feature-Icons haben"
 TOGGLE = re.search(r'(<button class="theme-toggle".*?</button>)', TEMPLATE, re.S).group(1)
@@ -138,7 +154,8 @@ def lang_panel(current: str, page: str, up: str) -> str:
     return '<div class="lang-panel">\n' + "\n".join(items) + "\n        </div>"
 
 
-def head(hl: str, title: str, description: str, code: str, page: str, up: str, css: str) -> str:
+def head(hl: str, title: str, description: str, code: str, page: str, up: str, css: str,
+         extra: str = "") -> str:
     desc = f'\n  <meta name="description" content="{a(description)}" />' if description else ""
     return f"""<!DOCTYPE html>
 <html lang="{hl}">
@@ -152,7 +169,7 @@ def head(hl: str, title: str, description: str, code: str, page: str, up: str, c
   <title>{e(title)}</title>{desc}
   <link rel="canonical" href="{url(code, page)}" />
 {alternates(page)}
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow" />{extra}
   <link rel="stylesheet" href="{up}assets/base.css" />
   <style>{css}</style>
 </head>
@@ -220,6 +237,7 @@ def render_index(d: dict, code: str, hl: str, name: str) -> str:
     </div>"""
         for q, ans in d["faq"]
     )
+    g = d["guide"]
     meta = '<span class="sep">·</span>'.join(
         f"<span>{e(m)}</span>" for m in ["iPad & iPhone", *d["meta"]]
     )
@@ -266,6 +284,18 @@ def render_index(d: dict, code: str, hl: str, name: str) -> str:
     <ol class="how-steps">
 {how}
     </ol>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- GUIDE -->
+  <section class="guides">
+    <p class="section-eyebrow">{e(g["eyebrow"])}</p>
+    <a class="guide-card" href="classroom-management/">
+      <h3>{e(g["card_title"])}</h3>
+      <p>{e(g["card_text"])}</p>
+      <span class="guide-more">{e(g["more"])}</span>
+    </a>
   </section>
 
   <hr class="divider" />
@@ -332,14 +362,135 @@ def render_privacy(d: dict, code: str, hl: str, name: str) -> str:
     )
 
 
+GUIDE_APPS = [  # Klassen-Suffix, Name, Icon-Ordner, Ziel im Generat
+    ("pw", "Platzwahl", "platzwahl", GUIDE_LINKS["platzwahl"]),
+    ("tz", "Team Zufall", "team-zufall", GUIDE_LINKS["teamzufall"]),
+    ("ru", "Ruhe", "ruhe", GUIDE_LINKS["ruhe"]),
+]
+LESSON_TOOLS = ["Platzwahl", "–", "Team Zufall", "Ruhe", "Ruhe"]
+
+
+def ld(obj: dict) -> str:
+    body = json.dumps(obj, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    return '\n  <script type="application/ld+json">\n' + body + "\n  </script>"
+
+
+def render_guide(d: dict, code: str, hl: str, name: str) -> str:
+    up = "../../../"
+    g = d["guide"]
+    page_url = url(code, "guide")
+    org = {"@type": "Organization", "name": "crabucate", "url": SITE}
+    extra = (
+        ld({"@context": "https://schema.org", "@type": "Article", "headline": g["h1"],
+            "description": g["description"], "inLanguage": hl,
+            "datePublished": "2026-10-12", "dateModified": "2026-10-12",
+            "author": org, "publisher": org, "mainEntityOfPage": page_url})
+        + ld({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "crabucate", "item": f"{SITE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Ruhe", "item": url(code, "")},
+            {"@type": "ListItem", "position": 3, "name": g["h1"], "item": page_url}]})
+        + ld({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": ans}} for q, ans in g["faq"]]})
+    )
+
+    def blocks(items: list) -> str:
+        out = []
+        for item in items:
+            if isinstance(item, list):
+                out.append("  <ul>\n" + "\n".join(
+                    f"    <li><strong>{e(t)}</strong> {inline(x, GUIDE_LINKS)}</li>" for t, x in item)
+                    + "\n  </ul>")
+            else:
+                out.append(f"  <p>{inline(item, GUIDE_LINKS)}</p>")
+        return "\n".join(out)
+
+    shots = [
+        f'  <img class="shot" src="{up}images/platzwahl/screenshots/light/en_01_perfekterSitzplan.png" alt="{a(g["shot_alts"][0])}" loading="lazy" />',
+        f'  <img class="shot" src="{up}images/team-zufall/screenshots/light/marketing-03-result.png" alt="{a(g["shot_alts"][1])}" loading="lazy" />',
+        f'  <img class="shot shot--phone" src="{up}images/ruhe/screenshots/{code}/02_ampel.png" width="552" height="1200" alt="{a(g["shot_alts"][2])}" loading="lazy" />',
+    ]
+    steps = []
+    for i, st in enumerate(g["steps"]):
+        part = (f'  <span class="step-label">{e(st["label"])}</span>\n'
+                f'  <h2>{e(st["h"])}</h2>\n{blocks(st["body"])}')
+        if 1 <= i <= 3:
+            part += "\n\n" + shots[i - 1]
+        steps.append(part)
+    rows = "\n".join(
+        f"      <tr><td>{e(ph)}</td><td>{e(what)}</td><td>{tool}</td></tr>"
+        for (ph, what), tool in zip(g["lesson_rows"], LESSON_TOOLS, strict=True))
+    head_cells = "".join(f"<th>{e(c)}</th>" for c in g["lesson_head"])
+    cards = "\n".join(
+        f"""    <a class="app-card app-card--{k}" href="{href}">
+      <picture>
+        <source srcset="{up}images/{folder}/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+        <img src="{up}images/{folder}/icons/light/icon.png" alt="{a(app)}" />
+      </picture>
+      <span class="card-name">{app}</span>
+      <span class="card-role">{e(role)}</span>
+      <span class="card-cta">{e(g["card_cta"])}</span>
+    </a>"""
+        for (k, app, folder, href), role in zip(GUIDE_APPS, g["roles"], strict=True))
+    faq = "\n".join(
+        f"""    <div class="faq-item">
+      <h3>{e(q)}</h3>
+      <p>{e(ans)}</p>
+    </div>"""
+        for q, ans in g["faq"])
+    return (
+        head(hl, g["title"], g["description"], code, "guide", up, GUIDE_CSS, extra)
+        + nav(d, code, name, "guide", up, "../", "nav-link", "← Ruhe")
+        + f"""
+  <article>
+    <p class="breadcrumb">
+      <a href="{up}">crabucate</a><span>/</span><a href="../">Ruhe</a><span>/</span>{e(g["crumb"])}
+    </p>
+
+    <h1>{e(g["h1"])}</h1>
+    <p class="intro">{e(g["intro"])}</p>
+
+  <h2>{e(g["what_h"])}</h2>
+{blocks(g["what"])}
+
+{chr(10).join(s + chr(10) for s in steps)}
+  <h2>{e(g["lesson_h"])}</h2>
+  <table class="lesson">
+    <thead>
+      <tr>{head_cells}</tr>
+    </thead>
+    <tbody>
+{rows}
+    </tbody>
+  </table>
+
+  <div class="app-trio">
+{cards}
+  </div>
+
+  <h2>{e(g["faq_h"])}</h2>
+  <div class="faq-mini">
+{faq}
+  </div>
+
+  </article>
+
+  <footer>
+    © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="{up}en/impressum.html">{e(d["imprint"])}</a>
+  </footer>
+"""
+        + SCRIPTS.format(up=up)
+    )
+
+
 # ─────────────────────────────────────────────── handgeschriebene Seiten ──
 
 def patch_handwritten() -> None:
-    """Sprachwähler und hreflang-Liste der vier DE/EN-Seiten auf den Stand von LANGS bringen."""
+    """Sprachwähler und hreflang-Liste der sechs DE/EN-Seiten auf den Stand von LANGS bringen."""
     for code in HANDWRITTEN:
-        for page in ("", "privacy"):
+        for page in ("", "privacy", "guide"):
             path = ROOT / rel(code, page)
-            up = "../" if code == "en" else ""
+            up = "../" * rel(code, page).count("/")
             text = path.read_text(encoding="utf-8")
             text, n1 = re.subn(r'<div class="lang-panel">.*?</div>',
                                lambda _: lang_panel(code, page, up), text, count=1, flags=re.S)
@@ -358,11 +509,11 @@ def write_sitemap() -> None:
     for code, _, _ in LANGS:
         if code in HANDWRITTEN:
             continue
-        for page in ("", "privacy"):
+        for page in ("", "privacy", "guide"):
             lines += ["  <url>",
                       f"    <loc>{url(code, page)}</loc>",
-                      f"    <changefreq>{'yearly' if page else 'monthly'}</changefreq>",
-                      f"    <priority>{'0.3' if page else '0.8'}</priority>",
+                      f"    <changefreq>{'yearly' if page == 'privacy' else 'monthly'}</changefreq>",
+                      f"    <priority>{ {'': '0.8', 'privacy': '0.3', 'guide': '0.7'}[page] }</priority>",
                       "  </url>"]
     lines.append(SITEMAP_END)
 
@@ -384,7 +535,8 @@ def main() -> None:
             continue
         d = json.loads((I18N / f"{code}.json").read_text(encoding="utf-8"))
         for page, markup in (("", render_index(d, code, hl, name)),
-                             ("privacy", render_privacy(d, code, hl, name))):
+                             ("privacy", render_privacy(d, code, hl, name)),
+                             ("guide", render_guide(d, code, hl, name))):
             target = ROOT / rel(code, page) / "index.html"
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(markup, encoding="utf-8")

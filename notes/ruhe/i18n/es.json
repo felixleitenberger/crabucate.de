@@ -98,5 +98,167 @@
     ],
     "contact_title": "Contacto",
     "contact": "Para cualquier pregunta:"
+  },
+  "guide": {
+    "eyebrow": "Guía",
+    "card_title": "Gestión del aula: distribución, grupos y ruido",
+    "card_text": "Un método para toda la clase: de la distribución de asientos a grupos justos y una fase de trabajo tranquila.",
+    "more": "Leer la guía →",
+    "title": "Gestión del aula: distribución de asientos, grupos y ruido bajo control",
+    "description": "La gestión del aula como método: la distribución de asientos como base, grupos justos por sorteo y el ruido hecho visible. Consejos prácticos, ejemplo de clase y apps para docentes.",
+    "crumb": "Guía",
+    "h1": "Gestión del aula: distribución de asientos, grupos y ruido bajo control",
+    "intro": "Una buena gestión del aula apenas se nota, y precisamente ese es su objetivo: la clase avanza, las transiciones funcionan y el tiempo se dedica a aprender en lugar de a llamar la atención. Hay tres preguntas que vuelven casi en cada clase: ¿quién se sienta dónde? ¿Quién trabaja con quién? ¿Y cuánto ruido está bien ahora mismo? Esta guía muestra un método que responde a las tres antes de que se conviertan en un problema.",
+    "what_h": "Qué significa realmente gestionar el aula",
+    "what": [
+      "Gestionar el aula es más que mantener la disciplina. Ya en los años setenta, el psicólogo estadounidense Jacob Kounin demostró que los docentes eficaces no se distinguen tanto por cómo reaccionan ante las interrupciones como por lo bien que las **previenen**. Entre sus rasgos destacan:",
+      [
+        [
+          "Omnipresencia:",
+          "la clase percibe que tienes toda el aula a la vista."
+        ],
+        [
+          "Fluidez y ritmo:",
+          "las transiciones entre fases no cuestan minutos y la clase no pierde el ritmo."
+        ],
+        [
+          "Implicación del grupo:",
+          "todos siguen participando, no solo quien tiene el turno."
+        ]
+      ],
+      "Mucho de esto es actitud y experiencia. Pero una parte es simplemente organización, y esa se puede preparar. Ahí entra el método que sigue."
+    ],
+    "steps": [
+      {
+        "label": "Paso 1 · Una sola vez",
+        "h": "Crear la lista de clase una vez y usarla en todas partes",
+        "body": [
+          "La mayor pérdida de tiempo es hacer las cosas dos veces. Exporta tu lista de clase una sola vez como CSV desde Excel, Numbers o Google Sheets. Tanto [[platzwahl:Platzwahl]] como [[teamzufall:Team Zufall]] importan ese archivo directamente, y toda la clase queda creada en segundos. Ambas apps guardan los nombres solo en el dispositivo, sin cuenta y sin nube. Con datos de alumnos, eso no es un detalle, sino un requisito."
+        ]
+      },
+      {
+        "label": "Paso 2 · La base",
+        "h": "La distribución de asientos: prevenir antes de que surjan problemas",
+        "body": [
+          "La distribución de asientos es la herramienta de gestión del aula más eficaz, porque actúa cada minuto sin que tengas que decir nada. Quién se sienta junto a quién decide las conversaciones paralelas, las distracciones y la concentración. Lo que funciona:",
+          [
+            [
+              "Separar a los alumnos inquietos,",
+              "no solo uno al lado del otro, también uno detrás del otro."
+            ],
+            [
+              "Aprovechar la cercanía:",
+              "quien necesita apoyo o se distrae con facilidad se sienta en tu campo de visión directo."
+            ],
+            [
+              "Repartir anclas tranquilas",
+              "entre los alumnos más movidos."
+            ],
+            [
+              "Cambiar con regularidad,",
+              "por ejemplo después de las vacaciones o cada mes, para que no se formen rincones conflictivos."
+            ]
+          ],
+          "Con [[platzwahl:Platzwahl]] defines estas reglas por alumno (riesgo de interrupción, asiento delante, compañeros deseados, separaciones) y la distribución se calcula automáticamente. Una puntuación muestra en qué medida se cumplen todas las reglas. El plano terminado va a tu mesa en PDF."
+        ]
+      },
+      {
+        "label": "Paso 3 · Fases cooperativas",
+        "h": "Grupos justos, sin discusiones",
+        "body": [
+          "«¿Podemos elegir nosotros?» es la pregunta con la que muchos trabajos en grupo se pierden antes de empezar. La elección libre lleva tiempo, refuerza los grupitos y siempre deja fuera a los mismos. Repartir de forma dirigida es justo, pero laborioso, y apenas compensa para diez minutos de trabajo en parejas.",
+          "Para las muchas fases cortas, el **azar** es la mejor solución: es rápido, nadie se siente favorecido y la clase aprende a trabajar con todos. Lo importante es que el sorteo sea **visible**. Cuando la clase ve en el proyector cómo se mezclan los nombres, no hay nada que discutir.",
+          "En [[teamzufall:Team Zufall]] eliges el número de equipos, desmarcas a los ausentes con un toque y sorteas. Los equipos se pueden proyectar en la pared o exportar en PDF. Para proyectos más largos en los que hay que evitar ciertas combinaciones, la distribución dirigida sigue siendo la mejor opción."
+        ]
+      },
+      {
+        "label": "Paso 4 · Fase de trabajo",
+        "h": "Hacer visible el ruido en lugar de mandar callar todo el rato",
+        "body": [
+          "El trabajo en grupo es ruidoso, y no pasa nada. El problema empieza cuando nadie sabe ya cuánto es demasiado y te pasas la clase diciendo «¡Shh!». Las llamadas de atención se desgastan rápido e interrumpen precisamente a quienes están concentrados.",
+          "Funcionan mejor tres cosas:",
+          [
+            [
+              "Acordar el volumen:",
+              "decide con la clase qué vale en cada fase. Susurrar en el trabajo individual, voz de pareja en el trabajo en grupo."
+            ],
+            [
+              "Mostrar el volumen:",
+              "un semáforo de ruido en el proyector le da a la clase la información que, si no, tendrías que dar tú en voz alta."
+            ],
+            [
+              "Premiar el silencio en lugar de castigar el ruido:",
+              "si el semáforo solo se pone en rojo y quita algo, pronto se convierte en un instrumento de presión, y algunos alumnos ruidosos acaban siendo el chivo expiatorio de la clase. Funciona mejor una meta común que la clase pueda alcanzar."
+            ]
+          ],
+          "Justo para eso está hecho [[ruhe:Ruhe]]: una mascota muestra verde, amarillo o rojo, y mientras haya calma se enciende una llama tras otra. Doce llamas forman una corona completa, y eso se celebra. Ajustas los umbrales de amarillo y rojo según la fase, o dejas que Ruhe se calibre solo. Un temporizador muestra el tiempo restante, la vista de proyector lo pone todo en grande en la pared y los controles se quedan en tu iPad. Ruhe solo mide el volumen; no se graba nada."
+        ]
+      },
+      {
+        "label": "Paso 5 · Cierre",
+        "h": "Hacer visibles los logros",
+        "body": [
+          "Al final de la clase cuenta lo que ha funcionado. Una corona de llamas completa es un buen motivo para felicitar brevemente a toda la clase. Y si hoy no ha salido, es una oportunidad para pensar juntos en qué ha fallado, sin buscar culpables. Si los problemas se repiten en ciertas mesas, es señal de que toca una nueva distribución de asientos."
+        ]
+      }
+    ],
+    "shot_alts": [
+      "Gestión del aula con distribución de asientos: plano generado automáticamente en la app Platzwahl en el iPad",
+      "Hacer grupos en clase: equipos sorteados al azar en la app Team Zufall",
+      "Semáforo de ruido para el aula: la app Ruhe muestra amarillo para «Un poco más bajo» y rojo para «¡Demasiado ruido!»"
+    ],
+    "lesson_h": "Así es una clase con este método",
+    "lesson_head": [
+      "Fase",
+      "Qué pasa",
+      "Herramienta"
+    ],
+    "lesson_rows": [
+      [
+        "Antes de la clase",
+        "La distribución de asientos está a la vista y todos saben dónde sentarse. Sin peleas por los sitios."
+      ],
+      [
+        "Inicio",
+        "Fase con toda la clase en la distribución fija."
+      ],
+      [
+        "Transición",
+        "Los equipos se sortean en el proyector; los ausentes están desmarcados."
+      ],
+      [
+        "Fase de trabajo",
+        "El semáforo de ruido y el temporizador funcionan en el proyector; la clase reúne llamas."
+      ],
+      [
+        "Cierre",
+        "Vuelta a los sitios fijos y un vistazo rápido a la corona de llamas."
+      ]
+    ],
+    "roles": [
+      "Distribución de asientos en un toque",
+      "Sortear grupos justos",
+      "Un semáforo de ruido que premia"
+    ],
+    "card_cta": "Descubrir →",
+    "faq_h": "Preguntas frecuentes",
+    "faq": [
+      [
+        "¿Qué significa gestión del aula?",
+        "La gestión del aula abarca todo lo que hace un docente para que la mayor parte posible del tiempo de clase sea realmente tiempo de aprendizaje: normas y rutinas, organización del aula y de los asientos, transiciones fluidas y una mirada a toda la clase. Se trata menos de reaccionar ante las interrupciones que de evitar que surjan."
+      ],
+      [
+        "¿Qué ayuda cuando la clase es siempre demasiado ruidosa?",
+        "Primero, acordar con la clase qué volumen está permitido en cada fase. Después, hacer visible el volumen en lugar de llamar la atención sin parar, por ejemplo con un semáforo de ruido en el proyector. Lo más eficaz es valorar las fases tranquilas en lugar de solo sancionar el ruido."
+      ],
+      [
+        "¿Tiene sentido un semáforo de ruido en clase?",
+        "Sí, si se usa como meta común y no como instrumento de castigo. Los umbrales deben ajustarse a la fase: el trabajo en grupo puede ser más ruidoso que el individual. Un semáforo que premia el silencio en lugar de castigar el ruido evita que algunos alumnos ruidosos se conviertan en el chivo expiatorio de la clase."
+      ],
+      [
+        "¿Es mejor hacer los grupos al azar o de forma dirigida?",
+        "Las dos cosas tienen su lugar. Para fases cortas y frecuentes en parejas o grupos, el azar es ideal: rápido, justo y sin discusiones sobre quién va con quién. Para proyectos largos o combinaciones delicadas, merece la pena repartir de forma dirigida. La distribución de asientos, en cambio, siempre debe planificarse con intención."
+      ]
+    ]
   }
 }

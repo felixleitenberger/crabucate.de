@@ -114,6 +114,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/guides/classroom-management.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/en/guides/classroom-management.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/guides/sitzplan-erstellen.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://crabucate.de/guides/sitzplan-erstellen.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/create-seating-chart.html"/>
@@ -551,6 +561,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/fr/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/es/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -559,6 +574,11 @@
     <loc>https://crabucate.de/ruhe/es/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/es/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/it/</loc>
@@ -571,6 +591,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/it/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/pt-br/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -579,6 +604,11 @@
     <loc>https://crabucate.de/ruhe/pt-br/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/pt-br/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/nl/</loc>
@@ -591,6 +621,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/nl/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/da/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -599,6 +634,11 @@
     <loc>https://crabucate.de/ruhe/da/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/da/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/sv/</loc>
@@ -611,6 +651,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/sv/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/nb/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -619,6 +664,11 @@
     <loc>https://crabucate.de/ruhe/nb/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/nb/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/fi/</loc>
@@ -631,6 +681,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/fi/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/pl/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -639,6 +694,11 @@
     <loc>https://crabucate.de/ruhe/pl/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/pl/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/cs/</loc>
@@ -651,6 +711,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/cs/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/tr/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -659,6 +724,11 @@
     <loc>https://crabucate.de/ruhe/tr/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/tr/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/uk/</loc>
@@ -671,6 +741,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/uk/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/ja/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -679,6 +754,11 @@
     <loc>https://crabucate.de/ruhe/ja/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/ja/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crabucate.de/ruhe/ko/</loc>
@@ -691,6 +771,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/ko/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/zh-hans/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -701,6 +786,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://crabucate.de/ruhe/zh-hans/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crabucate.de/ruhe/zh-hant/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -709,6 +799,11 @@
     <loc>https://crabucate.de/ruhe/zh-hant/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://crabucate.de/ruhe/zh-hant/classroom-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <!-- /Ruhe, weitere Sprachen -->
 

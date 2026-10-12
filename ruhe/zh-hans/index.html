@@ -319,6 +319,49 @@
     }
 
     /* ── GUIDES ── */
+    .guides {
+      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guide-card {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .guide-card:hover { border-color: rgba(255,147,0,0.4); transform: translateY(-4px); }
+
+    .guide-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .guide-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .guide-card .guide-more {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ru-text);
+    }
+
     .faq {
       padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
       max-width: 800px;
@@ -556,6 +599,18 @@
         <p>下课时，重要的是做到了什么：火焰花环。</p>
       </li>
     </ol>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- GUIDE -->
+  <section class="guides">
+    <p class="section-eyebrow">指南</p>
+    <a class="guide-card" href="classroom-management/">
+      <h3>课堂管理：座位、分组与噪音</h3>
+      <p>贯穿整堂课的做法——从座位表到公平分组，再到安静的学习时段。</p>
+      <span class="guide-more">阅读指南 →</span>
+    </a>
   </section>
 
   <hr class="divider" />

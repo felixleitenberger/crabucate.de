@@ -18,7 +18,7 @@ The workflow mirrors with `--delete`, so files removed here are removed on the s
 
 ## Structure
 
-German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (12) and `/en/guides/` (8). The three newest — `arbeitszeiterfassung-lehrer`, `jahresarbeitszeit-lehrer-berechnen`, `ueberstunden-lehrer` — belong to the Lehrer Arbeitszeit Tracker and are German-only like the app page itself.
+German pages live at the root, English mirrors under `/en/`. SEO guide pages sit in `/guides/` (13) and `/en/guides/` (9). The three newest — `arbeitszeiterfassung-lehrer`, `jahresarbeitszeit-lehrer-berechnen`, `ueberstunden-lehrer` — belong to the Lehrer Arbeitszeit Tracker and are German-only like the app page itself. `classroom-management` ties Platzwahl, Team Zufall and Ruhe into one lesson workflow and is the one guide that exists in all nineteen Ruhe languages — see below.
 
 ### `/bestiary/` — Daily Bestiary in ten languages
 
@@ -59,8 +59,17 @@ counterparts — App Store Connect stores those addresses. The other seventeen
 are generated to `/ruhe/<code>/` and `/ruhe/<code>/privacy/`:
 
 ```
-python3 notes/ruhe/build.py     # schreibt ruhe/**, Sprachwähler + hreflang der vier DE/EN-Seiten, Ruhe-Block in sitemap.xml
+python3 notes/ruhe/build.py     # schreibt ruhe/**, Sprachwähler + hreflang der sechs DE/EN-Seiten, Ruhe-Block in sitemap.xml
 ```
+
+The same script also writes the Classroom-Management guide for those seventeen
+languages to `/ruhe/<code>/classroom-management/` (texts under the `guide` key of
+each JSON file) and a guide card on every Ruhe page. Its German and English
+versions are hand-written at `guides/classroom-management.html` and
+`en/guides/classroom-management.html`; the generator takes the guide CSS from the
+German one and keeps the language menu and `hreflang` of both in sync. Platzwahl
+and Team Zufall exist only in DE/EN, so the generated guides link to their
+English pages.
 
 Texts live in `notes/ruhe/i18n/<code>.json`. The generator takes the inline
 CSS and the feature icons **from `ruhe.html` / `ruhe-privacy.html`**, so a

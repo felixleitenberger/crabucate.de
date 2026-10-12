@@ -98,5 +98,167 @@
     ],
     "contact_title": "Contatti",
     "contact": "Per domande:"
+  },
+  "guide": {
+    "eyebrow": "Guida",
+    "card_title": "Gestione della classe: posti, gruppi e rumore",
+    "card_text": "Un metodo per tutta la lezione: dalla disposizione dei banchi ai gruppi equi fino a una fase di lavoro tranquilla.",
+    "more": "Leggi la guida →",
+    "title": "Gestione della classe: posti, gruppi e rumore sotto controllo",
+    "description": "La gestione della classe come metodo: la disposizione dei posti come base, gruppi equi estratti a sorte, il rumore reso visibile. Consigli pratici, esempio di lezione e app per insegnanti.",
+    "crumb": "Guida",
+    "h1": "Gestione della classe: posti, gruppi e rumore sotto controllo",
+    "intro": "Una buona gestione della classe quasi non si nota, ed è proprio questo il suo scopo: la lezione scorre, i passaggi funzionano e il tempo va all’apprendimento invece che ai richiami. Tre domande tornano quasi a ogni lezione: chi siede dove? Chi lavora con chi? E quanto rumore va bene in questo momento? Questa guida presenta un metodo che risponde a tutte e tre prima che diventino un problema.",
+    "what_h": "Che cosa significa davvero gestire la classe",
+    "what": [
+      "Gestire la classe è più che fare disciplina. Già negli anni Settanta lo psicologo statunitense Jacob Kounin dimostrò che gli insegnanti efficaci si distinguono meno per come reagiscono ai disturbi che per quanto bene li **prevengono**. Tra le sue caratteristiche:",
+      [
+        [
+          "Onnipresenza:",
+          "la classe percepisce che hai tutta l’aula sotto controllo."
+        ],
+        [
+          "Fluidità e ritmo:",
+          "i passaggi tra le fasi non costano minuti e la lezione non perde slancio."
+        ],
+        [
+          "Coinvolgimento del gruppo:",
+          "tutti restano partecipi, non solo chi è interrogato."
+        ]
+      ],
+      "Molto di questo è atteggiamento ed esperienza. Una parte, però, è semplicemente organizzazione, e quella si può preparare. È qui che entra in gioco il metodo che segue."
+    ],
+    "steps": [
+      {
+        "label": "Passo 1 · Una volta sola",
+        "h": "Creare l’elenco della classe una volta, usarlo ovunque",
+        "body": [
+          "La perdita di tempo più grande è fare le cose due volte. Esporta l’elenco della classe una sola volta in CSV da Excel, Numbers o Google Fogli. Sia [[platzwahl:Platzwahl]] sia [[teamzufall:Team Zufall]] importano direttamente quel file, e tutta la classe è pronta in pochi secondi. Entrambe le app salvano i nomi solo sul dispositivo, senza account e senza cloud. Con i dati degli studenti non è un dettaglio, ma un requisito."
+        ]
+      },
+      {
+        "label": "Passo 2 · Le fondamenta",
+        "h": "La disposizione dei posti: prevenire i disturbi prima che nascano",
+        "body": [
+          "La disposizione dei posti è lo strumento di gestione della classe più efficace, perché agisce in ogni minuto senza che tu debba dire nulla. Chi siede accanto a chi decide chiacchiere, distrazioni e concentrazione. Ciò che funziona:",
+          [
+            [
+              "Separare gli studenti irrequieti,",
+              "non solo uno accanto all’altro, ma anche uno dietro l’altro."
+            ],
+            [
+              "Sfruttare la vicinanza:",
+              "chi ha bisogno di supporto o si distrae facilmente siede nel tuo campo visivo diretto."
+            ],
+            [
+              "Distribuire ancore tranquille",
+              "tra gli studenti più vivaci."
+            ],
+            [
+              "Cambiare regolarmente,",
+              "per esempio dopo le vacanze o ogni mese, perché non si formino angoli problematici."
+            ]
+          ],
+          "Con [[platzwahl:Platzwahl]] stabilisci queste regole per ogni studente (tendenza a disturbare, posto davanti, vicini desiderati, separazioni) e la disposizione viene calcolata automaticamente. Un punteggio mostra quanto sono rispettate tutte le regole. Lo schema finito arriva sulla cattedra in PDF."
+        ]
+      },
+      {
+        "label": "Passo 3 · Fasi cooperative",
+        "h": "Gruppi equi, senza discussioni",
+        "body": [
+          "«Possiamo scegliere noi?» è la domanda con cui molti lavori di gruppo sono persi prima di cominciare. La scelta libera richiede tempo, consolida le cerchie e lascia sempre fuori gli stessi. La suddivisione mirata è equa ma faticosa, e per dieci minuti di lavoro a coppie non vale quasi la pena.",
+          "Per le tante fasi brevi il **caso** è la soluzione migliore: è veloce, nessuno si sente favorito e la classe impara a lavorare con tutti. L’importante è che l’estrazione sia **visibile**. Quando la classe vede i nomi mescolarsi sul proiettore, non c’è niente da contestare.",
+          "In [[teamzufall:Team Zufall]] scegli il numero di squadre, deselezioni gli assenti con un tocco ed estrai. Le squadre si possono proiettare sulla parete o esportare in PDF. Per progetti più lunghi in cui certe combinazioni vanno evitate, la suddivisione mirata resta la scelta migliore."
+        ]
+      },
+      {
+        "label": "Passo 4 · Fase di lavoro",
+        "h": "Rendere visibile il rumore invece di zittire di continuo",
+        "body": [
+          "Il lavoro di gruppo è rumoroso, ed è normale. Diventa un problema quando nessuno sa più quanto è troppo e passi la lezione a dire «Sss!». I richiami si consumano in fretta e interrompono proprio chi è concentrato.",
+          "Funzionano meglio tre cose:",
+          [
+            [
+              "Concordare il volume:",
+              "stabilisci con la classe che cosa vale in ogni fase. Sussurrare nel lavoro individuale, voce da coppia nel lavoro di gruppo."
+            ],
+            [
+              "Mostrare il volume:",
+              "un semaforo del rumore sul proiettore dà alla classe il riscontro che altrimenti dovresti dare tu a voce."
+            ],
+            [
+              "Premiare il silenzio invece di punire il rumore:",
+              "se il semaforo diventa solo rosso e toglie qualcosa, si trasforma presto in uno strumento di pressione, e alcuni studenti rumorosi diventano il capro espiatorio della classe. Funziona meglio un obiettivo comune che la classe può raggiungere."
+            ]
+          ],
+          "È esattamente per questo che è nato [[ruhe:Ruhe]]: una mascotte mostra verde, giallo o rosso, e finché c’è calma si accende una fiamma dopo l’altra. Dodici fiamme formano una corona completa, e si festeggia. Imposti le soglie di giallo e rosso in base alla fase, oppure lasci che Ruhe si calibri da solo. Un timer mostra il tempo rimanente, la vista proiettore porta tutto in grande sulla parete e i comandi restano sul tuo iPad. Ruhe misura solo il volume; non viene registrato nulla."
+        ]
+      },
+      {
+        "label": "Passo 5 · Conclusione",
+        "h": "Rendere visibili i successi",
+        "body": [
+          "A fine lezione conta ciò che ha funzionato. Una corona di fiamme completa è una buona occasione per un breve elogio a tutta la classe. E se oggi non è andata, è l’occasione per riflettere insieme sul perché, senza cercare colpevoli. Problemi ricorrenti in certi banchi sono il segnale che serve una nuova disposizione dei posti."
+        ]
+      }
+    ],
+    "shot_alts": [
+      "Gestione della classe con la disposizione dei posti: schema generato automaticamente nell’app Platzwahl su iPad",
+      "Formare gruppi in classe: squadre estratte a sorte nell’app Team Zufall",
+      "Semaforo del rumore per la classe: l’app Ruhe mostra giallo per «Un po’ più piano» e rosso per «Troppo rumore!»"
+    ],
+    "lesson_h": "Una lezione con questo metodo",
+    "lesson_head": [
+      "Fase",
+      "Che cosa succede",
+      "Strumento"
+    ],
+    "lesson_rows": [
+      [
+        "Prima della lezione",
+        "La disposizione dei posti è esposta, tutti sanno dove sedersi. Nessuna ressa per i posti."
+      ],
+      [
+        "Avvio",
+        "Fase frontale nella disposizione fissa."
+      ],
+      [
+        "Passaggio",
+        "Le squadre vengono estratte sul proiettore, gli assenti sono deselezionati."
+      ],
+      [
+        "Fase di lavoro",
+        "Semaforo del rumore e timer girano sul proiettore, la classe raccoglie fiamme."
+      ],
+      [
+        "Sintesi",
+        "Ritorno ai posti fissi, uno sguardo veloce alla corona di fiamme."
+      ]
+    ],
+    "roles": [
+      "Disposizione dei posti con un tocco",
+      "Estrarre gruppi equi",
+      "Un semaforo del rumore che premia"
+    ],
+    "card_cta": "Scopri →",
+    "faq_h": "Domande frequenti",
+    "faq": [
+      [
+        "Che cosa si intende per gestione della classe?",
+        "La gestione della classe comprende tutto ciò che un insegnante fa perché la maggior parte possibile del tempo di lezione sia davvero tempo di apprendimento: regole e routine, organizzazione dell’aula e dei posti, passaggi fluidi e uno sguardo sull’intera classe. Si tratta meno di reagire ai disturbi che di impedire che nascano."
+      ],
+      [
+        "Che cosa aiuta quando la classe è sempre troppo rumorosa?",
+        "Prima di tutto concordare con la classe quale volume è consentito in ogni fase. Poi rendere visibile il volume invece di richiamare continuamente, per esempio con un semaforo del rumore sul proiettore. La cosa più efficace è valorizzare le fasi tranquille invece di sanzionare soltanto il rumore."
+      ],
+      [
+        "Un semaforo del rumore in classe ha senso?",
+        "Sì, se viene usato come obiettivo comune e non come strumento di punizione. Le soglie devono adattarsi alla fase: il lavoro di gruppo può essere più rumoroso di quello individuale. Un semaforo che premia il silenzio invece di punire il rumore evita che alcuni studenti rumorosi diventino il capro espiatorio della classe."
+      ],
+      [
+        "Meglio formare i gruppi a caso o in modo mirato?",
+        "Entrambi hanno il loro posto. Per fasi brevi e frequenti a coppie o in gruppo il caso è ideale: veloce, equo e senza discussioni su chi lavora con chi. Per progetti lunghi o combinazioni delicate vale la pena una suddivisione mirata. La disposizione dei posti, invece, va sempre pianificata con cura."
+      ]
+    ]
   }
 }

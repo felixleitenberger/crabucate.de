@@ -98,5 +98,167 @@
     ],
     "contact_title": "İletişim",
     "contact": "Sorular için:"
+  },
+  "guide": {
+    "eyebrow": "Rehber",
+    "card_title": "Sınıf yönetimi: oturma düzeni, gruplar ve gürültü",
+    "card_text": "Tüm ders için bir yöntem – oturma planından adil gruplara ve sakin bir çalışma aşamasına kadar.",
+    "more": "Rehberi oku →",
+    "title": "Sınıf yönetimi: oturma düzeni, gruplar ve gürültü kontrol altında",
+    "description": "Bir yöntem olarak sınıf yönetimi: temel olarak oturma planı, kurayla adil gruplar ve görünür hâle gelen gürültü. Pratik ipuçları, örnek ders akışı ve öğretmenler için uygulamalar.",
+    "crumb": "Rehber",
+    "h1": "Sınıf yönetimi: oturma düzeni, gruplar ve gürültü kontrol altında",
+    "intro": "İyi bir sınıf yönetimi neredeyse hiç fark edilmez ve amacı da tam olarak budur: Ders akar, geçişler sorunsuz olur ve zaman uyarılara değil öğrenmeye gider. Neredeyse her derste üç soru yeniden gündeme gelir: Kim nerede oturuyor? Kim kiminle çalışıyor? Ve şu anda ne kadar ses olabilir? Bu rehber, bu üç soruyu sorun hâline gelmeden yanıtlayan bir yöntem gösteriyor.",
+    "what_h": "Sınıf yönetimi aslında ne demek",
+    "what": [
+      "Sınıf yönetimi disiplinden fazlasıdır. ABD’li psikolog Jacob Kounin daha 1970’lerde, başarılı öğretmenlerin rahatsızlıklara nasıl tepki verdikleriyle değil, onları ne kadar iyi **önledikleriyle** ayrıştığını gösterdi. Tanımladığı özellikler arasında şunlar var:",
+      [
+        [
+          "Her yerde olma:",
+          "Sınıf, tüm odayı gözünün önünde tuttuğunu hisseder."
+        ],
+        [
+          "Akıcılık ve tempo:",
+          "Aşamalar arası geçişler dakikalar sürmez ve ders hızını kaybetmez."
+        ],
+        [
+          "Grubu harekete geçirme:",
+          "Sadece söz alan değil, herkes derse katılmaya devam eder."
+        ]
+      ],
+      "Bunun büyük kısmı tutum ve deneyimdir. Ama bir kısmı yalnızca organizasyondur ve önceden hazırlanabilir. Aşağıdaki yöntem tam da burada devreye girer."
+    ],
+    "steps": [
+      {
+        "label": "Adım 1 · Bir kez, önceden",
+        "h": "Sınıf listesini bir kez oluştur, her yerde kullan",
+        "body": [
+          "En büyük zaman kaybı aynı işi iki kez yapmaktır. Sınıf listesini Excel, Numbers veya Google E-Tablolar’dan bir kez CSV olarak dışa aktar. Hem [[platzwahl:Platzwahl]] hem de [[teamzufall:Team Zufall]] bu dosyayı doğrudan içe aktarır ve tüm sınıf saniyeler içinde hazır olur. İki uygulama da isimleri yalnızca cihazda saklar; hesap da bulut da yoktur. Öğrenci verilerinde bu bir ayrıntı değil, bir ön koşuldur."
+        ]
+      },
+      {
+        "label": "Adım 2 · Temel",
+        "h": "Oturma planı: Rahatsızlıkları başlamadan önle",
+        "body": [
+          "Oturma düzeni, sınıf yönetiminin en etkili aracıdır; çünkü sen tek kelime etmeden her dakika işler. Kimin kimin yanında oturduğu; konuşmayı, dikkat dağınıklığını ve odaklanmayı belirler. İşe yarayanlar:",
+          [
+            [
+              "Huzursuz öğrencileri ayır;",
+              "sadece yan yana değil, arka arkaya da."
+            ],
+            [
+              "Yakınlıktan yararlan:",
+              "Desteğe ihtiyaç duyan ya da kolay dağılan öğrenciler doğrudan görüş alanında otursun."
+            ],
+            [
+              "Sakin çapaları",
+              "daha hareketli öğrencilerin arasına yerleştir."
+            ],
+            [
+              "Düzenli olarak değiştir;",
+              "örneğin tatillerden sonra ya da her ay, böylece kalıcı sorunlu köşeler oluşmaz."
+            ]
+          ],
+          "[[platzwahl:Platzwahl]] ile bu kuralları her öğrenci için belirlersin (rahatsız etme eğilimi, ön sıra, istenen sıra arkadaşları, ayırmalar) ve oturma planı otomatik olarak hesaplanır. Bir puan, tüm kurallara ne kadar uyulduğunu gösterir. Hazır plan PDF olarak masana gelir."
+        ]
+      },
+      {
+        "label": "Adım 3 · İş birliği aşamaları",
+        "h": "Tartışmasız, adil gruplar",
+        "body": [
+          "“Grupları biz seçebilir miyiz?” sorusu, birçok grup çalışmasını daha başlamadan kaybettirir. Serbest seçim zaman alır, grupçukları pekiştirir ve hep aynı öğrencileri dışarıda bırakır. Hedefli dağıtım adildir ama zahmetlidir ve on dakikalık bir ikili çalışma için pek değmez.",
+          "Pek çok kısa aşama için en iyi çözüm **rastgelelik**tir: Hızlıdır, kimse kayrıldığını hissetmez ve sınıf herkesle çalışmayı öğrenir. Önemli olan kuranın **görünür** olmasıdır. Sınıf, isimlerin projeksiyonda karıştırıldığını gördüğünde tartışacak bir şey kalmaz.",
+          "[[teamzufall:Team Zufall]]’da takım sayısını seçer, gelmeyenleri tek dokunuşla çıkarır ve kurayı çekersin. Takımlar büyük olarak duvara yansıtılabilir ya da PDF olarak dışa aktarılabilir. Belirli eşleşmelerden kaçınılması gereken uzun projelerde ise hedefli dağıtım daha iyi bir seçenek olmaya devam eder."
+        ]
+      },
+      {
+        "label": "Adım 4 · Çalışma aşaması",
+        "h": "Sürekli susturmak yerine gürültüyü görünür kıl",
+        "body": [
+          "Grup çalışması gürültülüdür ve bu normaldir. Sorun, kimse ne kadarının fazla olduğunu bilmediğinde ve sen dersi “Şşş!” diyerek geçirdiğinde başlar. Uyarılar çabucak etkisini yitirir ve tam da odaklanmış çalışanları böler.",
+          "Üç şey daha iyi işler:",
+          [
+            [
+              "Ses seviyesinde anlaşın:",
+              "Hangi aşamada neyin geçerli olduğunu sınıfla birlikte belirleyin. Bireysel çalışmada fısıltı, grup çalışmasında ikili konuşma sesi."
+            ],
+            [
+              "Ses seviyesini göster:",
+              "Projeksiyondaki bir gürültü ışığı, sınıfa normalde senin yüksek sesle vermen gereken geri bildirimi verir."
+            ],
+            [
+              "Gürültüyü cezalandırmak yerine sessizliği ödüllendir:",
+              "Işık yalnızca kırmızıya dönüp bir şeyleri elinden alıyorsa kısa sürede baskı aracına dönüşür ve birkaç gürültücü öğrenci sınıfın günah keçisi olur. Sınıfın ulaşabileceği ortak bir hedef daha iyi işler."
+            ]
+          ],
+          "[[ruhe:Ruhe]] tam olarak bunun için yapıldı: Bir maskot yeşil, sarı ya da kırmızı gösterir ve ortam sakin kaldıkça alevler birer birer yanar. On iki alev tam bir çelenk oluşturur ve bu kutlanır. Sarı ve kırmızı eşiklerini aşamaya göre ayarlarsın ya da Ruhe’nin kendini kalibre etmesine izin verirsin. Bir zamanlayıcı kalan süreyi gösterir, projeksiyon görünümü her şeyi büyük olarak duvara taşır ve kontroller iPad’inde kalır. Ruhe yalnızca ses seviyesini ölçer; hiçbir şey kaydedilmez."
+        ]
+      },
+      {
+        "label": "Adım 5 · Kapanış",
+        "h": "Başarıları görünür kıl",
+        "body": [
+          "Dersin sonunda önemli olan neyin işe yaradığıdır. Tam bir alev çelengi, tüm sınıfı kısaca övmek için iyi bir fırsattır. Bugün olmadıysa da, suçlu aramadan nedenini birlikte düşünmek için bir fırsattır. Belirli sıralarda tekrar eden sorunlar, yeni bir oturma planının zamanının geldiğine işaret eder."
+        ]
+      }
+    ],
+    "shot_alts": [
+      "Oturma planıyla sınıf yönetimi: iPad’de Platzwahl uygulamasında otomatik oluşturulmuş oturma planı",
+      "Sınıfı gruplara ayırmak: Team Zufall uygulamasında rastgele çekilen takımlar",
+      "Sınıf için gürültü ışığı: Ruhe uygulaması “Biraz daha sessiz” için sarı, “Çok gürültülü!” için kırmızı gösterir"
+    ],
+    "lesson_h": "Bu yöntemle bir ders nasıl geçer",
+    "lesson_head": [
+      "Aşama",
+      "Ne olur",
+      "Araç"
+    ],
+    "lesson_rows": [
+      [
+        "Ders öncesi",
+        "Oturma planı hazırdır, herkes nerede oturacağını bilir. Yer kapma telaşı yok."
+      ],
+      [
+        "Giriş",
+        "Sabit oturma düzeninde tüm sınıfla çalışma."
+      ],
+      [
+        "Geçiş",
+        "Takımlar projeksiyonda çekilir, gelmeyenler çıkarılmıştır."
+      ],
+      [
+        "Çalışma aşaması",
+        "Gürültü ışığı ve zamanlayıcı projeksiyonda çalışır, sınıf alev toplar."
+      ],
+      [
+        "Toparlama",
+        "Sabit yerlere dönüş, alev çelengine kısa bir bakış."
+      ]
+    ],
+    "roles": [
+      "Tek dokunuşla oturma planı",
+      "Adil gruplar için kura",
+      "Ödüllendiren bir gürültü ışığı"
+    ],
+    "card_cta": "Keşfet →",
+    "faq_h": "Sık sorulan sorular",
+    "faq": [
+      [
+        "Sınıf yönetimi ne demektir?",
+        "Sınıf yönetimi, ders süresinin olabildiğince büyük kısmının gerçekten öğrenme zamanı olması için öğretmenin yaptığı her şeyi kapsar: kurallar ve rutinler, sınıfın ve oturma düzeninin planlanması, akıcı geçişler ve tüm sınıfı göz önünde tutmak. Mesele rahatsızlıklara tepki vermekten çok, onların hiç ortaya çıkmamasını sağlamaktır."
+      ],
+      [
+        "Sınıf sürekli çok gürültülüyse ne işe yarar?",
+        "Önce hangi aşamada hangi ses seviyesine izin verildiğini sınıfla birlikte kararlaştır. Ardından sürekli uyarmak yerine ses seviyesini görünür kıl, örneğin projeksiyondaki bir gürültü ışığıyla. En etkilisi, yalnızca gürültüyü cezalandırmak yerine sakin aşamaları takdir etmektir."
+      ],
+      [
+        "Derste gürültü ışığı kullanmak mantıklı mı?",
+        "Evet, ceza aracı olarak değil ortak bir hedef olarak kullanılırsa. Eşikler aşamaya uygun olmalıdır: Grup çalışması bireysel çalışmadan daha gürültülü olabilir. Gürültüyü cezalandırmak yerine sessizliği ödüllendiren bir ışık, birkaç gürültücü öğrencinin sınıfın günah keçisi olmasını önler."
+      ],
+      [
+        "Gruplar rastgele mi yoksa hedefli mi oluşturulmalı?",
+        "İkisinin de yeri var. İkili veya grup hâlinde yapılan kısa ve sık aşamalar için rastgelelik idealdir: hızlı, adil ve kimin kiminle çalışacağı konusunda tartışmasız. Uzun projelerde veya hassas durumlarda hedefli dağıtım zahmetine değer. Oturma planının kendisi ise her zaman bilinçli olarak planlanmalıdır."
+      ]
+    ]
   }
 }
