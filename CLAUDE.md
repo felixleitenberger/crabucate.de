@@ -88,10 +88,32 @@ are split by language rather than by theme
 (`images/bestiary/screenshots/<code>/`). Ruhe keeps the usual `icons/{light,dark}/` but likewise
 splits its screenshots by language (`images/ruhe/screenshots/<code>/`, all 19): they are the store's
 marketing images with the headline burned in, resized to 552 px and run through `pngquant`.
-`images/ruhe/header.png` is the text-free store header and serves as the start-page preview. Assets both apps share — the crab logo, the two App Store
-badges, the empty iPad bezel — sit directly in `images/`. Only files the site actually references
-are kept; App Store deliverables and raw simulator captures were removed and are recoverable from
-git history if a submission needs them.
+Team Zufall splits its store screenshots by language too (`images/team-zufall/screenshots/{de,en}/`,
+552 px, `pngquant`); `screenshots/light/` only keeps what the guides and the hero scenes still use.
+Assets all apps share — the crab logo, the two App Store badges — sit directly in `images/`. Only
+files the site actually references are kept; App Store deliverables and raw simulator captures were
+removed and are recoverable from git history if a submission needs them.
+
+### Hero scenes
+
+Every app page (and every start-page tile) opens with a rendered scene: the real screenshots in
+CSS-drawn iPad/iPhone frames, overlapping, on a transparent background. They are generated:
+
+```
+python3 notes/heroes/build.py            # alle Szenen
+python3 notes/heroes/build.py ruhe       # nur eine: ruhe, bestiary, platzwahl, team-zufall, tracker
+```
+
+The script renders each scene with headless Chrome at 2× (2560×1800) and packs it as WebP with
+alpha, so the shadow lives in the alpha channel and the image works on light and dark grounds. The
+sources are **not** in this repo but in the app projects next to it (`~/Developer/Ruhe/…`,
+`~/Developer/Wildcards/fastlane/screenshots/…`, `~/Developer/Platzwahl/appstore_screenshots/raw/`,
+`~/Developer/Lehrer Arbeitszeit/Screenshots/`); only Team Zufall reads its two iPad captures from
+`images/team-zufall/screenshots/light/`. Outputs: `images/ruhe/hero/<code>.webp` (19),
+`images/bestiary/hero/<code>.webp` (10), `images/platzwahl/hero/{de,en}.webp`,
+`images/team-zufall/hero.webp` and `images/lehrer-arbeitszeit/hero/{light,dark}/hero.webp` — the
+last one sits in `light/`/`dark/` folders because `theme.js` recognises the dark source by that
+path segment.
 
 When checking which images are still in use, read `src`/`srcset`/`url()` **attribute values**, not
 a free-text pattern. Filenames have contained spaces, quotes and parentheses, and a naive pattern
@@ -104,6 +126,7 @@ There is still no build step. Shared code lives in `/assets/`, page-specific cod
 | `assets/base.css` | Design tokens, dark mode, reset, nav/footer/toggle chrome — everything that was byte-identical across pages |
 | `assets/theme.js` | The theme toggle, loaded with `defer` |
 | `assets/lang.js` | The language switcher's outside-click and Escape handling, loaded with `defer` |
+| `assets/app.css` | Layout of the app-page family: nav, hero stage, screenshot strip, features, steps, guide links, FAQ accordion, closing, footer. Loaded after `base.css` on the hand-written app pages (Ruhe, Tracker, Platzwahl, Team Zufall, DE/EN) and by both generators for the Ruhe and Bestiary index pages. Each page sets only `--app`/`--app-text`/`--app-dim` as `var()` references in its inline `:root` |
 | inline `<style>` | Everything specific to one page or page family (layout, hero, guide article styles) |
 | inline `<script>` in `<head>` | Only the 150-byte anti-flash snippet, see below |
 
@@ -181,10 +204,10 @@ dual-block pattern from `base.css`: media query first, `:root[data-theme="dark"]
 calculator reads `--ist`/`--over` back out via `getComputedStyle` to build the two-tone bar, so those
 two must stay resolvable custom properties — inlining the colours in the JS would break the toggle.
 
-That page also renders its screenshots without a bezel image: the frame is pure CSS on `.phone`, and
+That page also renders its screenshot strip without a bezel image: the frame is pure CSS on `.phone`, and
 the pill over the status bar (`.phone-island`) is positioned in percent so it scales with the
-mockup. The screenshots themselves are raw simulator captures at 828 px (iPhone) and 1600 px (iPad)
-width, run through `pngquant`; the whole app folder is ~1.2 MB.
+mockup. The screenshots themselves are raw simulator captures at 828 px (iPhone) width, run through
+`pngquant`.
 
 Guide pages add three aliases in their own inline `:root`, pointing at whichever app that guide
 belongs to — `--app: var(--pw); --app-text: var(--pw-text); --app-dim: var(--pw-dim);` (or the

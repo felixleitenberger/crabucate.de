@@ -105,475 +105,9 @@
   </script>
 
   <link rel="stylesheet" href="../assets/base.css" />
+  <link rel="stylesheet" href="../assets/app.css" />
   <style>
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .nav-logo img {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse, var(--pw-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-    .hero-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 21px;
-      display: block;
-      margin: 0 auto 1.75rem;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 7rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 46ch;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero .app-store-badge {
-      display: inline-block;
-      margin-top: 2.25rem;
-    }
-
-    .app-store-badge {
-      display: inline-block;
-      margin-top: 2.25rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-      transition: opacity 0.2s;
-    }
-
-    .app-store-badge:hover { opacity: 0.75 !important; }
-
-    .app-store-badge img { height: 48px; width: auto; display: block; }
-
-    .hero-meta {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-meta span { white-space: nowrap; }
-    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
-
-    /* ── SCREENSHOTS ── */
-    .screenshots-section {
-      position: relative;
-      z-index: 1;
-      padding: 3rem clamp(1.5rem, 6vw, 6rem) 3rem;
-    }
-
-    .screenshots-carousel {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .carousel-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 2752 / 2064;
-      border-radius: 18px;
-      overflow: hidden;
-      cursor: pointer;
-      filter: drop-shadow(0 16px 48px rgba(36,31,26,0.16));
-    }
-
-    .carousel-frame .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.7s ease;
-      display: block;
-    }
-
-    .carousel-frame .slide.active { opacity: 1; }
-
-    .slideshow-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 2.75rem;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--muted);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .dot.active { background: var(--pw-text); transform: scale(1.4); }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 1rem auto 0;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(245,146,58,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--pw-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--pw-text);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
-
-    .how-steps li {
-      counter-increment: step;
-      position: relative;
-      padding: 0 0 2rem 3.6rem;
-    }
-
-    .how-steps li:last-child { padding-bottom: 0; }
-
-    .how-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      background: var(--pw-dim);
-      color: var(--pw-text);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .how-steps h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-
-    .how-steps p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── GUIDES ── */
-    .guides {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .guides-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .guide-card {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .guide-card:hover { border-color: rgba(245,146,58,0.4); transform: translateY(-4px); }
-
-    .guide-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .guide-card p {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .guide-card .guide-more {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--pw-text);
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item { border-top: 1px solid var(--line); padding: 1.5rem 0; }
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .faq-more {
-      display: inline-block;
-      margin-top: 0.45rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--pw-text);
-      text-decoration: none;
-    }
-
-    .faq-more:hover { text-decoration: underline; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(245,146,58,0.07), transparent 65%);
-      pointer-events: none;
-    }
-
-    .final-cta > * { position: relative; }
-
-    .final-cta-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--fg);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero-icon, .hero h1, .tagline { opacity: 1; }
-    }
+    :root { --app: var(--pw); --app-text: var(--pw-text); --app-dim: var(--pw-dim); }
   </style>
 </head>
 <body>
@@ -600,259 +134,138 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <picture>
-      <source srcset="../images/platzwahl/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-      <img
-        src="../images/platzwahl/icons/light/icon.png"
-        alt="Platzwahl App Icon"
-        class="hero-icon"
-      />
-    </picture>
-    <h1>Platzwahl</h1>
-    <p class="tagline">The classroom seating chart app for teachers: create a seating chart in one tap — automatic, fair, print-ready as PDF.</p>
-    <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
-      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
-    </a>
-    <p class="hero-meta">
-      <span>Free</span><span class="sep">·</span><span>iPhone &amp; iPad</span><span class="sep">·</span><span>No account</span><span class="sep">·</span><span>Student data stays on your device</span>
-    </p>
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        <picture>
+          <source srcset="../images/platzwahl/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="../images/platzwahl/icons/light/icon.png" alt="Platzwahl App Icon" class="stage-icon" />
+        </picture>
+        <h1>Platzwahl</h1>
+        <p class="tagline">Seating charts for teachers, created automatically and fairly.</p>
+        <div class="stage-cta">
+          <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
+            <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
+          </a>
+          <ul class="hero-meta">
+            <li>Free for iPhone &amp; iPad</li>
+            <li>No sign-in</li>
+            <li>Data stays on your device</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stage-art">
+        <img src="../images/platzwahl/hero/en.webp" width="2560" height="1800" alt="Platzwahl on iPad: an automatically created seating chart for class 7a, behind it the print-ready PDF" />
+      </div>
+    </div>
   </section>
 
   <!-- SCREENSHOTS -->
-  <section class="screenshots-section" aria-label="App Screenshots">
-    <div class="screenshots-carousel">
-      <div class="carousel-frame" id="screenshotsFrame">
-        <img class="slide active" src="../images/platzwahl/screenshots/light/en_01_perfekterSitzplan.png" alt="Create seating plans — all seats fairly distributed automatically" />
-        <img class="slide" src="../images/platzwahl/screenshots/light/en_02_Kriterien.png" alt="Define criteria — set individual rules per student" loading="lazy" />
-        <img class="slide" src="../images/platzwahl/screenshots/light/en_03_automaticCalculation.png" alt="Optimize automatically — calculate the best seating plan at the tap of a button" loading="lazy" />
-        <img class="slide" src="../images/platzwahl/screenshots/light/en_04_DesignRooms.png" alt="Design rooms — recreate your classroom layout exactly" loading="lazy" />
-        <img class="slide" src="../images/platzwahl/screenshots/light/en_05_Print.png" alt="Print seating plans — clean PDF export ready to print" loading="lazy" />
-      </div>
-    </div>
-    <div class="slideshow-dots">
-      <button class="dot active" aria-label="Image 1"></button>
-      <button class="dot" aria-label="Image 2"></button>
-      <button class="dot" aria-label="Image 3"></button>
-      <button class="dot" aria-label="Image 4"></button>
-      <button class="dot" aria-label="Image 5"></button>
-    </div>
-  </section>
-
-  <hr class="divider" />
+  <div class="shots shots--wide" aria-label="App screenshots">
+    <img src="../images/platzwahl/screenshots/light/en_01_perfekterSitzplan.png" width="2752" height="2064" alt="Create seating plans — all seats fairly distributed automatically" />
+    <img src="../images/platzwahl/screenshots/light/en_02_Kriterien.png" width="2752" height="2064" alt="Define criteria — set individual rules per student" loading="lazy" />
+    <img src="../images/platzwahl/screenshots/light/en_03_automaticCalculation.png" width="2752" height="2064" alt="Optimize automatically — calculate the best seating plan at the tap of a button" loading="lazy" />
+    <img src="../images/platzwahl/screenshots/light/en_04_DesignRooms.png" width="2752" height="2064" alt="Design rooms — recreate your classroom layout exactly" loading="lazy" />
+    <img src="../images/platzwahl/screenshots/light/en_05_Print.png" width="2752" height="2064" alt="Print seating plans — clean PDF export ready to print" loading="lazy" />
+  </div>
 
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Features</p>
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-          </svg>
-        </div>
-        <h3>Seating plan at the tap of a button</h3>
-        <p>One tap — Platzwahl distributes all students automatically and in accordance with the rules you've set. No manual rearranging, no trial and error.</p>
+  <section class="sec">
+    <h2 class="sec-title">Everything a good seating chart needs.</h2>
+    <div class="feats">
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Seating chart in one tap</h3>
+        <p>One tap seats the whole class, fairly and by your rules.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7"/>
-            <rect x="14" y="3" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/>
-          </svg>
-        </div>
-        <h3>Customise your classroom</h3>
-        <p>Place desks, leave gaps, position the teacher's desk — recreate your classroom exactly as it is. Any layout is possible.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <h3>Your room, exactly</h3>
+        <p>Rows, U-shape or table groups: any classroom can be rebuilt.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <line x1="17" y1="8" x2="23" y2="8"/>
-            <line x1="20" y1="5" x2="20" y2="11"/>
-          </svg>
-        </div>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="8" x2="23" y2="8"/><line x1="20" y1="5" x2="20" y2="11"/></svg></div>
         <h3>Rules per student</h3>
-        <p>Disruptive tendencies, seating preferences, sit at the front — individual rules feed directly into the calculation.</p>
+        <p>Disruptiveness, preferred neighbours and front-row seats go into the calculation.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="20" x2="18" y2="10"/>
-            <line x1="12" y1="20" x2="12" y2="4"/>
-            <line x1="6" y1="20" x2="6" y2="14"/>
-            <line x1="2" y1="20" x2="22" y2="20"/>
-          </svg>
-        </div>
-        <h3>Score &amp; violations</h3>
-        <p>Every rule violation is explained and weighted. You can see exactly why a plan is good — or still needs improvement.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <h3>A score you can follow</h3>
+        <p>A score shows how good the chart is and explains every deviation.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"/>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-            <rect x="6" y="14" width="12" height="8"/>
-          </svg>
-        </div>
-        <h3>Export as PDF</h3>
-        <p>Clean seating plan as PDF — print it, place it on the desk, done. No post-processing needed.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></div>
+        <h3>Class from Excel</h3>
+        <p>Import a CSV and the whole class is set up in seconds.</p>
       </div>
-
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+        <h3>Print-ready PDF</h3>
+        <p>Every chart can be exported as a PDF and printed.</p>
+      </div>
     </div>
   </section>
 
-  <!-- DESCRIPTION -->
-  <section class="description">
-    <p>Platzwahl is for teachers who need a working seating plan in the morning — not an hour to create one. Set up the room once, add your class, define rules. From then on, the app does the work: it distributes everyone fairly, displays rule conflicts transparently, and delivers the result as a print-ready PDF. No cloud, no sign-in, no distractions.</p>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how">
-    <p class="section-eyebrow">How it works</p>
-    <ol class="how-steps">
-      <li>
-        <h3>Rebuild your classroom</h3>
-        <p>Draw your room as a grid — tap seats or paint whole areas with your finger. Rows, U-shape, table groups: any layout works.</p>
-      </li>
-      <li>
-        <h3>Add your class &amp; set rules</h3>
-        <p>Enter students or import them via CSV from Excel. Then mark per student: disruption level, front-row seat, preferred neighbors, separations.</p>
-      </li>
-      <li>
-        <h3>Tap "Optimize"</h3>
-        <p>The genetic algorithm computes the best possible seating chart. A score shows how well all rules are met — every deviation is explained.</p>
-      </li>
-      <li>
-        <h3>Print as PDF</h3>
-        <p>Export the finished chart, print it, put it on your desk. Need a new one? One tap.</p>
-      </li>
+  <!-- SO GEHT'S -->
+  <section class="sec">
+    <h2 class="sec-title">Four steps to a finished chart.</h2>
+    <ol class="steps">
+      <li><h3>Rebuild your room</h3><p>Tap seats or paint whole areas with your finger.</p></li>
+      <li><h3>Add your class</h3><p>Type names or import a CSV, then set rules.</p></li>
+      <li><h3>Tap “Optimize”</h3><p>The algorithm finds the best possible chart.</p></li>
+      <li><h3>Print</h3><p>Export as PDF. Need a new chart? One tap.</p></li>
     </ol>
   </section>
 
-  <!-- GUIDES -->
-  <section class="guides">
-    <p class="section-eyebrow">Guides</p>
-    <div class="guides-grid">
-      <a class="guide-card" href="guides/create-seating-chart.html">
-        <h3>Create a seating chart</h3>
-        <p>Five minutes to a finished chart — what actually matters.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/seating-chart-generator.html">
-        <h3>Seating chart generator</h3>
-        <p>Why random isn't enough — and how the algorithm works.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/classroom-seating-arrangements.html">
-        <h3>Classroom seating arrangements</h3>
-        <p>Rows, U-shape, table groups — ideas for restless classes too.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/seating-chart-app.html">
-        <h3>Seating chart app for iPad</h3>
-        <p>App instead of Excel — and why privacy is criterion #1.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/classroom-management.html">
-        <h3>Classroom management</h3>
-        <p>Seating, groups and noise – one workflow for the whole lesson.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-    </div>
+  <!-- RATGEBER -->
+  <section class="sec">
+    <h2 class="sec-title">Further reading</h2>
+    <ul class="guide-links">
+      <li><a href="guides/create-seating-chart.html"><strong>Create a seating chart</strong><span>Five minutes to a finished chart.</span></a></li>
+      <li><a href="guides/seating-chart-generator.html"><strong>Seating chart generator</strong><span>Why random isn't enough.</span></a></li>
+      <li><a href="guides/classroom-seating-arrangements.html"><strong>Classroom seating arrangements</strong><span>Rows, U-shape, table groups.</span></a></li>
+      <li><a href="guides/seating-chart-app.html"><strong>Seating chart app for iPad</strong><span>App instead of Excel, with privacy in mind.</span></a></li>
+      <li><a href="guides/classroom-management.html"><strong>Classroom management</strong><span>Seating, groups and noise.</span></a></li>
+    </ul>
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
-    <p class="faq-eyebrow">FAQ</p>
-
-    <div class="faq-item">
-      <h3>Who is Platzwahl for?</h3>
-      <p>For teachers of all school types who want to create seating charts quickly and fairly — without spending hours manually rearranging or fiddling with spreadsheets.</p>
-      <a class="faq-more" href="guides/create-seating-chart.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>How does Platzwahl automatically create a seating chart?</h3>
-      <p>The app distributes students based on individual rules — disruptive behaviour, seating preferences, gender separation — optimally across the available seats. A score shows at a glance how good the chart is and which rules are still violated.</p>
-      <a class="faq-more" href="guides/seating-chart-generator.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Are student data stored or shared?</h3>
-      <p>No. All entered names and rules remain exclusively on your device. There is no transmission to external servers — neither by us nor by any third party.</p>
-      <a class="faq-more" href="guides/seating-chart-app.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I manage multiple classes and rooms?</h3>
-      <p>Yes. You can create as many rooms and classes as you like, each with their own seating charts. Everything is saved.</p>
-      <a class="faq-more" href="guides/classroom-seating-arrangements.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is there a PDF export?</h3>
-      <p>Yes. Every seating chart can be exported directly as a PDF — clean, effortlessly, immediately ready to print.</p>
-      <a class="faq-more" href="guides/create-seating-chart.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is the seating chart app free?</h3>
-      <p>Yes. Platzwahl is free on the App Store. Platzwahl Pro optionally unlocks unlimited rooms, groups, and seating charts.</p>
-      <a class="faq-more" href="guides/seating-chart-app.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I import a whole class from Excel?</h3>
-      <p>Yes. Export the class list as a CSV file from Excel or Google Sheets and import it straight into Platzwahl — the whole class is set up in seconds.</p>
-      <a class="faq-more" href="guides/create-seating-chart.html">Learn more →</a>
-    </div>
+  <section class="sec faq">
+    <h2 class="sec-title">Questions</h2>
+    <details class="qa"><summary><h3>Who is Platzwahl for?</h3></summary>
+      <p>For teachers of all school types who want to create seating charts quickly and fairly — without spending hours manually rearranging or fiddling with spreadsheets.</p></details>
+    <details class="qa"><summary><h3>How does Platzwahl automatically create a seating chart?</h3></summary>
+      <p>The app distributes students based on individual rules — disruptive behaviour, seating preferences, gender separation — optimally across the available seats. A score shows at a glance how good the chart is and which rules are still violated.</p></details>
+    <details class="qa"><summary><h3>Are student data stored or shared?</h3></summary>
+      <p>No. All entered names and rules remain exclusively on your device. There is no transmission to external servers — neither by us nor by any third party.</p></details>
+    <details class="qa"><summary><h3>Can I manage multiple classes and rooms?</h3></summary>
+      <p>Yes. You can create as many rooms and classes as you like, each with their own seating charts. Everything is saved.</p></details>
+    <details class="qa"><summary><h3>Is there a PDF export?</h3></summary>
+      <p>Yes. Every seating chart can be exported directly as a PDF — clean, effortlessly, immediately ready to print.</p></details>
+    <details class="qa"><summary><h3>Is the seating chart app free?</h3></summary>
+      <p>Yes. Platzwahl is free on the App Store. Platzwahl Pro optionally unlocks unlimited rooms, groups, and seating charts.</p></details>
+    <details class="qa"><summary><h3>Can I import a whole class from Excel?</h3></summary>
+      <p>Yes. Export the class list as a CSV file from Excel or Google Sheets and import it straight into Platzwahl — the whole class is set up in seconds.</p></details>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <p class="final-cta-title">Your next seating chart takes one minute.</p>
-    <p class="final-cta-sub" style="margin-bottom:1.75rem;">Download for free — and never shuffle names around again.</p>
-    <a href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" style="height:48px; width:auto; display:block;" />
+  <!-- SCHLUSS -->
+  <section class="closing">
+    <picture>
+      <source srcset="../images/platzwahl/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="../images/platzwahl/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>Your next seating chart takes one minute.</h2>
+    <a class="app-store-badge" href="https://apps.apple.com/us/app/platzwahl-sitzplan-app/id6769323924" target="_blank" rel="noopener">
+      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
     </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Legal Notice</a> · <a href="platzwahl-privacy.html">Privacy</a> · <a href="platzwahl-terms.html">Terms</a>
   </footer>
-
-  <script>
-    (function () {
-      var slides = document.querySelectorAll('#screenshotsFrame .slide');
-      var dots = document.querySelectorAll('.slideshow-dots .dot');
-      var frame = document.getElementById('screenshotsFrame');
-      var current = 0;
-
-      function go(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (n + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { go(i); });
-      });
-
-      frame.addEventListener('click', function () { go(current + 1); });
-    })();
-  </script>
 
   <script src="../assets/theme.js" defer></script>
   <script src="../assets/lang.js" defer></script>

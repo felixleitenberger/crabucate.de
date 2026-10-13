@@ -32,447 +32,9 @@
   <link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe.html" />
   <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="../../assets/base.css" />
+  <link rel="stylesheet" href="../../assets/app.css" />
   <style>
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .nav-logo img {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse, var(--ru-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-    .hero-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 21px;
-      display: block;
-      margin: 0 auto 1.75rem;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 7rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 46ch;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero .app-store-badge {
-      display: inline-block;
-      margin-top: 2.25rem;
-    }
-
-    .hero-meta {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-meta span { white-space: nowrap; }
-    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
-
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
-
-    /* ── SCREENSHOTS ── */
-    /* Die Store-Bilder tragen ihre Überschrift selbst, deshalb ohne Bildunterschrift.
-       Fünf mal 200px plus Abstände brauchen rund 1090px; schmaler wird gescrollt. */
-    .shots {
-      display: flex;
-      gap: 1.25rem;
-      padding: 0.5rem clamp(1.5rem, 6vw, 6rem) 4rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      position: relative;
-      z-index: 1;
-    }
-
-    .shots img {
-      flex: 0 0 auto;
-      width: 200px;
-      height: auto;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(36,31,26,0.14);
-      scroll-snap-align: center;
-    }
-
-    @media (min-width: 1240px) { .shots { justify-content: center; } }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 1rem auto 0;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(255,147,0,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--ru-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--ru-text);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
-
-    .how-steps li {
-      counter-increment: step;
-      position: relative;
-      padding: 0 0 2rem 3.6rem;
-    }
-
-    .how-steps li:last-child { padding-bottom: 0; }
-
-    .how-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      background: var(--ru-dim);
-      color: var(--ru-text);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .how-steps h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-
-    .how-steps p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── GUIDES ── */
-    .guides {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .guide-card {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .guide-card:hover { border-color: rgba(255,147,0,0.4); transform: translateY(-4px); }
-
-    .guide-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .guide-card p {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .guide-card .guide-more {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--ru-text);
-    }
-
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0;
-    }
-
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .faq-more {
-      display: inline-block;
-      margin-top: 0.45rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--ru-text);
-      text-decoration: none;
-    }
-
-    .faq-more:hover { text-decoration: underline; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(255,147,0,0.07), transparent 65%);
-      pointer-events: none;
-    }
-
-    .final-cta > * { position: relative; }
-
-    .final-cta-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--fg);
-      margin-bottom: 0.75rem;
-    }
-
-    .final-cta-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero-icon, .hero h1, .tagline { opacity: 1; }
-    }
-
-    .hero, .final-cta { overflow-x: clip; }
-    .faq-item p a { color: var(--ru-text); text-decoration: none; border-bottom: 1px solid var(--line); }
-    .faq-item p a:hover { border-color: var(--ru-text); }
-
+    :root { --app: var(--ru); --app-text: var(--ru-text); --app-dim: var(--ru-dim); }
   </style>
 </head>
 <body>
@@ -516,20 +78,32 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <picture>
-      <source srcset="../../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-      <img src="../../images/ruhe/icons/light/icon.png" alt="Ruhes appsymbol" class="hero-icon" />
-    </picture>
-    <h1>Ruhe</h1>
-    <p class="tagline">Det vänliga ljudtrafikljuset för klassrummet: tyst arbete ger lågor – oväsen bestraffas aldrig.</p>
-    <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
-      <img src="../../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Hämta i App Store" />
-    </a>
-    <p class="hero-meta">
-      <span>iPad &amp; iPhone</span><span class="sep">·</span><span>Inget konto</span><span class="sep">·</span><span>Inget spelas in</span>
-    </p>
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        <picture>
+          <source srcset="../../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="../../images/ruhe/icons/light/icon.png" alt="Ruhes appsymbol" class="stage-icon" />
+        </picture>
+        <h1>Ruhe</h1>
+        <p class="tagline">Det vänliga ljudtrafikljuset för klassrummet: tyst arbete ger lågor – oväsen bestraffas aldrig.</p>
+        <div class="stage-cta">
+          <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
+            <img src="../../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Hämta i App Store" />
+          </a>
+          <ul class="hero-meta">
+            <li>iPad &amp; iPhone</li>
+            <li>Inget konto</li>
+            <li>Inget spelas in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stage-art">
+        <img src="../../images/ruhe/hero/sv.webp" width="2560" height="1800" alt="Pip visar hur högt det är: gult vid ”Lite tystare”, rött vid ”För högt!”" />
+      </div>
+    </div>
   </section>
 
   <!-- SCREENSHOTS -->
@@ -541,38 +115,36 @@
     <img src="../../images/ruhe/screenshots/sv/05_datenschutz.png" width="552" height="1200" loading="lazy" alt="Inget spelas in: inget konto, ingen reklam, ingen spårning" />
   </div>
 
-  <hr class="divider" />
-
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Funktioner</p>
-    <div class="features-grid">
-      <div class="feature-card">
+  <section class="sec">
+    <h2 class="sec-title">Funktioner</h2>
+    <div class="feats">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="19" rx="3"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></div>
         <h3>Ljudtrafikljus med maskot</h3>
         <p>Grönt, gult, rött – ett glatt ansikte visar hur högt det är. Vid gult säger det tyst ”schh”, vid rött håller det för öronen.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.8 7-6.8 0-4.2-3.3-6.6-4.4-10.7-.2-.8-1.2-1-1.6-.3C11.6 6.6 10 8 9 9.4 8.4 8.6 7.9 8 7.5 7.7 6.2 9.6 5 11.8 5 15.2 5 19.2 8 22 12 22z"/><path d="M12 22c-1.7 0-3-1.2-3-3 0-2 1.6-3 3-5 1.4 2 3 3 3 5 0 1.8-1.3 3-3 3z"/></svg></div>
         <h3>Lågor i stället för straff</h3>
         <p>Så länge det är tyst tänds den ena lågan efter den andra. Tolv lågor blir en full krans, och det firas. Blir det för högt slocknar lågorna.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg></div>
         <h3>Timern i sikte</h3>
         <p>Ringen runt maskoten visar återstående tid. Starta och stoppa direkt bredvid tiden; när den är slut pausas mätningen.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></div>
         <h3>Projektorvy</h3>
         <p>På en projektor eller en andra skärm visas ljudtrafikljuset i helskärm – reglagen stannar på din iPad.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></div>
         <h3>Passar varje klass</h3>
         <p>Med två reglage bestämmer du när gult och rött börjar – eller så lyssnar Ruhe i 5 sekunder och kalibrerar sig själv.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
         <h3>Lås reglagen</h3>
         <p>Låst med Face ID eller lösenkod, så att ingen i klassen ändrar något.</p>
@@ -580,74 +152,53 @@
     </div>
   </section>
 
-  <hr class="divider" />
-
   <!-- HOW -->
-  <section class="how">
-    <p class="section-eyebrow">Så fungerar det</p>
-    <ol class="how-steps">
-      <li>
-        <h3>Ställ upp iPaden</h3>
-        <p>Öppna Ruhe och tryck på ansiktet – mätningen startar.</p>
-      </li>
-      <li>
-        <h3>Låt klassen arbeta</h3>
-        <p>Maskoten visar klassen hur högt det är och samlar lågor för varje lugn stund.</p>
-      </li>
-      <li>
-        <h3>Se framgången</h3>
-        <p>I slutet av lektionen räknas det som gick bra: kransen av lågor.</p>
-      </li>
+  <section class="sec">
+    <h2 class="sec-title">Så fungerar det</h2>
+    <ol class="steps">
+      <li><h3>Ställ upp iPaden</h3><p>Öppna Ruhe och tryck på ansiktet – mätningen startar.</p></li>
+      <li><h3>Låt klassen arbeta</h3><p>Maskoten visar klassen hur högt det är och samlar lågor för varje lugn stund.</p></li>
+      <li><h3>Se framgången</h3><p>I slutet av lektionen räknas det som gick bra: kransen av lågor.</p></li>
     </ol>
   </section>
 
-  <hr class="divider" />
-
   <!-- GUIDE -->
-  <section class="guides">
-    <p class="section-eyebrow">Guide</p>
-    <a class="guide-card" href="classroom-management/">
-      <h3>Ledarskap i klassrummet: placering, grupper och ljud</h3>
-      <p>Ett arbetssätt för hela lektionen – från placeringen via rättvisa grupper till en lugn arbetsfas.</p>
-      <span class="guide-more">Läs guiden →</span>
-    </a>
+  <section class="sec">
+    <h2 class="sec-title">Guide</h2>
+    <ul class="guide-links">
+      <li><a href="classroom-management/"><strong>Ledarskap i klassrummet: placering, grupper och ljud</strong><span>Ett arbetssätt för hela lektionen – från placeringen via rättvisa grupper till en lugn arbetsfas.</span></a></li>
+    </ul>
   </section>
-
-  <hr class="divider" />
 
   <!-- SUPPORT -->
-  <section class="faq" id="support">
-    <p class="faq-eyebrow">Hjälp och support</p>
-    <div class="faq-item">
-      <h3>Ruhe mäter ingenting – vad gör jag?</h3>
-      <p>Ruhe behöver åtkomst till mikrofonen. Tillåt den i Inställningar → Integritet och säkerhet → Mikrofon → Ruhe.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Ljuset slår om till rött för tidigt eller för sent.</h3>
-      <p>Tryck på reglagesymbolen i verktygsfältet och flytta gränserna för gult och rött – eller använd ”Ställ in automatiskt” medan klassen arbetar som vanligt.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Hur visar jag Ruhe på projektorn?</h3>
-      <p>Anslut iPaden till projektorn med kabel eller AirPlay. Ruhe visar där automatiskt ljudtrafikljuset i helskärm, och reglagen stannar på iPaden.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Hur nollställer jag lågorna?</h3>
-      <p>Tryck på lågräknaren uppe till vänster. Där kan du justera lågorna eller nollställa alla. Har Ruhe varit i bakgrunden i mer än 10 minuter börjar nästa lektion ändå på 0.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Spelas något in?</h3>
-      <p>Nej. Ruhe mäter bara ljudnivån – inget spelas in, sparas eller skickas. Detaljer finns i <a href="privacy/">integritetspolicyn</a>.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Finns inte din fråga med?</h3>
-      <p>Skriv till <a href="mailto:info@crabucate.de">info@crabucate.de</a> – jag svarar oftast inom en eller två dagar.</p>
-    </div>
+  <section class="sec faq" id="support">
+    <h2 class="sec-title">Hjälp och support</h2>
+    <details class="qa"><summary><h3>Ruhe mäter ingenting – vad gör jag?</h3></summary>
+      <p>Ruhe behöver åtkomst till mikrofonen. Tillåt den i Inställningar → Integritet och säkerhet → Mikrofon → Ruhe.</p></details>
+    <details class="qa"><summary><h3>Ljuset slår om till rött för tidigt eller för sent.</h3></summary>
+      <p>Tryck på reglagesymbolen i verktygsfältet och flytta gränserna för gult och rött – eller använd ”Ställ in automatiskt” medan klassen arbetar som vanligt.</p></details>
+    <details class="qa"><summary><h3>Hur visar jag Ruhe på projektorn?</h3></summary>
+      <p>Anslut iPaden till projektorn med kabel eller AirPlay. Ruhe visar där automatiskt ljudtrafikljuset i helskärm, och reglagen stannar på iPaden.</p></details>
+    <details class="qa"><summary><h3>Hur nollställer jag lågorna?</h3></summary>
+      <p>Tryck på lågräknaren uppe till vänster. Där kan du justera lågorna eller nollställa alla. Har Ruhe varit i bakgrunden i mer än 10 minuter börjar nästa lektion ändå på 0.</p></details>
+    <details class="qa"><summary><h3>Spelas något in?</h3></summary>
+      <p>Nej. Ruhe mäter bara ljudnivån – inget spelas in, sparas eller skickas. Detaljer finns i <a href="privacy/">integritetspolicyn</a>.</p></details>
+    <details class="qa"><summary><h3>Finns inte din fråga med?</h3></summary>
+      <p>Skriv till <a href="mailto:info@crabucate.de">info@crabucate.de</a> – jag svarar oftast inom en eller två dagar.</p></details>
   </section>
 
-  <section class="final-cta">
-    <p class="final-cta-title">Tystnad som känns bra.</p>
-    <p class="final-cta-sub">För iPad och iPhone – nu på App Store.</p>
+  <section class="closing">
+    <picture>
+      <source srcset="../../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="../../images/ruhe/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>Tystnad som känns bra.</h2>
+    <p>För iPad och iPhone – nu på App Store.</p>
+    <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
+      <img src="../../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Hämta i App Store" />
+    </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="../../en/impressum.html">Juridisk information</a> · <a href="privacy/">Integritet</a>

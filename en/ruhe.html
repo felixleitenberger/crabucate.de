@@ -32,447 +32,9 @@
   <link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe.html" />
   <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="../assets/base.css" />
+  <link rel="stylesheet" href="../assets/app.css" />
   <style>
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .nav-logo img {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse, var(--ru-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-    .hero-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 21px;
-      display: block;
-      margin: 0 auto 1.75rem;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 7rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 46ch;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero .app-store-badge {
-      display: inline-block;
-      margin-top: 2.25rem;
-    }
-
-    .hero-meta {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-meta span { white-space: nowrap; }
-    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
-
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
-
-    /* ── SCREENSHOTS ── */
-    /* The store images carry their own headline, so no caption.
-       Five times 200px plus gaps need about 1090px; narrower screens scroll. */
-    .shots {
-      display: flex;
-      gap: 1.25rem;
-      padding: 0.5rem clamp(1.5rem, 6vw, 6rem) 4rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      position: relative;
-      z-index: 1;
-    }
-
-    .shots img {
-      flex: 0 0 auto;
-      width: 200px;
-      height: auto;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(36,31,26,0.14);
-      scroll-snap-align: center;
-    }
-
-    @media (min-width: 1240px) { .shots { justify-content: center; } }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 1rem auto 0;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(255,147,0,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--ru-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--ru-text);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
-
-    .how-steps li {
-      counter-increment: step;
-      position: relative;
-      padding: 0 0 2rem 3.6rem;
-    }
-
-    .how-steps li:last-child { padding-bottom: 0; }
-
-    .how-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      background: var(--ru-dim);
-      color: var(--ru-text);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .how-steps h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-
-    .how-steps p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── GUIDES ── */
-    .guides {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .guide-card {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .guide-card:hover { border-color: rgba(255,147,0,0.4); transform: translateY(-4px); }
-
-    .guide-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .guide-card p {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .guide-card .guide-more {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--ru-text);
-    }
-
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0;
-    }
-
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .faq-more {
-      display: inline-block;
-      margin-top: 0.45rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--ru-text);
-      text-decoration: none;
-    }
-
-    .faq-more:hover { text-decoration: underline; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(255,147,0,0.07), transparent 65%);
-      pointer-events: none;
-    }
-
-    .final-cta > * { position: relative; }
-
-    .final-cta-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--fg);
-      margin-bottom: 0.75rem;
-    }
-
-    .final-cta-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero-icon, .hero h1, .tagline { opacity: 1; }
-    }
-
-    .hero, .final-cta { overflow-x: clip; }
-    .faq-item p a { color: var(--ru-text); text-decoration: none; border-bottom: 1px solid var(--line); }
-    .faq-item p a:hover { border-color: var(--ru-text); }
-
+    :root { --app: var(--ru); --app-text: var(--ru-text); --app-dim: var(--ru-dim); }
   </style>
 </head>
 <body>
@@ -516,24 +78,36 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <picture>
-      <source srcset="../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-      <img src="../images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="hero-icon" />
-    </picture>
-    <h1>Ruhe</h1>
-    <p class="tagline">A friendly noise light for the classroom: quiet work earns flames – noise is never punished.</p>
-    <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
-      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
-    </a>
-    <p class="hero-meta">
-      <span>iPad &amp; iPhone</span><span class="sep">·</span><span>No account</span><span class="sep">·</span><span>Nothing is recorded</span>
-    </p>
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        <picture>
+          <source srcset="../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="../images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="stage-icon" />
+        </picture>
+        <h1>Ruhe</h1>
+        <p class="tagline">The noise light that rewards quiet work.</p>
+        <div class="stage-cta">
+          <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
+            <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
+          </a>
+          <ul class="hero-meta">
+            <li>iPad &amp; iPhone</li>
+            <li>No account</li>
+            <li>Nothing is recorded</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stage-art">
+        <img src="../images/ruhe/hero/en.webp" width="2560" height="1800" alt="Pip in all three colours: green with a full ring of flames on iPad, yellow and red on two iPhones" />
+      </div>
+    </div>
   </section>
 
   <!-- SCREENSHOTS -->
-  <div class="shots">
+  <div class="shots" aria-label="App screenshots">
     <img src="../images/ruhe/screenshots/en/01_belohnt.png" width="552" height="1200" alt="Quiet gets rewarded: the mascot Pip with a full ring of flames" />
     <img src="../images/ruhe/screenshots/en/02_ampel.png" width="552" height="1200" loading="lazy" alt="Pip shows how loud it is: yellow for “A little quieter”, red for “Too loud”" />
     <img src="../images/ruhe/screenshots/en/03_timer.png" width="552" height="1200" loading="lazy" alt="Quiet work, on the clock: timer ring around the mascot" />
@@ -541,113 +115,90 @@
     <img src="../images/ruhe/screenshots/en/05_datenschutz.png" width="552" height="1200" loading="lazy" alt="Nothing gets recorded: no account, no ads, no tracking" />
   </div>
 
-  <hr class="divider" />
-
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Features</p>
-    <div class="features-grid">
-      <div class="feature-card">
+  <section class="sec">
+    <h2 class="sec-title">Quiet gets rewarded.</h2>
+    <div class="feats">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="19" rx="3"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></div>
-        <h3>Noise light with a mascot</h3>
-        <p>Green, yellow, red – a cheerful face shows how loud the room is. On yellow it gently says “shh”, on red it covers its ears.</p>
+        <h3>A noise light with a face</h3>
+        <p>Pip shows the class in green, yellow and red how loud it is right now.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.8 7-6.8 0-4.2-3.3-6.6-4.4-10.7-.2-.8-1.2-1-1.6-.3C11.6 6.6 10 8 9 9.4 8.4 8.6 7.9 8 7.5 7.7 6.2 9.6 5 11.8 5 15.2 5 19.2 8 22 12 22z"/><path d="M12 22c-1.7 0-3-1.2-3-3 0-2 1.6-3 3-5 1.4 2 3 3 3 5 0 1.8-1.3 3-3 3z"/></svg></div>
-        <h3>Flames instead of punishment</h3>
-        <p>While it stays quiet, one flame after another lights up. Twelve flames complete the ring, and that gets celebrated. If it gets too loud, the flames go out.</p>
+        <h3>Flames, not punishment</h3>
+        <p>Every quiet stretch lights a flame. Twelve complete the ring.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg></div>
         <h3>Timer at a glance</h3>
-        <p>The ring around the mascot shows the time left. Start and stop right next to the time; when it ends, measuring pauses.</p>
+        <p>The ring around Pip shows how much time is left.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></div>
-        <h3>Projector view</h3>
-        <p>On a projector or second display the noise light appears full screen – the controls stay on your iPad.</p>
+        <h3>Big on the projector</h3>
+        <p>The light full screen on the wall, the controls stay with you.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></div>
         <h3>Fits every class</h3>
-        <p>Set when yellow and red begin with two sliders – or let Ruhe listen for 5 seconds and calibrate itself.</p>
+        <p>Set the thresholds yourself or calibrate in 5 seconds.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3>Lock the controls</h3>
-        <p>Locked with Face ID or passcode, so nobody in class changes anything.</p>
+        <h3>Safely locked</h3>
+        <p>Locked with Face ID or passcode, so nobody changes anything.</p>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <!-- HOW -->
-  <section class="how">
-    <p class="section-eyebrow">How it works</p>
-    <ol class="how-steps">
-      <li>
-        <h3>Set up your iPad</h3>
-        <p>Open Ruhe and tap the face – measuring starts.</p>
-      </li>
-      <li>
-        <h3>Let them work</h3>
-        <p>The mascot shows the class how loud it is and collects flames for every quiet stretch.</p>
-      </li>
-      <li>
-        <h3>See the success</h3>
-        <p>At the end of the lesson, what counts is what went well: the ring of flames.</p>
-      </li>
+  <!-- SO GEHT'S -->
+  <section class="sec">
+    <h2 class="sec-title">How it works</h2>
+    <ol class="steps">
+      <li><h3>Set up your iPad</h3><p>Open Ruhe and tap the face to start measuring.</p></li>
+      <li><h3>Let them work</h3><p>Pip shows how loud it is and collects flames.</p></li>
+      <li><h3>See the success</h3><p>At the end, the ring of flames is what counts.</p></li>
     </ol>
   </section>
 
-  <hr class="divider" />
-
-  <!-- GUIDE -->
-  <section class="guides">
-    <p class="section-eyebrow">Guide</p>
-    <a class="guide-card" href="guides/classroom-management.html">
-      <h3>Classroom management: seating, groups &amp; noise</h3>
-      <p>A workflow for the whole lesson – from the seating chart to fair groups to a calm work phase.</p>
-      <span class="guide-more">Read the guide →</span>
-    </a>
+  <!-- RATGEBER -->
+  <section class="sec">
+    <h2 class="sec-title">Further reading</h2>
+    <ul class="guide-links">
+      <li><a href="guides/classroom-management.html"><strong>Classroom management: seating, groups &amp; noise</strong><span>A workflow for the whole lesson.</span></a></li>
+    </ul>
   </section>
-
-  <hr class="divider" />
 
   <!-- SUPPORT -->
-  <section class="faq" id="support">
-    <p class="faq-eyebrow">Help &amp; Support</p>
-    <div class="faq-item">
-      <h3>Ruhe doesn’t measure anything – what now?</h3>
-      <p>Ruhe needs microphone access. Allow it in iOS Settings under Privacy &amp; Security → Microphone → Ruhe.</p>
-    </div>
-    <div class="faq-item">
-      <h3>The light turns red too early or too late.</h3>
-      <p>Tap the slider icon in the toolbar and move the yellow and red thresholds – or use “Set Automatically” while the class works normally.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How do I show Ruhe on a projector?</h3>
-      <p>Connect your iPad to the projector by cable or AirPlay. Ruhe automatically shows the noise light full screen there and keeps the controls on the iPad.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How do I reset the flames?</h3>
-      <p>Tap the flame counter at the top left. You can adjust the flames there or reset them to 0. If Ruhe was in the background for more than 10 minutes, the next lesson starts at 0 anyway.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is anything recorded?</h3>
-      <p>No. Ruhe only measures the volume – nothing is recorded, stored or sent. Details are in the <a href="ruhe-privacy.html">privacy policy</a>.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Question not answered?</h3>
-      <p>Write to <a href="mailto:info@crabucate.de">info@crabucate.de</a> – I usually reply within a day or two.</p>
-    </div>
+  <section class="sec faq" id="support">
+    <h2 class="sec-title">Help &amp; Support</h2>
+    <details class="qa"><summary><h3>Ruhe doesn’t measure anything – what now?</h3></summary>
+      <p>Ruhe needs microphone access. Allow it in iOS Settings under Privacy &amp; Security → Microphone → Ruhe.</p></details>
+    <details class="qa"><summary><h3>The light turns red too early or too late.</h3></summary>
+      <p>Tap the slider icon in the toolbar and move the yellow and red thresholds – or use “Set Automatically” while the class works normally.</p></details>
+    <details class="qa"><summary><h3>How do I show Ruhe on a projector?</h3></summary>
+      <p>Connect your iPad to the projector by cable or AirPlay. Ruhe automatically shows the noise light full screen there and keeps the controls on the iPad.</p></details>
+    <details class="qa"><summary><h3>How do I reset the flames?</h3></summary>
+      <p>Tap the flame counter at the top left. You can adjust the flames there or reset them to 0. If Ruhe was in the background for more than 10 minutes, the next lesson starts at 0 anyway.</p></details>
+    <details class="qa"><summary><h3>Is anything recorded?</h3></summary>
+      <p>No. Ruhe only measures the volume – nothing is recorded, stored or sent. Details are in the <a href="ruhe-privacy.html">privacy policy</a>.</p></details>
+    <details class="qa"><summary><h3>Question not answered?</h3></summary>
+      <p>Write to <a href="mailto:info@crabucate.de">info@crabucate.de</a> – I usually reply within a day or two.</p></details>
   </section>
 
-  <section class="final-cta">
-    <p class="final-cta-title">Quiet that feels good.</p>
-    <p class="final-cta-sub">For iPad and iPhone – now on the App Store.</p>
+  <!-- SCHLUSS -->
+  <section class="closing">
+    <picture>
+      <source srcset="../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="../images/ruhe/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>Quiet that feels good.</h2>
+    <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
+      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
+    </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="../impressum.html">Legal notice</a> · <a href="ruhe-privacy.html">Privacy</a>

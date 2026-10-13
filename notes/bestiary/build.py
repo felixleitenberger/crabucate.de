@@ -233,220 +233,31 @@ PROSE_CSS = """
 """
 
 INDEX_CSS = """
+    /* Das Grundgeruest (Buehne, Leiste, Features, FAQ) kommt aus
+       assets/app.css. Hier steht nur, was Bestiary anders macht. */
+    :root { --app: var(--db); --app-text: var(--db-text); --app-dim: var(--db-dim); }
+
     main { position: relative; z-index: 1; }
 
-    section { padding: 0 clamp(1.5rem, 6vw, 5rem); }
+    .shots figure { flex: 0 0 auto; width: clamp(200px, 21vw, 240px); scroll-snap-align: center; }
+    .shots figure img { width: 100%; }
+    .shots figcaption { margin-top: 0.9rem; font-size: 0.82rem; line-height: 1.5; color: var(--muted); text-align: center; text-wrap: balance; }
 
-    .wrap { max-width: 1000px; margin: 0 auto; }
-
-    /* ── HERO ── */
-    .hero {
-      padding-top: calc(60px + 5rem);
-      padding-bottom: 4rem;
-      text-align: center;
-    }
-
-    .hero-icon {
-      width: 108px;
-      height: 108px;
-      border-radius: 24px;
-      display: block;
-      margin: 0 auto 1.6rem;
-    }
-
-    .eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--db-text);
-      margin-bottom: 0.9rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      line-height: 1.05;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero .tagline {
-      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
-      color: var(--db-text);
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero .lead {
-      font-size: 1rem;
-      line-height: 1.85;
-      color: var(--prose);
-      max-width: 620px;
-      margin: 0 auto 1rem;
-    }
-
-    .cta { margin-top: 2.2rem; }
-    .cta img { height: 52px; width: auto; display: block; margin: 0 auto; }
-
-    /* ── ABSCHNITTE ── */
-    .band { padding-top: 4.5rem; padding-bottom: 4.5rem; }
-    .band--tint { background: var(--db-dim); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-
-    h2 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 1.6rem;
-      text-align: center;
-    }
-
-    .band p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--prose);
-      max-width: 620px;
-      margin: 0 auto 0.9rem;
-      text-align: center;
-    }
-
-    .features {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .features li {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-    }
-
-    .features h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-      color: var(--fg);
-    }
-
-    .features p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-      margin: 0;
-      text-align: left;
-      max-width: none;
-    }
-
-    /* ── BILDSCHIRMFOTOS ── */
-    .shots {
-      display: flex;
-      gap: 1.25rem;
-      overflow-x: auto;
-      padding: 0.5rem clamp(1.5rem, 6vw, 5rem) 1.5rem;
-      margin: 0 calc(-1 * clamp(1.5rem, 6vw, 5rem));
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Fuenf Bilder plus vier Abstaende bleiben so unter der 1000px der .wrap
-       und stehen auf breiten Schirmen vollstaendig da; schmaler wird gescrollt. */
-    .shot { flex: 0 0 auto; width: 180px; scroll-snap-align: center; }
-
-    .shot img {
-      width: 180px;
-      height: auto;
-      display: block;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(43,33,24,0.14);
-      background: var(--card-bg);
-    }
-
-    .shot figcaption {
-      font-size: 0.8rem;
-      line-height: 1.6;
-      color: var(--muted);
-      margin-top: 0.85rem;
-      text-align: center;
-    }
-
-    /* ── FAQ ── */
-    .faq { max-width: 720px; margin: 0 auto; }
-
-    .faq details {
-      border-bottom: 1px solid var(--line);
-      padding: 1.1rem 0;
-    }
-
-    .faq summary {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .faq summary::-webkit-details-marker { display: none; }
-
-    .faq summary::after {
-      content: '+';
-      color: var(--db-text);
-      font-weight: 400;
-      font-size: 1.3rem;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .faq details[open] summary::after { content: '−'; }
-
-    .faq details p {
-      font-size: 0.875rem;
-      line-height: 1.85;
-      color: var(--muted);
-      margin: 0.8rem 0 0;
-      text-align: left;
-      max-width: none;
-    }
-
-    .legal-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      justify-content: center;
-      margin-top: 1.8rem;
-    }
-
-    .legal-row a {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--db-text);
-      text-decoration: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.5rem 1.1rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .legal-row a:hover { border-color: var(--db); background: var(--db-dim); }
-
-    a { color: var(--db-text); }
+    /* Collector, Datenschutz, Bildnachweise: Pflichtangaben, ruhig gesetzt */
+    .fine { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 2.5rem; }
+    .fine h3 { font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+    .fine p { font-size: 0.86rem; line-height: 1.65; color: var(--muted); margin-bottom: 0.7rem; }
+    .fine > div { border-top: 1px solid var(--line); padding-top: 1.4rem; }
+    .legal-row { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin-top: 0.4rem; }
+    .legal-row a { font-size: 0.86rem; font-weight: 600; color: var(--app-text); text-decoration: none; }
+    .legal-row a:hover { text-decoration: underline; }
+    @media (max-width: 860px) { .fine { grid-template-columns: 1fr; } }
 """
 
 
 def head(lang_code: str, hreflang: str, locale: str, title: str, description: str,
-         canonical: str, up: str, extra_css: str, robots: str = "index, follow") -> str:
+         canonical: str, up: str, extra_css: str, robots: str = "index, follow",
+         app_css: bool = False) -> str:
     alts = "\n".join(
         f'  <link rel="alternate" hreflang="{hl}" href="{url_for(code, PAGE_OF[canonical])}" />'
         for code, hl, _, _, _ in LANGS
@@ -473,7 +284,8 @@ def head(lang_code: str, hreflang: str, locale: str, title: str, description: st
   <meta property="og:description" content="{html.escape(description)}" />
   <meta property="og:locale" content="{locale}" />
 
-  <link rel="stylesheet" href="{up}assets/base.css" />
+  <link rel="stylesheet" href="{up}assets/base.css" />{f'''
+  <link rel="stylesheet" href="{up}assets/app.css" />''' if app_css else ""}
   <style>
 {extra_css}  </style>
 </head>
@@ -482,6 +294,16 @@ def head(lang_code: str, hreflang: str, locale: str, title: str, description: st
 
 
 PAGE_OF: dict[str, str] = {}
+
+_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
+        'stroke-linecap="round" stroke-linejoin="round">{}</svg>')
+FEATURE_ICONS = [_SVG.format(x) for x in (
+    '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>',
+    '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/>',
+    '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>',
+    '<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="9" rx="1.5"/><rect x="3" y="15" width="7" height="6" rx="1.5"/><rect x="14" y="15" width="7" height="6" rx="1.5"/>',
+    '<path d="M12 3l2.4 5.2 5.6.6-4.2 3.8 1.2 5.6L12 15.4 7 18.2l1.2-5.6L4 8.8l5.6-.6z"/>',
+)]
 
 
 def lang_menu(data: dict, lang: str, page: str, up: str) -> str:
@@ -657,89 +479,91 @@ def render_index(data: dict, lang: str, hreflang: str, locale: str) -> str:
     }
 
     features = "\n".join(
-        f'        <li>\n          <h3>{e(f["t"])}</h3>\n          <p>{f["d"]}</p>\n        </li>'
-        for f in d["features"]
+        f'          <div class="feat">\n            <div class="feat-icon">{icon}</div>\n'
+        f'            <h3>{e(f["t"])}</h3>\n            <p>{f["d"]}</p>\n          </div>'
+        for icon, f in zip(FEATURE_ICONS, d["features"], strict=True)
     )
     shots = "\n".join(
-        f'        <figure class="shot">\n'
+        f'        <figure>\n'
         f'          <img src="{shots_dir}{name}.png" width="405" height="880" loading="lazy" '
         f'alt="{html.escape(cap)}" />\n'
         f'          <figcaption>{e(cap)}</figcaption>\n        </figure>'
         for name, cap in zip(SHOTS, d["shots"])
     )
     faq = "\n".join(
-        f'        <details>\n          <summary>{e(q["q"])}</summary>\n'
-        f'          <p>{q["a"]}</p>\n        </details>'
+        f'        <details class="qa"><summary><h3>{e(q["q"])}</h3></summary>\n'
+        f'          <p>{q["a"]}</p></details>'
         for q in d["faq"]
     )
 
-    def paras(key, cls=""):
-        attr = f' class="{cls}"' if cls else ""
-        return "\n".join(f"      <p{attr}>{p}</p>" for p in d[key])
+    def paras(key):
+        return "\n".join(f"          <p>{p}</p>" for p in d[key])
+
+    badge_link = (f'<a class="app-store-badge" href="{APPSTORE}"><img src="{up}images/{badge}" '
+                  f'alt="{html.escape(d["badge_alt"])}" /></a>')
 
     parts = [
         head(lang, hreflang, locale, d["title"], d["description"], canonical, up,
-             CHROME_CSS + INDEX_CSS),
+             CHROME_CSS + INDEX_CSS, app_css=True),
         f'  <script type="application/ld+json">\n{json.dumps(app_ld, ensure_ascii=False, indent=2)}\n  </script>',
         f'  <script type="application/ld+json">\n{json.dumps(faq_ld, ensure_ascii=False, indent=2)}\n  </script>',
         nav(up, f"{up}", f'← {e(c["all_apps"])}', lang_menu(data, lang, "", up)),
         "\n  <main>",
-        '    <section class="hero">',
-        f'      <img class="hero-icon" src="{up}images/bestiary/icon.png" width="108" height="108" alt="Daily Bestiary" />',
-        f'      <p class="eyebrow">{e(d["eyebrow"])}</p>',
-        "      <h1>Daily Bestiary</h1>",
-        f'      <p class="tagline">{e(d["tagline"])}</p>',
-        paras("lead", "lead"),
-        '      <div class="cta">',
-        f'        <a href="{APPSTORE}"><img src="{up}images/{badge}" alt="{html.escape(d["badge_alt"])}" /></a>',
-        "      </div>",
-        "    </section>",
-
-        '    <section class="band">',
-        '      <div class="wrap">',
-        f'        <h2>{e(d["features_title"])}</h2>',
-        f'        <ul class="features">\n{features}\n        </ul>',
-        "      </div>",
-        "    </section>",
-
-        '    <section class="band band--tint">',
-        '      <div class="wrap">',
-        f'        <h2>{e(d["shots_title"])}</h2>',
-        f'        <div class="shots">\n{shots}\n        </div>',
-        "      </div>",
-        "    </section>",
-
-        '    <section class="band">',
-        '      <div class="wrap">',
-        f'        <h2>{e(d["collector_title"])}</h2>',
-        paras("collector"),
-        "      </div>",
-        "    </section>",
-
-        '    <section class="band band--tint">',
-        '      <div class="wrap">',
-        f'        <h2>{e(d["privacy_title"])}</h2>',
-        paras("privacy"),
-        '        <div class="legal-row">',
-        f'          <a href="privacy/">{e(c["nav_privacy"])}</a>',
-        f'          <a href="terms/">{e(c["nav_terms"])}</a>',
-        f'          <a href="support/">{e(c["nav_support"])}</a>',
+        '    <section class="stage">',
+        '      <div class="stage-inner">',
+        '        <div class="stage-copy">',
+        f'          <img class="stage-icon" src="{up}images/bestiary/icon.png" width="108" height="108" alt="Daily Bestiary" />',
+        "          <h1>Daily Bestiary</h1>",
+        f'          <p class="tagline">{e(d["tagline"])}</p>',
+        '          <div class="stage-cta">',
+        f'            {badge_link}',
+        f'            <ul class="hero-meta"><li>{e(d["eyebrow"])}</li></ul>',
+        "          </div>",
+        "        </div>",
+        '        <div class="stage-art">',
+        f'          <img src="{up}images/bestiary/hero/{lang}.webp" width="2560" height="1800" alt="{html.escape(d["shots"][2])}" />',
         "        </div>",
         "      </div>",
         "    </section>",
 
-        '    <section class="band">',
-        '      <div class="wrap">',
-        f'        <h2>{e(d["credits_title"])}</h2>',
+        f'    <div class="shots" aria-label="{html.escape(d["shots_title"])}">\n{shots}\n    </div>',
+
+        '    <section class="sec">',
+        f'      <h2 class="sec-title">{e(d["features_title"])}</h2>',
+        f'      <div class="feats">\n{features}\n      </div>',
+        "    </section>",
+
+        '    <section class="sec">',
+        '      <div class="fine">',
+        '        <div>',
+        f'          <h3>{e(d["collector_title"])}</h3>',
+        paras("collector"),
+        "        </div>",
+        '        <div>',
+        f'          <h3>{e(d["privacy_title"])}</h3>',
+        paras("privacy"),
+        '          <div class="legal-row">',
+        f'            <a href="privacy/">{e(c["nav_privacy"])}</a>',
+        f'            <a href="terms/">{e(c["nav_terms"])}</a>',
+        f'            <a href="support/">{e(c["nav_support"])}</a>',
+        "          </div>",
+        "        </div>",
+        '        <div>',
+        f'          <h3>{e(d["credits_title"])}</h3>',
         paras("credits"),
+        "        </div>",
         "      </div>",
         "    </section>",
 
-        '    <section class="band band--tint">',
-        '      <div class="wrap">',
-        f'        <h2>{e(d["faq_title"])}</h2>',
-        f'        <div class="faq">\n{faq}\n        </div>',
-        "      </div>",
+        '    <section class="sec faq">',
+        f'      <h2 class="sec-title">{e(d["faq_title"])}</h2>',
+        faq,
+        "    </section>",
+
+        '    <section class="closing">',
+        f'      <img class="closing-icon" src="{up}images/bestiary/icon.png" width="108" height="108" alt="" loading="lazy" />',
+        f'      <h2>{e(d["tagline"])}</h2>',
+        f'      {badge_link}',
         "    </section>",
         "  </main>",
         MAIL_SCRIPT,

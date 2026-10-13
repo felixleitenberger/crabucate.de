@@ -32,447 +32,9 @@
   <link rel="alternate" hreflang="x-default" href="https://crabucate.de/ruhe.html" />
   <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="assets/base.css" />
+  <link rel="stylesheet" href="assets/app.css" />
   <style>
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .nav-logo img {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 5.5rem) clamp(1.5rem, 6vw, 6rem) 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse, var(--ru-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-    .hero-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 21px;
-      display: block;
-      margin: 0 auto 1.75rem;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 7rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 46ch;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero .app-store-badge {
-      display: inline-block;
-      margin-top: 2.25rem;
-    }
-
-    .hero-meta {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-meta span { white-space: nowrap; }
-    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
-
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
-
-    /* ── SCREENSHOTS ── */
-    /* Die Store-Bilder tragen ihre Überschrift selbst, deshalb ohne Bildunterschrift.
-       Fünf mal 200px plus Abstände brauchen rund 1090px; schmaler wird gescrollt. */
-    .shots {
-      display: flex;
-      gap: 1.25rem;
-      padding: 0.5rem clamp(1.5rem, 6vw, 6rem) 4rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      position: relative;
-      z-index: 1;
-    }
-
-    .shots img {
-      flex: 0 0 auto;
-      width: 200px;
-      height: auto;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(36,31,26,0.14);
-      scroll-snap-align: center;
-    }
-
-    @media (min-width: 1240px) { .shots { justify-content: center; } }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 1rem auto 0;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(255,147,0,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--ru-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--ru-text);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
-
-    .how-steps li {
-      counter-increment: step;
-      position: relative;
-      padding: 0 0 2rem 3.6rem;
-    }
-
-    .how-steps li:last-child { padding-bottom: 0; }
-
-    .how-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      background: var(--ru-dim);
-      color: var(--ru-text);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .how-steps h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-
-    .how-steps p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── GUIDES ── */
-    .guides {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .guide-card {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .guide-card:hover { border-color: rgba(255,147,0,0.4); transform: translateY(-4px); }
-
-    .guide-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .guide-card p {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .guide-card .guide-more {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--ru-text);
-    }
-
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0;
-    }
-
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .faq-more {
-      display: inline-block;
-      margin-top: 0.45rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--ru-text);
-      text-decoration: none;
-    }
-
-    .faq-more:hover { text-decoration: underline; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(255,147,0,0.07), transparent 65%);
-      pointer-events: none;
-    }
-
-    .final-cta > * { position: relative; }
-
-    .final-cta-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--fg);
-      margin-bottom: 0.75rem;
-    }
-
-    .final-cta-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero-icon, .hero h1, .tagline { opacity: 1; }
-    }
-
-    .hero, .final-cta { overflow-x: clip; }
-    .faq-item p a { color: var(--ru-text); text-decoration: none; border-bottom: 1px solid var(--line); }
-    .faq-item p a:hover { border-color: var(--ru-text); }
-
+    :root { --app: var(--ru); --app-text: var(--ru-text); --app-dim: var(--ru-dim); }
   </style>
 </head>
 <body>
@@ -516,24 +78,36 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <picture>
-      <source srcset="images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-      <img src="images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="hero-icon" />
-    </picture>
-    <h1>Ruhe</h1>
-    <p class="tagline">Die freundliche Lärmampel fürs Klassenzimmer: Leises Arbeiten wird mit Flammen belohnt – Lärm wird nicht bestraft.</p>
-    <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
-    </a>
-    <p class="hero-meta">
-      <span>iPad &amp; iPhone</span><span class="sep">·</span><span>Kein Konto</span><span class="sep">·</span><span>Nichts wird aufgenommen</span>
-    </p>
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        <picture>
+          <source srcset="images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="stage-icon" />
+        </picture>
+        <h1>Ruhe</h1>
+        <p class="tagline">Die Lärmampel, die ruhige Phasen belohnt.</p>
+        <div class="stage-cta">
+          <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
+            <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+          </a>
+          <ul class="hero-meta">
+            <li>iPad &amp; iPhone</li>
+            <li>Kein Konto</li>
+            <li>Nichts wird aufgenommen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stage-art">
+        <img src="images/ruhe/hero/de.webp" width="2560" height="1800" alt="Pip in allen drei Ampelfarben: grün mit vollem Flammenkranz auf dem iPad, gelb und rot auf zwei iPhones" />
+      </div>
+    </div>
   </section>
 
   <!-- SCREENSHOTS -->
-  <div class="shots">
+  <div class="shots" aria-label="App-Screenshots">
     <img src="images/ruhe/screenshots/de/01_belohnt.png" width="552" height="1200" alt="Ruhe wird belohnt: das Maskottchen Pip mit vollem Flammenkranz" />
     <img src="images/ruhe/screenshots/de/02_ampel.png" width="552" height="1200" loading="lazy" alt="Pip zeigt, wie laut es ist: Gelb bei „Etwas leiser“, Rot bei „Zu laut“" />
     <img src="images/ruhe/screenshots/de/03_timer.png" width="552" height="1200" loading="lazy" alt="Stillarbeit im Blick: Timer mit Ringanzeige um das Maskottchen" />
@@ -541,113 +115,90 @@
     <img src="images/ruhe/screenshots/de/05_datenschutz.png" width="552" height="1200" loading="lazy" alt="Nichts wird aufgenommen: kein Konto, keine Werbung, kein Tracking" />
   </div>
 
-  <hr class="divider" />
-
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Features</p>
-    <div class="features-grid">
-      <div class="feature-card">
+  <section class="sec">
+    <h2 class="sec-title">Leise wird belohnt.</h2>
+    <div class="feats">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="19" rx="3"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/></svg></div>
-        <h3>Lärmampel mit Maskottchen</h3>
-        <p>Grün, Gelb, Rot – ein fröhliches Gesicht zeigt, wie laut es gerade ist. Bei Gelb macht es leise „Pssst“, bei Rot hält es sich die Ohren zu.</p>
+        <h3>Lärmampel mit Gesicht</h3>
+        <p>Pip zeigt der Klasse in Grün, Gelb und Rot, wie laut es gerade ist.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.8 7-6.8 0-4.2-3.3-6.6-4.4-10.7-.2-.8-1.2-1-1.6-.3C11.6 6.6 10 8 9 9.4 8.4 8.6 7.9 8 7.5 7.7 6.2 9.6 5 11.8 5 15.2 5 19.2 8 22 12 22z"/><path d="M12 22c-1.7 0-3-1.2-3-3 0-2 1.6-3 3-5 1.4 2 3 3 3 5 0 1.8-1.3 3-3 3z"/></svg></div>
         <h3>Flammen statt Strafen</h3>
-        <p>Solange es ruhig ist, entzündet sich eine Flamme nach der anderen. Zwölf Flammen ergeben einen vollen Kranz, und das wird gefeiert. Wird es zu laut, gehen die Flammen aus.</p>
+        <p>Jede ruhige Phase entzündet eine Flamme. Zwölf ergeben den Kranz.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg></div>
         <h3>Timer im Blick</h3>
-        <p>Der Ring um das Maskottchen zeigt die Restzeit. Start und Stopp direkt neben der Zeit, am Ende pausiert die Messung.</p>
+        <p>Der Ring um Pip zeigt, wie viel Zeit noch bleibt.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></div>
-        <h3>Beamer-Ansicht</h3>
-        <p>Am Beamer oder zweiten Bildschirm erscheint die Lärmampel im Vollbild – die Bedienung bleibt auf deinem iPad.</p>
+        <h3>Groß am Beamer</h3>
+        <p>Die Ampel im Vollbild an der Wand, die Bedienung bleibt bei dir.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></div>
-        <h3>Passend für jede Klasse</h3>
-        <p>Ab wann Gelb und Rot gelten, stellst du mit zwei Reglern ein – oder Ruhe misst 5 Sekunden lang und kalibriert sich selbst.</p>
+        <h3>Passt zu jeder Klasse</h3>
+        <p>Schwellen selbst setzen oder in 5 Sekunden kalibrieren lassen.</p>
       </div>
-      <div class="feature-card">
+      <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3>Bedienung sperren</h3>
-        <p>Mit Face ID oder Code gesperrt, damit niemand aus der Klasse etwas verstellt.</p>
+        <h3>Sicher gesperrt</h3>
+        <p>Mit Face ID oder Code gesperrt, damit niemand etwas verstellt.</p>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <!-- HOW -->
-  <section class="how">
-    <p class="section-eyebrow">So funktioniert’s</p>
-    <ol class="how-steps">
-      <li>
-        <h3>iPad hinstellen</h3>
-        <p>Ruhe öffnen und aufs Gesicht tippen – die Messung startet.</p>
-      </li>
-      <li>
-        <h3>Arbeiten lassen</h3>
-        <p>Das Maskottchen zeigt der Klasse, wie laut es ist, und sammelt Flammen für jede ruhige Phase.</p>
-      </li>
-      <li>
-        <h3>Erfolg sehen</h3>
-        <p>Am Ende der Stunde zählt, was geklappt hat: der Flammenkranz.</p>
-      </li>
+  <!-- SO GEHT'S -->
+  <section class="sec">
+    <h2 class="sec-title">So funktioniert’s</h2>
+    <ol class="steps">
+      <li><h3>iPad hinstellen</h3><p>Ruhe öffnen und aufs Gesicht tippen, dann läuft die Messung.</p></li>
+      <li><h3>Arbeiten lassen</h3><p>Pip zeigt, wie laut es ist, und sammelt Flammen.</p></li>
+      <li><h3>Erfolg sehen</h3><p>Am Ende zählt der Flammenkranz.</p></li>
     </ol>
   </section>
 
-  <hr class="divider" />
-
-  <!-- GUIDE -->
-  <section class="guides">
-    <p class="section-eyebrow">Ratgeber</p>
-    <a class="guide-card" href="guides/classroom-management.html">
-      <h3>Classroom Management: Sitzplan, Gruppen &amp; Lautstärke</h3>
-      <p>Ein Workflow für die ganze Stunde – vom Sitzplan über faire Gruppen bis zur ruhigen Arbeitsphase.</p>
-      <span class="guide-more">Zum Ratgeber →</span>
-    </a>
+  <!-- RATGEBER -->
+  <section class="sec">
+    <h2 class="sec-title">Zum Weiterlesen</h2>
+    <ul class="guide-links">
+      <li><a href="guides/classroom-management.html"><strong>Classroom Management: Sitzplan, Gruppen &amp; Lautstärke</strong><span>Ein Workflow für die ganze Stunde.</span></a></li>
+    </ul>
   </section>
-
-  <hr class="divider" />
 
   <!-- SUPPORT -->
-  <section class="faq" id="support">
-    <p class="faq-eyebrow">Hilfe &amp; Support</p>
-    <div class="faq-item">
-      <h3>Ruhe misst nichts – was tun?</h3>
-      <p>Ruhe braucht Zugriff aufs Mikrofon. Erlaube ihn in den iOS-Einstellungen unter Datenschutz &amp; Sicherheit → Mikrofon → Ruhe.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Die Ampel springt zu schnell oder zu spät auf Rot.</h3>
-      <p>Tippe in der Leiste auf das Regler-Symbol und verschiebe die Schwellen für Gelb und Rot – oder nutze „Automatisch einstellen“, während die Klasse normal arbeitet.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Wie zeige ich Ruhe am Beamer?</h3>
-      <p>Verbinde das iPad per Kabel oder AirPlay mit dem Beamer. Ruhe zeigt dort automatisch die Lärmampel im Vollbild, auf dem iPad bleibt die Bedienung.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Wie setze ich die Flammen zurück?</h3>
-      <p>Tippe oben links auf den Flammenzähler. Dort kannst du Flammen korrigieren oder alle auf 0 setzen. War Ruhe länger als 10 Minuten im Hintergrund, beginnt die nächste Stunde ohnehin bei 0.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Wird etwas aufgenommen?</h3>
-      <p>Nein. Ruhe misst nur die Lautstärke, nichts wird aufgenommen, gespeichert oder gesendet. Details stehen in der <a href="ruhe-privacy.html">Datenschutzerklärung</a>.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Eine Frage ist nicht dabei?</h3>
-      <p>Schreib an <a href="mailto:info@crabucate.de">info@crabucate.de</a> – ich antworte in der Regel innerhalb von ein, zwei Tagen.</p>
-    </div>
+  <section class="sec faq" id="support">
+    <h2 class="sec-title">Hilfe &amp; Support</h2>
+    <details class="qa"><summary><h3>Ruhe misst nichts – was tun?</h3></summary>
+      <p>Ruhe braucht Zugriff aufs Mikrofon. Erlaube ihn in den iOS-Einstellungen unter Datenschutz &amp; Sicherheit → Mikrofon → Ruhe.</p></details>
+    <details class="qa"><summary><h3>Die Ampel springt zu schnell oder zu spät auf Rot.</h3></summary>
+      <p>Tippe in der Leiste auf das Regler-Symbol und verschiebe die Schwellen für Gelb und Rot – oder nutze „Automatisch einstellen“, während die Klasse normal arbeitet.</p></details>
+    <details class="qa"><summary><h3>Wie zeige ich Ruhe am Beamer?</h3></summary>
+      <p>Verbinde das iPad per Kabel oder AirPlay mit dem Beamer. Ruhe zeigt dort automatisch die Lärmampel im Vollbild, auf dem iPad bleibt die Bedienung.</p></details>
+    <details class="qa"><summary><h3>Wie setze ich die Flammen zurück?</h3></summary>
+      <p>Tippe oben links auf den Flammenzähler. Dort kannst du Flammen korrigieren oder alle auf 0 setzen. War Ruhe länger als 10 Minuten im Hintergrund, beginnt die nächste Stunde ohnehin bei 0.</p></details>
+    <details class="qa"><summary><h3>Wird etwas aufgenommen?</h3></summary>
+      <p>Nein. Ruhe misst nur die Lautstärke, nichts wird aufgenommen, gespeichert oder gesendet. Details stehen in der <a href="ruhe-privacy.html">Datenschutzerklärung</a>.</p></details>
+    <details class="qa"><summary><h3>Eine Frage ist nicht dabei?</h3></summary>
+      <p>Schreib an <a href="mailto:info@crabucate.de">info@crabucate.de</a> – ich antworte in der Regel innerhalb von ein, zwei Tagen.</p></details>
   </section>
 
-  <section class="final-cta">
-    <p class="final-cta-title">Ruhe, die sich gut anfühlt.</p>
-    <p class="final-cta-sub">Für iPad und iPhone – jetzt im App Store.</p>
+  <!-- SCHLUSS -->
+  <section class="closing">
+    <picture>
+      <source srcset="images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="images/ruhe/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>Ruhe, die sich gut anfühlt.</h2>
+    <a class="app-store-badge" href="https://apps.apple.com/app/id6817002986" target="_blank" rel="noopener">
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+    </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="ruhe-privacy.html">Datenschutz</a>

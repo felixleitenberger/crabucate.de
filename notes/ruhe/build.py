@@ -155,7 +155,7 @@ def lang_panel(current: str, page: str, up: str) -> str:
 
 
 def head(hl: str, title: str, description: str, code: str, page: str, up: str, css: str,
-         extra: str = "") -> str:
+         extra: str = "", app_css: bool = False) -> str:
     desc = f'\n  <meta name="description" content="{a(description)}" />' if description else ""
     return f"""<!DOCTYPE html>
 <html lang="{hl}">
@@ -170,7 +170,8 @@ def head(hl: str, title: str, description: str, code: str, page: str, up: str, c
   <link rel="canonical" href="{url(code, page)}" />
 {alternates(page)}
   <meta name="robots" content="index, follow" />{extra}
-  <link rel="stylesheet" href="{up}assets/base.css" />
+  <link rel="stylesheet" href="{up}assets/base.css" />{f'''
+  <link rel="stylesheet" href="{up}assets/app.css" />''' if app_css else ""}
   <style>{css}</style>
 </head>
 <body>
@@ -216,49 +217,49 @@ def render_index(d: dict, code: str, hl: str, name: str) -> str:
         for i, (shot, alt) in enumerate(zip(SHOTS, d["shots"], strict=True))
     )
     features = "\n".join(
-        f"""      <div class="feature-card">
+        f"""      <div class="feat">
         <div class="feat-icon">{icon}</div>
         <h3>{e(t)}</h3>
         <p>{inline(p)}</p>
       </div>"""
         for icon, (t, p) in zip(ICONS, d["features"], strict=True)
     )
-    how = "\n".join(
-        f"""      <li>
-        <h3>{e(t)}</h3>
-        <p>{inline(p)}</p>
-      </li>"""
-        for t, p in d["how"]
-    )
+    how = "\n".join(f"      <li><h3>{e(t)}</h3><p>{inline(p)}</p></li>" for t, p in d["how"])
     faq = "\n".join(
-        f"""    <div class="faq-item">
-      <h3>{e(q)}</h3>
-      <p>{inline(ans)}</p>
-    </div>"""
+        f'    <details class="qa"><summary><h3>{e(q)}</h3></summary>\n      <p>{inline(ans)}</p></details>'
         for q, ans in d["faq"]
     )
     g = d["guide"]
-    meta = '<span class="sep">·</span>'.join(
-        f"<span>{e(m)}</span>" for m in ["iPad & iPhone", *d["meta"]]
-    )
+    meta = "".join(f"\n            <li>{e(m)}</li>" for m in ["iPad & iPhone", *d["meta"]])
+    icon = f"""<picture>
+          <source srcset="{up}images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="{up}images/ruhe/icons/light/icon.png" alt="{a(d["icon_alt"])}" class="stage-icon" />
+        </picture>"""
+    badge = f"""<a class="app-store-badge" href="{APPSTORE}" target="_blank" rel="noopener">
+            <img src="{up}images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="{a(d["badge_alt"])}" />
+          </a>"""
     return (
-        head(hl, d["title"], d["description"], code, "", up, INDEX_CSS)
+        head(hl, d["title"], d["description"], code, "", up, INDEX_CSS, app_css=True)
         + nav(d, code, name, "", up, up, "nav-link", d["all_apps"])
         + f"""
-  <!-- HERO -->
-  <section class="hero">
-    <picture>
-      <source srcset="{up}images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-      <img src="{up}images/ruhe/icons/light/icon.png" alt="{a(d["icon_alt"])}" class="hero-icon" />
-    </picture>
-    <h1>Ruhe</h1>
-    <p class="tagline">{e(d["tagline"])}</p>
-    <a class="app-store-badge" href="{APPSTORE}" target="_blank" rel="noopener">
-      <img src="{up}images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="{a(d["badge_alt"])}" />
-    </a>
-    <p class="hero-meta">
-      {meta}
-    </p>
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        {icon}
+        <h1>Ruhe</h1>
+        <p class="tagline">{e(d["tagline"])}</p>
+        <div class="stage-cta">
+          {badge}
+          <ul class="hero-meta">{meta}
+          </ul>
+        </div>
+      </div>
+      <div class="stage-art">
+        <img src="{up}images/ruhe/hero/{code}.webp" width="2560" height="1800" alt="{a(d["shots"][1])}" />
+      </div>
+    </div>
   </section>
 
   <!-- SCREENSHOTS -->
@@ -266,50 +267,48 @@ def render_index(d: dict, code: str, hl: str, name: str) -> str:
 {shots}
   </div>
 
-  <hr class="divider" />
-
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">{e(d["features_eyebrow"])}</p>
-    <div class="features-grid">
+  <section class="sec">
+    <h2 class="sec-title">{e(d["features_eyebrow"])}</h2>
+    <div class="feats">
 {features}
     </div>
   </section>
 
-  <hr class="divider" />
-
   <!-- HOW -->
-  <section class="how">
-    <p class="section-eyebrow">{e(d["how_eyebrow"])}</p>
-    <ol class="how-steps">
+  <section class="sec">
+    <h2 class="sec-title">{e(d["how_eyebrow"])}</h2>
+    <ol class="steps">
 {how}
     </ol>
   </section>
 
-  <hr class="divider" />
-
   <!-- GUIDE -->
-  <section class="guides">
-    <p class="section-eyebrow">{e(g["eyebrow"])}</p>
-    <a class="guide-card" href="classroom-management/">
-      <h3>{e(g["card_title"])}</h3>
-      <p>{e(g["card_text"])}</p>
-      <span class="guide-more">{e(g["more"])}</span>
-    </a>
+  <section class="sec">
+    <h2 class="sec-title">{e(g["eyebrow"])}</h2>
+    <ul class="guide-links">
+      <li><a href="classroom-management/"><strong>{e(g["card_title"])}</strong><span>{e(g["card_text"])}</span></a></li>
+    </ul>
   </section>
 
-  <hr class="divider" />
-
   <!-- SUPPORT -->
-  <section class="faq" id="support">
-    <p class="faq-eyebrow">{e(d["support_eyebrow"])}</p>
+  <section class="sec faq" id="support">
+    <h2 class="sec-title">{e(d["support_eyebrow"])}</h2>
 {faq}
   </section>
 
-  <section class="final-cta">
-    <p class="final-cta-title">{e(d["final_title"])}</p>
-    <p class="final-cta-sub">{e(d["final_sub"])}</p>
+  <section class="closing">
+    <picture>
+      <source srcset="{up}images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="{up}images/ruhe/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>{e(d["final_title"])}</h2>
+    <p>{e(d["final_sub"])}</p>
+    <a class="app-store-badge" href="{APPSTORE}" target="_blank" rel="noopener">
+      <img src="{up}images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="{a(d["badge_alt"])}" />
+    </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="{up}en/impressum.html">{e(d["imprint"])}</a> · <a href="privacy/">{e(d["privacy"])}</a>

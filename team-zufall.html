@@ -100,483 +100,9 @@
   </script>
 
   <link rel="stylesheet" href="assets/base.css" />
+  <link rel="stylesheet" href="assets/app.css" />
   <style>
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .nav-logo img {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      background: #fff;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 4rem) clamp(1.5rem, 6vw, 6rem) 0;
-      max-width: 1300px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 500px;
-      background: radial-gradient(ellipse, var(--tz-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 3.5rem;
-    }
-    .hero-icon {
-      width: 76px;
-      height: 76px;
-      border-radius: 18px;
-      display: block;
-      margin-bottom: 1.75rem;
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 6rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 42ch;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero-badge {
-      margin-top: 2.25rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-badge img {
-      height: 48px;
-      width: auto;
-      display: block;
-      transition: opacity 0.2s;
-    }
-
-    .hero-badge a:hover img { opacity: 0.75; }
-
-    .hero-meta {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.65s forwards;
-    }
-
-    .hero-meta span { white-space: nowrap; }
-    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
-
-    /* ── IPAD MOCKUP ── */
-    .hero-visual {
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeUp 1.2s ease 0.5s forwards;
-      filter: drop-shadow(0 30px 80px rgba(36,31,26,0.16));
-    }
-
-    .ipad-mockup { position: relative; width: 100%; }
-
-    .ipad-mockup .ipad-bezel {
-      width: 100%;
-      height: auto;
-      display: block;
-      position: relative;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .ipad-mockup .ipad-screen {
-      position: absolute;
-      top: 5.8%;
-      left: 3.85%;
-      width: 92.4%;
-      height: 88.5%;
-      z-index: 1;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .ipad-screen .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top left;
-      opacity: 0;
-      transition: opacity 0.7s ease;
-      display: block;
-    }
-
-    .ipad-screen .slide.active { opacity: 1; }
-
-    .slideshow-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 1.25rem;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--muted);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .dot.active { background: var(--tz-text); transform: scale(1.4); }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 3.5rem auto 0;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(240,125,74,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--tz-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--tz-text);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
-
-    .how-steps li {
-      counter-increment: step;
-      position: relative;
-      padding: 0 0 2rem 3.6rem;
-    }
-
-    .how-steps li:last-child { padding-bottom: 0; }
-
-    .how-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      background: var(--tz-dim);
-      color: var(--tz-text);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .how-steps h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-
-    .how-steps p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── GUIDES ── */
-    .guides {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .guides-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .guide-card {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .guide-card:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-4px); }
-
-    .guide-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .guide-card p {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .guide-card .guide-more {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--tz-text);
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item { border-top: 1px solid var(--line); padding: 1.5rem 0; }
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .faq-more {
-      display: inline-block;
-      margin-top: 0.45rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--tz-text);
-      text-decoration: none;
-    }
-
-    .faq-more:hover { text-decoration: underline; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(240,125,74,0.07), transparent 65%);
-      pointer-events: none;
-    }
-
-    .final-cta > * { position: relative; }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) { .hero-visual { max-width: 100%; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero-icon, .hero h1, .tagline, .hero-badge, .hero-visual { opacity: 1; }
-    }
+    :root { --app: var(--tz); --app-text: var(--tz-text); --app-dim: var(--tz-dim); }
   </style>
 </head>
 <body>
@@ -603,239 +129,136 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-
-    <div class="hero-content">
-      <picture>
-        <source srcset="images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-        <img src="images/team-zufall/icons/light/icon.png" alt="Team Zufall App Icon" class="hero-icon" />
-      </picture>
-      <h1>Team Zufall</h1>
-      <p class="tagline">Gruppen einteilen &amp; Teams auslosen — zufällig, fair und in einer Sekunde.</p>
-      <div class="hero-badge">
-        <a href="https://apps.apple.com/de/app/gruppen-aufteilen-team-zufall/id6768655282" target="_blank" rel="noopener">
-          <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
-        </a>
-      </div>
-      <p class="hero-meta">
-        <span>Gratis</span><span class="sep">·</span><span>iPhone &amp; iPad</span><span class="sep">·</span><span>Keine Anmeldung</span><span class="sep">·</span><span>Daten bleiben auf dem Gerät</span>
-      </p>
-    </div>
-
-    <div class="hero-visual">
-      <div class="ipad-mockup">
-        <div class="ipad-screen">
-          <img class="slide active" src="images/team-zufall/screenshots/light/app-01-overview.png" alt="Team Zufall Übersicht mit gespeicherten Gruppen" />
-          <img class="slide" src="images/team-zufall/screenshots/light/app-02-members.png" alt="Teilnehmerliste einer Gruppe in Team Zufall" loading="lazy" />
-          <img class="slide" src="images/team-zufall/screenshots/light/app-03-teams.png" alt="Zufällig aufgeteilte Teams in Team Zufall" loading="lazy" />
-          <img class="slide" src="images/team-zufall/screenshots/light/app-04-new-group.png" alt="Neue Gruppe erstellen in Team Zufall" loading="lazy" />
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        <picture>
+          <source srcset="images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/team-zufall/icons/light/icon.png" alt="Team Zufall App Icon" class="stage-icon" />
+        </picture>
+        <h1>Team Zufall</h1>
+        <p class="tagline">Faire Teams. In einer Sekunde.</p>
+        <div class="stage-cta">
+          <a class="app-store-badge" href="https://apps.apple.com/de/app/gruppen-aufteilen-team-zufall/id6768655282" target="_blank" rel="noopener">
+            <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
+          </a>
+          <ul class="hero-meta">
+            <li>Gratis für iPhone &amp; iPad</li>
+            <li>Keine Anmeldung</li>
+            <li>Daten bleiben auf dem Gerät</li>
+          </ul>
         </div>
-        <img class="ipad-bezel"
-             src="images/ipad-bezel.png"
-             alt="" aria-hidden="true" />
+      </div>
+      <div class="stage-art">
+        <img src="images/team-zufall/hero.webp" width="2560" height="1800" alt="Team Zufall auf dem iPad: sieben ausgeloste Teams, dahinter die Übersicht der gespeicherten Gruppen" />
       </div>
     </div>
-
-    <div class="slideshow-dots">
-      <button class="dot active" aria-label="Bild 1"></button>
-      <button class="dot" aria-label="Bild 2"></button>
-      <button class="dot" aria-label="Bild 3"></button>
-      <button class="dot" aria-label="Bild 4"></button>
-    </div>
-
   </section>
 
-  <hr class="divider" />
+  <!-- SCREENSHOTS -->
+  <div class="shots" aria-label="App-Screenshots">
+    <img src="images/team-zufall/screenshots/de/01.png" width="552" height="1199" alt="Faire Teams in einer Sekunde: ausgeloste Teams auf dem iPhone" />
+    <img src="images/team-zufall/screenshots/de/02.png" width="552" height="1199" loading="lazy" alt="Wer fehlt, bleibt draußen: Abwesende mit einem Tipp abwählen" />
+    <img src="images/team-zufall/screenshots/de/03.png" width="552" height="1199" loading="lazy" alt="Zuschauen, wie es sich mischt: die Auslosung als Animation" />
+    <img src="images/team-zufall/screenshots/de/04.png" width="552" height="1199" loading="lazy" alt="Einmal anlegen, immer wieder auslosen: gespeicherte Gruppen" />
+    <img src="images/team-zufall/screenshots/de/05.png" width="552" height="1199" loading="lazy" alt="Klassenliste direkt aus Excel importieren" />
+  </div>
 
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Features</p>
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <h3>Gruppen verwalten</h3>
-        <p>Trage deine Gruppen einmalig ein. Namen bleiben gespeichert — kein erneutes Eintippen beim nächsten Mal.</p>
+  <section class="sec">
+    <h2 class="sec-title">Auslosen ohne Diskussion.</h2>
+    <div class="feats">
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+        <h3>Ein Tippen, fertig</h3>
+        <p>Alle werden gleichmäßig und zufällig auf die Teams verteilt.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 3 21 3 21 8"/>
-            <line x1="4" y1="20" x2="21" y2="3"/>
-            <polyline points="21 16 21 21 16 21"/>
-            <line x1="15" y1="15" x2="21" y2="21"/>
-            <line x1="4" y1="4" x2="9" y2="9"/>
-          </svg>
-        </div>
-        <h3>Ein Tippen — fertig</h3>
-        <p>Alle Teilnehmer werden gleichmäßig und zufällig auf Teams verteilt. Sofort einsatzbereit.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Gruppen bleiben gespeichert</h3>
+        <p>Klasse, Training oder Verein einmal anlegen und immer wieder auslosen.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"/>
-            <line x1="4" y1="10" x2="4" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12" y2="3"/>
-            <line x1="20" y1="21" x2="20" y2="16"/>
-            <line x1="20" y1="12" x2="20" y2="3"/>
-            <line x1="1" y1="14" x2="7" y2="14"/>
-            <line x1="9" y1="8" x2="15" y2="8"/>
-            <line x1="17" y1="16" x2="23" y2="16"/>
-          </svg>
-        </div>
-        <h3>Flexible Teamgröße</h3>
-        <p>2er, 3er, 4er Gruppen — du bestimmst, wie groß die Teams werden sollen.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="7" y1="12" x2="17" y2="12"/></svg></div>
+        <h3>Wer fehlt, bleibt draußen</h3>
+        <p>Abwesende wählst du mit einem Tipp ab, die Auslosung überspringt sie.</p>
       </div>
-
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Teamzahl frei wählbar</h3>
+        <p>Zweier, Dreier, Vierer oder größere Teams.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg></div>
+        <h3>Sichtbar gemischt</h3>
+        <p>Eine Animation mischt alle Namen sichtbar. Schütteln startet eine neue Runde.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></div>
+        <h3>Groß an die Wand</h3>
+        <p>Teams beamen oder als PDF teilen. Klassenlisten kommen per CSV aus Excel.</p>
+      </div>
     </div>
   </section>
 
-  <!-- DESCRIPTION -->
-  <section class="description">
-    <p>Team Zufall macht das zufällige Einteilen von Gruppen so einfach wie möglich. Egal ob Sport, Seminar, Workshop oder Unterricht — ein Tippen genügt, und alle Teilnehmer sind fair auf Teams ausgelost. Die App speichert deine Gruppen lokal, sodass du beim nächsten Mal sofort loslegen kannst. Keine Anmeldung, keine Cloud, keine Ablenkung.</p>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how">
-    <p class="section-eyebrow">So funktioniert's</p>
-    <ol class="how-steps">
-      <li>
-        <h3>Gruppe anlegen</h3>
-        <p>Namen eintippen oder die ganze Liste als CSV aus Excel bzw. Google Sheets importieren. Einmal angelegt, bleibt alles gespeichert.</p>
-      </li>
-      <li>
-        <h3>Abwesende abwählen</h3>
-        <p>Wer heute fehlt, wird mit einem Tipp deaktiviert — und bei der Auslosung automatisch übersprungen.</p>
-      </li>
-      <li>
-        <h3>Teams auslosen</h3>
-        <p>Teamanzahl wählen, auslosen — die Animation wirbelt alle Namen sichtbar durcheinander, dann stehen die Teams fest. Nicht zufrieden? Gerät schütteln, neue Runde.</p>
-      </li>
-      <li>
-        <h3>Ergebnis teilen</h3>
-        <p>Teams groß anzeigen, an die Wand beamen oder als PDF exportieren.</p>
-      </li>
+  <!-- SO GEHT'S -->
+  <section class="sec">
+    <h2 class="sec-title">So einfach geht’s.</h2>
+    <ol class="steps">
+      <li><h3>Gruppe anlegen</h3><p>Namen eintippen oder als CSV importieren.</p></li>
+      <li><h3>Abwesende abwählen</h3><p>Ein Tipp pro Name, der heute fehlt.</p></li>
+      <li><h3>Auslosen</h3><p>Teamzahl wählen, tippen, zuschauen.</p></li>
+      <li><h3>Zeigen</h3><p>Beamen oder als PDF teilen.</p></li>
     </ol>
   </section>
 
-  <!-- GUIDES -->
-  <section class="guides">
-    <p class="section-eyebrow">Ratgeber</p>
-    <div class="guides-grid">
-      <a class="guide-card" href="guides/gruppen-einteilen.html">
-        <h3>Gruppen einteilen</h3>
-        <p>Zufällig, fair und ohne Diskussion — so klappt's im Unterricht.</p>
-        <span class="guide-more">Zum Ratgeber →</span>
-      </a>
-      <a class="guide-card" href="guides/zufallsgruppen-generator.html">
-        <h3>Zufallsgruppen-Generator</h3>
-        <p>Was ein guter Generator braucht — App oder Online-Tool?</p>
-        <span class="guide-more">Zum Ratgeber →</span>
-      </a>
-      <a class="guide-card" href="guides/teams-auslosen.html">
-        <h3>Teams auslosen</h3>
-        <p>Faire Mannschaften für Sportunterricht, Training und Verein.</p>
-        <span class="guide-more">Zum Ratgeber →</span>
-      </a>
-      <a class="guide-card" href="guides/gruppeneinteilung-methoden.html">
-        <h3>5 Methoden im Vergleich</h3>
-        <p>Abzählen, Karten, Puzzle, Excel oder App — was wann passt.</p>
-        <span class="guide-more">Zum Ratgeber →</span>
-      </a>
-      <a class="guide-card" href="guides/classroom-management.html">
-        <h3>Classroom Management</h3>
-        <p>Sitzplan, Gruppen und Lautstärke – ein Workflow für die ganze Stunde.</p>
-        <span class="guide-more">Zum Ratgeber →</span>
-      </a>
-    </div>
+  <!-- RATGEBER -->
+  <section class="sec">
+    <h2 class="sec-title">Zum Weiterlesen</h2>
+    <ul class="guide-links">
+      <li><a href="guides/gruppen-einteilen.html"><strong>Gruppen einteilen</strong><span>Zufällig, fair und ohne Diskussion.</span></a></li>
+      <li><a href="guides/zufallsgruppen-generator.html"><strong>Zufallsgruppen-Generator</strong><span>App oder Online-Tool?</span></a></li>
+      <li><a href="guides/teams-auslosen.html"><strong>Teams auslosen</strong><span>Für Sportunterricht, Training und Verein.</span></a></li>
+      <li><a href="guides/gruppeneinteilung-methoden.html"><strong>5 Methoden im Vergleich</strong><span>Abzählen, Karten, Puzzle, Excel oder App.</span></a></li>
+      <li><a href="guides/classroom-management.html"><strong>Classroom Management</strong><span>Sitzplan, Gruppen und Lautstärke.</span></a></li>
+    </ul>
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
-    <p class="faq-eyebrow">FAQ</p>
-
-    <div class="faq-item">
-      <h3>Wie teile ich eine Gruppe zufällig in Teams auf?</h3>
-      <p>Lege deine Gruppe einmalig in Team Zufall an, trage die Teilnehmer ein und tippe auf „Teams auslosen". Die App verteilt alle gleichmäßig und zufällig auf die gewählte Anzahl Teams — in Sekunden.</p>
-      <a class="faq-more" href="guides/gruppen-einteilen.html">Mehr erfahren →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Für wen ist Team Zufall geeignet?</h3>
-      <p>Für alle, die regelmäßig Gruppen in Teams aufteilen: Lehrkräfte, Trainer, Seminarleiter, Vereinsverantwortliche oder Eventorganisatoren.</p>
-      <a class="faq-more" href="guides/teams-auslosen.html">Mehr erfahren →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Kann ich die Teamgröße selbst festlegen?</h3>
-      <p>Ja. Du bestimmst, wie viele Personen ein Team haben soll — 2er, 3er, 4er Gruppen und mehr sind möglich. Team Zufall verteilt die Teilnehmer entsprechend gleichmäßig.</p>
-      <a class="faq-more" href="guides/zufallsgruppen-generator.html">Mehr erfahren →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Werden meine Daten gespeichert oder übertragen?</h3>
-      <p>Nein. Alle Gruppen und Teilnehmernamen bleiben ausschließlich lokal auf deinem Gerät. Es werden keine Daten an externe Server übertragen.</p>
-      <a class="faq-more" href="guides/zufallsgruppen-generator.html">Mehr erfahren →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Kann ich Namenslisten aus Excel importieren?</h3>
-      <p>Ja. Exportiere die Liste als CSV aus Excel oder Google Sheets und importiere sie direkt in Team Zufall — die ganze Klasse oder Mannschaft ist in Sekunden angelegt.</p>
-      <a class="faq-more" href="guides/gruppen-einteilen.html">Mehr erfahren →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Ist Team Zufall kostenlos?</h3>
-      <p>Ja. Team Zufall ist kostenlos für iPhone und iPad (iOS 17+) im App Store erhältlich.</p>
-      <a class="faq-more" href="guides/gruppeneinteilung-methoden.html">Mehr erfahren →</a>
-    </div>
+  <section class="sec faq">
+    <h2 class="sec-title">Häufige Fragen</h2>
+    <details class="qa"><summary><h3>Wie teile ich eine Gruppe zufällig in Teams auf?</h3></summary>
+      <p>Lege deine Gruppe einmalig in Team Zufall an, trage die Teilnehmer ein und tippe auf „Teams auslosen". Die App verteilt alle gleichmäßig und zufällig auf die gewählte Anzahl Teams — in Sekunden.</p></details>
+    <details class="qa"><summary><h3>Für wen ist Team Zufall geeignet?</h3></summary>
+      <p>Für alle, die regelmäßig Gruppen in Teams aufteilen: Lehrkräfte, Trainer, Seminarleiter, Vereinsverantwortliche oder Eventorganisatoren.</p></details>
+    <details class="qa"><summary><h3>Kann ich die Teamgröße selbst festlegen?</h3></summary>
+      <p>Ja. Du bestimmst, wie viele Personen ein Team haben soll — 2er, 3er, 4er Gruppen und mehr sind möglich. Team Zufall verteilt die Teilnehmer entsprechend gleichmäßig.</p></details>
+    <details class="qa"><summary><h3>Werden meine Daten gespeichert oder übertragen?</h3></summary>
+      <p>Nein. Alle Gruppen und Teilnehmernamen bleiben ausschließlich lokal auf deinem Gerät. Es werden keine Daten an externe Server übertragen.</p></details>
+    <details class="qa"><summary><h3>Kann ich Namenslisten aus Excel importieren?</h3></summary>
+      <p>Ja. Exportiere die Liste als CSV aus Excel oder Google Sheets und importiere sie direkt in Team Zufall — die ganze Klasse oder Mannschaft ist in Sekunden angelegt.</p></details>
+    <details class="qa"><summary><h3>Ist Team Zufall kostenlos?</h3></summary>
+      <p>Ja. Team Zufall ist kostenlos für iPhone und iPad (iOS 17+) im App Store erhältlich.</p></details>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <p style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; letter-spacing:-0.03em; margin-bottom:0.75rem;">Die nächste Gruppeneinteilung dauert eine Sekunde.</p>
-    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.75rem;">Gratis laden — und nie wieder Zettelchen falten.</p>
-    <a href="https://apps.apple.com/de/app/gruppen-aufteilen-team-zufall/id6768655282" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" style="height:48px; width:auto; display:block;" />
+  <!-- SCHLUSS -->
+  <section class="closing">
+    <picture>
+      <source srcset="images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="images/team-zufall/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>Die nächste Gruppeneinteilung dauert eine Sekunde.</h2>
+    <a class="app-store-badge" href="https://apps.apple.com/de/app/gruppen-aufteilen-team-zufall/id6768655282" target="_blank" rel="noopener">
+      <img src="images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Im App Store herunterladen" />
     </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Impressum</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a>
   </footer>
-
-  <script>
-    (function () {
-      var slides = document.querySelectorAll('.ipad-screen .slide');
-      var dots = document.querySelectorAll('.dot');
-      var frame = document.querySelector('.ipad-screen');
-      var current = 0;
-
-      function go(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (n + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { go(i); });
-      });
-
-      frame.addEventListener('click', function () { go(current + 1); });
-    })();
-  </script>
   <script src="assets/theme.js" defer></script>
   <script src="assets/lang.js" defer></script>
 </body>

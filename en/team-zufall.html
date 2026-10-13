@@ -100,483 +100,9 @@
   </script>
 
   <link rel="stylesheet" href="../assets/base.css" />
+  <link rel="stylesheet" href="../assets/app.css" />
   <style>
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem clamp(1.5rem, 6vw, 5rem);
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .nav-logo img {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      background: #fff;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: calc(60px + 4rem) clamp(1.5rem, 6vw, 6rem) 0;
-      max-width: 1300px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 500px;
-      background: radial-gradient(ellipse, var(--tz-dim), transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 3.5rem;
-    }
-    .hero-icon {
-      width: 76px;
-      height: 76px;
-      border-radius: 18px;
-      display: block;
-      margin-bottom: 1.75rem;
-      opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 6rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--fg);
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
-    }
-
-    .tagline {
-      margin-top: 1.25rem;
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 42ch;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
-    }
-
-    .hero-badge {
-      margin-top: 2.25rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.55s forwards;
-    }
-
-    .hero-badge img {
-      height: 48px;
-      width: auto;
-      display: block;
-      transition: opacity 0.2s;
-    }
-
-    .hero-badge a:hover img { opacity: 0.75; }
-
-    .hero-meta {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.65s forwards;
-    }
-
-    .hero-meta span { white-space: nowrap; }
-    .hero-meta .sep { opacity: 0.35; margin: 0 0.5rem; }
-
-    /* ── IPAD MOCKUP ── */
-    .hero-visual {
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeUp 1.2s ease 0.5s forwards;
-      filter: drop-shadow(0 30px 80px rgba(36,31,26,0.16));
-    }
-
-    .ipad-mockup { position: relative; width: 100%; }
-
-    .ipad-mockup .ipad-bezel {
-      width: 100%;
-      height: auto;
-      display: block;
-      position: relative;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .ipad-mockup .ipad-screen {
-      position: absolute;
-      top: 5.8%;
-      left: 3.85%;
-      width: 92.4%;
-      height: 88.5%;
-      z-index: 1;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .ipad-screen .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top left;
-      opacity: 0;
-      transition: opacity 0.7s ease;
-      display: block;
-    }
-
-    .ipad-screen .slide.active { opacity: 1; }
-
-    .slideshow-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 1.25rem;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--muted);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .dot.active { background: var(--tz-text); transform: scale(1.4); }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      max-width: 1100px;
-      margin: 3.5rem auto 0;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      padding: 7rem clamp(1.5rem, 8vw, 8rem) 7rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 3.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 2rem 2rem 2.25rem;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover { border-color: rgba(240,125,74,0.22); }
-
-    .feat-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 11px;
-      background: var(--tz-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      color: var(--tz-text);
-    }
-
-    .feat-icon svg { width: 22px; height: 22px; }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.65rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── DESCRIPTION ── */
-    .description {
-      padding: 0 clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .description p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 auto;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-steps { counter-reset: step; list-style: none; margin-top: 0.5rem; }
-
-    .how-steps li {
-      counter-increment: step;
-      position: relative;
-      padding: 0 0 2rem 3.6rem;
-    }
-
-    .how-steps li:last-child { padding-bottom: 0; }
-
-    .how-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      background: var(--tz-dim);
-      color: var(--tz-text);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .how-steps h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-
-    .how-steps p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* ── GUIDES ── */
-    .guides {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .guides-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .guide-card {
-      display: block;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem 1.6rem;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(176,77,28,0.05), 0 8px 24px rgba(36,31,26,0.05);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .guide-card:hover { border-color: rgba(240,125,74,0.4); transform: translateY(-4px); }
-
-    .guide-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .guide-card p {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .guide-card .guide-more {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--tz-text);
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      padding: 5rem clamp(1.5rem, 8vw, 8rem) 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .faq-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item { border-top: 1px solid var(--line); padding: 1.5rem 0; }
-    .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .faq-more {
-      display: inline-block;
-      margin-top: 0.45rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--tz-text);
-      text-decoration: none;
-    }
-
-    .faq-more:hover { text-decoration: underline; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem clamp(1.5rem, 8vw, 8rem) 9rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center bottom, rgba(240,125,74,0.07), transparent 65%);
-      pointer-events: none;
-    }
-
-    .final-cta > * { position: relative; }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem 3.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) { .hero-visual { max-width: 100%; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero-icon, .hero h1, .tagline, .hero-badge, .hero-visual { opacity: 1; }
-    }
+    :root { --app: var(--tz); --app-text: var(--tz-text); --app-dim: var(--tz-dim); }
   </style>
 </head>
 <body>
@@ -603,239 +129,136 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-
-    <div class="hero-content">
-      <picture>
-        <source srcset="../images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-        <img src="../images/team-zufall/icons/light/icon.png" alt="Team Zufall App Icon" class="hero-icon" />
-      </picture>
-      <h1>Team Zufall</h1>
-      <p class="tagline">Random team generator &amp; group maker — divide any group fairly, in one second.</p>
-      <div class="hero-badge">
-        <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
-          <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
-        </a>
-      </div>
-      <p class="hero-meta">
-        <span>Free</span><span class="sep">·</span><span>iPhone &amp; iPad</span><span class="sep">·</span><span>No account</span><span class="sep">·</span><span>Data stays on your device</span>
-      </p>
-    </div>
-
-    <div class="hero-visual">
-      <div class="ipad-mockup">
-        <div class="ipad-screen">
-          <img class="slide active" src="../images/team-zufall/screenshots/light/app-01-overview.png" alt="Team Zufall overview with saved groups" />
-          <img class="slide" src="../images/team-zufall/screenshots/light/app-02-members.png" alt="Participant list of a group in Team Zufall" loading="lazy" />
-          <img class="slide" src="../images/team-zufall/screenshots/light/app-03-teams.png" alt="Randomly split teams in Team Zufall" loading="lazy" />
-          <img class="slide" src="../images/team-zufall/screenshots/light/app-04-new-group.png" alt="Create a new group in Team Zufall" loading="lazy" />
+  <main>
+  <!-- STAGE -->
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="stage-copy">
+        <picture>
+          <source srcset="../images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+          <img src="../images/team-zufall/icons/light/icon.png" alt="Team Zufall App Icon" class="stage-icon" />
+        </picture>
+        <h1>Team Zufall</h1>
+        <p class="tagline">Fair teams. In one second.</p>
+        <div class="stage-cta">
+          <a class="app-store-badge" href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
+            <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
+          </a>
+          <ul class="hero-meta">
+            <li>Free for iPhone &amp; iPad</li>
+            <li>No sign-in</li>
+            <li>Data stays on your device</li>
+          </ul>
         </div>
-        <img class="ipad-bezel"
-             src="../images/ipad-bezel.png"
-             alt="" aria-hidden="true" />
+      </div>
+      <div class="stage-art">
+        <img src="../images/team-zufall/hero.webp" width="2560" height="1800" alt="Team Zufall on iPad: seven drawn teams, behind them the overview of saved groups" />
       </div>
     </div>
-
-    <div class="slideshow-dots">
-      <button class="dot active" aria-label="Image 1"></button>
-      <button class="dot" aria-label="Image 2"></button>
-      <button class="dot" aria-label="Image 3"></button>
-      <button class="dot" aria-label="Image 4"></button>
-    </div>
-
   </section>
 
-  <hr class="divider" />
+  <!-- SCREENSHOTS -->
+  <div class="shots" aria-label="App screenshots">
+    <img src="../images/team-zufall/screenshots/en/01.png" width="552" height="1199" alt="Fair teams in one second: drawn teams on iPhone" />
+    <img src="../images/team-zufall/screenshots/en/02.png" width="552" height="1199" loading="lazy" alt="Absent today? Deselect with one tap" />
+    <img src="../images/team-zufall/screenshots/en/03.png" width="552" height="1199" loading="lazy" alt="Watch the shuffle: the draw as an animation" />
+    <img src="../images/team-zufall/screenshots/en/04.png" width="552" height="1199" loading="lazy" alt="Set up once, draw again and again: saved groups" />
+    <img src="../images/team-zufall/screenshots/en/05.png" width="552" height="1199" loading="lazy" alt="Import a class list straight from Excel" />
+  </div>
 
   <!-- FEATURES -->
-  <section class="features">
-    <p class="section-eyebrow">Features</p>
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <h3>Manage groups</h3>
-        <p>Enter your groups once. Names are saved — no retyping next time.</p>
+  <section class="sec">
+    <h2 class="sec-title">Teams without the argument.</h2>
+    <div class="feats">
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+        <h3>One tap, done</h3>
+        <p>Everyone is spread evenly and randomly across the teams.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 3 21 3 21 8"/>
-            <line x1="4" y1="20" x2="21" y2="3"/>
-            <polyline points="21 16 21 21 16 21"/>
-            <line x1="15" y1="15" x2="21" y2="21"/>
-            <line x1="4" y1="4" x2="9" y2="9"/>
-          </svg>
-        </div>
-        <h3>One tap — done</h3>
-        <p>All participants are distributed evenly and randomly into teams. Ready to go immediately.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Groups stay saved</h3>
+        <p>Set up a class, team or club once and draw again and again.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"/>
-            <line x1="4" y1="10" x2="4" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12" y2="3"/>
-            <line x1="20" y1="21" x2="20" y2="16"/>
-            <line x1="20" y1="12" x2="20" y2="3"/>
-            <line x1="1" y1="14" x2="7" y2="14"/>
-            <line x1="9" y1="8" x2="15" y2="8"/>
-            <line x1="17" y1="16" x2="23" y2="16"/>
-          </svg>
-        </div>
-        <h3>Flexible team size</h3>
-        <p>Teams of 2, 3, 4 — you decide how many people should be in each team.</p>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="7" y1="12" x2="17" y2="12"/></svg></div>
+        <h3>Absent? Left out</h3>
+        <p>Deselect absentees with one tap and the draw skips them.</p>
       </div>
-
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Any team size</h3>
+        <p>Pairs, threes, fours or larger teams.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg></div>
+        <h3>Visibly shuffled</h3>
+        <p>An animation visibly shuffles every name. Shaking starts a new round.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></div>
+        <h3>Up on the wall</h3>
+        <p>Beam the teams or share a PDF. Class lists come in via CSV from Excel.</p>
+      </div>
     </div>
   </section>
 
-  <!-- DESCRIPTION -->
-  <section class="description">
-    <p>Team Zufall makes dividing groups into random teams as simple as possible. Whether for sports, seminars, workshops, or the classroom — one tap is enough, and everyone is drawn fairly into teams. The app saves your groups locally, so you can start right away next time. No sign-in, no cloud, no distractions.</p>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how">
-    <p class="section-eyebrow">How it works</p>
-    <ol class="how-steps">
-      <li>
-        <h3>Set up your group</h3>
-        <p>Type in names or import the whole list as CSV from Excel or Google Sheets. Once created, everything stays saved.</p>
-      </li>
-      <li>
-        <h3>Deselect absentees</h3>
-        <p>Whoever's out today gets deactivated with one tap — and is skipped automatically in the draw.</p>
-      </li>
-      <li>
-        <h3>Draw the teams</h3>
-        <p>Choose the team count and draw — the animation visibly scrambles all names, then the teams are set. Not happy? Shake the device for a new round.</p>
-      </li>
-      <li>
-        <h3>Share the result</h3>
-        <p>Show the teams full-screen, beam them onto the wall, or export as PDF.</p>
-      </li>
+  <!-- SO GEHT'S -->
+  <section class="sec">
+    <h2 class="sec-title">That’s all it takes.</h2>
+    <ol class="steps">
+      <li><h3>Set up a group</h3><p>Type names or import a CSV.</p></li>
+      <li><h3>Deselect absentees</h3><p>One tap per name that’s out today.</p></li>
+      <li><h3>Draw</h3><p>Pick the team count, tap, watch.</p></li>
+      <li><h3>Show</h3><p>Beam it or share a PDF.</p></li>
     </ol>
   </section>
 
-  <!-- GUIDES -->
-  <section class="guides">
-    <p class="section-eyebrow">Guides</p>
-    <div class="guides-grid">
-      <a class="guide-card" href="guides/divide-students-into-groups.html">
-        <h3>Divide students into groups</h3>
-        <p>Random, fair, and drama-free — how it works in class.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/random-group-generator.html">
-        <h3>Random group generator</h3>
-        <p>What a good generator needs — app or online tool?</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/random-team-generator.html">
-        <h3>Random team generator</h3>
-        <p>Fair teams for PE, practice, and clubs.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/ways-to-group-students.html">
-        <h3>5 ways to group students</h3>
-        <p>Counting off, cards, puzzles, Excel, or app — what fits when.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-      <a class="guide-card" href="guides/classroom-management.html">
-        <h3>Classroom management</h3>
-        <p>Seating, groups and noise – one workflow for the whole lesson.</p>
-        <span class="guide-more">Read the guide →</span>
-      </a>
-    </div>
+  <!-- RATGEBER -->
+  <section class="sec">
+    <h2 class="sec-title">Further reading</h2>
+    <ul class="guide-links">
+      <li><a href="guides/divide-students-into-groups.html"><strong>Divide students into groups</strong><span>Random, fair and drama-free.</span></a></li>
+      <li><a href="guides/random-group-generator.html"><strong>Random group generator</strong><span>App or online tool?</span></a></li>
+      <li><a href="guides/random-team-generator.html"><strong>Random team generator</strong><span>Fair teams for PE, practice and clubs.</span></a></li>
+      <li><a href="guides/ways-to-group-students.html"><strong>5 ways to group students</strong><span>Counting off, cards, puzzles, Excel or app.</span></a></li>
+      <li><a href="guides/classroom-management.html"><strong>Classroom management</strong><span>Seating, groups and noise.</span></a></li>
+    </ul>
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
-    <p class="faq-eyebrow">FAQ</p>
-
-    <div class="faq-item">
-      <h3>How do I randomly split a group into teams?</h3>
-      <p>Add your group to Team Zufall once, enter the participants, and tap "Draw Teams". The app distributes everyone evenly and randomly into the chosen number of teams — in seconds.</p>
-      <a class="faq-more" href="guides/divide-students-into-groups.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Who is Team Zufall for?</h3>
-      <p>For anyone who regularly splits groups into teams: teachers, coaches, seminar leaders, club organisers, or event planners.</p>
-      <a class="faq-more" href="guides/random-team-generator.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I choose the team size?</h3>
-      <p>Yes. You decide how many people should be in a team — groups of 2, 3, 4 and more are possible. Team Zufall distributes the participants evenly.</p>
-      <a class="faq-more" href="guides/random-group-generator.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Are my data stored or transmitted?</h3>
-      <p>No. All groups and participant names remain exclusively on your device. No data is transmitted to external servers.</p>
-      <a class="faq-more" href="guides/random-group-generator.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I import name lists from Excel?</h3>
-      <p>Yes. Export the list as CSV from Excel or Google Sheets and import it straight into Team Zufall — the whole class or roster is set up in seconds.</p>
-      <a class="faq-more" href="guides/divide-students-into-groups.html">Learn more →</a>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is Team Zufall free?</h3>
-      <p>Yes. Team Zufall is free for iPhone and iPad (iOS 17+) on the App Store.</p>
-      <a class="faq-more" href="guides/ways-to-group-students.html">Learn more →</a>
-    </div>
+  <section class="sec faq">
+    <h2 class="sec-title">Questions</h2>
+    <details class="qa"><summary><h3>How do I randomly split a group into teams?</h3></summary>
+      <p>Add your group to Team Zufall once, enter the participants, and tap "Draw Teams". The app distributes everyone evenly and randomly into the chosen number of teams — in seconds.</p></details>
+    <details class="qa"><summary><h3>Who is Team Zufall for?</h3></summary>
+      <p>For anyone who regularly splits groups into teams: teachers, coaches, seminar leaders, club organisers, or event planners.</p></details>
+    <details class="qa"><summary><h3>Can I choose the team size?</h3></summary>
+      <p>Yes. You decide how many people should be in a team — groups of 2, 3, 4 and more are possible. Team Zufall distributes the participants evenly.</p></details>
+    <details class="qa"><summary><h3>Are my data stored or transmitted?</h3></summary>
+      <p>No. All groups and participant names remain exclusively on your device. No data is transmitted to external servers.</p></details>
+    <details class="qa"><summary><h3>Can I import name lists from Excel?</h3></summary>
+      <p>Yes. Export the list as CSV from Excel or Google Sheets and import it straight into Team Zufall — the whole class or roster is set up in seconds.</p></details>
+    <details class="qa"><summary><h3>Is Team Zufall free?</h3></summary>
+      <p>Yes. Team Zufall is free for iPhone and iPad (iOS 17+) on the App Store.</p></details>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <p style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; letter-spacing:-0.03em; margin-bottom:0.75rem;">Your next group split takes one second.</p>
-    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.75rem;">Download for free — and never fold paper slips again.</p>
-    <a href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener" style="display:inline-block; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" style="height:48px; width:auto; display:block;" />
+  <!-- SCHLUSS -->
+  <section class="closing">
+    <picture>
+      <source srcset="../images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+      <img src="../images/team-zufall/icons/light/icon.png" alt="" class="closing-icon" loading="lazy" />
+    </picture>
+    <h2>Your next group split takes one second.</h2>
+    <a class="app-store-badge" href="https://apps.apple.com/us/app/team-zufall-gruppen-aufteilen/id6768655282" target="_blank" rel="noopener">
+      <img src="../images/Download_on_the_App_Store_Badge_US_RGB_blk_092917.svg" alt="Download on the App Store" />
     </a>
   </section>
+  </main>
 
   <footer>
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="impressum.html">Legal Notice</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
   </footer>
-
-  <script>
-    (function () {
-      var slides = document.querySelectorAll('.ipad-screen .slide');
-      var dots = document.querySelectorAll('.dot');
-      var frame = document.querySelector('.ipad-screen');
-      var current = 0;
-
-      function go(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (n + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { go(i); });
-      });
-
-      frame.addEventListener('click', function () { go(current + 1); });
-    })();
-  </script>
   <script src="../assets/theme.js" defer></script>
   <script src="../assets/lang.js" defer></script>
 </body>
