@@ -148,13 +148,30 @@ def team_zufall() -> None:
     # Keine eigene Szene: Die Screenshot-Pipeline der App rendert für den
     # Beamer-Screenshot schon Fernseher plus iPhone auf transparentem Grund
     # (pipeline/tv.py). Die iPad-Fassung (2400×1960) passt in die Bühne.
+    # Ihr orangefarbener Schein und der Schatten enden dort hart an der Bildkante;
+    # auf dem Verlauf der Kacheln sah man das als Rechteck. Darum laufen die
+    # halbtransparenten Pixel am Rand aus, Fernseher und iPhone (deckend) nicht.
+    from PIL import Image, ImageChops
+
+    band = 140  # Pixel, auf denen der Rand ausläuft
     for code, folder in TZ_LANGS.items():
         src = TZ_TV / folder / "tv.png"
         need(src)
+        img = Image.open(src).convert("RGBA")
+        w, h = img.size
+        edge = lambda n: [min(255, 255 * min(i, n - 1 - i) // band) for i in range(n)]
+        across = Image.new("L", (w, 1)); across.putdata(edge(w))
+        down = Image.new("L", (1, h)); down.putdata(edge(h))
+        ramp = ImageChops.darker(across.resize((w, h)), down.resize((w, h)))
+        alpha = img.getchannel("A")
+        opaque = alpha.point(lambda v: 255 if v >= 230 else 0)
+        img.putalpha(Image.composite(alpha, ImageChops.multiply(alpha, ramp), opaque))
         out = ROOT / f"images/team-zufall/hero/{code}.webp"
         out.parent.mkdir(parents=True, exist_ok=True)
-        subprocess.run(["cwebp", "-quiet", "-q", "82", "-alpha_q", "90", "-m", "6",
-                        str(src), "-o", str(out)], check=True)
+        with tempfile.NamedTemporaryFile(suffix=".png") as tmp:
+            img.save(tmp.name)
+            subprocess.run(["cwebp", "-quiet", "-q", "82", "-alpha_q", "90", "-m", "6",
+                            tmp.name, "-o", str(out)], check=True)
 
 
 def tracker() -> None:

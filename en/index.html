@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS Apps for iPhone and iPad</title>
-  <meta name="description" content="iOS apps by crabucate: Daily Bestiary, Team Draw and Platzwahl — simple, local, no distractions." />
+  <meta name="description" content="iOS apps by crabucate: Team Draw, Daily Bestiary and Platzwahl — simple, local, no distractions." />
   <link rel="canonical" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="x-default" href="https://crabucate.de/" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/en/" />
   <meta property="og:title" content="crabucate — iOS Apps for iPhone and iPad" />
-  <meta property="og:description" content="Small apps for real problems. Daily Bestiary, Team Draw and Platzwahl, for iPhone and iPad." />
+  <meta property="og:description" content="Small apps for real problems. Team Draw, Daily Bestiary and Platzwahl, for iPhone and iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -188,6 +188,8 @@
     }
 
     .app-tile:hover .tile-preview img { transform: scale(1.03); }
+    /* Die Beamer-Szene hat kaum eigenen Rand und ist höher als die übrigen Szenen. */
+    .app-tile--tz .tile-preview img { width: 88%; margin: 2.25rem 0; }
 
     /* ── GUIDES ── */
     .ratgeber {
@@ -287,7 +289,23 @@
 
     <div class="apps-grid">
 
-      <a href="ruhe.html" class="app-tile app-tile--ru app-tile--wide">
+      <a href="team-zufall.html" class="app-tile app-tile--tz app-tile--wide">
+        <div class="tile-content">
+          <picture>
+            <source srcset="../images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+            <img src="../images/team-zufall/icons/light/icon.png" alt="Team Draw App Icon" class="tile-icon" />
+          </picture>
+          <h2 class="tile-name">Team Draw</h2>
+          <p class="tile-tagline">Fair teams. In one second.</p>
+          <span class="tile-free">New: live on the big screen</span>
+          <span class="tile-cta">On the App Store</span>
+        </div>
+        <div class="tile-preview">
+          <img src="../images/team-zufall/hero/en.webp" width="2400" height="1960" alt="Team Draw live on a TV: drawn teams" />
+        </div>
+      </a>
+
+      <a href="ruhe.html" class="app-tile app-tile--ru">
         <div class="tile-content">
           <picture>
             <source srcset="../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
@@ -298,7 +316,7 @@
           <span class="tile-cta">On the App Store</span>
         </div>
         <div class="tile-preview">
-          <img src="../images/ruhe/hero/en.webp" width="2560" height="1800" alt="Ruhe on iPad and iPhone: Pip in green, yellow and red" />
+          <img src="../images/ruhe/hero/en.webp" width="2560" height="1800" alt="Ruhe on iPad and iPhone: Pip in green, yellow and red" loading="lazy" />
         </div>
       </a>
 
@@ -311,21 +329,6 @@
         </div>
         <div class="tile-preview">
           <img src="../images/bestiary/hero/en.webp" width="2560" height="1800" alt="Daily Bestiary on three iPhones: today’s card, front and back" loading="lazy" />
-        </div>
-      </a>
-
-      <a href="team-zufall.html" class="app-tile app-tile--tz">
-        <div class="tile-content">
-          <picture>
-            <source srcset="../images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-            <img src="../images/team-zufall/icons/light/icon.png" alt="Team Draw App Icon" class="tile-icon" />
-          </picture>
-          <h2 class="tile-name">Team Draw</h2>
-          <p class="tile-tagline">Fair teams. In one second.</p>
-          <span class="tile-cta">On the App Store</span>
-        </div>
-        <div class="tile-preview">
-          <img src="../images/team-zufall/hero/en.webp" width="2400" height="1960" alt="Team Draw live on a TV: drawn teams" loading="lazy" />
         </div>
       </a>
 
@@ -349,15 +352,15 @@
     <section class="ratgeber" aria-label="Guides">
       <p class="ratgeber-title">Guides for teachers</p>
       <div class="ratgeber-links">
+        <a href="guides/divide-students-into-groups.html">Divide students into groups</a>
+        <a href="guides/random-group-generator.html">Random group generator</a>
+        <a href="guides/random-team-generator.html">Random team generator</a>
+        <a href="guides/ways-to-group-students.html">5 ways to group students</a>
         <a href="guides/classroom-management.html">Classroom management</a>
         <a href="guides/create-seating-chart.html">Create a seating chart</a>
         <a href="guides/seating-chart-generator.html">Seating chart generator</a>
         <a href="guides/classroom-seating-arrangements.html">Classroom seating arrangements</a>
         <a href="guides/seating-chart-app.html">Seating chart app for iPad</a>
-        <a href="guides/divide-students-into-groups.html">Divide students into groups</a>
-        <a href="guides/random-group-generator.html">Random group generator</a>
-        <a href="guides/random-team-generator.html">Random team generator</a>
-        <a href="guides/ways-to-group-students.html">5 ways to group students</a>
       </div>
     </section>
   </main>

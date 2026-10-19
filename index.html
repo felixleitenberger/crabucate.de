@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS-Apps für Schule &amp; Unterricht</title>
-  <meta name="description" content="iOS-Apps aus dem Schulalltag: Der Lehrer Arbeitszeit Tracker erfasst die Arbeitszeit, Platzwahl erstellt automatisch Sitzpläne, Team Zufall teilt Gruppen zufällig auf, Daily Bestiary bringt jeden Tag eine neue Tierkarte. Für iPhone und iPad." />
+  <meta name="description" content="iOS-Apps aus dem Schulalltag: Team Zufall teilt Gruppen zufällig auf, der Lehrer Arbeitszeit Tracker erfasst die Arbeitszeit, Platzwahl erstellt automatisch Sitzpläne, Daily Bestiary bringt jeden Tag eine neue Tierkarte. Für iPhone und iPad." />
   <link rel="canonical" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
@@ -24,7 +24,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/" />
   <meta property="og:title" content="crabucate — iOS-Apps für Schule &amp; Unterricht" />
-  <meta property="og:description" content="iOS-Apps aus dem Schulalltag: Zeiterfassung mit dem Lehrer Arbeitszeit Tracker, Sitzpläne mit Platzwahl, Gruppen mit Team Zufall, Tierkarten mit Daily Bestiary. Für iPhone und iPad." />
+  <meta property="og:description" content="iOS-Apps aus dem Schulalltag: Gruppen mit Team Zufall, Zeiterfassung mit dem Lehrer Arbeitszeit Tracker, Sitzpläne mit Platzwahl, Tierkarten mit Daily Bestiary. Für iPhone und iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -193,6 +193,8 @@
     }
 
     .app-tile:hover .tile-preview img { transform: scale(1.03); }
+    /* Die Beamer-Szene hat kaum eigenen Rand und ist höher als die übrigen Szenen. */
+    .app-tile--tz .tile-preview img { width: 88%; margin: 2.25rem 0; }
 
     /* ── RATGEBER ── */
     .ratgeber {
@@ -292,18 +294,19 @@
 
     <div class="apps-grid">
 
-      <a href="ruhe.html" class="app-tile app-tile--ru app-tile--wide">
+      <a href="team-zufall.html" class="app-tile app-tile--tz app-tile--wide">
         <div class="tile-content">
           <picture>
-            <source srcset="images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-            <img src="images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="tile-icon" />
+            <source srcset="images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+            <img src="images/team-zufall/icons/light/icon.png" alt="Team Zufall App Icon" class="tile-icon" />
           </picture>
-          <h2 class="tile-name">Ruhe</h2>
-          <p class="tile-tagline">Die Lärmampel, die ruhige Phasen belohnt.</p>
+          <h2 class="tile-name">Team Zufall</h2>
+          <p class="tile-tagline">Faire Teams. In einer Sekunde.</p>
+          <span class="tile-free">Neu: live auf dem Beamer</span>
           <span class="tile-cta">Im App Store</span>
         </div>
         <div class="tile-preview">
-          <img src="images/ruhe/hero/de.webp" width="2560" height="1800" alt="Ruhe auf iPad und iPhone: Pip in Grün, Gelb und Rot" />
+          <img src="images/team-zufall/hero/de.webp" width="2400" height="1960" alt="Team Zufall live auf dem Fernseher: ausgeloste Teams" />
         </div>
       </a>
 
@@ -326,6 +329,21 @@
         </div>
       </a>
 
+      <a href="ruhe.html" class="app-tile app-tile--ru">
+        <div class="tile-content">
+          <picture>
+            <source srcset="images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
+            <img src="images/ruhe/icons/light/icon.png" alt="Ruhe App Icon" class="tile-icon" />
+          </picture>
+          <h2 class="tile-name">Ruhe</h2>
+          <p class="tile-tagline">Die Lärmampel, die ruhige Phasen belohnt.</p>
+          <span class="tile-cta">Im App Store</span>
+        </div>
+        <div class="tile-preview">
+          <img src="images/ruhe/hero/de.webp" width="2560" height="1800" alt="Ruhe auf iPad und iPhone: Pip in Grün, Gelb und Rot" loading="lazy" />
+        </div>
+      </a>
+
       <a href="bestiary/de/" class="app-tile app-tile--db">
         <div class="tile-content">
           <img src="images/bestiary/icon.png" alt="Daily Bestiary App Icon" class="tile-icon" />
@@ -335,21 +353,6 @@
         </div>
         <div class="tile-preview">
           <img src="images/bestiary/hero/de.webp" width="2560" height="1800" alt="Daily Bestiary auf drei iPhones: Karte des Tages, Vorder- und Rückseite" loading="lazy" />
-        </div>
-      </a>
-
-      <a href="team-zufall.html" class="app-tile app-tile--tz">
-        <div class="tile-content">
-          <picture>
-            <source srcset="images/team-zufall/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-            <img src="images/team-zufall/icons/light/icon.png" alt="Team Zufall App Icon" class="tile-icon" />
-          </picture>
-          <h2 class="tile-name">Team Zufall</h2>
-          <p class="tile-tagline">Faire Teams. In einer Sekunde.</p>
-          <span class="tile-cta">Im App Store</span>
-        </div>
-        <div class="tile-preview">
-          <img src="images/team-zufall/hero/de.webp" width="2400" height="1960" alt="Team Zufall live auf dem Fernseher: ausgeloste Teams" loading="lazy" />
         </div>
       </a>
 
@@ -373,6 +376,10 @@
     <section class="ratgeber" aria-label="Ratgeber">
       <p class="ratgeber-title">Ratgeber für Lehrkräfte</p>
       <div class="ratgeber-links">
+        <a href="guides/gruppen-einteilen.html">Gruppen einteilen</a>
+        <a href="guides/zufallsgruppen-generator.html">Zufallsgruppen-Generator</a>
+        <a href="guides/teams-auslosen.html">Teams auslosen</a>
+        <a href="guides/gruppeneinteilung-methoden.html">Gruppeneinteilung: Methoden</a>
         <a href="guides/arbeitszeiterfassung-lehrer.html">Arbeitszeiterfassung für Lehrer</a>
         <a href="guides/jahresarbeitszeit-lehrer-berechnen.html">Jahresarbeitszeit berechnen</a>
         <a href="guides/ueberstunden-lehrer.html">Überstunden als Lehrkraft</a>
@@ -382,10 +389,6 @@
         <a href="guides/sitzordnung-klassenzimmer.html">Sitzordnung im Klassenzimmer</a>
         <a href="guides/sitzplan-grundschule.html">Sitzplan Grundschule</a>
         <a href="guides/sitzplan-app-ipad.html">Sitzplan-App für iPad</a>
-        <a href="guides/gruppen-einteilen.html">Gruppen einteilen</a>
-        <a href="guides/zufallsgruppen-generator.html">Zufallsgruppen-Generator</a>
-        <a href="guides/teams-auslosen.html">Teams auslosen</a>
-        <a href="guides/gruppeneinteilung-methoden.html">Gruppeneinteilung: Methoden</a>
       </div>
     </section>
   </main>
