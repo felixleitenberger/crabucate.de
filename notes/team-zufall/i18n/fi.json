@@ -1,0 +1,113 @@
+{
+  "name": "Team Arvonta",
+  "store_locale": "fi",
+  "lang_choose": "Valitse kieli",
+  "all_apps": "← Kaikki sovellukset",
+  "title": "{n}: jaa ryhmät ja arvo joukkueet",
+  "description": "Jaa mikä tahansa ryhmä reiluihin joukkueisiin sekunneissa: luo lista tai tuo se Excelistä, valitse joukkueiden määrä ja arvo. iPhonelle ja iPadille.",
+  "icon_alt": "Sovelluksen {n} kuvake",
+  "hero_alt": "{n} livenä televisiossa: arvotut joukkueet, edessä iPhone",
+  "tagline": "Reilut joukkueet. Sekunneissa.",
+  "new_label": "UUTTA",
+  "new_text": "Livenä isolla näytöllä",
+  "badge_alt": "Lataa App Storesta",
+  "meta": [
+    "Ensimmäinen arvonta ilmainen",
+    "Ei tiliä",
+    "Tiedot pysyvät laitteella"
+  ],
+  "shots": [
+    "Reilut joukkueet. Sekunneissa.",
+    "Livenä isolla näytöllä.",
+    "Joku poissa? Yksi napautus.",
+    "Ei väittelyä, kuka on kenenkin kanssa.",
+    "Luo jokainen luokka vain kerran.",
+    "Lisäksi: Jaa PDF:nä, Viimeisin arvonta tallessa, 19 kieltä, Ei tiliä"
+  ],
+  "features_eyebrow": "Joukkueet ilman väittelyä.",
+  "features": [
+    [
+      "Livenä isolla näytöllä",
+      "AirPlayn tai kaapelin kautta koko luokka näkee, miten joukkueet syntyvät."
+    ],
+    [
+      "Yksi napautus riittää",
+      "Kaikki jaetaan satunnaisesti ja tasaisesti joukkueisiin."
+    ],
+    [
+      "Ryhmät tallentuvat",
+      "Luo luokka, joukkue tai seura kerran ja arvo yhä uudelleen. Jokainen ryhmä muistaa viimeisimmän arvontansa."
+    ],
+    [
+      "Poissa? Jää pois",
+      "Poista poissaolijat valinnasta yhdellä napautuksella, niin arvonta ohittaa heidät."
+    ],
+    [
+      "Joukkueiden määrä vapaasti",
+      "Pareja, kolmen tai neljän ryhmiä tai isompia joukkueita."
+    ],
+    [
+      "Näkyvästi sekoitettu",
+      "Animaatio sekoittaa kaikki nimet kaikkien nähden. Laitteen ravistus aloittaa uuden kierroksen."
+    ]
+  ],
+  "how_eyebrow": "Näin helppoa se on.",
+  "how": [
+    [
+      "Luo ryhmä",
+      "Kirjoita nimet tai tuo CSV-tiedosto."
+    ],
+    [
+      "Poista poissaolijat",
+      "Yksi napautus jokaista tänään puuttuvaa kohden."
+    ],
+    [
+      "Arvo",
+      "Valitse joukkueiden määrä, napauta ja katso."
+    ],
+    [
+      "Näytä",
+      "Projektorilla tai PDF:nä."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Opas",
+    "card_title": "Luokanhallinta: istumajärjestys, ryhmät ja melu",
+    "card_text": "Toimintamalli koko oppitunnille – istumajärjestyksestä reiluihin ryhmiin ja rauhalliseen työskentelyvaiheeseen."
+  },
+  "faq_eyebrow": "Usein kysyttyä",
+  "faq": [
+    [
+      "Miten jaan ryhmän satunnaisesti joukkueisiin?",
+      "Luo ryhmä kerran sovellukseen {n}, lisää osallistujat ja aloita arvonta. Sovellus jakaa kaikki satunnaisesti ja tasaisesti valitsemaasi määrään joukkueita."
+    ],
+    [
+      "Kenelle {n} on tarkoitettu?",
+      "Kaikille, jotka jakavat ryhmiä usein joukkueisiin: opettajille, valmentajille, kurssien vetäjille, seuroille ja tapahtumien järjestäjille."
+    ],
+    [
+      "Voinko valita joukkueiden määrän itse?",
+      "Kyllä. Valitset itse joukkueiden määrän pareista isoihin joukkueisiin, ja {n} jakaa osallistujat tasaisesti."
+    ],
+    [
+      "Tallennetaanko tai lähetetäänkö tietojani?",
+      "Kaikki ryhmät ja nimet pysyvät vain laitteellasi. Mitään tietoja ei lähetetä palvelimelle."
+    ],
+    [
+      "Voinko tuoda nimilistoja Excelistä?",
+      "Kyllä. Vie lista CSV-muodossa Excelistä tai Google Sheetsistä ja tuo se sovellukseen {n}. Koko luokka on valmiina sekunneissa."
+    ],
+    [
+      "Voinko näyttää arvonnan projektorilla?",
+      "Kyllä. Kun iPhone tai iPad on yhdistetty projektoriin, Apple TV:hen tai näyttöön AirPlayn tai kaapelin kautta, {n} näyttää arvonnan siellä livenä ja vaakasuunnassa. Sovellusta ohjataan edelleen laitteelta."
+    ],
+    [
+      "Mitä {n} maksaa?",
+      "Lataus ja ensimmäinen arvonta ovat ilmaisia. Seuraaviin arvontoihin tarvitset Pro-tilauksen, kuukausittain tai vuosittain, jota voit ensin kokeilla ilmaiseksi. {n} toimii iPhonessa ja iPadissa, joissa on iOS 17 tai uudempi."
+    ]
+  ],
+  "final_title": "Seuraava joukkuejakosi vie sekunnin.",
+  "imprint": "Yhteystiedot",
+  "privacy": "Tietosuoja",
+  "terms": "Käyttöehdot"
+}

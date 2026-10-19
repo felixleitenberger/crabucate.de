@@ -1,0 +1,113 @@
+{
+  "name": "Team Losowanie",
+  "store_locale": "pl",
+  "lang_choose": "Wybierz język",
+  "all_apps": "← Wszystkie aplikacje",
+  "title": "{n}: dziel grupy i losuj zespoły",
+  "description": "Podziel dowolną grupę na sprawiedliwe zespoły w kilka sekund: utwórz listę albo zaimportuj ją z Excela, wybierz liczbę zespołów i losuj. Na iPhone’a i iPada.",
+  "icon_alt": "Ikona aplikacji {n}",
+  "hero_alt": "{n} na żywo na telewizorze: wylosowane zespoły, z przodu iPhone",
+  "tagline": "Sprawiedliwe zespoły. W sekundę.",
+  "new_label": "NOWOŚĆ",
+  "new_text": "Na żywo na dużym ekranie",
+  "badge_alt": "Pobierz z App Store",
+  "meta": [
+    "Pierwsze losowanie za darmo",
+    "Bez konta",
+    "Dane zostają na urządzeniu"
+  ],
+  "shots": [
+    "Sprawiedliwe zespoły. W sekundę.",
+    "Na żywo na dużym ekranie.",
+    "Ktoś nieobecny? Jedno dotknięcie.",
+    "Koniec kłótni o to, kto z kim.",
+    "Każdą klasę tworzysz tylko raz.",
+    "A także: Udostępnianie PDF, Ostatnie losowanie zapisane, 19 języków, Bez konta"
+  ],
+  "features_eyebrow": "Zespoły bez kłótni.",
+  "features": [
+    [
+      "Na żywo na dużym ekranie",
+      "Przez AirPlay lub kabel cała klasa widzi, jak powstają zespoły."
+    ],
+    [
+      "Jedno dotknięcie i gotowe",
+      "Wszyscy trafiają losowo i równo do zespołów."
+    ],
+    [
+      "Grupy zostają zapisane",
+      "Utwórz klasę, drużynę lub klub raz i losuj, ile razy chcesz. Każda grupa pamięta ostatnie losowanie."
+    ],
+    [
+      "Nieobecny? Nie losuje",
+      "Odznacz nieobecnych jednym dotknięciem, a losowanie ich pominie."
+    ],
+    [
+      "Dowolna liczba zespołów",
+      "Pary, trójki, czwórki albo większe zespoły."
+    ],
+    [
+      "Mieszanie na oczach wszystkich",
+      "Animacja miesza wszystkie imiona tak, że każdy to widzi. Potrząśnięcie urządzeniem zaczyna nową rundę."
+    ]
+  ],
+  "how_eyebrow": "To takie proste.",
+  "how": [
+    [
+      "Utwórz grupę",
+      "Wpisz imiona albo zaimportuj plik CSV."
+    ],
+    [
+      "Odznacz nieobecnych",
+      "Jedno dotknięcie na każdą osobę, której dziś nie ma."
+    ],
+    [
+      "Losuj",
+      "Wybierz liczbę zespołów, dotknij i patrz."
+    ],
+    [
+      "Pokaż",
+      "Na projektorze albo jako PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Poradnik",
+    "card_title": "Zarządzanie klasą: miejsca, grupy i hałas",
+    "card_text": "Sposób pracy na całą lekcję – od planu miejsc przez sprawiedliwe grupy po spokojną fazę pracy."
+  },
+  "faq_eyebrow": "Częste pytania",
+  "faq": [
+    [
+      "Jak losowo podzielić grupę na zespoły?",
+      "Utwórz grupę raz w {n}, dodaj uczestników i rozpocznij losowanie. Aplikacja rozdzieli wszystkich losowo i równo na wybraną liczbę zespołów."
+    ],
+    [
+      "Dla kogo jest {n}?",
+      "Dla wszystkich, którzy często dzielą grupy na zespoły: nauczycieli, trenerów, prowadzących warsztaty, klubów i organizatorów wydarzeń."
+    ],
+    [
+      "Czy mogę sam wybrać liczbę zespołów?",
+      "Tak. Sam wybierasz, ile ma być zespołów, od par po duże drużyny, a {n} rozdziela uczestników równo."
+    ],
+    [
+      "Czy moje dane są zapisywane lub przesyłane?",
+      "Wszystkie grupy i imiona zostają wyłącznie na Twoim urządzeniu. Żadne dane nie trafiają na serwer."
+    ],
+    [
+      "Czy mogę zaimportować listy imion z Excela?",
+      "Tak. Wyeksportuj listę jako CSV z Excela lub Arkuszy Google i zaimportuj ją do {n}. Cała klasa jest gotowa w kilka sekund."
+    ],
+    [
+      "Czy mogę pokazać losowanie na projektorze?",
+      "Tak. Gdy iPhone lub iPad jest połączony z projektorem, Apple TV lub monitorem przez AirPlay lub kabel, {n} pokazuje tam losowanie na żywo, w poziomie. Aplikację nadal obsługujesz na swoim urządzeniu."
+    ],
+    [
+      "Ile kosztuje {n}?",
+      "Pobranie i pierwsze losowanie są bezpłatne. Do kolejnych losowań potrzebna jest subskrypcja Pro, miesięczna lub roczna, którą możesz najpierw wypróbować za darmo. {n} działa na iPhonie i iPadzie z iOS 17 lub nowszym."
+    ]
+  ],
+  "final_title": "Następny podział na zespoły zajmie sekundę.",
+  "imprint": "Nota prawna",
+  "privacy": "Prywatność",
+  "terms": "Warunki korzystania"
+}

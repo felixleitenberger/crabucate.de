@@ -1,0 +1,113 @@
+{
+  "name": "Team Lottning",
+  "store_locale": "sv",
+  "lang_choose": "Välj språk",
+  "all_apps": "← Alla appar",
+  "title": "{n}: dela in grupper och lotta lag",
+  "description": "Dela in vilken grupp som helst i rättvisa lag på några sekunder: skapa en lista eller importera den från Excel, välj antal lag och lotta. För iPhone och iPad.",
+  "icon_alt": "Appikon för {n}",
+  "hero_alt": "{n} live på en tv: lottade lag, med iPhone framför",
+  "tagline": "Rättvisa lag. På sekunder.",
+  "new_label": "NYTT",
+  "new_text": "Live på storskärmen",
+  "badge_alt": "Hämta i App Store",
+  "meta": [
+    "Första lottningen gratis",
+    "Inget konto",
+    "Data stannar på enheten"
+  ],
+  "shots": [
+    "Rättvisa lag. På sekunder.",
+    "Live på storskärmen.",
+    "Saknas någon? Ett tryck.",
+    "Inget tjat om vem som hamnar med vem.",
+    "Skapa varje klass bara en gång.",
+    "Dessutom: Dela som PDF, Senaste lottningen sparad, 19 språk, Ingen inloggning"
+  ],
+  "features_eyebrow": "Lag utan diskussion.",
+  "features": [
+    [
+      "Live på storskärmen",
+      "Via AirPlay eller kabel ser hela klassen hur lagen växer fram."
+    ],
+    [
+      "Ett tryck, klart",
+      "Alla fördelas slumpmässigt och jämnt på lagen."
+    ],
+    [
+      "Grupperna sparas",
+      "Skapa en klass, ett lag eller en förening en gång och lotta om och om igen. Varje grupp sparar sin senaste lottning."
+    ],
+    [
+      "Frånvarande? Står över",
+      "Avmarkera frånvarande med ett tryck så hoppar lottningen över dem."
+    ],
+    [
+      "Valfritt antal lag",
+      "Par, tremannalag, fyrmannalag eller större lag."
+    ],
+    [
+      "Synligt blandat",
+      "En animation blandar alla namn så att alla ser det. Skaka enheten för en ny omgång."
+    ]
+  ],
+  "how_eyebrow": "Så enkelt är det.",
+  "how": [
+    [
+      "Skapa en grupp",
+      "Skriv in namnen eller importera en CSV."
+    ],
+    [
+      "Avmarkera frånvarande",
+      "Ett tryck per namn som saknas i dag."
+    ],
+    [
+      "Lotta",
+      "Välj antal lag, tryck och titta."
+    ],
+    [
+      "Visa",
+      "På projektorn eller som PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Guide",
+    "card_title": "Ledarskap i klassrummet: placering, grupper och ljud",
+    "card_text": "Ett arbetssätt för hela lektionen – från placeringen via rättvisa grupper till en lugn arbetsfas."
+  },
+  "faq_eyebrow": "Vanliga frågor",
+  "faq": [
+    [
+      "Hur delar jag in en grupp slumpmässigt i lag?",
+      "Skapa gruppen en gång i {n}, lägg till deltagarna och starta lottningen. Appen fördelar alla slumpmässigt och jämnt på det valda antalet lag."
+    ],
+    [
+      "Vem är {n} till för?",
+      "För alla som ofta delar in grupper i lag: lärare, tränare, kursledare, föreningar och arrangörer av evenemang."
+    ],
+    [
+      "Kan jag välja antalet lag själv?",
+      "Ja. Du väljer hur många lag det ska bli, från par till stora lag, och {n} fördelar deltagarna jämnt."
+    ],
+    [
+      "Sparas eller skickas mina data?",
+      "Alla grupper och namn stannar bara på din enhet. Inga data skickas till någon server."
+    ],
+    [
+      "Kan jag importera namnlistor från Excel?",
+      "Ja. Exportera listan som CSV från Excel eller Google Kalkylark och importera den i {n}. Hela klassen är inlagd på några sekunder."
+    ],
+    [
+      "Kan jag visa lottningen på projektorn?",
+      "Ja. När din iPhone eller iPad är ansluten till en projektor, Apple TV eller skärm via AirPlay eller kabel visar {n} lottningen där live och i liggande format. Du styr fortfarande appen på din enhet."
+    ],
+    [
+      "Vad kostar {n}?",
+      "Nedladdningen och den första lottningen är gratis. För fler lottningar behöver du Pro-prenumerationen, månadsvis eller årsvis, som du först kan prova gratis. {n} fungerar på iPhone och iPad med iOS 17 eller senare."
+    ]
+  ],
+  "final_title": "Din nästa lagindelning tar en sekund.",
+  "imprint": "Om oss",
+  "privacy": "Integritet",
+  "terms": "Användarvillkor"
+}

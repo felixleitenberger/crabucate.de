@@ -32,7 +32,7 @@ RUHE_RAW = DEV / "Ruhe/screenshots/public/screenshots/apple"
 BESTIARY_RAW = DEV / "Wildcards/fastlane/screenshots"
 PLATZWAHL_RAW = DEV / "Platzwahl/appstore_screenshots/raw"
 TRACKER_RAW = DEV / "Lehrer Arbeitszeit/Screenshots"
-TZ_RAW = ROOT / "images/team-zufall/screenshots/light"
+TZ_TV = DEV / "Team Zufall/ASO/screenshots-editor/public/screenshots/apple/ipad"
 
 # Seiten-Kennung -> Ordner der Rohaufnahmen
 RUHE_LANGS = {
@@ -40,6 +40,11 @@ RUHE_LANGS = {
     "nl": "nl", "da": "da", "sv": "sv", "nb": "nb", "fi": "fi", "pl": "pl",
     "cs": "cs", "tr": "tr", "uk": "uk", "ja": "ja", "ko": "ko",
     "zh-hans": "zh-Hans", "zh-hant": "zh-Hant",
+}
+TZ_LANGS = {
+    "de": "de-DE", "en": "en-US", "fr": "fr-FR", "es": "es-ES", "it": "it", "pt-br": "pt-BR",
+    "nl": "nl-NL", "da": "da", "sv": "sv", "nb": "no", "fi": "fi", "pl": "pl", "tr": "tr",
+    "uk": "uk", "ru": "ru", "id": "id", "ja": "ja", "ko": "ko", "zh-hans": "zh-Hans",
 }
 BESTIARY_LANGS = {
     "en": "en-US", "de": "de-DE", "fr": "fr-FR", "es": "es-ES", "it": "it",
@@ -140,10 +145,16 @@ def platzwahl() -> None:
 
 
 def team_zufall() -> None:
-    r = 2752 / 2064
-    body = (ipad(TZ_RAW / "app-01-overview.png", 400, 24, 770, r, z=1)
-            + ipad(TZ_RAW / "app-03-teams.png", 30, 176, 790, r, z=2))
-    render(body, ROOT / "images/team-zufall/hero.webp")
+    # Keine eigene Szene: Die Screenshot-Pipeline der App rendert für den
+    # Beamer-Screenshot schon Fernseher plus iPhone auf transparentem Grund
+    # (pipeline/tv.py). Die iPad-Fassung (2400×1960) passt in die Bühne.
+    for code, folder in TZ_LANGS.items():
+        src = TZ_TV / folder / "tv.png"
+        need(src)
+        out = ROOT / f"images/team-zufall/hero/{code}.webp"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["cwebp", "-quiet", "-q", "82", "-alpha_q", "90", "-m", "6",
+                        str(src), "-o", str(out)], check=True)
 
 
 def tracker() -> None:

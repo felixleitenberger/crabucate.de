@@ -32,6 +32,8 @@
     cs: { auto: 'Vzhled: automaticky', light: 'Vzhled: světlý', dark: 'Vzhled: tmavý' },
     tr: { auto: 'Tema: otomatik', light: 'Tema: açık', dark: 'Tema: koyu' },
     uk: { auto: 'Тема: автоматично', light: 'Тема: світла', dark: 'Тема: темна' },
+    ru: { auto: 'Тема: автоматически', light: 'Тема: светлая', dark: 'Тема: тёмная' },
+    id: { auto: 'Tema: otomatis', light: 'Tema: terang', dark: 'Tema: gelap' },
     ja: { auto: 'テーマ: 自動', light: 'テーマ: ライト', dark: 'テーマ: ダーク' },
     ko: { auto: '테마: 자동', light: '테마: 밝게', dark: '테마: 어둡게' },
     'zh-Hans': { auto: '主题：自动', light: '主题：浅色', dark: '主题：深色' },

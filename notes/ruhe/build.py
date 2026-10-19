@@ -91,13 +91,25 @@ LINKS = {
     "apple": "https://www.apple.com/legal/privacy/",
 }
 
-# Im Ratgeber (/ruhe/<code>/classroom-management/): Platzwahl und Team Zufall
-# gibt es nur auf Deutsch und Englisch, also zeigen sie auf die englische Seite.
+# Im Ratgeber (/ruhe/<code>/classroom-management/): Platzwahl gibt es nur auf
+# Deutsch und Englisch, also zeigt der Link auf die englische Seite. Team Zufall
+# hat eine eigene Seite in jeder Sprache der App (notes/team-zufall/) und dort
+# auch einen eigenen Namen; siehe team_zufall().
 GUIDE_LINKS = {
     "platzwahl": "../../../en/platzwahl.html",
     "teamzufall": "../../../en/team-zufall.html",
     "ruhe": "../",
 }
+TZ_I18N = ROOT / "notes/team-zufall/i18n"
+
+
+def team_zufall(code: str) -> tuple[str, str]:
+    """Name und Link von Team Zufall im Ratgeber dieser Sprache. Spricht die App die
+    Sprache nicht (cs, zh-hant), gilt wie im App Store der englische Name."""
+    path = TZ_I18N / f"{code}.json"
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))["name"], f"../../../team-zufall/{code}/"
+    return "Team Draw", GUIDE_LINKS["teamzufall"]
 
 
 def inline(text: str, links: dict = LINKS) -> str:
@@ -376,7 +388,13 @@ def ld(obj: dict) -> str:
 
 def render_guide(d: dict, code: str, hl: str, name: str) -> str:
     up = "../../../"
-    g = d["guide"]
+    tz_name, tz_href = team_zufall(code)
+    # Die Sprachdateien schreiben "Team Zufall"; hier wird daraus der Name der Sprache.
+    g = json.loads(json.dumps(d["guide"], ensure_ascii=False).replace("Team Zufall", tz_name))
+    links = {**GUIDE_LINKS, "teamzufall": tz_href}
+    apps = [(k, tz_name if k == "tz" else app, folder, tz_href if k == "tz" else href)
+            for k, app, folder, href in GUIDE_APPS]
+    tools = [tz_name if t == "Team Zufall" else t for t in LESSON_TOOLS]
     page_url = url(code, "guide")
     org = {"@type": "Organization", "name": "crabucate", "url": SITE}
     extra = (
@@ -398,10 +416,10 @@ def render_guide(d: dict, code: str, hl: str, name: str) -> str:
         for item in items:
             if isinstance(item, list):
                 out.append("  <ul>\n" + "\n".join(
-                    f"    <li><strong>{e(t)}</strong> {inline(x, GUIDE_LINKS)}</li>" for t, x in item)
+                    f"    <li><strong>{e(t)}</strong> {inline(x, links)}</li>" for t, x in item)
                     + "\n  </ul>")
             else:
-                out.append(f"  <p>{inline(item, GUIDE_LINKS)}</p>")
+                out.append(f"  <p>{inline(item, links)}</p>")
         return "\n".join(out)
 
     shots = [
@@ -418,7 +436,7 @@ def render_guide(d: dict, code: str, hl: str, name: str) -> str:
         steps.append(part)
     rows = "\n".join(
         f"      <tr><td>{e(ph)}</td><td>{e(what)}</td><td>{tool}</td></tr>"
-        for (ph, what), tool in zip(g["lesson_rows"], LESSON_TOOLS, strict=True))
+        for (ph, what), tool in zip(g["lesson_rows"], tools, strict=True))
     head_cells = "".join(f"<th>{e(c)}</th>" for c in g["lesson_head"])
     cards = "\n".join(
         f"""    <a class="app-card app-card--{k}" href="{href}">
@@ -426,11 +444,11 @@ def render_guide(d: dict, code: str, hl: str, name: str) -> str:
         <source srcset="{up}images/{folder}/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
         <img src="{up}images/{folder}/icons/light/icon.png" alt="{a(app)}" />
       </picture>
-      <span class="card-name">{app}</span>
+      <span class="card-name">{e(app)}</span>
       <span class="card-role">{e(role)}</span>
       <span class="card-cta">{e(g["card_cta"])}</span>
     </a>"""
-        for (k, app, folder, href), role in zip(GUIDE_APPS, g["roles"], strict=True))
+        for (k, app, folder, href), role in zip(apps, g["roles"], strict=True))
     faq = "\n".join(
         f"""    <div class="faq-item">
       <h3>{e(q)}</h3>

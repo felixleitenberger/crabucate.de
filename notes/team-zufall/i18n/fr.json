@@ -1,0 +1,113 @@
+{
+  "name": "Team Tirage",
+  "store_locale": "fr-FR",
+  "lang_choose": "Choisir la langue",
+  "all_apps": "← Toutes les apps",
+  "title": "{n} : répartir des groupes et tirer des équipes au sort",
+  "description": "Répartissez n’importe quel groupe en équipes équitables en quelques secondes : créez une liste ou importez-la depuis Excel, choisissez le nombre d’équipes, lancez le tirage. Pour iPhone et iPad.",
+  "icon_alt": "Icône de l’app {n}",
+  "hero_alt": "{n} en direct sur un téléviseur : équipes tirées au sort, l’iPhone devant",
+  "tagline": "Des équipes justes. En un instant.",
+  "new_label": "NOUVEAU",
+  "new_text": "En direct sur grand écran",
+  "badge_alt": "Télécharger dans l’App Store",
+  "meta": [
+    "Premier tirage gratuit",
+    "Sans compte",
+    "Les données restent sur l’appareil"
+  ],
+  "shots": [
+    "Des équipes justes. En un instant.",
+    "En direct sur grand écran.",
+    "Un absent ? Un geste.",
+    "Fini les débats sur qui va avec qui.",
+    "Créez chaque classe une seule fois.",
+    "Et aussi: Partage en PDF, Dernier tirage enregistré, 19 langues, Sans compte"
+  ],
+  "features_eyebrow": "Des équipes sans discussion.",
+  "features": [
+    [
+      "En direct sur grand écran",
+      "Via AirPlay ou câble, toute la classe voit les équipes se former."
+    ],
+    [
+      "Un geste, c’est fait",
+      "Chacun est réparti au hasard et équitablement entre les équipes."
+    ],
+    [
+      "Les groupes restent enregistrés",
+      "Créez une classe, une équipe ou un club une seule fois et tirez au sort autant de fois que vous voulez. Chaque groupe garde son dernier tirage."
+    ],
+    [
+      "Absent ? Exclu",
+      "Décochez les absents d’un geste, le tirage les ignore."
+    ],
+    [
+      "Nombre d’équipes au choix",
+      "Par deux, par trois, par quatre ou en plus grandes équipes."
+    ],
+    [
+      "Mélangé sous vos yeux",
+      "Une animation mélange tous les noms à la vue de tous. Secouer l’appareil lance un nouveau tour."
+    ]
+  ],
+  "how_eyebrow": "C’est aussi simple que ça.",
+  "how": [
+    [
+      "Créer un groupe",
+      "Saisissez les noms ou importez un CSV."
+    ],
+    [
+      "Décocher les absents",
+      "Un geste par nom absent aujourd’hui."
+    ],
+    [
+      "Tirer au sort",
+      "Choisissez le nombre d’équipes, touchez, regardez."
+    ],
+    [
+      "Montrer",
+      "Au projecteur ou en PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Guide",
+    "card_title": "Gestion de classe : plan de classe, groupes et bruit",
+    "card_text": "Une méthode pour toute la séance – du plan de classe aux groupes équitables jusqu’à une phase de travail au calme."
+  },
+  "faq_eyebrow": "Questions fréquentes",
+  "faq": [
+    [
+      "Comment répartir un groupe en équipes au hasard ?",
+      "Créez votre groupe une seule fois dans {n}, ajoutez les participants et lancez le tirage. L’app répartit chacun au hasard et équitablement entre le nombre d’équipes choisi."
+    ],
+    [
+      "À qui s’adresse {n} ?",
+      "À tous ceux qui forment régulièrement des équipes : enseignants, entraîneurs, animateurs d’ateliers, clubs et organisateurs d’événements."
+    ],
+    [
+      "Puis-je choisir le nombre d’équipes ?",
+      "Oui. Vous choisissez le nombre d’équipes, des binômes aux grandes équipes, et {n} répartit les participants de façon équilibrée."
+    ],
+    [
+      "Mes données sont-elles enregistrées ou transmises ?",
+      "Tous les groupes et tous les noms restent uniquement sur votre appareil. Aucune donnée n’est envoyée à un serveur."
+    ],
+    [
+      "Puis-je importer des listes de noms depuis Excel ?",
+      "Oui. Exportez la liste en CSV depuis Excel ou Google Sheets et importez-la dans {n}. Toute la classe est créée en quelques secondes."
+    ],
+    [
+      "Puis-je afficher le tirage au projecteur ?",
+      "Oui. Lorsque votre iPhone ou iPad est relié à un projecteur, une Apple TV ou un moniteur via AirPlay ou câble, {n} y affiche le tirage en direct, en format paysage. Vous continuez à piloter l’app sur votre appareil."
+    ],
+    [
+      "Combien coûte {n} ?",
+      "Le téléchargement et le premier tirage sont gratuits. Pour les tirages suivants, il faut l’abonnement Pro, mensuel ou annuel, que vous pouvez d’abord essayer gratuitement. {n} fonctionne sur iPhone et iPad à partir d’iOS 17."
+    ]
+  ],
+  "final_title": "Votre prochaine répartition en équipes prend une seconde.",
+  "imprint": "Mentions légales",
+  "privacy": "Confidentialité",
+  "terms": "Conditions d’utilisation"
+}

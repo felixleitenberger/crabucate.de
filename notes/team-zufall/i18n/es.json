@@ -1,0 +1,113 @@
+{
+  "name": "Team Sorteo",
+  "store_locale": "es-ES",
+  "lang_choose": "Elegir idioma",
+  "all_apps": "← Todas las apps",
+  "title": "{n}: repartir grupos y sortear equipos",
+  "description": "Reparte cualquier grupo en equipos justos en segundos: crea una lista o impórtala desde Excel, elige el número de equipos y sortea. Para iPhone y iPad.",
+  "icon_alt": "Icono de la app {n}",
+  "hero_alt": "{n} en directo en un televisor: equipos sorteados, con el iPhone delante",
+  "tagline": "Equipos justos. En segundos.",
+  "new_label": "NOVEDAD",
+  "new_text": "En directo en pantalla grande",
+  "badge_alt": "Descargar en el App Store",
+  "meta": [
+    "Primer sorteo gratis",
+    "Sin registro",
+    "Los datos se quedan en el dispositivo"
+  ],
+  "shots": [
+    "Equipos justos. En segundos.",
+    "En directo en pantalla grande.",
+    "¿Falta alguien? Un toque.",
+    "Sin discutir quién va con quién.",
+    "Crea cada clase una sola vez.",
+    "Y además: Comparte en PDF, Último sorteo guardado, 19 idiomas, Sin cuenta"
+  ],
+  "features_eyebrow": "Equipos sin discusiones.",
+  "features": [
+    [
+      "En directo en pantalla grande",
+      "Por AirPlay o cable, toda la clase ve cómo se forman los equipos."
+    ],
+    [
+      "Un toque y listo",
+      "Todos se reparten de forma aleatoria y equilibrada entre los equipos."
+    ],
+    [
+      "Los grupos se guardan",
+      "Crea una clase, un equipo o un club una sola vez y sortea cuantas veces quieras. Cada grupo conserva su último sorteo."
+    ],
+    [
+      "¿Falta alguien? Fuera",
+      "Desmarca a los ausentes con un toque y el sorteo los omite."
+    ],
+    [
+      "Número de equipos a tu gusto",
+      "Parejas, tríos, grupos de cuatro o equipos más grandes."
+    ],
+    [
+      "Mezcla a la vista",
+      "Una animación mezcla todos los nombres a la vista de todos. Agitar el dispositivo inicia una nueva ronda."
+    ]
+  ],
+  "how_eyebrow": "Así de fácil.",
+  "how": [
+    [
+      "Crear un grupo",
+      "Escribe los nombres o importa un CSV."
+    ],
+    [
+      "Desmarcar ausentes",
+      "Un toque por cada nombre que falta hoy."
+    ],
+    [
+      "Sortear",
+      "Elige el número de equipos, toca y mira."
+    ],
+    [
+      "Mostrar",
+      "En el proyector o como PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Guía",
+    "card_title": "Gestión del aula: distribución, grupos y ruido",
+    "card_text": "Un método para toda la clase: de la distribución de asientos a grupos justos y una fase de trabajo tranquila."
+  },
+  "faq_eyebrow": "Preguntas frecuentes",
+  "faq": [
+    [
+      "¿Cómo reparto un grupo en equipos al azar?",
+      "Crea tu grupo una vez en {n}, añade a los participantes e inicia el sorteo. La app reparte a todos de forma aleatoria y equilibrada entre el número de equipos elegido."
+    ],
+    [
+      "¿Para quién es {n}?",
+      "Para quien forma equipos con frecuencia: docentes, entrenadores, monitores de talleres, clubes y organizadores de eventos."
+    ],
+    [
+      "¿Puedo elegir el número de equipos?",
+      "Sí. Tú eliges cuántos equipos, desde parejas hasta equipos grandes, y {n} reparte a los participantes de forma equilibrada."
+    ],
+    [
+      "¿Se guardan o envían mis datos?",
+      "Todos los grupos y nombres se quedan solo en tu dispositivo. No se envía ningún dato a ningún servidor."
+    ],
+    [
+      "¿Puedo importar listas de nombres desde Excel?",
+      "Sí. Exporta la lista como CSV desde Excel o Google Sheets e impórtala en {n}. Toda la clase queda creada en segundos."
+    ],
+    [
+      "¿Puedo mostrar el sorteo en un proyector?",
+      "Sí. Si tu iPhone o iPad está conectado por AirPlay o cable a un proyector, un Apple TV o un monitor, {n} muestra allí el sorteo en directo y en horizontal. Sigues manejando la app en tu dispositivo."
+    ],
+    [
+      "¿Cuánto cuesta {n}?",
+      "La descarga y el primer sorteo son gratis. Para más sorteos necesitas la suscripción Pro, mensual o anual, que puedes probar gratis antes. {n} funciona en iPhone y iPad con iOS 17 o posterior."
+    ]
+  ],
+  "final_title": "Tu próximo reparto de equipos dura un segundo.",
+  "imprint": "Aviso legal",
+  "privacy": "Privacidad",
+  "terms": "Condiciones de uso"
+}

@@ -68,8 +68,11 @@ each JSON file) and a guide card on every Ruhe page. Its German and English
 versions are hand-written at `guides/classroom-management.html` and
 `en/guides/classroom-management.html`; the generator takes the guide CSS from the
 German one and keeps the language menu and `hreflang` of both in sync. Platzwahl
-and Team Zufall exist only in DE/EN, so the generated guides link to their
-English pages.
+exists only in DE/EN, so the generated guides link to its English page. Team
+Zufall is named and linked per language: the generator takes the app's name from
+`notes/team-zufall/i18n/<code>.json` and links `/team-zufall/<code>/`; for `cs`
+and `zh-hant`, which the app does not speak, it uses "Team Draw" and the English
+page. The Ruhe JSON files keep writing "Team Zufall" — the script swaps it.
 
 Texts live in `notes/ruhe/i18n/<code>.json`. The generator takes the inline
 CSS and the feature icons **from `ruhe.html` / `ruhe-privacy.html`**, so a
@@ -77,6 +80,32 @@ design change is made there and then the script is re-run. It also rewrites the
 language menu and the `hreflang` block of the four hand-written pages, so a new
 language is one JSON file plus one row in `LANGS`. Edit the JSON, never the
 generated HTML.
+
+### `/team-zufall/` — Team Zufall in the app's further languages
+
+The app ships in 19 languages and has a **different name in each** (Team Draw,
+Team Tirage, チーム抽選, Жребий Команд …, from the app's `InfoPlist.xcstrings`).
+In English it is **Team Draw** — every page under `/en/` says so; only the
+German pages say Team Zufall. File names and URLs (`team-zufall.html`,
+`images/team-zufall/`) stay as they are, App Store Connect stores
+`en/team-zufall.html`.
+
+German and English stay **hand-written** (`team-zufall.html`,
+`en/team-zufall.html`). The other seventeen are generated to `/team-zufall/<code>/`:
+
+```
+python3 notes/team-zufall/build.py     # schreibt team-zufall/**, Sprachwähler + hreflang der zwei DE/EN-Seiten, Team-Zufall-Block in sitemap.xml
+```
+
+Texts live in `notes/team-zufall/i18n/<code>.json`, `{n}` stands for the app's
+name in that language. Taglines and screenshot alt texts are the store
+screenshots' headlines (`ASO/screenshots-editor/pipeline/project.py` in the app
+repo). CSS and feature icons come **from `team-zufall.html`**. Privacy policy and
+terms exist only in DE/EN (`privacy.html`, `terms.html` are Team Zufall's); the
+generated pages link the English ones. Where Ruhe has the Classroom-Management
+guide in that language, the page links it. After re-running `notes/ruhe/build.py`
+nothing here changes, but after adding a Team Zufall language re-run the Ruhe
+script so its guides pick up the new name and link.
 
 `lehrer-arbeitszeit.html` and `lehrer-arbeitszeit-privacy.html` are **deliberately German-only** and have no `/en/` counterpart: the app ships the Ferien- and Feiertagstermine of the sixteen German states and is useless elsewhere. Their `hreflang` therefore names only `de`, and the English start page lists three apps where the German one lists four. Do not "fix" that asymmetry by machine-translating the pages.
 
@@ -88,8 +117,9 @@ are split by language rather than by theme
 (`images/bestiary/screenshots/<code>/`). Ruhe keeps the usual `icons/{light,dark}/` but likewise
 splits its screenshots by language (`images/ruhe/screenshots/<code>/`, all 19): they are the store's
 marketing images with the headline burned in, resized to 552 px and run through `pngquant`.
-Team Zufall splits its store screenshots by language too (`images/team-zufall/screenshots/{de,en}/`,
-552 px, `pngquant`); `screenshots/light/` only keeps what the guides and the hero scenes still use.
+Team Zufall splits its store screenshots by language too (`images/team-zufall/screenshots/<code>/`,
+all 19, `01.png`–`06.png`, the iPhone set from `~/Developer/Team Zufall/AppStore Screenshots Remake/`,
+552 px, `pngquant`); `screenshots/light/` only keeps what the guides still use.
 Assets all apps share — the crab logo, the two App Store badges — sit directly in `images/`. Only
 files the site actually references are kept; App Store deliverables and raw simulator captures were
 removed and are recoverable from git history if a submission needs them.
@@ -108,10 +138,13 @@ The script renders each scene with headless Chrome at 2× (2560×1800) and packs
 alpha, so the shadow lives in the alpha channel and the image works on light and dark grounds. The
 sources are **not** in this repo but in the app projects next to it (`~/Developer/Ruhe/…`,
 `~/Developer/Wildcards/fastlane/screenshots/…`, `~/Developer/Platzwahl/appstore_screenshots/raw/`,
-`~/Developer/Lehrer Arbeitszeit/Screenshots/`); only Team Zufall reads its two iPad captures from
-`images/team-zufall/screenshots/light/`. Outputs: `images/ruhe/hero/<code>.webp` (19),
+`~/Developer/Lehrer Arbeitszeit/Screenshots/`). Team Zufall is the exception: its scene is the
+TV-plus-iPhone composite the app's own screenshot pipeline renders for the projector slide
+(`~/Developer/Team Zufall/ASO/screenshots-editor/public/screenshots/apple/ipad/<locale>/tv.png`,
+2400×1960), which the script only converts to WebP, one per language. It shows the live projector
+mode on purpose, the feature the page leads with. Outputs: `images/ruhe/hero/<code>.webp` (19),
 `images/bestiary/hero/<code>.webp` (10), `images/platzwahl/hero/{de,en}.webp`,
-`images/team-zufall/hero.webp` and `images/lehrer-arbeitszeit/hero/{light,dark}/hero.webp` — the
+`images/team-zufall/hero/<code>.webp` (19) and `images/lehrer-arbeitszeit/hero/{light,dark}/hero.webp` — the
 last one sits in `light/`/`dark/` folders because `theme.js` recognises the dark source by that
 path segment.
 

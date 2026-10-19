@@ -1,0 +1,113 @@
+{
+  "name": "Team Kura",
+  "store_locale": "tr",
+  "lang_choose": "Dil seçin",
+  "all_apps": "← Tüm uygulamalar",
+  "title": "{n}: grupları böl, takımları kurayla belirle",
+  "description": "Her grubu saniyeler içinde adil takımlara böl: liste oluştur ya da Excel’den içe aktar, takım sayısını seç ve kura çek. iPhone ve iPad için.",
+  "icon_alt": "{n} uygulama simgesi",
+  "hero_alt": "{n} televizyonda canlı: kurayla belirlenen takımlar, önde iPhone",
+  "tagline": "Adil takımlar. Saniyeler içinde.",
+  "new_label": "YENİ",
+  "new_text": "Büyük ekranda canlı",
+  "badge_alt": "App Store’dan indirin",
+  "meta": [
+    "İlk kura ücretsiz",
+    "Hesap gerekmez",
+    "Veriler cihazda kalır"
+  ],
+  "shots": [
+    "Adil takımlar. Saniyeler içinde.",
+    "Büyük ekranda canlı.",
+    "Gelmeyen mi var? Tek dokunuş.",
+    "Kim kiminle tartışması bitti.",
+    "Her sınıfı bir kez oluşturun.",
+    "Ayrıca: PDF olarak paylaş, Son kura kaydedilir, 19 dil, Hesap gerekmez"
+  ],
+  "features_eyebrow": "Tartışmasız takımlar.",
+  "features": [
+    [
+      "Büyük ekranda canlı",
+      "AirPlay ya da kabloyla tüm sınıf takımların oluşmasını izler."
+    ],
+    [
+      "Tek dokunuş, bitti",
+      "Herkes takımlara rastgele ve eşit olarak dağıtılır."
+    ],
+    [
+      "Gruplar kayıtlı kalır",
+      "Sınıfı, takımı ya da kulübü bir kez oluştur, istediğin kadar kura çek. Her grup son kurasını saklar."
+    ],
+    [
+      "Gelmeyen mi var? Dışarıda",
+      "Gelmeyenlerin işaretini tek dokunuşla kaldır, kura onları atlar."
+    ],
+    [
+      "Takım sayısı serbest",
+      "İkili, üçlü, dörtlü ya da daha büyük takımlar."
+    ],
+    [
+      "Göz önünde karıştırılır",
+      "Bir animasyon tüm isimleri herkesin gözü önünde karıştırır. Cihazı sallamak yeni bir tur başlatır."
+    ]
+  ],
+  "how_eyebrow": "Bu kadar kolay.",
+  "how": [
+    [
+      "Grup oluştur",
+      "İsimleri yaz ya da CSV içe aktar."
+    ],
+    [
+      "Gelmeyenleri çıkar",
+      "Bugün eksik olan her isim için bir dokunuş."
+    ],
+    [
+      "Kura çek",
+      "Takım sayısını seç, dokun, izle."
+    ],
+    [
+      "Göster",
+      "Projeksiyonda ya da PDF olarak."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Rehber",
+    "card_title": "Sınıf yönetimi: oturma düzeni, gruplar ve gürültü",
+    "card_text": "Tüm ders için bir yöntem – oturma planından adil gruplara ve sakin bir çalışma aşamasına kadar."
+  },
+  "faq_eyebrow": "Sık sorulan sorular",
+  "faq": [
+    [
+      "Bir grubu rastgele takımlara nasıl bölerim?",
+      "Grubunu {n} uygulamasında bir kez oluştur, katılımcıları ekle ve kurayı başlat. Uygulama herkesi seçtiğin takım sayısına rastgele ve eşit olarak dağıtır."
+    ],
+    [
+      "{n} kimler için?",
+      "Grupları sık sık takımlara bölen herkes için: öğretmenler, antrenörler, atölye yürütücüleri, kulüpler ve etkinlik düzenleyicileri."
+    ],
+    [
+      "Takım sayısını kendim seçebilir miyim?",
+      "Evet. İkililerden büyük takımlara kadar kaç takım olacağını sen seçersin, {n} katılımcıları eşit dağıtır."
+    ],
+    [
+      "Verilerim kaydediliyor ya da gönderiliyor mu?",
+      "Tüm gruplar ve isimler yalnızca cihazında kalır. Hiçbir veri bir sunucuya gönderilmez."
+    ],
+    [
+      "İsim listelerini Excel’den aktarabilir miyim?",
+      "Evet. Listeyi Excel ya da Google E-Tablolar’dan CSV olarak dışa aktar ve {n} uygulamasına aktar. Tüm sınıf saniyeler içinde hazır olur."
+    ],
+    [
+      "Kurayı projeksiyonda gösterebilir miyim?",
+      "Evet. iPhone ya da iPad AirPlay veya kabloyla bir projeksiyona, Apple TV’ye ya da monitöre bağlıysa {n} kurayı orada canlı ve yatay olarak gösterir. Uygulamayı yine cihazından kullanırsın."
+    ],
+    [
+      "{n} ne kadar?",
+      "İndirmek ve ilk kura ücretsizdir. Sonraki kuralar için aylık ya da yıllık Pro aboneliği gerekir; aboneliği önce ücretsiz deneyebilirsin. {n}, iOS 17 veya sonrası yüklü iPhone ve iPad’de çalışır."
+    ]
+  ],
+  "final_title": "Bir sonraki takım ayrımın bir saniye sürer.",
+  "imprint": "Künye",
+  "privacy": "Gizlilik",
+  "terms": "Kullanım koşulları"
+}

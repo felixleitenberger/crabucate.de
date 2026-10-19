@@ -1,0 +1,113 @@
+{
+  "name": "Team Lodtrækning",
+  "store_locale": "da",
+  "lang_choose": "Vælg sprog",
+  "all_apps": "← Alle apps",
+  "title": "{n}: del grupper og træk lod om hold",
+  "description": "Del enhver gruppe i retfærdige hold på få sekunder: opret en liste eller importér den fra Excel, vælg antal hold, og træk lod. Til iPhone og iPad.",
+  "icon_alt": "Appikon for {n}",
+  "hero_alt": "{n} live på et tv: udtrukne hold, med iPhone foran",
+  "tagline": "Retfærdige hold. På sekunder.",
+  "new_label": "NYT",
+  "new_text": "Live på storskærmen",
+  "badge_alt": "Hent i App Store",
+  "meta": [
+    "Første lodtrækning gratis",
+    "Ingen konto",
+    "Data bliver på enheden"
+  ],
+  "shots": [
+    "Retfærdige hold. På sekunder.",
+    "Live på storskærmen.",
+    "Mangler nogen? Ét tryk.",
+    "Ingen diskussion om, hvem der er med hvem.",
+    "Opret hver klasse kun én gang.",
+    "Og desuden: Del som PDF, Seneste lodtrækning gemt, 19 sprog, Ingen konto nødvendig"
+  ],
+  "features_eyebrow": "Hold uden diskussion.",
+  "features": [
+    [
+      "Live på storskærmen",
+      "Via AirPlay eller kabel ser hele klassen, hvordan holdene bliver til."
+    ],
+    [
+      "Ét tryk, færdig",
+      "Alle fordeles tilfældigt og jævnt på holdene."
+    ],
+    [
+      "Grupper bliver gemt",
+      "Opret en klasse, et hold eller en klub én gang, og træk lod igen og igen. Hver gruppe gemmer sin seneste lodtrækning."
+    ],
+    [
+      "Fraværende? Udenfor",
+      "Fravælg fraværende med ét tryk, så springer lodtrækningen dem over."
+    ],
+    [
+      "Valgfrit antal hold",
+      "To og to, tre og tre, fire og fire eller større hold."
+    ],
+    [
+      "Synligt blandet",
+      "En animation blander alle navne for øjnene af alle. Ryst enheden for en ny runde."
+    ]
+  ],
+  "how_eyebrow": "Så nemt er det.",
+  "how": [
+    [
+      "Opret en gruppe",
+      "Skriv navnene, eller importér en CSV."
+    ],
+    [
+      "Fravælg fraværende",
+      "Ét tryk pr. navn, der mangler i dag."
+    ],
+    [
+      "Træk lod",
+      "Vælg antal hold, tryk, og se med."
+    ],
+    [
+      "Vis",
+      "På projektoren eller som PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Guide",
+    "card_title": "Klasseledelse: bordplan, grupper og støj",
+    "card_text": "En arbejdsgang for hele timen – fra bordplanen over retfærdige grupper til en rolig arbejdsfase."
+  },
+  "faq_eyebrow": "Ofte stillede spørgsmål",
+  "faq": [
+    [
+      "Hvordan deler jeg en gruppe tilfældigt i hold?",
+      "Opret gruppen én gang i {n}, tilføj deltagerne, og start lodtrækningen. Appen fordeler alle tilfældigt og jævnt på det valgte antal hold."
+    ],
+    [
+      "Hvem er {n} til?",
+      "Til alle, der jævnligt deler grupper i hold: lærere, trænere, kursusledere, foreninger og arrangører af events."
+    ],
+    [
+      "Kan jeg selv vælge antallet af hold?",
+      "Ja. Du vælger, hvor mange hold der skal være, fra par til store hold, og {n} fordeler deltagerne jævnt."
+    ],
+    [
+      "Bliver mine data gemt eller sendt videre?",
+      "Alle grupper og navne bliver kun på din enhed. Der sendes ingen data til nogen server."
+    ],
+    [
+      "Kan jeg importere navnelister fra Excel?",
+      "Ja. Eksportér listen som CSV fra Excel eller Google Sheets, og importér den i {n}. Hele klassen er oprettet på få sekunder."
+    ],
+    [
+      "Kan jeg vise lodtrækningen på projektoren?",
+      "Ja. Når din iPhone eller iPad er forbundet med en projektor, Apple TV eller skærm via AirPlay eller kabel, viser {n} lodtrækningen dér live og i liggende format. Du styrer stadig appen på din enhed."
+    ],
+    [
+      "Hvad koster {n}?",
+      "Download og første lodtrækning er gratis. Til flere lodtrækninger skal du bruge Pro-abonnementet, månedligt eller årligt, som du først kan prøve gratis. {n} kører på iPhone og iPad med iOS 17 eller nyere."
+    ]
+  ],
+  "final_title": "Din næste holdinddeling tager ét sekund.",
+  "imprint": "Kolofon",
+  "privacy": "Privatliv",
+  "terms": "Brugsvilkår"
+}

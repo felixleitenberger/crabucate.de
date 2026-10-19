@@ -1,0 +1,108 @@
+{
+  "name": "Team Undian",
+  "store_locale": "id",
+  "lang_choose": "Pilih bahasa",
+  "all_apps": "← Semua aplikasi",
+  "title": "{n}: bagi grup dan undi tim secara acak",
+  "description": "Bagi grup apa pun menjadi tim yang adil dalam hitungan detik: buat daftar atau impor dari Excel, pilih jumlah tim, lalu undi. Untuk iPhone dan iPad.",
+  "icon_alt": "Ikon aplikasi {n}",
+  "hero_alt": "{n} langsung di TV: tim hasil undian, dengan iPhone di depan",
+  "tagline": "Tim yang adil. Dalam detik.",
+  "new_label": "BARU",
+  "new_text": "Langsung di layar besar",
+  "badge_alt": "Unduh di App Store",
+  "meta": [
+    "Undian pertama gratis",
+    "Tanpa akun",
+    "Data tetap di perangkat"
+  ],
+  "shots": [
+    "Tim yang adil. Dalam detik.",
+    "Langsung di layar besar.",
+    "Ada yang absen? Sekali ketuk.",
+    "Tanpa debat siapa dengan siapa.",
+    "Buat tiap kelas sekali saja.",
+    "Plus: Bagikan sebagai PDF, Undian terakhir tersimpan, 19 bahasa, Tanpa akun"
+  ],
+  "features_eyebrow": "Tim tanpa perdebatan.",
+  "features": [
+    [
+      "Langsung di layar besar",
+      "Lewat AirPlay atau kabel, seluruh kelas melihat tim terbentuk."
+    ],
+    [
+      "Sekali ketuk, selesai",
+      "Semua orang dibagi ke tim secara acak dan merata."
+    ],
+    [
+      "Grup tetap tersimpan",
+      "Buat kelas, tim, atau klub sekali saja lalu undi sesering yang Anda mau. Setiap grup menyimpan undian terakhirnya."
+    ],
+    [
+      "Tidak hadir? Tidak ikut",
+      "Hapus centang yang tidak hadir dengan sekali ketuk, undian akan melewati mereka."
+    ],
+    [
+      "Jumlah tim bebas",
+      "Berpasangan, bertiga, berempat, atau tim yang lebih besar."
+    ],
+    [
+      "Diacak di depan semua",
+      "Animasi mengacak semua nama di depan semua orang. Goyangkan perangkat untuk memulai babak baru."
+    ]
+  ],
+  "how_eyebrow": "Semudah itu.",
+  "how": [
+    [
+      "Buat grup",
+      "Ketik nama atau impor CSV."
+    ],
+    [
+      "Hapus yang tidak hadir",
+      "Sekali ketuk untuk setiap nama yang absen hari ini."
+    ],
+    [
+      "Undi",
+      "Pilih jumlah tim, ketuk, lalu tonton."
+    ],
+    [
+      "Tampilkan",
+      "Di proyektor atau sebagai PDF."
+    ]
+  ],
+  "faq_eyebrow": "Pertanyaan umum",
+  "faq": [
+    [
+      "Bagaimana cara membagi grup menjadi tim secara acak?",
+      "Buat grup Anda sekali di {n}, tambahkan peserta, lalu mulai undian. Aplikasi membagi semua orang secara acak dan merata ke jumlah tim yang Anda pilih."
+    ],
+    [
+      "Untuk siapa {n}?",
+      "Untuk siapa saja yang sering membagi grup menjadi tim: guru, pelatih, fasilitator lokakarya, klub, dan penyelenggara acara."
+    ],
+    [
+      "Bisakah saya memilih jumlah tim sendiri?",
+      "Bisa. Anda menentukan berapa tim, dari berpasangan sampai tim besar, dan {n} membagi peserta secara merata."
+    ],
+    [
+      "Apakah data saya disimpan atau dikirim?",
+      "Semua grup dan nama hanya tersimpan di perangkat Anda. Tidak ada data yang dikirim ke server mana pun."
+    ],
+    [
+      "Bisakah saya mengimpor daftar nama dari Excel?",
+      "Bisa. Ekspor daftar sebagai CSV dari Excel atau Google Sheets lalu impor ke {n}. Seluruh kelas siap dalam hitungan detik."
+    ],
+    [
+      "Bisakah undian ditampilkan di proyektor?",
+      "Bisa. Saat iPhone atau iPad terhubung ke proyektor, Apple TV, atau monitor lewat AirPlay atau kabel, {n} menampilkan undian di sana secara langsung dalam format lanskap. Aplikasi tetap Anda kendalikan dari perangkat."
+    ],
+    [
+      "Berapa harga {n}?",
+      "Mengunduh dan undian pertama gratis. Untuk undian berikutnya Anda memerlukan langganan Pro, bulanan atau tahunan, yang bisa dicoba gratis lebih dulu. {n} berjalan di iPhone dan iPad dengan iOS 17 atau lebih baru."
+    ]
+  ],
+  "final_title": "Pembagian tim berikutnya hanya butuh satu detik.",
+  "imprint": "Informasi hukum",
+  "privacy": "Privasi",
+  "terms": "Ketentuan penggunaan"
+}

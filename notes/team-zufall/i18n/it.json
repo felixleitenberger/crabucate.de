@@ -1,0 +1,113 @@
+{
+  "name": "Team Sorteggio",
+  "store_locale": "it",
+  "lang_choose": "Scegli la lingua",
+  "all_apps": "← Tutte le app",
+  "title": "{n}: dividere gruppi e sorteggiare squadre",
+  "description": "Dividi qualsiasi gruppo in squadre eque in pochi secondi: crea un elenco o importalo da Excel, scegli il numero di squadre, sorteggia. Per iPhone e iPad.",
+  "icon_alt": "Icona dell’app {n}",
+  "hero_alt": "{n} in diretta su un televisore: squadre sorteggiate, davanti l’iPhone",
+  "tagline": "Squadre giuste. In un attimo.",
+  "new_label": "NOVITÀ",
+  "new_text": "Dal vivo sul grande schermo",
+  "badge_alt": "Scarica su App Store",
+  "meta": [
+    "Primo sorteggio gratis",
+    "Nessun account",
+    "I dati restano sul dispositivo"
+  ],
+  "shots": [
+    "Squadre giuste. In un attimo.",
+    "Dal vivo sul grande schermo.",
+    "Manca qualcuno? Un tocco.",
+    "Basta discussioni su chi va con chi.",
+    "Crea ogni classe una volta sola.",
+    "E inoltre: Condividi in PDF, Ultimo sorteggio salvato, 19 lingue, Nessun account"
+  ],
+  "features_eyebrow": "Squadre senza discussioni.",
+  "features": [
+    [
+      "In diretta sul grande schermo",
+      "Con AirPlay o via cavo tutta la classe vede nascere le squadre."
+    ],
+    [
+      "Un tocco e via",
+      "Tutti vengono distribuiti a caso e in modo equilibrato tra le squadre."
+    ],
+    [
+      "I gruppi restano salvati",
+      "Crea una classe, una squadra o un club una volta sola e sorteggia tutte le volte che vuoi. Ogni gruppo conserva l’ultimo sorteggio."
+    ],
+    [
+      "Assente? Escluso",
+      "Togli gli assenti con un tocco e il sorteggio li salta."
+    ],
+    [
+      "Numero di squadre a scelta",
+      "Coppie, terzetti, gruppi da quattro o squadre più grandi."
+    ],
+    [
+      "Mescolato sotto gli occhi di tutti",
+      "Un’animazione mescola tutti i nomi in modo visibile. Scuotendo il dispositivo parte un nuovo giro."
+    ]
+  ],
+  "how_eyebrow": "Ecco come funziona.",
+  "how": [
+    [
+      "Crea un gruppo",
+      "Scrivi i nomi o importa un CSV."
+    ],
+    [
+      "Togli gli assenti",
+      "Un tocco per ogni nome che oggi manca."
+    ],
+    [
+      "Sorteggia",
+      "Scegli il numero di squadre, tocca, guarda."
+    ],
+    [
+      "Mostra",
+      "Sul proiettore o come PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Guida",
+    "card_title": "Gestione della classe: posti, gruppi e rumore",
+    "card_text": "Un metodo per tutta la lezione: dalla disposizione dei banchi ai gruppi equi fino a una fase di lavoro tranquilla."
+  },
+  "faq_eyebrow": "Domande frequenti",
+  "faq": [
+    [
+      "Come divido un gruppo in squadre a caso?",
+      "Crea il gruppo una volta in {n}, aggiungi i partecipanti e avvia il sorteggio. L’app distribuisce tutti a caso e in modo equilibrato nel numero di squadre scelto."
+    ],
+    [
+      "A chi serve {n}?",
+      "A chi forma spesso delle squadre: insegnanti, allenatori, conduttori di laboratori, società sportive e organizzatori di eventi."
+    ],
+    [
+      "Posso scegliere il numero di squadre?",
+      "Sì. Scegli tu quante squadre, dalle coppie alle squadre grandi, e {n} distribuisce i partecipanti in modo equilibrato."
+    ],
+    [
+      "I miei dati vengono salvati o trasmessi?",
+      "Tutti i gruppi e i nomi restano solo sul tuo dispositivo. Nessun dato viene inviato a un server."
+    ],
+    [
+      "Posso importare elenchi di nomi da Excel?",
+      "Sì. Esporta l’elenco come CSV da Excel o Google Sheets e importalo in {n}. L’intera classe è pronta in pochi secondi."
+    ],
+    [
+      "Posso mostrare il sorteggio sul proiettore?",
+      "Sì. Quando iPhone o iPad è collegato a un proiettore, una Apple TV o un monitor con AirPlay o via cavo, {n} vi mostra il sorteggio in diretta e in orizzontale. L’app si comanda sempre dal dispositivo."
+    ],
+    [
+      "Quanto costa {n}?",
+      "Il download e il primo sorteggio sono gratuiti. Per i sorteggi successivi serve l’abbonamento Pro, mensile o annuale, che puoi provare prima gratuitamente. {n} funziona su iPhone e iPad con iOS 17 o successivo."
+    ]
+  ],
+  "final_title": "La prossima divisione in squadre dura un secondo.",
+  "imprint": "Note legali",
+  "privacy": "Privacy",
+  "terms": "Condizioni d’uso"
+}

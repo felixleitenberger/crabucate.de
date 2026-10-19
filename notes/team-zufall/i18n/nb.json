@@ -1,0 +1,113 @@
+{
+  "name": "Team Trekning",
+  "store_locale": "no",
+  "lang_choose": "Velg språk",
+  "all_apps": "← Alle apper",
+  "title": "{n}: del inn grupper og trekk lag",
+  "description": "Del enhver gruppe inn i rettferdige lag på sekunder: lag en liste eller importer den fra Excel, velg antall lag og trekk. For iPhone og iPad.",
+  "icon_alt": "Appikon for {n}",
+  "hero_alt": "{n} direkte på en TV: trukne lag, med iPhone foran",
+  "tagline": "Rettferdige lag. På sekunder.",
+  "new_label": "NYTT",
+  "new_text": "Direkte på storskjermen",
+  "badge_alt": "Last ned fra App Store",
+  "meta": [
+    "Første trekning gratis",
+    "Ingen konto",
+    "Data blir på enheten"
+  ],
+  "shots": [
+    "Rettferdige lag. På sekunder.",
+    "Direkte på storskjermen.",
+    "Mangler noen? Ett trykk.",
+    "Ingen krangel om hvem som skal med hvem.",
+    "Opprett hver klasse bare én gang.",
+    "I tillegg: Del som PDF, Siste trekning lagret, 19 språk, Ingen konto"
+  ],
+  "features_eyebrow": "Lag uten diskusjon.",
+  "features": [
+    [
+      "Direkte på storskjermen",
+      "Via AirPlay eller kabel ser hele klassen hvordan lagene blir til."
+    ],
+    [
+      "Ett trykk, ferdig",
+      "Alle fordeles tilfeldig og jevnt på lagene."
+    ],
+    [
+      "Gruppene blir lagret",
+      "Opprett en klasse, et lag eller en klubb én gang og trekk igjen og igjen. Hver gruppe lagrer sin siste trekning."
+    ],
+    [
+      "Fraværende? Står over",
+      "Fjern haken for fraværende med ett trykk, så hopper trekningen over dem."
+    ],
+    [
+      "Valgfritt antall lag",
+      "To og to, tre og tre, fire og fire eller større lag."
+    ],
+    [
+      "Synlig blandet",
+      "En animasjon blander alle navnene så alle ser det. Rist enheten for en ny runde."
+    ]
+  ],
+  "how_eyebrow": "Så enkelt er det.",
+  "how": [
+    [
+      "Opprett en gruppe",
+      "Skriv inn navnene eller importer en CSV."
+    ],
+    [
+      "Fjern fraværende",
+      "Ett trykk per navn som mangler i dag."
+    ],
+    [
+      "Trekk",
+      "Velg antall lag, trykk og se på."
+    ],
+    [
+      "Vis",
+      "På prosjektoren eller som PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Veiledning",
+    "card_title": "Klasseledelse: plassering, grupper og støy",
+    "card_text": "En arbeidsflyt for hele timen – fra klassekartet via rettferdige grupper til en rolig arbeidsfase."
+  },
+  "faq_eyebrow": "Vanlige spørsmål",
+  "faq": [
+    [
+      "Hvordan deler jeg en gruppe tilfeldig inn i lag?",
+      "Opprett gruppen én gang i {n}, legg til deltakerne og start trekningen. Appen fordeler alle tilfeldig og jevnt på antallet lag du har valgt."
+    ],
+    [
+      "Hvem er {n} for?",
+      "For alle som ofte deler grupper inn i lag: lærere, trenere, kursledere, klubber og arrangører av arrangementer."
+    ],
+    [
+      "Kan jeg velge antall lag selv?",
+      "Ja. Du velger hvor mange lag det skal være, fra par til store lag, og {n} fordeler deltakerne jevnt."
+    ],
+    [
+      "Blir dataene mine lagret eller sendt videre?",
+      "Alle grupper og navn blir bare på enheten din. Ingen data sendes til noen server."
+    ],
+    [
+      "Kan jeg importere navnelister fra Excel?",
+      "Ja. Eksporter listen som CSV fra Excel eller Google Regneark og importer den i {n}. Hele klassen er lagt inn på sekunder."
+    ],
+    [
+      "Kan jeg vise trekningen på prosjektoren?",
+      "Ja. Når iPhone eller iPad er koblet til en prosjektor, Apple TV eller skjerm via AirPlay eller kabel, viser {n} trekningen der direkte og i liggende format. Du styrer fortsatt appen på enheten."
+    ],
+    [
+      "Hva koster {n}?",
+      "Nedlasting og første trekning er gratis. For flere trekninger trenger du Pro-abonnementet, månedlig eller årlig, som du kan prøve gratis først. {n} fungerer på iPhone og iPad med iOS 17 eller nyere."
+    ]
+  ],
+  "final_title": "Den neste laginndelingen din tar ett sekund.",
+  "imprint": "Kolofon",
+  "privacy": "Personvern",
+  "terms": "Bruksvilkår"
+}

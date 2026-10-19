@@ -1,0 +1,113 @@
+{
+  "name": "Team Loting",
+  "store_locale": "nl-NL",
+  "lang_choose": "Taal kiezen",
+  "all_apps": "← Alle apps",
+  "title": "{n}: groepen verdelen en teams loten",
+  "description": "Verdeel elke groep in een paar seconden in eerlijke teams: maak een lijst of importeer hem uit Excel, kies het aantal teams en loot. Voor iPhone en iPad.",
+  "icon_alt": "Appicoon van {n}",
+  "hero_alt": "{n} live op een tv: gelote teams, met de iPhone ervoor",
+  "tagline": "Eerlijke teams. In seconden.",
+  "new_label": "NIEUW",
+  "new_text": "Live op het grote scherm",
+  "badge_alt": "Download in de App Store",
+  "meta": [
+    "Eerste loting gratis",
+    "Geen account",
+    "Gegevens blijven op het apparaat"
+  ],
+  "shots": [
+    "Eerlijke teams. In seconden.",
+    "Live op het grote scherm.",
+    "Iemand afwezig? Eén tik.",
+    "Geen gedoe over wie met wie.",
+    "Maak elke klas maar één keer aan.",
+    "En verder: Delen als pdf, Laatste loting bewaard, 19 talen, Geen account nodig"
+  ],
+  "features_eyebrow": "Teams zonder gedoe.",
+  "features": [
+    [
+      "Live op het grote scherm",
+      "Via AirPlay of kabel ziet de hele klas hoe de teams ontstaan."
+    ],
+    [
+      "Eén tik, klaar",
+      "Iedereen wordt willekeurig en gelijk over de teams verdeeld."
+    ],
+    [
+      "Groepen blijven bewaard",
+      "Maak een klas, team of club één keer aan en loot zo vaak je wilt. Elke groep bewaart de laatste loting."
+    ],
+    [
+      "Afwezig? Doet niet mee",
+      "Vink afwezigen met één tik uit, de loting slaat ze over."
+    ],
+    [
+      "Aantal teams naar keuze",
+      "Tweetallen, drietallen, viertallen of grotere teams."
+    ],
+    [
+      "Zichtbaar geschud",
+      "Een animatie schudt alle namen zichtbaar door elkaar. Schudden met het apparaat start een nieuwe ronde."
+    ]
+  ],
+  "how_eyebrow": "Zo eenvoudig gaat het.",
+  "how": [
+    [
+      "Groep aanmaken",
+      "Namen intypen of een CSV importeren."
+    ],
+    [
+      "Afwezigen uitvinken",
+      "Eén tik per naam die vandaag ontbreekt."
+    ],
+    [
+      "Loten",
+      "Aantal teams kiezen, tikken, kijken."
+    ],
+    [
+      "Laten zien",
+      "Op de beamer of als pdf."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Gids",
+    "card_title": "Klassenmanagement: plattegrond, groepjes en geluid",
+    "card_text": "Een werkwijze voor de hele les – van de plattegrond via eerlijke groepjes tot een rustige werkfase."
+  },
+  "faq_eyebrow": "Veelgestelde vragen",
+  "faq": [
+    [
+      "Hoe verdeel ik een groep willekeurig in teams?",
+      "Maak je groep één keer aan in {n}, voeg de deelnemers toe en start de loting. De app verdeelt iedereen willekeurig en gelijk over het gekozen aantal teams."
+    ],
+    [
+      "Voor wie is {n}?",
+      "Voor iedereen die regelmatig teams maakt: leraren, trainers, workshopleiders, verenigingen en organisatoren van evenementen."
+    ],
+    [
+      "Kan ik het aantal teams zelf kiezen?",
+      "Ja. Jij kiest hoeveel teams, van tweetallen tot grote teams, en {n} verdeelt de deelnemers gelijkmatig."
+    ],
+    [
+      "Worden mijn gegevens opgeslagen of verstuurd?",
+      "Alle groepen en namen blijven alleen op je apparaat. Er gaan geen gegevens naar een server."
+    ],
+    [
+      "Kan ik namenlijsten uit Excel importeren?",
+      "Ja. Exporteer de lijst als CSV uit Excel of Google Sheets en importeer hem in {n}. De hele klas staat er in een paar seconden in."
+    ],
+    [
+      "Kan ik de loting op de beamer laten zien?",
+      "Ja. Is je iPhone of iPad via AirPlay of kabel verbonden met een beamer, Apple TV of monitor, dan toont {n} de loting daar live en liggend. Je bedient de app gewoon op je apparaat."
+    ],
+    [
+      "Wat kost {n}?",
+      "Downloaden en de eerste loting zijn gratis. Voor volgende lotingen heb je het Pro-abonnement nodig, per maand of per jaar, dat je eerst gratis kunt uitproberen. {n} werkt op iPhone en iPad vanaf iOS 17."
+    ]
+  ],
+  "final_title": "Je volgende teamindeling duurt één seconde.",
+  "imprint": "Colofon",
+  "privacy": "Privacy",
+  "terms": "Gebruiksvoorwaarden"
+}

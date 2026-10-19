@@ -1,0 +1,113 @@
+{
+  "name": "Team Sorteio",
+  "store_locale": "pt-BR",
+  "lang_choose": "Escolher idioma",
+  "all_apps": "← Todos os apps",
+  "title": "{n}: dividir grupos e sortear times",
+  "description": "Divida qualquer grupo em times justos em segundos: crie uma lista ou importe do Excel, escolha o número de times e sorteie. Para iPhone e iPad.",
+  "icon_alt": "Ícone do app {n}",
+  "hero_alt": "{n} ao vivo numa TV: times sorteados, com o iPhone na frente",
+  "tagline": "Times justos. Em segundos.",
+  "new_label": "NOVIDADE",
+  "new_text": "Ao vivo na tela grande",
+  "badge_alt": "Baixar na App Store",
+  "meta": [
+    "Primeiro sorteio grátis",
+    "Sem cadastro",
+    "Os dados ficam no aparelho"
+  ],
+  "shots": [
+    "Times justos. Em segundos.",
+    "Ao vivo na tela grande.",
+    "Alguém faltou? Um toque.",
+    "Sem discussão sobre quem fica com quem.",
+    "Crie cada turma uma única vez.",
+    "E ainda: Compartilhe em PDF, Último sorteio salvo, 19 idiomas, Sem conta"
+  ],
+  "features_eyebrow": "Times sem discussão.",
+  "features": [
+    [
+      "Ao vivo na tela grande",
+      "Por AirPlay ou cabo, a turma inteira vê os times se formando."
+    ],
+    [
+      "Um toque e pronto",
+      "Todos são distribuídos de forma aleatória e equilibrada entre os times."
+    ],
+    [
+      "Os grupos ficam salvos",
+      "Crie uma turma, um time ou um clube uma vez e sorteie quantas vezes quiser. Cada grupo guarda o último sorteio."
+    ],
+    [
+      "Faltou? Fica de fora",
+      "Desmarque quem faltou com um toque e o sorteio pula essas pessoas."
+    ],
+    [
+      "Número de times à escolha",
+      "Duplas, trios, quartetos ou times maiores."
+    ],
+    [
+      "Embaralhado à vista",
+      "Uma animação embaralha todos os nomes à vista de todos. Agitar o aparelho começa uma nova rodada."
+    ]
+  ],
+  "how_eyebrow": "Simples assim.",
+  "how": [
+    [
+      "Criar um grupo",
+      "Digite os nomes ou importe um CSV."
+    ],
+    [
+      "Desmarcar ausentes",
+      "Um toque para cada nome que faltou hoje."
+    ],
+    [
+      "Sortear",
+      "Escolha o número de times, toque e assista."
+    ],
+    [
+      "Mostrar",
+      "No projetor ou em PDF."
+    ]
+  ],
+  "guide": {
+    "eyebrow": "Guia",
+    "card_title": "Gestão de sala de aula: lugares, grupos e barulho",
+    "card_text": "Um método para a aula inteira: do mapa de sala aos grupos justos até uma fase de trabalho tranquila."
+  },
+  "faq_eyebrow": "Perguntas frequentes",
+  "faq": [
+    [
+      "Como divido um grupo em times aleatórios?",
+      "Crie seu grupo uma vez no {n}, adicione os participantes e inicie o sorteio. O app distribui todos de forma aleatória e equilibrada no número de times escolhido."
+    ],
+    [
+      "Para quem é o {n}?",
+      "Para quem monta times com frequência: professores, treinadores, facilitadores de oficinas, clubes e organizadores de eventos."
+    ],
+    [
+      "Posso escolher o número de times?",
+      "Sim. Você escolhe quantos times, de duplas a times grandes, e o {n} distribui os participantes de forma equilibrada."
+    ],
+    [
+      "Meus dados são salvos ou enviados?",
+      "Todos os grupos e nomes ficam apenas no seu aparelho. Nenhum dado é enviado a servidor algum."
+    ],
+    [
+      "Posso importar listas de nomes do Excel?",
+      "Sim. Exporte a lista como CSV do Excel ou do Google Planilhas e importe no {n}. A turma inteira fica pronta em segundos."
+    ],
+    [
+      "Posso mostrar o sorteio no projetor?",
+      "Sim. Com o iPhone ou iPad conectado por AirPlay ou cabo a um projetor, Apple TV ou monitor, o {n} mostra o sorteio lá ao vivo e na horizontal. Você continua controlando o app no aparelho."
+    ],
+    [
+      "Quanto custa o {n}?",
+      "O download e o primeiro sorteio são grátis. Para os sorteios seguintes você precisa da assinatura Pro, mensal ou anual, que pode testar grátis antes. O {n} funciona no iPhone e no iPad com iOS 17 ou posterior."
+    ]
+  ],
+  "final_title": "A próxima divisão de times leva um segundo.",
+  "imprint": "Informações legais",
+  "privacy": "Privacidade",
+  "terms": "Termos de uso"
+}
