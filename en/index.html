@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS Apps for iPhone and iPad</title>
-  <meta name="description" content="iOS apps by crabucate: Team Draw, Daily Bestiary and Platzwahl — simple, local, no distractions." />
+  <meta name="description" content="iOS apps for teachers: Team Draw splits a class into groups, Ruhe shows classroom noise as a traffic light, Platzwahl builds seating charts." />
   <link rel="canonical" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
   <link rel="alternate" hreflang="x-default" href="https://crabucate.de/" />
@@ -19,14 +19,29 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/en/" />
   <meta property="og:title" content="crabucate — iOS Apps for iPhone and iPad" />
-  <meta property="og:description" content="Small apps for real problems. Team Draw, Daily Bestiary and Platzwahl, for iPhone and iPad." />
+  <meta property="og:description" content="iOS apps from everyday school life: groups with Team Draw, a noise traffic light with Ruhe, seating charts with Platzwahl, animal cards with Daily Bestiary. For iPhone and iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:locale" content="en_US" />
+
+  <!-- JSON-LD: Organisation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "crabucate",
+    "url": "https://crabucate.de/",
+    "logo": "https://crabucate.de/images/crabucateSquare.jpg",
+    "email": "info@crabucate.de",
+    "founder": { "@type": "Person", "name": "Felix Leitenberger" }
+  }
+  </script>
 
   <link rel="stylesheet" href="../assets/base.css" />
   <style>
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
     body {
       background: var(--bg);
@@ -270,6 +285,8 @@
   </nav>
 
   <main>
+    <h1 class="sr-only">Apps for the classroom</h1>
+
     <div class="apps-grid">
 
       <a href="team-zufall.html" class="app-tile app-tile--tz app-tile--wide">
@@ -318,15 +335,15 @@
       <a href="platzwahl.html" class="app-tile app-tile--pw">
         <div class="tile-content">
           <picture>
-            <source srcset="../images/platzwahl/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-            <img src="../images/platzwahl/icons/light/icon.png" alt="Platzwahl App Icon" class="tile-icon" />
+            <source srcset="../images/platzwahl/icons/dark/icon.png?v=2" media="(prefers-color-scheme: dark)" />
+            <img src="../images/platzwahl/icons/light/icon.png?v=2" alt="Platzwahl App Icon" class="tile-icon" />
           </picture>
           <h2 class="tile-name">Platzwahl</h2>
           <p class="tile-tagline">Seating charts for teachers, created automatically and fairly.</p>
           <span class="tile-cta">On the App Store</span>
         </div>
         <div class="tile-preview">
-          <img src="../images/platzwahl/hero/en.webp" width="2560" height="1800" alt="Platzwahl on iPad: an automatically created seating chart" loading="lazy" />
+          <img src="../images/platzwahl/hero/en.webp" width="2560" height="1800" alt="Platzwahl on iPad and iPhone: an automatically created seating chart" loading="lazy" />
         </div>
       </a>
 

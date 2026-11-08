@@ -282,6 +282,10 @@ def head(lang_code: str, hreflang: str, locale: str, title: str, description: st
   <meta property="og:url" content="{canonical}" />
   <meta property="og:title" content="{html.escape(title)}" />
   <meta property="og:description" content="{html.escape(description)}" />
+  <meta property="og:image" content="https://crabucate.de/images/og/bestiary/{lang_code}.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:locale" content="{locale}" />
 
   <link rel="stylesheet" href="{up}assets/base.css" />{f'''

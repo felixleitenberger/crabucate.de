@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
   <title>crabucate — iOS-Apps für Schule &amp; Unterricht</title>
-  <meta name="description" content="iOS-Apps aus dem Schulalltag: Team Zufall teilt Gruppen zufällig auf, der Lehrer Arbeitszeit Tracker erfasst die Arbeitszeit, Platzwahl erstellt automatisch Sitzpläne, Daily Bestiary bringt jeden Tag eine neue Tierkarte. Für iPhone und iPad." />
+  <meta name="description" content="Apps für Lehrkräfte: Team Zufall lost Gruppen aus, Ruhe zeigt den Lärm als Ampel, Platzwahl erstellt Sitzpläne, der Tracker erfasst die Arbeitszeit." />
   <link rel="canonical" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/" />
@@ -24,14 +24,29 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crabucate.de/" />
   <meta property="og:title" content="crabucate — iOS-Apps für Schule &amp; Unterricht" />
-  <meta property="og:description" content="iOS-Apps aus dem Schulalltag: Gruppen mit Team Zufall, Zeiterfassung mit dem Lehrer Arbeitszeit Tracker, Sitzpläne mit Platzwahl, Tierkarten mit Daily Bestiary. Für iPhone und iPad." />
+  <meta property="og:description" content="iOS-Apps aus dem Schulalltag: Gruppen mit Team Zufall, Lärmampel mit Ruhe, Sitzpläne mit Platzwahl, Zeiterfassung mit dem Lehrer Arbeitszeit Tracker, Tierkarten mit Daily Bestiary. Für iPhone und iPad." />
   <meta property="og:image" content="https://crabucate.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:locale" content="de_DE" />
+
+  <!-- JSON-LD: Organisation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "crabucate",
+    "url": "https://crabucate.de/",
+    "logo": "https://crabucate.de/images/crabucateSquare.jpg",
+    "email": "info@crabucate.de",
+    "founder": { "@type": "Person", "name": "Felix Leitenberger" }
+  }
+  </script>
 
   <link rel="stylesheet" href="assets/base.css" />
   <style>
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
     body {
       background: var(--bg);
@@ -275,6 +290,8 @@
   </nav>
 
   <main>
+    <h1 class="sr-only">Apps für Schule und Unterricht</h1>
+
     <div class="apps-grid">
 
       <a href="team-zufall.html" class="app-tile app-tile--tz app-tile--wide">
@@ -342,15 +359,15 @@
       <a href="platzwahl.html" class="app-tile app-tile--pw">
         <div class="tile-content">
           <picture>
-            <source srcset="images/platzwahl/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-            <img src="images/platzwahl/icons/light/icon.png" alt="Platzwahl App Icon" class="tile-icon" />
+            <source srcset="images/platzwahl/icons/dark/icon.png?v=2" media="(prefers-color-scheme: dark)" />
+            <img src="images/platzwahl/icons/light/icon.png?v=2" alt="Platzwahl App Icon" class="tile-icon" />
           </picture>
           <h2 class="tile-name">Platzwahl</h2>
           <p class="tile-tagline">Sitzpläne für Lehrkräfte, automatisch und fair verteilt.</p>
           <span class="tile-cta">Im App Store</span>
         </div>
         <div class="tile-preview">
-          <img src="images/platzwahl/hero/de.webp" width="2560" height="1800" alt="Platzwahl auf dem iPad: automatisch erstellter Sitzplan" loading="lazy" />
+          <img src="images/platzwahl/hero/de.webp" width="2560" height="1800" alt="Platzwahl auf iPad und iPhone: automatisch erstellter Sitzplan" loading="lazy" />
         </div>
       </a>
 

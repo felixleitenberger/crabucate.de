@@ -30,7 +30,7 @@ PAD_X, PAD_Y = 40, 30     # Rand, damit der Schatten nicht an der Bildkante abre
 
 RUHE_RAW = DEV / "Ruhe/screenshots/public/screenshots/apple"
 BESTIARY_RAW = DEV / "Wildcards/fastlane/screenshots"
-PLATZWAHL_RAW = DEV / "Platzwahl/appstore_screenshots/raw"
+PLATZWAHL_RAW = DEV / "Platzwahl/appstore_screenshots/v14"   # ipad/raw, iphone/raw (Version 1.4)
 TRACKER_RAW = DEV / "Lehrer Arbeitszeit/Screenshots"
 TZ_TV = DEV / "Team Zufall/ASO/screenshots-editor/public/screenshots/apple/ipad"
 
@@ -137,10 +137,11 @@ def bestiary() -> None:
 
 
 def platzwahl() -> None:
+    # iPad hochkant mit dem fertigen Plan, rechts davor das iPhone mit den
+    # Sitzregeln eines Schülers.
     for code in ("de", "en"):
-        r = 2420 / 1668
-        body = (ipad(PLATZWAHL_RAW / f"{code}_05_druckeAus.png", 380, 24, 790, r, z=1)
-                + ipad(PLATZWAHL_RAW / f"{code}_01_perfekterSitzplan.png", 30, 196, 820, r, z=2))
+        body = (ipad(PLATZWAHL_RAW / "ipad/raw" / f"{code}_01_plan.png", 170, 10, 610, 2064 / 2752, z=1)
+                + iphone(PLATZWAHL_RAW / "iphone/raw" / f"{code}_03_regeln.png", 765, 150, 660, rot=4, z=2))
         render(body, ROOT / f"images/platzwahl/hero/{code}.webp")
 
 

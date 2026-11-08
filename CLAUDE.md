@@ -14,7 +14,9 @@ Credentials live in GitHub repository secrets: `IONOS_SFTP_HOST`, `IONOS_SFTP_US
 
 The workflow mirrors with `--delete`, so files removed here are removed on the server. Repository-only files (`CLAUDE.md`, `app.md`, `notes/`, `og-image.html`, `.github/`, `.claude/`) are excluded — extend that list when adding files that must not be published. `notes/` holds the per-app working documents (App-Store-Checklisten, Textentwürfe, Datenschutz-Quelltexte) that must never reach the webspace — including `notes/bestiary/`, the source of the forty `/bestiary/` pages.
 
-`.htaccess` handles what GitHub Pages used to do implicitly: HTTPS enforcement, `www` → apex redirect, compression, cache headers, and `ErrorDocument 404 /404.html`.
+`.htaccess` handles what GitHub Pages used to do implicitly: HTTPS enforcement, `www` → apex redirect, compression, cache headers, and `ErrorDocument 404 /404.html`. It also redirects `/platzwahl/support` (the support URL App Store Connect stores for Platzwahl) to `/platzwahl.html#support`.
+
+PNGs are cached for a year. When an app icon is replaced under the same path, append a version query to every reference (`icon.png?v=2`) so returning visitors get the new one; the Ruhe generator carries the same suffix in `ICON_V`.
 
 ## Structure
 
@@ -110,13 +112,18 @@ script so its guides pick up the new name and link.
 `lehrer-arbeitszeit.html` and `lehrer-arbeitszeit-privacy.html` are **deliberately German-only** and have no `/en/` counterpart: the app ships the Ferien- and Feiertagstermine of the sixteen German states and is useless elsewhere. Their `hreflang` therefore names only `de`, and the English start page lists three apps where the German one lists four. Do not "fix" that asymmetry by machine-translating the pages.
 
 Images are grouped per app: `images/<app>/icons/{light,dark}/icon.png` and
-`images/<app>/screenshots/{light,dark}/`. Daily Bestiary is the exception on
+`images/<app>/screenshots/{light,dark}/`. App icons from Icon Composer are exported with
+`ictool <App>.icon --export-image --platform iOS --rendition Default|Dark --width 256 --height 256 --scale 2`
+and run through `pngquant`. Daily Bestiary is the exception on
 both counts: Icon Composer exports one icon for both themes, so it is a plain
 `images/bestiary/icon.png` with no `<picture>` around it, and its screenshots
 are split by language rather than by theme
 (`images/bestiary/screenshots/<code>/`). Ruhe keeps the usual `icons/{light,dark}/` but likewise
 splits its screenshots by language (`images/ruhe/screenshots/<code>/`, all 19): they are the store's
 marketing images with the headline burned in, resized to 552 px and run through `pngquant`.
+Platzwahl's App-Store set (version 1.4, iPad portrait, four images) sits under
+`images/platzwahl/screenshots/{de,en}/01.png`–`04.png`, 552 px, `pngquant`; `screenshots/light/` keeps
+the older landscape captures the guides still show.
 Team Zufall splits its store screenshots by language too (`images/team-zufall/screenshots/<code>/`,
 all 19, `01.png`–`06.png`, the iPhone set from `~/Developer/Team Zufall/AppStore Screenshots Remake/`,
 552 px, `pngquant`); `screenshots/light/` only keeps what the guides still use.
@@ -137,7 +144,7 @@ python3 notes/heroes/build.py ruhe       # nur eine: ruhe, bestiary, platzwahl, 
 The script renders each scene with headless Chrome at 2× (2560×1800) and packs it as WebP with
 alpha, so the shadow lives in the alpha channel and the image works on light and dark grounds. The
 sources are **not** in this repo but in the app projects next to it (`~/Developer/Ruhe/…`,
-`~/Developer/Wildcards/fastlane/screenshots/…`, `~/Developer/Platzwahl/appstore_screenshots/raw/`,
+`~/Developer/Wildcards/fastlane/screenshots/…`, `~/Developer/Platzwahl/appstore_screenshots/v14/{ipad,iphone}/raw/`,
 `~/Developer/Lehrer Arbeitszeit/Screenshots/`). Team Zufall is the exception: its scene is the
 TV-plus-iPhone composite the app's own screenshot pipeline renders for the projector slide
 (`~/Developer/Team Zufall/ASO/screenshots-editor/public/screenshots/apple/ipad/<locale>/tv.png`,
@@ -147,6 +154,19 @@ mode on purpose, the feature the page leads with. Outputs: `images/ruhe/hero/<co
 `images/team-zufall/hero/<code>.webp` (19) and `images/lehrer-arbeitszeit/hero/{light,dark}/hero.webp` — the
 last one sits in `light/`/`dark/` folders because `theme.js` recognises the dark source by that
 path segment.
+
+### Link previews (og:image)
+
+Every app page, its guides and the generated language pages carry an `og:image` of their app in
+their language, plus `twitter:card`. The images are generated from the hero scenes:
+
+```
+python3 notes/og/build.py            # alle
+python3 notes/og/build.py platzwahl  # nur eine App
+```
+
+Output: `images/og/<app>/<code>.jpg`, 1200×630. Re-run it after a hero changes. The three
+generators write the tags themselves; the start pages keep `og-image.png`.
 
 When checking which images are still in use, read `src`/`srcset`/`url()` **attribute values**, not
 a free-text pattern. Filenames have contained spaces, quotes and parentheses, and a naive pattern

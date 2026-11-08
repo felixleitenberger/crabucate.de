@@ -79,6 +79,30 @@ def rel(code: str, page: str) -> str:
     return f"ruhe/{code}/" + ("privacy/" if page else "")
 
 
+# og:locale je hreflang (Facebook erwartet Sprache_LAND).
+OG_LOCALE = {
+    "de": "de_DE", "en": "en_US", "fr": "fr_FR", "es": "es_ES", "it": "it_IT", "pt-BR": "pt_BR",
+    "nl": "nl_NL", "da": "da_DK", "sv": "sv_SE", "nb": "nb_NO", "fi": "fi_FI", "pl": "pl_PL",
+    "cs": "cs_CZ", "tr": "tr_TR", "uk": "uk_UA", "ru": "ru_RU", "id": "id_ID", "ja": "ja_JP",
+    "ko": "ko_KR", "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
+}
+
+
+def og(page_url: str, title: str, description: str, image: str, hl: str) -> str:
+    """Open-Graph-Block; das Bild erzeugt notes/og/build.py."""
+    return f"""
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{page_url}" />
+  <meta property="og:title" content="{a(title)}" />
+  <meta property="og:description" content="{a(description)}" />
+  <meta property="og:image" content="{SITE}/images/og/{image}.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:locale" content="{OG_LOCALE[hl]}" />"""
+
+
 def url(code: str, page: str) -> str:
     return f"{SITE}/{rel(code, page)}"
 
@@ -181,7 +205,7 @@ def head(hl: str, title: str, description: str, code: str, page: str, up: str, c
   <title>{e(title)}</title>{desc}
   <link rel="canonical" href="{url(code, page)}" />
 {alternates(page)}
-  <meta name="robots" content="index, follow" />{extra}
+  <meta name="robots" content="index, follow" />{og(url(code, page), title, description, f"ruhe/{code}", hl) if description else ""}{extra}
   <link rel="stylesheet" href="{up}assets/base.css" />{f'''
   <link rel="stylesheet" href="{up}assets/app.css" />''' if app_css else ""}
   <style>{css}</style>
@@ -373,6 +397,11 @@ def render_privacy(d: dict, code: str, hl: str, name: str) -> str:
     )
 
 
+# Cache-Zusatz für ausgetauschte Icons. .htaccess cacht PNGs ein Jahr; ohne
+# geänderte URL sähen wiederkehrende Besucher das alte Icon. Bei jedem neuen
+# Icon hochzählen, auf den handgeschriebenen Seiten ebenso.
+ICON_V = {"platzwahl": "?v=2"}
+
 GUIDE_APPS = [  # Klassen-Suffix, Name, Icon-Ordner, Ziel im Generat
     ("pw", "Platzwahl", "platzwahl", GUIDE_LINKS["platzwahl"]),
     ("tz", "Team Zufall", "team-zufall", GUIDE_LINKS["teamzufall"]),
@@ -441,8 +470,8 @@ def render_guide(d: dict, code: str, hl: str, name: str) -> str:
     cards = "\n".join(
         f"""    <a class="app-card app-card--{k}" href="{href}">
       <picture>
-        <source srcset="{up}images/{folder}/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
-        <img src="{up}images/{folder}/icons/light/icon.png" alt="{a(app)}" />
+        <source srcset="{up}images/{folder}/icons/dark/icon.png{ICON_V.get(folder, '')}" media="(prefers-color-scheme: dark)" />
+        <img src="{up}images/{folder}/icons/light/icon.png{ICON_V.get(folder, '')}" alt="{a(app)}" />
       </picture>
       <span class="card-name">{e(app)}</span>
       <span class="card-role">{e(role)}</span>

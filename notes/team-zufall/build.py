@@ -72,6 +72,30 @@ def rel(code: str) -> str:
     return {"de": "team-zufall.html", "en": "en/team-zufall.html"}.get(code, f"team-zufall/{code}/")
 
 
+# og:locale je hreflang (Facebook erwartet Sprache_LAND).
+OG_LOCALE = {
+    "de": "de_DE", "en": "en_US", "fr": "fr_FR", "es": "es_ES", "it": "it_IT", "pt-BR": "pt_BR",
+    "nl": "nl_NL", "da": "da_DK", "sv": "sv_SE", "nb": "nb_NO", "fi": "fi_FI", "pl": "pl_PL",
+    "cs": "cs_CZ", "tr": "tr_TR", "uk": "uk_UA", "ru": "ru_RU", "id": "id_ID", "ja": "ja_JP",
+    "ko": "ko_KR", "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
+}
+
+
+def og(page_url: str, title: str, description: str, image: str, hl: str) -> str:
+    """Open-Graph-Block; das Bild erzeugt notes/og/build.py."""
+    return f"""
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{page_url}" />
+  <meta property="og:title" content="{a(title)}" />
+  <meta property="og:description" content="{a(description)}" />
+  <meta property="og:image" content="{SITE}/images/og/{image}.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:locale" content="{OG_LOCALE[hl]}" />"""
+
+
 def url(code: str) -> str:
     return f"{SITE}/{rel(code)}"
 
@@ -193,7 +217,7 @@ def render(d: dict, code: str, hl: str, lang_name: str) -> str:
   <meta name="description" content="{a(d["description"])}" />
   <link rel="canonical" href="{url(code)}" />
 {alternates()}
-  <meta name="robots" content="index, follow" />{extra}
+  <meta name="robots" content="index, follow" />{og(url(code), d["title"], d["description"], f"team-zufall/{code}", hl)}{extra}
   <link rel="stylesheet" href="{up}assets/base.css" />
   <link rel="stylesheet" href="{up}assets/app.css" />
   <style>{CSS}</style>

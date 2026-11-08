@@ -113,6 +113,9 @@
       margin-bottom: 0.75rem;
     }
 
+    ul { margin: 0 0 0.75rem 1.1rem; padding: 0; }
+    li { font-size: 0.875rem; line-height: 1.9; color: var(--muted); margin-bottom: 0.2rem; }
+
     a {
       color: var(--accent);
       text-decoration: none;
@@ -160,35 +163,54 @@
   <main>
     <p class="page-label">Rechtliches</p>
     <h1>Datenschutzerklärung</h1>
-    <p class="meta">Platzwahl · Zuletzt aktualisiert: Juni 2026</p>
+    <p class="meta">Platzwahl · Zuletzt aktualisiert: November 2026</p>
 
     <h2>Überblick</h2>
-    <p>Platzwahl erhebt keine personenbezogenen Daten, sendet keine Informationen an externe Server und verwendet kein Tracking oder Analytics. Alle in der App eingetragenen Daten werden ausschließlich lokal auf deinem Gerät gespeichert und verlassen dieses nie.</p>
+    <p>Platzwahl verwendet kein Tracking und keine Analysedienste und braucht kein Konto. Alles, was du in der App einträgst, liegt auf deinem Gerät. Es verlässt das Gerät nur in zwei Fällen:</p>
+    <ul>
+      <li>wenn du die <strong>iCloud-Synchronisierung</strong> einschaltest: Dann liegen deine Daten zusätzlich in deiner privaten iCloud, Namen und Eigenschaften der Schülerinnen und Schüler Ende-zu-Ende-verschlüsselt (Abschnitt „iCloud-Synchronisierung“);</li>
+      <li>bei <strong>Käufen</strong>: Ein Dienstleister (RevenueCat) prüft, ob Platzwahl Pro freigeschaltet ist. Dabei werden keine Schülerdaten und keine Angaben übertragen, die dich benennen (Abschnitt „Käufe und Abos“).</li>
+    </ul>
+    <p>Es gibt keine Werbung, kein Tracking über App-Grenzen hinweg und keine Weitergabe an Datenhändler.</p>
 
     <h2>Welche Daten werden verarbeitet?</h2>
     <p>Beim Verwenden der App kannst du folgende Informationen eingeben und speichern:</p>
-    <p>Raumkonfigurationen (Raumname, Tischanordnung, Pultposition), Gruppen- und Klasseninformationen (Klassenname, Namen der Schülerinnen und Schüler, individuelle Regeln wie Störneigung oder Sitzwünsche) sowie daraus generierte Sitzpläne.</p>
-    <p>Diese Daten werden ausschließlich lokal auf deinem Gerät im App-Container gespeichert. Sie werden nicht an uns oder Dritte übertragen, nicht in einer Cloud gesichert und nicht mit anderen Apps geteilt.</p>
+    <p>Raumkonfigurationen (Raumname, Tischanordnung, Pult- und Türpositionen), Gruppen- und Klasseninformationen (Klassenname, Namen der Schülerinnen und Schüler, Geschlecht, individuelle Regeln wie Störneigung oder Sitzwünsche) sowie daraus generierte Sitzpläne.</p>
+    <p>Diese Daten werden im App-Container auf deinem Gerät gespeichert. Sie werden nicht an crabucate oder Dritte übertragen und nicht mit anderen Apps geteilt. Eine Ausnahme ist allein die iCloud-Synchronisierung, wenn du sie einschaltest.</p>
+
+    <h2>iCloud-Synchronisierung</h2>
+    <p>Mit Platzwahl Pro kannst du in den Einstellungen der App die iCloud-Synchronisierung einschalten. Sie ist standardmäßig aus. Eingeschaltet speichert die App Räume, Klassen und Sitzpläne über Apples CloudKit in der <strong>privaten Datenbank deines iCloud-Kontos</strong> und gleicht sie zwischen deinen Geräten ab, die mit derselben Apple-ID angemeldet sind.</p>
+    <p>Namen und Eigenschaften der Schülerinnen und Schüler werden dabei <strong>Ende-zu-Ende-verschlüsselt</strong>. Der Schlüssel liegt in deinem iCloud-Schlüsselbund; weder Apple noch crabucate können diese Daten lesen. crabucate hat auch auf die übrigen Daten in deiner privaten iCloud-Datenbank keinen Zugriff.</p>
+    <p>Die Speicherung in iCloud erfolgt durch Apple gemäß den <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank" rel="noopener">Datenschutzrichtlinien von Apple</a>. Schaltest du die Synchronisierung aus, lädt die App nichts mehr hoch. Bereits gespeicherte Daten löschst du in den iOS-Einstellungen unter deinem Namen → iCloud → Speicher verwalten → Platzwahl.</p>
 
     <h2>Personenbezogene Daten von Schülerinnen und Schülern</h2>
-    <p>Wenn du Namen von Schülerinnen und Schülern einträgst, verarbeitest du als nutzende Lehrkraft personenbezogene Daten natürlicher Personen. Da diese Daten ausschließlich auf deinem Gerät verbleiben und crabucate zu keinem Zeitpunkt Zugriff darauf hat, bist du im Sinne der DSGVO die verantwortliche Stelle für die Verarbeitung dieser Daten.</p>
-    <p>Bitte stelle sicher, dass du für die Eingabe und Speicherung von Schülernamen auf deinem Dienstgerät eine geeignete Rechtsgrundlage hast — in der Regel ergibt sich diese aus deinen dienstlichen Pflichten und den Regelungen deiner Schule oder Schulbehörde.</p>
+    <p>Wenn du Namen von Schülerinnen und Schülern einträgst, verarbeitest du als nutzende Lehrkraft personenbezogene Daten natürlicher Personen. Da crabucate zu keinem Zeitpunkt Zugriff auf diese Daten hat, bist du im Sinne der DSGVO die verantwortliche Stelle für ihre Verarbeitung.</p>
+    <p>Bitte stelle sicher, dass du für die Eingabe und Speicherung von Schülernamen auf deinem Dienstgerät eine geeignete Rechtsgrundlage hast — in der Regel ergibt sich diese aus deinen dienstlichen Pflichten und den Regelungen deiner Schule oder Schulbehörde. Klärt deine Schule, ob die Speicherung in einer privaten iCloud zulässig ist, lass die iCloud-Synchronisierung aus, bis das geklärt ist.</p>
     <p>Wir empfehlen, für die App Schülerinnen und Schüler mit Vornamen oder einem internen Kürzel einzutragen, sofern vollständige Namen nicht zwingend erforderlich sind.</p>
 
-    <h2>In-App-Käufe</h2>
-    <p>Platzwahl kann optionale In-App-Käufe anbieten. Alle Zahlungen werden ausschließlich über Apple und den App Store abgewickelt. crabucate hat keinen Zugriff auf deine Zahlungsdaten. Es gelten die <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank" rel="noopener">Datenschutzrichtlinien von Apple</a>.</p>
+    <h2>Käufe und Abos (RevenueCat)</h2>
+    <p>Bezahlt wird ausschließlich über Apple und den App Store; crabucate hat keinen Zugriff auf deine Zahlungsdaten. Damit die App weiß, ob ein Kauf gültig ist und ob ein Abo noch läuft, wird der Dienst <strong>RevenueCat</strong> eingesetzt (RevenueCat, Inc., 300 Delaware Ave, Suite 210 #4453, Wilmington, DE 19801, USA). Er prüft den Kaufbeleg gegen Apple und teilt der App mit, ob „Platzwahl Pro“ freigeschaltet ist.</p>
+    <p>Dabei werden verarbeitet:</p>
+    <ul><li>eine <strong>zufällig erzeugte Kennung</strong>, die die App beim ersten Start vergibt und die mit keiner Angabe zu deiner Person verknüpft ist (anonyme App-User-ID)</li><li>der <strong>Kaufbeleg von Apple</strong> mit Produkt, Kaufzeitpunkt, Transaktionskennung, Land des Stores und Status eines Abos</li><li><strong>Geräte- und Systemangaben</strong> wie Gerätetyp, Betriebssystemversion, App-Version, Sprache und Zeitzone</li><li>die <strong>IP-Adresse</strong> des Aufrufs, die RevenueCat zur Bestimmung des Landes und zur Abwehr von Missbrauch verwendet</li></ul>
+    <p><strong>Kein Tracking, keine Werbung.</strong> RevenueCat erhält keine Werbekennung (IDFA), es findet keine geräteübergreifende Zusammenführung statt und die Daten werden nicht an Werbenetzwerke weitergegeben. Räume, Klassen, Schülernamen und Sitzpläne werden nie an RevenueCat übertragen.</p>
+    <p><strong>Rechtsgrundlage</strong> ist Art. 6 Abs. 1 lit. b DSGVO: Ohne diese Prüfung ließe sich ein Kauf nicht ausliefern und ein Abo nicht freischalten.</p>
+    <p><strong>Übermittlung in die USA:</strong> RevenueCat verarbeitet die Daten in den Vereinigten Staaten. Mit RevenueCat besteht ein Auftragsverarbeitungsvertrag, der die Standardvertragsklauseln der Europäischen Kommission einschließt. Näheres steht in der <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">Datenschutzerklärung von RevenueCat</a>.</p>
+    <p><strong>Speicherdauer:</strong> Die Kaufhistorie bleibt gespeichert, solange sie zur Freischaltung deiner Käufe gebraucht wird. Löschst du die App, bleibt die anonyme Kennung ohne Gerät zurück; sie lässt sich keiner Person zuordnen.</p>
+
+    <h2>Bewertungen</h2>
+    <p>Gelegentlich zeigt Platzwahl den Bewertungsdialog von iOS an. Ob und wie du bewertest, wird ausschließlich von Apple verarbeitet.</p>
 
     <h2>Drittanbieter</h2>
-    <p>Die App bindet keine Drittanbieter-SDKs, Werbenetzwerke oder Analysedienste ein. Es findet kein Tracking statt.</p>
+    <p>Außer RevenueCat für die Prüfung von Käufen bindet die App keine Drittanbieter-SDKs, Werbenetzwerke oder Analysedienste ein. Es findet kein Tracking statt.</p>
 
     <h2>Kinder</h2>
-    <p>Platzwahl richtet sich als Werkzeug für Lehrkräfte an erwachsene Nutzerinnen und Nutzer. Die App selbst ist nicht für die direkte Nutzung durch Kinder konzipiert. Schülernamen werden, sofern eingegeben, nicht von der App übertragen oder verarbeitet — sie verbleiben ausschließlich auf dem Gerät der Lehrkraft.</p>
+    <p>Platzwahl richtet sich als Werkzeug für Lehrkräfte an erwachsene Nutzerinnen und Nutzer. Die App selbst ist nicht für die direkte Nutzung durch Kinder konzipiert. Schülernamen, sofern eingegeben, erhält crabucate nie. Sie liegen auf dem Gerät der Lehrkraft und, bei eingeschalteter Synchronisierung, verschlüsselt in ihrer privaten iCloud.</p>
 
     <h2>Gerätespeicher und Backups</h2>
-    <p>Die lokal gespeicherten App-Daten können, je nach Geräteeinstellungen, Teil eines iCloud- oder iTunes/Finder-Backups sein. Das Backup wird dann von Apple gemäß deren Datenschutzrichtlinien verarbeitet. Du kannst App-Daten vom Backup ausschließen, indem du in den iOS-Einstellungen unter iCloud → Apps den Schalter für Platzwahl deaktivierst.</p>
+    <p>Die lokal gespeicherten App-Daten können, je nach Geräteeinstellungen, Teil eines iCloud- oder Finder-Backups sein. Das Backup wird dann von Apple gemäß deren Datenschutzrichtlinien verarbeitet. Du kannst App-Daten vom Backup ausschließen, indem du in den iOS-Einstellungen unter iCloud → Apps den Schalter für Platzwahl deaktivierst.</p>
 
     <h2>Deine Rechte</h2>
-    <p>Da crabucate keine Nutzerdaten erhebt oder speichert, können wir keine Auskunft über gespeicherte Daten geben oder Löschungen vornehmen — diese Daten liegen ausschließlich auf deinem Gerät. Alle App-Daten kannst du jederzeit vollständig löschen, indem du die App deinstallierst.</p>
+    <p>Räume, Klassen und Sitzpläne liegen auf deinem Gerät und gegebenenfalls in deiner privaten iCloud; du löschst sie, indem du die App deinstallierst und, falls genutzt, die iCloud-Daten wie oben beschrieben entfernst. Bei RevenueCat liegen nur die oben genannten Kaufdaten unter einer anonymen Kennung, die crabucate keiner Person zuordnen kann. Möchtest du Auskunft oder Löschung nach Art. 15–17 DSGVO verlangen, schreib uns an die unten genannte Adresse, wir helfen dir, die betreffende Kennung zu finden. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
 
     <h2>Änderungen</h2>
     <p>Sollte sich etwas grundlegend ändern, das diese Erklärung betrifft, werden wir sie aktualisieren. Das Datum oben zeigt an, wann die Erklärung zuletzt geändert wurde.</p>

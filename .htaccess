@@ -13,6 +13,12 @@ RewriteRule ^(.*)$ https://crabucate.de/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.crabucate\.de$ [NC]
 RewriteRule ^(.*)$ https://crabucate.de/$1 [R=301,L]
 
+# App Store Connect fuehrt fuer Platzwahl die Support-URL crabucate.de/platzwahl/support
+# (DE und EN). Die Seite gibt es nicht als Verzeichnis; der Hilfe-Abschnitt steht auf
+# der App-Seite. NE, damit das # nicht als %23 kodiert wird.
+RewriteRule ^platzwahl/support/?$ /platzwahl.html#support [R=301,NE,L]
+RewriteRule ^platzwahl/?$ /platzwahl.html [R=301,L]
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css image/svg+xml application/javascript
 </IfModule>
