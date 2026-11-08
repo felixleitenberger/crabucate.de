@@ -196,8 +196,13 @@ footer a:hover { color: var(--accent); }
 html.js .theme-toggle { display: inline-flex; }
 .theme-toggle:hover { color: var(--fg); background: var(--line); }
 .theme-toggle svg { width: 16px; height: 16px; display: block; }
-.theme-toggle .ico-light, .theme-toggle .ico-dark { display: none; }
-:root[data-theme="light"] .theme-toggle .ico-auto { display: none; }
-:root[data-theme="light"] .theme-toggle .ico-light { display: block; }
-:root[data-theme="dark"] .theme-toggle .ico-auto { display: none; }
+/* Zwei Zustände: Das Symbol zeigt, was gerade zu sehen ist (Sonne hell, Mond
+   dunkel), ohne eigene Wahl also das System. ico-auto steht noch im Markup der
+   Seiten, wird aber nicht mehr gezeigt. */
+.theme-toggle .ico-auto, .theme-toggle .ico-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .ico-light { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .ico-dark { display: block; }
+}
+:root[data-theme="dark"] .theme-toggle .ico-light { display: none; }
 :root[data-theme="dark"] .theme-toggle .ico-dark { display: block; }

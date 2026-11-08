@@ -269,8 +269,8 @@ belongs to — `--app: var(--pw); --app-text: var(--pw-text); --app-dim: var(--p
 
 ## Dark mode
 
-Follows the OS by default; the nav toggle cycles between auto, light and dark and persists an
-explicit choice in `localStorage.theme` (no entry means auto). All of it lives in `assets/base.css`
+Follows the OS by default; the nav toggle has two states, light and dark, and persists the
+choice in `localStorage.theme` (no entry means: follow the OS). All of it lives in `assets/base.css`
 and `assets/theme.js` — a new page needs nothing beyond the `<link>`, the `<script>`, the head
 snippet and the button markup. The button's label comes from `TEXTS` in `theme.js`, keyed by
 `<html lang>`; it carries all ten languages of `/bestiary/` and falls back to German for anything
@@ -291,10 +291,10 @@ stays inline deliberately: an external file would only run after a round-trip an
 flash the wrong theme until then. It also sets `class="js"`, which is what reveals the button —
 without JavaScript it stays hidden and the media query alone still gives automatic dark mode.
 
-The cycle order depends on the system theme so the first click always changes something visible.
-With a light system it runs auto → dark → light → auto; with a dark system auto → light → dark →
-auto. A fixed order would make `auto → light` a no-op on a light system and the button would seem
-to need two clicks.
+A click always switches to the opposite of what is currently visible (stored choice, otherwise the
+system), so the first click always changes something. There is no way back to "follow the OS" from
+the button; that was dropped on purpose. The icon shows the visible state (sun or moon); the
+`ico-auto` SVG is still in every page's markup but hidden by `base.css`.
 
 `theme.js` recognises the dark source by the `/dark/` segment of its path, so icon files must stay
 inside their `light/` and `dark/` folders — renaming those folders breaks the toggle silently.
