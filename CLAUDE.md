@@ -179,6 +179,7 @@ There is still no build step. Shared code lives in `/assets/`, page-specific cod
 | `assets/base.css` | Design tokens, dark mode, reset, nav/footer/toggle chrome — everything that was byte-identical across pages |
 | `assets/theme.js` | The theme toggle, loaded with `defer` |
 | `assets/lang.js` | The language switcher's outside-click and Escape handling, loaded with `defer` |
+| `assets/groups.css`, `assets/groups.js` | The random group generator in the browser, embedded at `#generator` in `guides/zufallsgruppen-generator.html` and `en/guides/random-group-generator.html`. Texts are `data-*` attributes on `<section class="gg">`, so one script serves both languages. Nothing is sent or stored; keep it that way, the pages promise it |
 | `assets/app.css` | Layout of the app-page family: nav, hero stage, screenshot strip, features, steps, guide links, FAQ accordion, closing, footer. Loaded after `base.css` on the hand-written app pages (Ruhe, Tracker, Platzwahl, Team Zufall, DE/EN) and by both generators for the Ruhe and Bestiary index pages. Each page sets only `--app`/`--app-text`/`--app-dim` as `var()` references in its inline `:root` |
 | inline `<style>` | Everything specific to one page or page family (layout, hero, guide article styles) |
 | inline `<script>` in `<head>` | Only the 150-byte anti-flash snippet, see below |
@@ -197,6 +198,16 @@ When adding a rule, ask whether it is identical everywhere. If yes it belongs in
 The font stack is system-native (`-apple-system, BlinkMacSystemFont, …`), no webfonts.
 
 DE and EN counterparts reference each other via `hreflang` and each carry a `canonical` link — keep both in sync when adding pages, and add new URLs to `sitemap.xml`.
+
+## Reach: app banner and IndexNow
+
+App pages, their guides and all generated pages carry `<meta name="apple-itunes-app" content="app-id=…">`,
+Safari's native install banner on iPhone and iPad. The three generators write it themselves; a new
+hand-written page for an app needs the line by hand.
+
+`<key>.txt` in the root is the IndexNow key. After a deploy, `python3 notes/indexnow.py` reports all
+sitemap URLs (or only the paths given) to Bing, Yandex and the other IndexNow engines. Google does not
+take part; for Google, resubmit the sitemap in the Search Console.
 
 ## The language switcher
 

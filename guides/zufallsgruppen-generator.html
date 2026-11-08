@@ -7,8 +7,8 @@
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
-  <title>Zufallsgruppen-Generator: Gruppen per Zufall bilden (App)</title>
-  <meta name="description" content="Zufallsgruppen bilden ohne Zettelchen: Mit dem Zufallsgruppen-Generator Team Zufall teilst du jede Liste in Sekunden fair auf – mit CSV-Import und PDF-Export." />
+  <title>Zufallsgruppen-Generator: Gruppen online zufällig einteilen</title>
+  <meta name="description" content="Kostenloser Zufallsgruppen-Generator: Namen einfügen, Anzahl wählen, auslosen. Läuft im Browser, ohne Anmeldung, und speichert keine Namen." />
   <link rel="canonical" href="https://crabucate.de/guides/zufallsgruppen-generator.html" />
   <link rel="alternate" hreflang="de" href="https://crabucate.de/guides/zufallsgruppen-generator.html" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/random-group-generator.html" />
@@ -16,8 +16,8 @@
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://crabucate.de/guides/zufallsgruppen-generator.html" />
-  <meta property="og:title" content="Zufallsgruppen-Generator: Gruppen per Zufall bilden (App)" />
-  <meta property="og:description" content="Zufallsgruppen bilden ohne Zettelchen: Mit dem Zufallsgruppen-Generator Team Zufall teilst du jede Liste in Sekunden fair auf – mit CSV-Import und PDF-Export." />
+  <meta property="og:title" content="Zufallsgruppen-Generator: Gruppen online zufällig einteilen" />
+  <meta property="og:description" content="Kostenloser Zufallsgruppen-Generator: Namen einfügen, Anzahl wählen, auslosen. Läuft im Browser, ohne Anmeldung, und speichert keine Namen." />
   <meta property="og:image" content="https://crabucate.de/images/og/team-zufall/de.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -26,9 +26,25 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zufallsgruppen-Generator",
+    "url": "https://crabucate.de/guides/zufallsgruppen-generator.html#generator",
+    "description": "Teilt eine Namensliste zufällig und gleichmäßig in Gruppen auf, nach Anzahl der Gruppen oder Personen pro Gruppe. Läuft im Browser, ohne Anmeldung.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "de",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Zufallsgruppen-Generator: Gruppen per Zufall bilden",
-    "description": "Zufallsgruppen bilden ohne Zettelchen: Mit dem Zufallsgruppen-Generator Team Zufall teilst du jede Liste in Sekunden fair auf – mit CSV-Import und PDF-Export.",
+    "description": "Kostenloser Zufallsgruppen-Generator: Namen einfügen, Anzahl wählen, auslosen. Läuft im Browser, ohne Anmeldung, und speichert keine Namen.",
     "inLanguage": "de",
     "datePublished": "2026-07-11",
     "dateModified": "2026-07-11",
@@ -81,7 +97,7 @@
         "name": "Gibt es einen kostenlosen Zufallsgruppen-Generator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Online-Generatoren im Browser sind meist gratis, speichern aber keine Listen. Bei Team Zufall sind das Laden und die erste Auslosung gratis, danach brauchst du das Pro-Abo, das du vorher kostenlos testen kannst. Dafür bleiben deine Gruppen gespeichert, mit CSV-Import und PDF-Export."
+          "text": "Ja, oben auf dieser Seite: Namen einfügen, Anzahl der Gruppen oder Personen pro Gruppe wählen und auslosen. Er ist kostenlos, braucht keine Anmeldung und speichert keine Namen. Wer Listen dauerhaft speichern möchte, nutzt die App Team Zufall; dort sind das Laden und die erste Auslosung gratis, danach gibt es ein Pro-Abo, das du vorher kostenlos testen kannst."
         }
       },
       {
@@ -103,6 +119,7 @@
     ]
   }
   </script>
+  <meta name="apple-itunes-app" content="app-id=6768655282" />
   <link rel="stylesheet" href="../assets/base.css" />
   <style>
     :root {
@@ -197,6 +214,7 @@
       margin-top: 3rem;
     }
 </style>
+  <link rel="stylesheet" href="../assets/groups.css" />
 </head>
 <body>
 
@@ -230,6 +248,47 @@
     <h1>Zufallsgruppen-Generator: Gruppen per Zufall bilden</h1>
     <p class="intro">Ob Arbeitsgruppen im Unterricht, Mannschaften im Training oder Teams im Workshop: Ein Zufallsgruppen-Generator nimmt dir die Einteilung ab — und jede Diskussion gleich mit. Worauf es ankommt und wie es am schnellsten geht.</p>
 
+    <section class="gg" id="generator" aria-label="Gruppen-Zufallsgenerator"
+      data-group-label="Gruppe" data-err-few="Trag mindestens zwei Namen ein." data-summary="{n} Namen, {k} Gruppen"
+      data-note-even="{k} Gruppen à {lo} Personen" data-note-range="{k} Gruppen à {lo}–{hi} Personen" data-copy="Kopieren" data-copied="Kopiert"
+      data-sample="Amira|Ben|Clara|David|Elif|Finn|Greta|Hannes|Ida|Jonas|Kaya|Leon|Mia|Noah|Ola|Paul|Romy|Samuel|Tara|Umut|Valentina|Willi|Yara|Zoe">
+      <div class="gg-grid">
+        <div>
+          <label class="gg-label" for="gg-names">Namen <span class="gg-count" aria-live="polite">0</span></label>
+          <textarea id="gg-names" rows="9" placeholder="Ein Name pro Zeile, oder alle durch Komma getrennt" spellcheck="false" autocomplete="off"></textarea>
+          <button type="button" class="gg-link" data-act="sample">Beispielklasse einfügen</button>
+        </div>
+        <div class="gg-controls">
+          <div class="gg-seg" role="radiogroup" aria-label="Einteilen nach">
+            <button type="button" role="radio" aria-checked="true" data-mode="groups">Anzahl Gruppen</button>
+            <button type="button" role="radio" aria-checked="false" data-mode="size">Personen pro Gruppe</button>
+          </div>
+          <div class="gg-stepper">
+            <button type="button" data-act="dec" aria-label="Weniger">−</button>
+            <output id="gg-n" aria-live="polite">4</output>
+            <button type="button" data-act="inc" aria-label="Mehr">+</button>
+          </div>
+          <p class="gg-stepper-note"></p>
+          <button type="button" class="gg-go" data-act="draw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Gruppen auslosen</button>
+          <p class="gg-error" role="alert"></p>
+        </div>
+      </div>
+      <div class="gg-result" hidden>
+        <div class="gg-bar">
+          <span class="gg-summary"></span>
+          <div class="gg-actions">
+            <button type="button" data-act="again"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg><span>Neu auslosen</span></button>
+            <button type="button" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Kopieren</span></button>
+            <button type="button" data-act="fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Am Beamer zeigen</span></button>
+          </div>
+        </div>
+        <div class="gg-groups" aria-live="polite"></div>
+        <p class="gg-nudge"><img src="../images/team-zufall/icons/light/icon.png" alt="Team Zufall" /><span>Jede Woche dieselbe Klasse? <a href="../team-zufall.html">Team Zufall</a> merkt sich deine Listen, nimmt Abwesende mit einem Tipp heraus und zeigt die Auslosung live am Beamer.</span></p>
+      </div>
+      <p class="gg-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Läuft vollständig in deinem Browser. Die Namen werden weder gesendet noch gespeichert.</p>
+    </section>
+
+
   <h2>Was ein guter Zufallsgruppen-Generator braucht</h2>
   <ul>
     <li><strong>Gespeicherte Listen:</strong> Die Klasse oder das Team einmal anlegen — nicht bei jeder Nutzung neu eintippen. Das ist der große Schwachpunkt der meisten Online-Generatoren.</li>
@@ -239,7 +298,7 @@
   </ul>
 
   <h2>Online-Generator oder App?</h2>
-  <p>Web-Tools sind schnell erreichbar, vergessen aber alles beim Schließen des Tabs — und Namenslisten in fremde Web-Formulare einzutippen ist spätestens bei Schülernamen ein Datenschutzproblem. Eine App wie <strong>Team Zufall</strong> speichert deine Gruppen lokal auf dem Gerät: einmal anlegen, für immer wiederverwenden, keine Datenübertragung.</p>
+  <p>Der Generator oben ist für den schnellen Einsatz gedacht: Namen einfügen, auslosen, fertig. Er läuft komplett in deinem Browser, die Namen verlassen dein Gerät nicht. Dafür vergisst er die Liste, sobald du den Tab schließt. Wenn du dieselbe Klasse jede Woche neu einteilst, spart dir eine App wie <strong>Team Zufall</strong> das ständige Einfügen: Sie speichert deine Gruppen auf dem Gerät, nimmt Abwesende mit einem Tipp heraus und zeigt die Auslosung live am Beamer.</p>
 
   <h2>In drei Schritten zu Zufallsgruppen</h2>
   <ol class="steps">
@@ -268,7 +327,7 @@
   <div class="faq-mini">
     <div class="faq-item">
       <h3>Gibt es einen kostenlosen Zufallsgruppen-Generator?</h3>
-      <p>Online-Generatoren im Browser sind meist gratis, speichern aber keine Listen. Bei Team Zufall sind das Laden und die erste Auslosung gratis, danach brauchst du das Pro-Abo, das du vorher kostenlos testen kannst. Dafür bleiben deine Gruppen gespeichert, mit CSV-Import und PDF-Export.</p>
+      <p>Ja, oben auf dieser Seite: Namen einfügen, Anzahl der Gruppen oder Personen pro Gruppe wählen und auslosen. Er ist kostenlos, braucht keine Anmeldung und speichert keine Namen. Wer Listen dauerhaft speichern möchte, nutzt die App Team Zufall; dort sind das Laden und die erste Auslosung gratis, danach gibt es ein Pro-Abo, das du vorher kostenlos testen kannst.</p>
     </div>
     <div class="faq-item">
       <h3>Kann ich Namenslisten aus Excel importieren?</h3>
@@ -295,6 +354,7 @@
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="../impressum.html">Impressum</a>
   </footer>
 
+  <script src="../assets/groups.js" defer></script>
   <script src="../assets/theme.js" defer></script>
   <script src="../assets/lang.js" defer></script>
 </body>

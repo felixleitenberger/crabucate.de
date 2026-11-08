@@ -205,7 +205,8 @@ def head(hl: str, title: str, description: str, code: str, page: str, up: str, c
   <title>{e(title)}</title>{desc}
   <link rel="canonical" href="{url(code, page)}" />
 {alternates(page)}
-  <meta name="robots" content="index, follow" />{og(url(code, page), title, description, f"ruhe/{code}", hl) if description else ""}{extra}
+  <meta name="robots" content="index, follow" />{og(url(code, page), title, description, f"ruhe/{code}", hl) if description else ""}
+  <meta name="apple-itunes-app" content="app-id=6817002986" />{extra}
   <link rel="stylesheet" href="{up}assets/base.css" />{f'''
   <link rel="stylesheet" href="{up}assets/app.css" />''' if app_css else ""}
   <style>{css}</style>

@@ -287,6 +287,7 @@ def head(lang_code: str, hreflang: str, locale: str, title: str, description: st
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:locale" content="{locale}" />
+  <meta name="apple-itunes-app" content="app-id=6808938974" />
 
   <link rel="stylesheet" href="{up}assets/base.css" />{f'''
   <link rel="stylesheet" href="{up}assets/app.css" />''' if app_css else ""}

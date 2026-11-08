@@ -217,7 +217,8 @@ def render(d: dict, code: str, hl: str, lang_name: str) -> str:
   <meta name="description" content="{a(d["description"])}" />
   <link rel="canonical" href="{url(code)}" />
 {alternates()}
-  <meta name="robots" content="index, follow" />{og(url(code), d["title"], d["description"], f"team-zufall/{code}", hl)}{extra}
+  <meta name="robots" content="index, follow" />{og(url(code), d["title"], d["description"], f"team-zufall/{code}", hl)}
+  <meta name="apple-itunes-app" content="app-id=6768655282" />{extra}
   <link rel="stylesheet" href="{up}assets/base.css" />
   <link rel="stylesheet" href="{up}assets/app.css" />
   <style>{CSS}</style>

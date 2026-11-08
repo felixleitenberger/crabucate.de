@@ -7,8 +7,8 @@
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#17120E" media="(prefers-color-scheme: dark)" />
-  <title>Random Group Generator App – Saved Lists, CSV Import, PDF</title>
-  <meta name="description" content="A random group generator that remembers your lists: Team Draw splits any group fairly in seconds – with CSV import, absence handling, and PDF export." />
+  <title>Random Group Generator: Split a Class into Groups Online</title>
+  <meta name="description" content="Free random group generator: paste names, pick the number of groups and shuffle. Runs in your browser, no sign-up, and no names are stored." />
   <link rel="canonical" href="https://crabucate.de/en/guides/random-group-generator.html" />
   <link rel="alternate" hreflang="en" href="https://crabucate.de/en/guides/random-group-generator.html" />
   <link rel="alternate" hreflang="x-default" href="https://crabucate.de/guides/zufallsgruppen-generator.html" />
@@ -16,8 +16,8 @@
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://crabucate.de/en/guides/random-group-generator.html" />
-  <meta property="og:title" content="Random Group Generator App – Saved Lists, CSV Import, PDF" />
-  <meta property="og:description" content="A random group generator that remembers your lists: Team Draw splits any group fairly in seconds – with CSV import, absence handling, and PDF export." />
+  <meta property="og:title" content="Random Group Generator: Split a Class into Groups Online" />
+  <meta property="og:description" content="Free random group generator: paste names, pick the number of groups and shuffle. Runs in your browser, no sign-up, and no names are stored." />
   <meta property="og:image" content="https://crabucate.de/images/og/team-zufall/en.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -26,9 +26,25 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Random Group Generator",
+    "url": "https://crabucate.de/en/guides/random-group-generator.html#generator",
+    "description": "Splits a list of names randomly and evenly into groups, by number of groups or people per group. Runs in the browser, no sign-up.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "crabucate", "url": "https://crabucate.de" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Random Group Generator: Groups in One Tap",
-    "description": "A random group generator that remembers your lists: Team Draw splits any group fairly in seconds – with CSV import, absence handling, and PDF export.",
+    "headline": "Random Group Generator: Split Any Class into Groups",
+    "description": "Free random group generator: paste names, pick the number of groups and shuffle. Runs in your browser, no sign-up, and no names are stored.",
     "inLanguage": "en",
     "datePublished": "2026-07-11",
     "dateModified": "2026-07-11",
@@ -65,7 +81,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Random Group Generator: Groups in One Tap",
+        "name": "Random Group Generator: Split Any Class into Groups",
         "item": "https://crabucate.de/en/guides/random-group-generator.html"
       }
     ]
@@ -81,7 +97,7 @@
         "name": "Is there a free random group generator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Browser-based generators are usually free but don't save your lists. With Team Draw, downloading and your first draw are free, after that you need the Pro subscription, which you can try for free first. In return your groups stay saved, with CSV import and PDF export."
+          "text": "Yes, at the top of this page: paste names, choose the number of groups or people per group and shuffle. It's free, needs no sign-up and stores no names. If you want to keep your lists, use the Team Draw app; downloading it and your first draw are free, after that there's a Pro subscription you can try for free first."
         }
       },
       {
@@ -103,6 +119,7 @@
     ]
   }
   </script>
+  <meta name="apple-itunes-app" content="app-id=6768655282" />
   <link rel="stylesheet" href="../../assets/base.css" />
   <style>
     :root {
@@ -197,6 +214,7 @@
       margin-top: 3rem;
     }
 </style>
+  <link rel="stylesheet" href="../../assets/groups.css" />
 </head>
 <body>
 
@@ -227,8 +245,49 @@
       <a href="/en/">crabucate</a><span>/</span><a href="../team-zufall.html">Team Draw</a><span>/</span>Guides
     </p>
 
-    <h1>Random Group Generator: Groups in One Tap</h1>
+    <h1>Random Group Generator: Split Any Class into Groups</h1>
     <p class="intro">Work groups in class, teams at practice, breakout circles at a workshop: a random group generator takes the assignment off your hands — and every argument with it. Here's what to look for and the fastest way to do it.</p>
+
+    <section class="gg" id="generator" aria-label="Random group generator"
+      data-group-label="Group" data-err-few="Enter at least two names." data-summary="{n} names, {k} groups"
+      data-note-even="{k} groups of {lo}" data-note-range="{k} groups of {lo}–{hi}" data-copy="Copy" data-copied="Copied"
+      data-sample="Amelia|Ben|Chloe|Daniel|Ella|Finn|Grace|Henry|Isla|Jack|Kai|Leo|Mia|Noah|Olivia|Priya|Quinn|Ruby|Sam|Theo|Uma|Victor|Willow|Zara">
+      <div class="gg-grid">
+        <div>
+          <label class="gg-label" for="gg-names">Names <span class="gg-count" aria-live="polite">0</span></label>
+          <textarea id="gg-names" rows="9" placeholder="One name per line, or all separated by commas" spellcheck="false" autocomplete="off"></textarea>
+          <button type="button" class="gg-link" data-act="sample">Insert a sample class</button>
+        </div>
+        <div class="gg-controls">
+          <div class="gg-seg" role="radiogroup" aria-label="Split by">
+            <button type="button" role="radio" aria-checked="true" data-mode="groups">Number of groups</button>
+            <button type="button" role="radio" aria-checked="false" data-mode="size">People per group</button>
+          </div>
+          <div class="gg-stepper">
+            <button type="button" data-act="dec" aria-label="Fewer">−</button>
+            <output id="gg-n" aria-live="polite">4</output>
+            <button type="button" data-act="inc" aria-label="More">+</button>
+          </div>
+          <p class="gg-stepper-note"></p>
+          <button type="button" class="gg-go" data-act="draw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Make groups</button>
+          <p class="gg-error" role="alert"></p>
+        </div>
+      </div>
+      <div class="gg-result" hidden>
+        <div class="gg-bar">
+          <span class="gg-summary"></span>
+          <div class="gg-actions">
+            <button type="button" data-act="again"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg><span>Shuffle again</span></button>
+            <button type="button" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button>
+            <button type="button" data-act="fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Show on projector</span></button>
+          </div>
+        </div>
+        <div class="gg-groups" aria-live="polite"></div>
+        <p class="gg-nudge"><img src="../../images/team-zufall/icons/light/icon.png" alt="Team Draw" /><span>Same class every week? <a href="../team-zufall.html">Team Draw</a> remembers your lists, leaves out absent students with one tap and shows the draw live on the projector.</span></p>
+      </div>
+      <p class="gg-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Runs entirely in your browser. Names are never sent or stored.</p>
+    </section>
+
 
   <h2>What a good random group generator needs</h2>
   <ul>
@@ -239,7 +298,7 @@
   </ul>
 
   <h2>Online generator or app?</h2>
-  <p>Web tools are quick to reach but forget everything when the tab closes — and typing name lists into third-party web forms becomes a privacy problem the moment student names are involved. An app like <strong>Team Draw</strong> stores your groups locally on the device: set up once, reuse forever, nothing transmitted.</p>
+  <p>The generator above is built for quick use: paste names, shuffle, done. It runs entirely in your browser, so the names never leave your device. In return, it forgets the list as soon as you close the tab. If you split the same class every week, an app like <strong>Team Draw</strong> saves you the pasting: it keeps your groups on the device, leaves out absent students with one tap and shows the draw live on the projector.</p>
 
   <h2>Three steps to random groups</h2>
   <ol class="steps">
@@ -268,7 +327,7 @@
   <div class="faq-mini">
     <div class="faq-item">
       <h3>Is there a free random group generator?</h3>
-      <p>Browser-based generators are usually free but don't save your lists. With Team Draw, downloading and your first draw are free, after that you need the Pro subscription, which you can try for free first. In return your groups stay saved, with CSV import and PDF export.</p>
+      <p>Yes, at the top of this page: paste names, choose the number of groups or people per group and shuffle. It's free, needs no sign-up and stores no names. If you want to keep your lists, use the Team Draw app; downloading it and your first draw are free, after that there's a Pro subscription you can try for free first.</p>
     </div>
     <div class="faq-item">
       <h3>Can I import name lists from Excel?</h3>
@@ -295,6 +354,7 @@
     © 2026 crabucate · <a href="mailto:info@crabucate.de">info@crabucate.de</a> · <a href="../impressum.html">Imprint</a>
   </footer>
 
+  <script src="../../assets/groups.js" defer></script>
   <script src="../../assets/theme.js" defer></script>
   <script src="../../assets/lang.js" defer></script>
 </body>
