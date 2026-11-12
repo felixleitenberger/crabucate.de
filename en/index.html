@@ -111,7 +111,7 @@
     /* ── APP TILES GRID ── */
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
 
@@ -305,7 +305,7 @@
         </div>
       </a>
 
-      <a href="ruhe.html" class="app-tile app-tile--ru">
+      <a href="ruhe.html" class="app-tile app-tile--ru app-tile--wide">
         <div class="tile-content">
           <picture>
             <source srcset="../images/ruhe/icons/dark/icon.png" media="(prefers-color-scheme: dark)" />
@@ -320,19 +320,7 @@
         </div>
       </a>
 
-      <a href="../bestiary/" class="app-tile app-tile--db">
-        <div class="tile-content">
-          <img src="../images/bestiary/icon.png" alt="Daily Bestiary App Icon" class="tile-icon" />
-          <h2 class="tile-name">Daily Bestiary</h2>
-          <p class="tile-tagline">A new hand-drawn animal card every day.</p>
-          <span class="tile-cta">On the App Store</span>
-        </div>
-        <div class="tile-preview">
-          <img src="../images/bestiary/hero/en.webp" width="2560" height="1800" alt="Daily Bestiary on three iPhones: today’s card, front and back" loading="lazy" />
-        </div>
-      </a>
-
-      <a href="platzwahl.html" class="app-tile app-tile--pw">
+      <a href="platzwahl.html" class="app-tile app-tile--pw app-tile--wide">
         <div class="tile-content">
           <picture>
             <source srcset="../images/platzwahl/icons/dark/icon.png?v=2" media="(prefers-color-scheme: dark)" />
@@ -344,6 +332,18 @@
         </div>
         <div class="tile-preview">
           <img src="../images/platzwahl/hero/en.webp" width="2560" height="1800" alt="Platzwahl on iPad and iPhone: an automatically created seating chart" loading="lazy" />
+        </div>
+      </a>
+
+      <a href="../bestiary/" class="app-tile app-tile--db app-tile--wide">
+        <div class="tile-content">
+          <img src="../images/bestiary/icon.png" alt="Daily Bestiary App Icon" class="tile-icon" />
+          <h2 class="tile-name">Daily Bestiary</h2>
+          <p class="tile-tagline">A new hand-drawn animal card every day.</p>
+          <span class="tile-cta">On the App Store</span>
+        </div>
+        <div class="tile-preview">
+          <img src="../images/bestiary/hero/en.webp" width="2560" height="1800" alt="Daily Bestiary on three iPhones: today’s card, front and back" loading="lazy" />
         </div>
       </a>
 
